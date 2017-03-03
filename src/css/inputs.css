@@ -1,0 +1,144 @@
+/* custom selectors */
+@custom-selector :--inputs input[type='text'], select, textarea;
+
+:--inputs {
+	height: var(--btn-height);
+	background: var(--input-bg);
+	border: var(--input-border);
+	border-radius: var(--input-border-radius);
+	padding: var(--input-padding);
+	line-height: var(--input-line-height);
+	color: var(--input-color);
+	transition: background var(--md-speed) var(--ease), border var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
+	display: block;
+	width: 100%;
+	font-family: var(--input-font);
+	font-size: 1em;
+	outline: none;
+}
+
+.large :--inputs {
+	height: 60px;
+	font-size: 1.25rem;
+}
+
+:--inputs::placeholder {
+	color: var(--placeholder-color);
+	transition: color var(--md-speed) var(--ease);
+}
+
+:--inputs:hover {
+	background: var(--input-hover-bg);
+	color: var(--input-hover-color);
+	border: var(--input-hover-border);
+}
+
+:--inputs:focus {
+	background: var(--input-focus-bg);
+	color: var(--input-focus-color);
+	border: var(--input-focus-border);
+}
+
+:--inputs:focus::placeholder {
+	color: var(--placeholder-focus-color);
+}
+
+:--inputs:disabled {
+	color: var(--placeholder-color);
+	background: var(--input-bg);
+}
+
+:--inputs:-webkit-autofill,
+:--inputs:-webkit-autofill:hover, 
+:--inputs:-webkit-autofill:focus
+:--inputs:-webkit-autofill {
+  border: inherit;
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  transition: background-color 50000s ease-in-out 0s;
+}
+
+textarea {
+	line-height: var(--base-line-height);
+	padding-top: .5em;
+	padding-bottom: .5em;
+	resize: none;
+	height: var(--btn-height);
+}
+
+label {
+	cursor: pointer;
+	transition: transform var(--md-speed) var(--ease), background var(--md-speed) var(--ease), border var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	display: none;
+}
+
+input[type='checkbox'] + label span,
+input[type='radio'] + label span {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	margin: -2px 10px 0 0;
+	border-radius: 3px;
+	border: 1px solid var(--mid-grey);
+	background: var(--mid-grey);
+	transition: background var(--md-speed) var(--ease), border var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
+}
+
+input[type='checkbox'] ~ label,
+input[type='radio'] ~ label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+	border-color: var(--main-color);
+}
+
+input[type='checkbox']:checked ~ label,
+input[type='radio']:checked ~ label {
+	color: var(--text-color);
+}
+
+input[type='checkbox'] {
+	border-radius: 4px;
+}
+
+input[type='checkbox']:checked + label span {
+	background: var(--main-color);
+	border-color: var(--main-color);
+}
+
+input[type='radio'] + label span {
+	border-radius: 50%;
+	border: 2px solid var(--light-text-color);
+	position: relative;
+}
+
+input[type='radio'] + label span:after {
+	content: '';
+	display: block;
+	background: var(--main-color);
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	bottom: 2px;
+	left: 2px;
+	width: 8px;
+	height: 8px;
+	opacity: 0;
+	transform: scale(.25);
+	transition: transform var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
+}
+
+input[type='radio']:checked + label span:after {
+	opacity: 1;
+	transform: scale(1);
+}

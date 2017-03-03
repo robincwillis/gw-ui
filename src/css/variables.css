@@ -1,0 +1,93 @@
+:root {	
+	/* Color Variables */
+	--bg-color: #fff;
+	--main-color: #32ebc7;
+	--text-color: #333;
+	--light-text-color: rgba(0, 0, 0, .4);
+	--mid-grey: #ccc;
+	--light-grey: #f2f2f2;
+
+	/* Typography Variables */
+	--base-font-size: 16px;
+	--base-line-height: 1.65em; /* For larger text */
+	--short-line-height: calc(var(--base-line-height) * .8);
+	--main-font: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+	--secondary-font: -apple-system, BlinkMacSystemFont, sans-serif;
+	--code-font: 'Source Code Pro', monospaced;
+	--tracked-out: .15em;
+
+	/* Layout & Grid Variables */
+	--siteWidth: 85%;
+	--maxSiteWidth: 1000px;
+	--margin: calc( (100% - var(--siteWidth))/2 );
+	--gutter: 20px;
+
+	/* Breakpoints */
+	--md-width: 600px;
+
+	/* Button Variables */
+	--btn-radius: 6px;
+	--btn-padding: 0 1rem 6px;
+	--btn-text-transform: inherit;
+	--btn-letter-spacing: inherit;
+
+	/* Button Sizes */
+	--btn-height: 40px;
+		--btn-small-height: 30px;
+			--btn-large-height: 60px;
+	--btn-font-size: var(--base-font-size);
+		--btn-small-font-size: calc(var(--btn-font-size) - 2px);
+			--btn-large-font-size: var(--btn-font-size);
+	
+		/* Default */
+		--btn-font: var(--text-font);
+		--btn-bg: var(--text-color);
+		--btn-border: 2px solid var(--btn-bg);
+		--btn-color: var(--bg-color);
+			--btn-hover-bg: var(--main-color);
+			--btn-hover-border: 2px solid var(--btn-hover-bg);
+			--btn-hover-color: var(--bg-color);
+		
+		/* Secondary */
+		--btn-secondary-bg: var(--text-color);
+		--btn-secondary-border: 2px solid var(--btn-secondary-bg);
+		--btn-secondary-color: #eee;
+			--btn-secondary-hover-bg: #000;
+			--btn-secondary-hover-border: 2px solid var(--btn-secondary-hover-bg);
+			--btn-secondary-hover-color: var(--bg-color);
+
+		/* Tertiary */
+		--btn-tertiary-bg: #ccc;
+		--btn-tertiary-border: 2px solid var(--btn-tertiary-bg);
+		--btn-tertiary-color: #444;
+			--btn-tertiary-hover-bg: #ddd;		
+			--btn-tertiary-hover-border: 2px solid #ddd;
+			--btn-tertiary-hover-color: #000;
+
+	/* Inputs */
+	--input-font : var(--main-font);
+	--input-bg : var(--light-grey);
+	--input-color : var(--text-color);
+	--input-border : none;
+	--input-border-radius : var(--btn-radius);
+	--input-hover-bg : var(--input-bg);
+	--input-hover-color : var(--text-color);
+	--input-hover-border : none;
+	--input-focus-bg : var(--input-bg);
+	--input-focus-color : var(--text-color);
+	--input-focus-border : none;
+	--placeholder-color : var(--light-text-color);
+	--placeholder-focus-color : transparent;
+	--input-padding : 0px 1rem 0px;
+	--input-line-height : 26px;
+
+	/* Tooltips */
+	--nipple-size: 4px;
+	--tooltip-offset: 6px;
+		
+	/* Transitions */
+	--md-speed: .3s;
+	--slow-speed: .7s;
+	--ease: ease-in-out;
+	--stagger-delay: .08s;
+}

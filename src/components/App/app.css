@@ -1,0 +1,149 @@
+@import url('../../css/variables.css');
+
+body, html {
+	background: var(--bg-color);
+}
+
+.centered-content {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.pay-me {
+	padding: 2.5rem 0 3.5rem;
+	max-width: 85%;
+	width: 350px;
+}
+
+@media screen and (min-width: 600px) {
+
+}
+
+.pay-me *[class^="stagger-"] {
+	opacity: 0;
+	transform: translate3d(0, 3rem, 0);
+	animation: transition-in var(--slow-speed) var(--ease) forwards;
+}
+
+.pay-me .stagger-2 {
+	animation-delay: calc(var(--stagger-delay) * 1);
+}
+
+.pay-me .stagger-3 {
+	animation-delay: calc(var(--stagger-delay) * 2);
+}
+
+.pay-me .stagger-4 {
+	animation-delay: calc(var(--stagger-delay) * 3);
+}
+
+.pay-me .stagger-5 {
+	animation-delay: calc(var(--stagger-delay) * 4);
+}
+
+.pay-me .stagger-6 {
+	animation-delay: calc(var(--stagger-delay) * 5);
+}
+
+.pay-me .stagger-7 {
+	animation-delay: calc(var(--stagger-delay) * 6);
+}
+
+.pay-me h1 {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.pay-me button {
+	display: block;
+	margin: 0 auto;
+}
+
+.pay-me .pay-row {
+	margin-top: 1rem;
+}
+
+.pay-me button {
+	margin-top: 2rem;
+}
+
+.pay-me .stripe-wrapper {
+	background: var(--input-bg);
+	height: 60px;
+	font-size: 1rem;
+	padding: 0 .5rem 0 1rem;
+	border-radius: var(--btn-radius);
+}
+
+.pay-me form .pay-row {
+}
+
+.fancy-input-wrap {
+	background: var(--input-bg);
+	border-radius: var(--btn-radius);
+	padding: var(--input-padding);
+	position: relative;
+	height: var(--btn-large-height);
+	padding-top: 1.075rem;
+	transform-style: preserve-3d;
+}
+
+.fancy-input-wrap label {
+	color: var(--light-text-color);
+	font-size: 1rem;
+	position: absolute;
+	top: 1rem;
+	transform: translate3d(0, 0, 0) scale(1);
+	transform-origin: 0;
+	pointer-events: none;
+	font-weight: 600;
+	color: var(--text-color);
+	opacity: .3;
+}
+
+.fancy-input-wrap input,
+.fancy-input-wrap input:hover,
+.fancy-input-wrap input:focus,
+.fancy-input-wrap input:active {
+	border: none;
+	padding: 0;
+	background: transparent;
+	font-size: 1rem;
+}
+
+.fancy-input-wrap input:focus + label,
+.fancy-input-wrap input:active + label,
+.fancy-input-wrap input:valid + label {
+	transform: translate3d(0, -.666rem, 0) scale(.7);
+	opacity: .5;
+}
+
+.pay-row.terms,
+.pay-row.terms label {
+	text-align: center;
+	color: var(--text-color);
+}
+
+.pay-row.terms a {
+	border-bottom: 1px solid var(--mid-grey);
+	color: var(--text-color);
+	transition: inherit;
+}
+
+.pay-row.terms a:hover {
+	border-color: var(--text-color);
+}
+
+label[for="acceptTerms"] {
+	pointer-events: none;
+	font-size: .875rem;
+}
+
+label[for="acceptTerms"] > * {
+	pointer-events: all;
+}

@@ -1,0 +1,61 @@
+/* CSS Only Icons for Buttons  */
+.css-icon-check {
+	width: 7px;
+	height: 14px;
+	margin: -1px auto 0;
+	transform: rotate(45deg) translate3d(0, 0, 0);
+	border-right: 2px solid currentcolor;
+	border-bottom: 2px solid currentcolor;
+}
+
+.css-icon-x {
+	width: 2px;
+	height: 16px;
+	margin: 0 auto;
+	background: currentcolor;
+	position: relative;
+	transform: rotate(45deg);
+}
+
+.css-icon-x:after,
+.css-icon-x:after {
+	content: '';
+	display: block;
+	width: 16px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -1px -8px;
+	background: currentcolor;
+}
+
+.css-icon-menu {
+	height: 2px;
+	min-width: 20px;
+	width: 100%;
+	background: currentcolor;
+	position: relative;
+	margin: 6px 0;
+}
+
+.css-icon-menu:before,
+.css-icon-menu:after {
+	content: '';
+	display: block;
+	height: 2px;
+	min-width: 16px;
+	width: 100%;
+	background: currentcolor;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.css-icon-menu:before {
+	bottom: 300%;
+}
+
+.css-icon-menu:after {
+	top: 300%;
+}
