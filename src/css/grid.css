@@ -1,6 +1,6 @@
 @media screen and (min-width: 600px) {
 
-	.grid {
+	.flex-grid {
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -8,27 +8,72 @@
 		margin-right: calc(var(--gutter) * -.5);
 	}
 
-	.grid.center {
+	.inline-grid,
+	.float-grid {
+		display: block;
+		margin-left: calc(var(--gutter) * -.5);
+		margin-right: calc(var(--gutter) * -.5);
+	}
+
+	.float-grid {
+		/* Figure out how to use @apply --clearfix; */
+		*zoom:1;
+	  &:before, 
+	  &:after {
+	    content: ""; 
+	    display: table; 
+	  }
+	  &:after {
+	    clear: both; 
+	  }
+	}
+
+	.float-grid *[class^="col-"]:not(.right) {
+		float: left;
+	}
+
+	.float-grid *[class^="col-"].right {
+		float: right;
+	}
+
+	.inline-grid *[class^="col-"] {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.inline-grid.middle *[class^="col-"] {
+		vertical-align: middle;
+	}
+
+	.inline-grid.bottom *[class^="col-"] {
+		vertical-align: bottom;
+	}
+
+	.inline-grid.center *[class^="col-"] {
+		text-align: center;
+	}
+
+	.flex-grid.center {
 		justify-content: center;
 	}
 
-	.grid.right {
+	.flex-grid.right {
 		justify-content: flex-end;
 	}
 
-	.grid.middle {
+	.flex-grid.middle {
 		align-items: center;
 	}
 
-	.grid.bottom {
+	.flex-grid.bottom {
 		align-items: flex-end;
 	}
 
-	.grid.baseline {
+	.flex-grid.baseline {
 		align-items: baseline;
 	}
 
-	.grid *[class^="col"] {
+	*[class^="col"] {
 		flex-grow: 0;
 		padding-left: calc(var(--gutter)/2);
 		padding-right: calc(var(--gutter)/2);
@@ -37,51 +82,51 @@
 		align-items: flex-start;
 	}
 
-	.grid .col-12 {
+	.col-12 {
 		width: 100%;
 	}
 
-	.grid .col-11 {
+	.col-11 {
 		width: 91.666%;
 	}
 
-	.grid .col-10 {
+	.col-10 {
 		width: 83.333%;
 	}
 
-	.grid .col-9 {
+	.col-9 {
 		width: 75%;
 	}
 
-	.grid .col-8 {
+	.col-8 {
 		width: 66.666%;
 	}
 
-	.grid .col-7 {
+	.col-7 {
 		width: 58.333%;
 	}
 
-	.grid .col-6 {
+	.col-6 {
 		width: 50%;
 	}
 
-	.grid .col-5 {
+	.col-5 {
 		width: 41.666%;
 	}
 
-	.grid .col-4 {
+	.col-4 {
 		width: 33.333%;
 	}
 
-	.grid .col-3 {
+	.col-3 {
 		width: 25%;
 	}
 
-	.grid .col-2 {
+	.col-2 {
 		width: 16.666%;
 	}
 
-	.grid .col-1 {
+	.col-1 {
 		width: 8.333%;
 	}
 

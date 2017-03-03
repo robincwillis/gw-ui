@@ -4,19 +4,55 @@ export default class UIGrid extends Component {
 
 	render () {
 		return (
-			<section id="grid">
+			<section id="flex-grid">
         <div className="container">
           <div className="section-info">
-            <div className="grid">
+            <div className="float-grid">
               <div className="col-6">
                 <h3>The Grid</h3>
               </div>
               <div className="col-6">
-                <p>Our grid setup uses flexbox on a 12 column grid. It's configurable with the <code>--gutter</code> variable.</p>
+                <p>The kit has 3 grid methods to choose from. A <code>.float-grid</code>, <code>.inline-grid</code>, and <code>.flex-grid</code>. They are all configurable with the <code>--gutter</code> variable.</p>
               </div>
             </div>
           </div>
-          <div className="grid gw-example">
+
+          <h4>The Old School Float</h4>
+          <div className="float-grid gw-example">
+            <div className="col-12"><div className="placeholder">col-12</div></div>
+            <div className="col-11"><div className="placeholder">col-11</div></div>
+            <div className="col-1"><div className="placeholder">col-1</div></div>
+            <div className="col-10"><div className="placeholder">col-10</div></div>
+            <div className="col-2"><div className="placeholder">col-2</div></div>
+            <div className="col-9"><div className="placeholder">col-9</div></div>
+            <div className="col-3"><div className="placeholder">col-3</div></div>
+            <div className="col-8"><div className="placeholder">col-8</div></div>
+            <div className="col-4"><div className="placeholder">col-4</div></div>
+            <div className="col-7"><div className="placeholder">col-7</div></div>
+            <div className="col-5"><div className="placeholder">col-5</div></div>
+            <div className="col-6"><div className="placeholder">col-6</div></div>
+            <div className="col-6"><div className="placeholder">col-6</div></div>
+          </div>
+
+          <h4>The Classic Inline-Block</h4>
+          <div className="inline-grid gw-example">
+            <div className="col-12"><div className="placeholder">col-12</div></div>
+            <div className="col-1"><div className="placeholder">col-1</div></div>
+            <div className="col-11"><div className="placeholder">col-11</div></div>
+            <div className="col-2"><div className="placeholder">col-2</div></div>
+            <div className="col-10"><div className="placeholder">col-10</div></div>
+            <div className="col-3"><div className="placeholder">col-3</div></div>
+            <div className="col-9"><div className="placeholder">col-9</div></div>
+            <div className="col-4"><div className="placeholder">col-4</div></div>
+            <div className="col-8"><div className="placeholder">col-8</div></div>
+            <div className="col-5"><div className="placeholder">col-5</div></div>
+            <div className="col-7"><div className="placeholder">col-7</div></div>
+            <div className="col-6"><div className="placeholder">col-6</div></div>
+            <div className="col-6"><div className="placeholder">col-6</div></div>
+          </div>
+
+          <h4>The Pimptastic Flex</h4>
+          <div className="flex-grid gw-example">
             <div className="col-12"><div className="placeholder">col-12</div></div>
             <div className="col-11"><div className="placeholder">col-11</div></div>
             <div className="col-1"><div className="placeholder">col-1</div></div>
@@ -32,7 +68,7 @@ export default class UIGrid extends Component {
             <div className="col-6"><div className="placeholder">col-6</div></div>
           </div>
           <div className="section-info">
-            <div className="grid">
+            <div className="float-grid">
               <div className="col-6">
                 <h4>Grid Options</h4>
               </div>
@@ -61,7 +97,7 @@ export default class UIGrid extends Component {
             <div className="col-3 medium"><div className="placeholder">col-3</div></div>
           </div>
           <div className="section-info">
-            <div className="grid">
+            <div className="float-grid">
               <div className="col-6">
                 <h4>Grid Tricks</h4>
               </div>

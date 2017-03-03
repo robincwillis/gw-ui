@@ -81,11 +81,11 @@ section h4 {
 	color: var(--light-text-color);
 }
 
-.grid.gw-example {
+.gw-example {
 	margin-bottom: calc(var(--gutter) * 2);
 }
 
-.grid *[class^="col"] .placeholder {
+ *[class^="col"] .placeholder {
 	background: #eee;
 	height: 40px;
 	margin-bottom: var(--gutter);
@@ -98,7 +98,7 @@ section h4 {
 	font-size: .875em;
 }
 
-.grid *[class^="col"] .ui-box {
+ *[class^="col"] .ui-box {
 	background: #f2f2f2;
 	margin-bottom: var(--gutter);
 	display: flex;
@@ -109,7 +109,7 @@ section h4 {
 	min-height: 150px;
 }
 
-.grid *[class^="col"] .ui-box + code {
+ *[class^="col"] .ui-box + code {
 	display: block;
 	margin-top: calc(var(--gutter) * -1);
 	padding-top: 4px;
@@ -117,63 +117,63 @@ section h4 {
 	font-size: 12px;
 }
 
-.grid.gw-example *[class^="col"].tall .placeholder {
+.gw-example *[class^="col"].tall .placeholder {
 	height: 200px;
 }
 
-.grid.gw-example *[class^="col"].medium .placeholder {
+.gw-example *[class^="col"].medium .placeholder {
 	height: 100px;
 }
 
 
 // Special Product Block Case
-.grid.gw-example.product-block {
+.gw-example.product-block {
 	margin-bottom: calc(var(--gutter) * -1);
 }
 
-.grid.product-block *[class^="col"].title {
+.product-block *[class^="col"].title {
 	order: 1;
 }
-.grid.product-block *[class^="col"].title h3 {
+.product-block *[class^="col"].title h3 {
 	font-weight: 600;
 	font-size: 1.5em;
 }
 
-.grid.product-block *[class^="col"].image {
+.product-block *[class^="col"].image {
 	order: 0;
 }
 
-.grid.product-block *[class^="col"].image .placeholder {
+.product-block *[class^="col"].image .placeholder {
 	width: 100%;
 	height: 80vw;
 	max-height: 350px;
 }
 
-.grid.product-block *[class^="col"].info {
+.product-block *[class^="col"].info {
 	order: 2;
 	display: flex;
 	flex-direction: column;
 }
 
-.grid.product-block *[class^="col"].info .desc {
+.product-block *[class^="col"].info .desc {
 	order: 1;
 }
 
 @media screen and (min-width: 600px) {
-	.grid.product-block *[class^="col"].title {
+	.product-block *[class^="col"].title {
 		order: 1;
 		width: 40%;
 	}
-	.grid.product-block *[class^="col"].image {
+	.product-block *[class^="col"].image {
 		width: 50%;
 		order: 0;
 	}
-	.grid.product-block *[class^="col"].info {
+	.product-block *[class^="col"].info {
 		order: 2;
 		width: 40%;
 		display: block;
 	}
-	.grid.product-block *[class^="col"].info .desc {
+	.product-block *[class^="col"].info .desc {
 		order: 0;
 	}
 }
