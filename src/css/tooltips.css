@@ -1,16 +1,20 @@
-*[tooltip-text]:hover:after,
-*[tooltip-text]:hover:before {
+*[data-tooltip-text] {
+	overflow: visible;
+}
+
+*[data-tooltip-text]:hover:after,
+*[data-tooltip-text]:hover:before {
 	opacity: 1;
 	visibility: visible;
 }
 
-*[tooltip-text]:after,
-*[tooltip-text]:before {
+*[data-tooltip-text]:after,
+*[data-tooltip-text]:before {
 	z-index: 9999;
 }
 
-*[tooltip-text]:after {
-	content: attr(tooltip-text);
+*[data-tooltip-text]:after {
+	content: attr(data-tooltip-text);
 	display: block;
 	white-space: nowrap;
 	overflow: hidden;
@@ -31,19 +35,19 @@
 	padding: 7px 10px 7px;
   border-radius: 3px;
   box-sizing: border-box;
-  opacity: 0;
   max-width: 250px;
+  opacity: 0;
   visibility: hidden;
   transition: opacity var(--md-speed) var(--ease), visibility var(--md-speed) var(--ease), transform var(--md-speed) var(--ease);
 }
 
-*[tooltip-text][tooltip-paragraph="true"]:after {
+*[data-tooltip-text][data-tooltip-paragraph="true"]:after {
 	white-space: normal;
 	width: 250px;
 	text-align: left;
 }
 
-*[tooltip-text]:before {
+*[data-tooltip-text]:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -59,12 +63,12 @@
 }
 
 /* Position Tooltip Left */
-*[tooltip-text][tooltip-position="left"]:after {
+*[data-tooltip-text][data-tooltip-position="left"]:after {
 	left: auto;
 	right: calc(100% + calc(var(--nipple-size) + var(--tooltip-offset)));
 }
 
-*[tooltip-text][tooltip-position="left"]:before {
+*[data-tooltip-text][data-tooltip-position="left"]:before {
 	left: auto;
 	right: calc(100% + var(--tooltip-offset));
 	border: var(--nipple-size) solid transparent;
@@ -73,7 +77,7 @@
 }
 
 /* Position Tooltip Top */
-*[tooltip-text][tooltip-position="top"]:after {
+*[data-tooltip-text][data-tooltip-position="top"]:after {
 	left: 50%;
 	top: auto;
 	bottom: calc(100% + calc(var(--nipple-size) + var(--tooltip-offset)));
@@ -81,7 +85,7 @@
 	transform: translate3d(-50%, 0, 0);
 }
 
-*[tooltip-text][tooltip-position="top"]:before {
+*[data-tooltip-text][data-tooltip-position="top"]:before {
 	left: 50%;
 	bottom: calc(100% + var(--tooltip-offset));
 	top: auto;
@@ -93,7 +97,7 @@
 }
 
 /* Position Tooltip Bottom */
-*[tooltip-text][tooltip-position="bottom"]:after {
+*[data-tooltip-text][data-tooltip-position="bottom"]:after {
 	left: 50%;
 	bottom: auto;
 	top: calc(100% + calc(var(--nipple-size) + var(--tooltip-offset)));
@@ -101,7 +105,7 @@
 	transform: translate3d(-50%, 0, 0);
 }
 
-*[tooltip-text][tooltip-position="bottom"]:before {
+*[data-tooltip-text][data-tooltip-position="bottom"]:before {
 	left: 50%;
 	top: calc(100% + var(--tooltip-offset));
 	bottom: auto;

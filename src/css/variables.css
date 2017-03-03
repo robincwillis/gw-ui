@@ -11,7 +11,7 @@
 	--base-font-size: 16px;
 	--base-line-height: 1.65em; /* For larger text */
 	--short-line-height: calc(var(--base-line-height) * .8);
-	--main-font: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+	--main-font: -apple-system, BlinkMacSystemFont, sans-serif;
 	--secondary-font: -apple-system, BlinkMacSystemFont, sans-serif;
 	--code-font: 'Source Code Pro', monospaced;
 	--tracked-out: .15em;
@@ -40,7 +40,7 @@
 			--btn-large-font-size: var(--btn-font-size);
 	
 		/* Default */
-		--btn-font: var(--text-font);
+		--btn-font: var(--main-font);
 		--btn-bg: var(--text-color);
 		--btn-border: 2px solid var(--btn-bg);
 		--btn-color: var(--bg-color);
