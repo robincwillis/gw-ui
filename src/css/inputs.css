@@ -155,7 +155,7 @@ input[type='radio'] {
 				left: 50%;
 				width: 8px;
 				height: 8px;
-				margin: -25%;
+				margin: -4px;
 				opacity: 0;
 				transform: scale(.8);
 				transition: transform var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
