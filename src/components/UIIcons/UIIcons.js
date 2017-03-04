@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
 
-import BoxIcon from '../Icons/List';
+import BoxIcon from '../Icons/Box';
 import ListIcon from '../Icons/List';
 import PlusIcon from '../Icons/Plus';
 import MinusIcon from '../Icons/List';
