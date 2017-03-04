@@ -1,20 +1,17 @@
+:root {
+	--col: calc(100% / 12);
+}
+
 @media screen and (min-width: 600px) {
-
-	.flex-grid {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		margin-left: calc(var(--gutter) * -.5);
-		margin-right: calc(var(--gutter) * -.5);
-	}
-
+	.float-grid,
 	.inline-grid,
-	.float-grid {
+	.flex-grid {
 		display: block;
 		margin-left: calc(var(--gutter) * -.5);
 		margin-right: calc(var(--gutter) * -.5);
 	}
 
+	/* Float Grid Rules */
 	.float-grid {
 		/* Figure out how to use @apply --clearfix; */
 		*zoom:1;
@@ -36,6 +33,7 @@
 		float: right;
 	}
 
+	/* Inline Grid Rules */
 	.inline-grid *[class^="col-"] {
 		display: inline-block;
 		vertical-align: top;
@@ -49,30 +47,40 @@
 		vertical-align: bottom;
 	}
 
-	.inline-grid.center *[class^="col-"] {
+	.inline-grid.center {
 		text-align: center;
 	}
 
-	.flex-grid.center {
-		justify-content: center;
+	.inline-grid.right {
+		text-align: right;
 	}
 
-	.flex-grid.right {
-		justify-content: flex-end;
+	/* Flex Grid Rules */
+	.flex-grid {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&.center {
+			justify-content: center;
+		}
+		&.left {
+			justify-content: flex-start;
+		}
+		&.right {
+			justify-content: flex-end;
+		}
+		&.middle {
+			align-items: center;
+		}
+		&.bottom {
+			align-items: flex-end;
+		}
+		&.baseline {
+			align-items: baseline;
+		}
 	}
 
-	.flex-grid.middle {
-		align-items: center;
-	}
-
-	.flex-grid.bottom {
-		align-items: flex-end;
-	}
-
-	.flex-grid.baseline {
-		align-items: baseline;
-	}
-
+	/* Column Rules */
 	*[class^="col"] {
 		flex-grow: 0;
 		padding-left: calc(var(--gutter)/2);
@@ -83,51 +91,150 @@
 	}
 
 	.col-12 {
-		width: 100%;
+		width: calc(var(--col) * 12);
 	}
 
 	.col-11 {
-		width: 91.666%;
+		width: calc(var(--col) * 11);
 	}
 
 	.col-10 {
-		width: 83.333%;
+		width: calc(var(--col) * 10);
 	}
 
 	.col-9 {
-		width: 75%;
+		width: calc(var(--col) * 9);
 	}
 
 	.col-8 {
-		width: 66.666%;
+		width: calc(var(--col) * 8);
 	}
 
 	.col-7 {
-		width: 58.333%;
+		width: calc(var(--col) * 7);
 	}
 
 	.col-6 {
-		width: 50%;
+		width: calc(var(--col) * 6);
 	}
 
 	.col-5 {
-		width: 41.666%;
+		width: calc(var(--col) * 5);
 	}
 
 	.col-4 {
-		width: 33.333%;
+		width: calc(var(--col) * 4);
 	}
 
 	.col-3 {
-		width: 25%;
+		width: calc(var(--col) * 3);
 	}
 
 	.col-2 {
-		width: 16.666%;
+		width: calc(var(--col) * 2);
 	}
 
 	.col-1 {
-		width: 8.333%;
+		width: var(--col);
 	}
 
+}
+
+/*	Use .push classes to move columsn over
+		Gernerally better to do this manually and breakpoints
+*/
+.push-right-1 {
+	margin-right: var(--col);
+}
+
+.push-right-2 {
+	margin-right: calc(var(--col) * 2);
+}
+
+.push-right-3 {
+	margin-right: calc(var(--col) * 3);
+}
+
+.push-right-4 {
+	margin-right: calc(var(--col) * 4);
+}
+
+.push-right-5 {
+	margin-right: calc(var(--col) * 5);
+}
+
+.push-right-6 {
+	margin-right: calc(var(--col) * 6);
+}
+
+.push-right-7 {
+	margin-right: calc(var(--col) * 7);
+}
+
+.push-right-8 {
+	margin-right: calc(var(--col) * 8);
+}
+
+.push-right-9 {
+	margin-right: calc(var(--col) * 9);
+}
+
+.push-right-10 {
+	margin-right: calc(var(--col) * 10);
+}
+
+.push-right-11 {
+	margin-right: calc(var(--col) * 11);
+}
+
+.push-right-12 {
+	margin-right: calc(var(--col) * 12);
+}
+
+.push-left-1 {
+	margin-left: var(--col);
+}
+
+.push-left-2 {
+	margin-left: calc(var(--col) * 2);
+}
+
+.push-left-3 {
+	margin-left: calc(var(--col) * 3);
+}
+
+.push-left-4 {
+	margin-left: calc(var(--col) * 4);
+}
+
+.push-left-5 {
+	margin-left: calc(var(--col) * 5);
+}
+
+.push-left-6 {
+	margin-left: calc(var(--col) * 6);
+}
+
+.push-left-7 {
+	margin-left: calc(var(--col) * 7);
+}
+
+.push-left-8 {
+	margin-left: calc(var(--col) * 8);
+}
+
+.push-left-9 {
+	margin-left: calc(var(--col) * 9);
+}
+
+.push-left-10 {
+	margin-left: calc(var(--col) * 10);
+}
+
+.push-left-11 {
+	margin-left: calc(var(--col) * 11);
+}
+
+.push-left-12 {
+	margin-left: calc(var(--col) * 12);
 }

@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button.js';
+import InlineSVG from 'svg-inline-react';
+
+import Button from '../Button/Button';
+
+import BoxIcon from '../Icons/Box';
+import ListIcon from '../Icons/List';
+import PlusIcon from '../Icons/Plus';
 
 export default class UIButtons extends Component {
 
@@ -8,7 +14,7 @@ export default class UIButtons extends Component {
       <section id="buttons">
         <div className="container">
           <div className="section-info">
-            <div className="grid">
+            <div className="float-grid">
               <div className="col-6">
                 <h3>Buttons</h3>
               </div>
@@ -17,17 +23,53 @@ export default class UIButtons extends Component {
               </div>
             </div>
           </div>
-          <div className="grid">
+          <div className="inline-grid">
+
+            <div className="col-4">
+              <div className="ui-box">
+                <Button
+                  buttonClass="small"
+                  label="Package"
+                  icon={BoxIcon}
+                  data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                  data-tooltip-paragraph="true"
+                />
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="ui-box">
+                <Button
+                  label="List"
+                  icon={ListIcon}
+                  data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                  data-tooltip-paragraph="true"
+                />
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="ui-box">
+                <Button
+                  buttonClass="large"
+                  label="Add Item"
+                  icon={PlusIcon}
+                  data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                  data-tooltip-paragraph="true"
+                />
+              </div>
+            </div>
+
             <div className="col-3">
               <div className="ui-box">
-                <Button label="Tester Button" />
+                <Button label="Tester" />
               </div>
               <code>button (Click)</code>
             </div>
             <div className="col-3">
               <div className="ui-box">
                 <a className="button">
-                  <div className="btn-label">a.button</div>
+                  <div className="button-content">
+                    <span className="label">a.button</span>
+                  </div>
                 </a>
               </div>
               <code>a.button</code>

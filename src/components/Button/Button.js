@@ -56,7 +56,7 @@ export default class Button extends Component {
         <div className="state-icon error">
           <div className="css-icon-x"></div>
         </div>
-        <div className="btn-label">
+        <div className="button-content">
           {this.buttonIcon()}{this.buttonLabel()}
         </div>
       </button>

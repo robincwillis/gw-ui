@@ -6,68 +6,88 @@ section {
 	position: fixed;
 	top: 0;
 	left: 0;
+	& nav {
+		position: absolute;
+		padding: 0 30px;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate3d(-100%, 0, 0);
+		transition: opacity var(--md-speed) var(--ease), visibility var(--md-speed) var(--ease), transform var(--md-speed) var(--ease);
+		& a {
+			display: block;
+			border-radius: 3px;
+			padding: .5rem 1.5rem .5rem .75rem;
+			transition: background var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
+			opacity: .4;
+			cursor: pointer;
+			margin: 0 -.75rem;
+			&:hover {
+				background: #eee;
+				opacity: 1;
+			}
+		}
+		& ul ul {
+			padding-left: .75rem;
+			margin-bottom: .75rem;
+			& a {
+				margin: 0;
+				padding: 0;
+				&:hover {
+					background: transparent;
+				}
+			}
+		}
+	}
+	&:hover nav {
+		opacity: 1;
+		visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+	& .icon {
+		padding: 30px 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: .4;
+		transition: opacity var(--md-speed) var(--ease);
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
-.gw-nav .icon {
-	padding: 30px 30px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: .4;
-	transition: opacity var(--md-speed) var(--ease);
-}
-.gw-nav .icon:hover {
-	opacity: 1;
-}
-
-.gw-nav:hover nav {
-	opacity: 1;
-	visibility: visible;
-	transform: translate3d(0, 0, 0);
-}
-
-.gw-nav nav {
-	position: absolute;
-	padding: 0 30px;
-	opacity: 0;
-	visibility: hidden;
-	transform: translate3d(-100%, 0, 0);
-	transition: opacity var(--md-speed) var(--ease), visibility var(--md-speed) var(--ease), transform var(--md-speed) var(--ease);
-}
-
-.gw-nav nav a {
-	display: block;
-	border-radius: 3px;
-	padding: .5rem 1.5rem .5rem .75rem;
-	transition: background var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
-	opacity: .4;
-	cursor: pointer;
-	margin: 0 -.75rem;
-}
-
-.gw-nav nav a:hover {
-	background: #eee;
-	opacity: 1;
+.input-wrap {
+	margin-bottom: 1rem;
 }
 
 .section-info {
 	display: block;
 	border-top: 1px solid var(--text-color);
-	padding: 1.25rem 0 2rem;
+	padding: 1.25rem 0 3rem;
 }
 
-.section-info h3 {
+.sub-section-info {
+	display: block;
+	border-top: 1px solid #eee;
+	padding: 1.25rem 0 3rem;
+	margin-top: 2rem;
+}
+
+.section-info h3,
+.sub-section-info h3 {
 	font-size: 1.5em;
 	font-weight: 600;
 }
 
-.section-info h4 {
+.section-info h4,
+.sub-section-info h4 {
 	border: none;
 	padding: 0;
-	margin: 0;
+	margin-top: 0;
 }
 
-.section-info code {
+.section-info code,
+.sub-section-info code {
 	background: #eee;
 	padding: .075em .4em .25em;
 	border-radius: 3px;
@@ -96,6 +116,15 @@ section h4 {
 	border-radius: 3px;
 	font-weight: 600;
 	font-size: .875em;
+	&.very-tall {
+		height: 400px;
+	}
+	&.tall {
+		height: 200px;
+	}
+	&.medium {
+		height: 100px;
+	}
 }
 
  *[class^="col"] .ui-box {
@@ -117,63 +146,17 @@ section h4 {
 	font-size: 12px;
 }
 
-.gw-example *[class^="col"].tall .placeholder {
-	height: 200px;
-}
 
-.gw-example *[class^="col"].medium .placeholder {
-	height: 100px;
-}
-
-
-// Special Product Block Case
-.gw-example.product-block {
-	margin-bottom: calc(var(--gutter) * -1);
-}
-
-.product-block *[class^="col"].title {
-	order: 1;
-}
-.product-block *[class^="col"].title h3 {
-	font-weight: 600;
-	font-size: 1.5em;
-}
-
-.product-block *[class^="col"].image {
-	order: 0;
-}
-
-.product-block *[class^="col"].image .placeholder {
-	width: 100%;
-	height: 80vw;
-	max-height: 350px;
-}
-
-.product-block *[class^="col"].info {
-	order: 2;
-	display: flex;
-	flex-direction: column;
-}
-
-.product-block *[class^="col"].info .desc {
-	order: 1;
+/* Special Product Block Case */
+.product-block {
+	& .desc {
+		margin-bottom: 1rem;
+	}
+	& .options {
+		margin-bottom: 1rem;
+	}
 }
 
 @media screen and (min-width: 600px) {
-	.product-block *[class^="col"].title {
-		order: 1;
-		width: 40%;
-	}
-	.product-block *[class^="col"].image {
-		width: 50%;
-		order: 0;
-	}
-	.product-block *[class^="col"].info {
-		order: 2;
-		width: 40%;
-		display: block;
-	}
-	.product-block *[class^="col"].info .desc {
-		order: 0;
-	}
+
 }

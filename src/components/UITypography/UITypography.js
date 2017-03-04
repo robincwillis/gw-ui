@@ -6,14 +6,15 @@ export default class UITypography extends Component {
 		return (
 			<section id="typography">
 				<div className="container">
-					<div className="grid">
+					<div className="float-grid">
 						<div className="col-4">
 							<div className="section-info">
 								<h3>Typography</h3>
 								<p>Wrap a dump of HTML with <code>.rich-text</code> to for extra readability</p>
 							</div>
 						</div>
-						<div className="col-7 rich-text">
+						<div className="col-7 right rich-text">
+						<hr className="space-below" />
 <h1>Indicant pueri, in quibus ut in speculis natura cernitur.</h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tamen intellego quid velit. Quae dici eadem de ceteris virtutibus possunt, quarum omnium fundamenta vos in voluptate tamquam in aqua ponitis. Nec tamen ullo modo summum pecudis bonum et hominis idem mihi videri potest. Nemo nostrum istius generis asotos iucunde putat vivere. <mark>Duo Reges: constructio interrete.</mark> <a href='http://loripsum.net/' target='_blank'>Eam stabilem appellas.</a> Sit, inquam, tam facilis, quam vultis, comparatio voluptatis, quid de dolore dicemus? <code>Paria sunt igitur.</code> Quis contra in illa aetate pudorem, constantiam, etiamsi sua nihil intersit, non tamen diligat? Collige omnia, quae soletis: Praesidium amicorum. Et summatim quidem haec erant de corpore animoque dicenda, quibus quasi informatum est quid hominis natura postulet. In qua si nihil est praeter rationem, sit in una virtute finis bonorum; </p>

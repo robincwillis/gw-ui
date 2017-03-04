@@ -4,8 +4,9 @@
 	--main-color: #32ebc7;
 	--text-color: #333;
 	--light-text-color: rgba(0, 0, 0, .4);
-	--mid-grey: #ccc;
+	--mid-grey: #ddd;
 	--light-grey: #f2f2f2;
+	--alert-color: #DF693D;
 
 	/* Typography Variables */
 	--base-font-size: 16px;
@@ -27,7 +28,7 @@
 
 	/* Button Variables */
 	--btn-radius: 6px;
-	--btn-padding: 0 1rem 6px;
+	--btn-padding: 0 1rem 1px;
 	--btn-text-transform: inherit;
 	--btn-letter-spacing: inherit;
 
