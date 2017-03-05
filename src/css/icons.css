@@ -1,4 +1,16 @@
 /* CSS Only Icons for Buttons  */
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+svg {
+	display: block;
+	& * {
+		fill: currentcolor;
+	}
+}
+
 .css-icon-check {
 	width: 7px;
 	height: 14px;
