@@ -2,6 +2,10 @@ section {
 	padding: var(--margin) 0;
 }
 
+h5 {
+	margin-top: 2rem;
+}
+
 .gw-nav {
 	position: fixed;
 	top: 0;

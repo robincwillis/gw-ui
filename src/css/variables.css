@@ -5,17 +5,20 @@
 	--text-color: #333;
 	--light-text-color: rgba(0, 0, 0, .4);
 	--mid-grey: #ddd;
+	--line-color: #e8e8e8;
 	--light-grey: #f2f2f2;
 	--alert-color: #DF693D;
 
 	/* Typography Variables */
 	--base-font-size: 16px;
 	--base-line-height: 1.65em; /* For larger text */
+	--tight-line-height: 1.4em; /* For larger text */
 	--short-line-height: calc(var(--base-line-height) * .8);
 	--main-font: -apple-system, BlinkMacSystemFont, sans-serif;
 	--secondary-font: -apple-system, BlinkMacSystemFont, sans-serif;
 	--code-font: 'Source Code Pro', monospaced;
 	--tracked-out: .15em;
+	--small-type: .875rem;
 
 	/* Layout & Grid Variables */
 	--siteWidth: 85%;
