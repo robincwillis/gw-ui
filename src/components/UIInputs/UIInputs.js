@@ -16,15 +16,7 @@ export default class UIInputs extends Component {
             </div>
             <div className="col-7 right">
               <hr className="space-below" />
-              <Input
-                inputType="typeahead"
-                placeholder="Type It"
-                options={[
-                  { value : 'this', label: 'This' },
-                  { value : 'that', label: 'That' },
-                  { value : 'other', label: 'Other' }
-                ]}
-              />
+              <h5>Text Inputs</h5>
               <Input
                 inputClass="large"
                 placeholder="Large Text Input"
@@ -33,9 +25,15 @@ export default class UIInputs extends Component {
                 placeholder="Text Input"
               />
               <Input
+                inputClass="small"
+                placeholder="Small Text Input"
+              />
+              <h5>Textareas</h5>
+              <Input
                 inputType="textarea"
                 placeholder="Textarea"
               />
+              <h5>Checklist</h5>
               <Input
                 inputType="checkbox"
                 inputName="option"
@@ -51,6 +49,7 @@ export default class UIInputs extends Component {
                 inputName="option"
                 inputValue="Checkbox 3"
               />
+              <h5>Radio List</h5>
               <Input
                 inputType="radio"
                 inputName="radio options"
@@ -65,6 +64,17 @@ export default class UIInputs extends Component {
                 inputType="radio"
                 inputName="radio options"
                 inputValue="Radio 3"
+              />
+              <h5>Selects</h5>
+              <Input
+                inputClass="small"
+                inputType="select"
+                placeholder="Small Select"
+                options={[
+                  'Small Select',
+                  'Option',
+                  'Another Option'
+                ]}
               />
               <Input
                 inputType="select"
@@ -83,6 +93,16 @@ export default class UIInputs extends Component {
                   'Large Select',
                   'Option',
                   'Another Option'
+                ]}
+              />
+              <h5>React Typeahead</h5>
+              <Input
+                inputType="typeahead"
+                placeholder="Type It"
+                options={[
+                  { value : 'this', label: 'This' },
+                  { value : 'that', label: 'That' },
+                  { value : 'other', label: 'Other' }
                 ]}
               />
             </div>

@@ -64,7 +64,7 @@ export default class Input extends Component {
           >
             {listOptions}
           </select>
-          <div className="icon">
+          <div className="icon light-text-color">
             <div className="css-icon-arrow" />
           </div>
         </div>

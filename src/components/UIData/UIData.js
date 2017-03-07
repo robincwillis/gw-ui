@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
 
-import Button from '../Button/Button.js';
+import Button from '../Button/Button';
+
 import RightArrow from '../Icons/ArrowRight';
+import EditIcon from '../Icons/Edit';
+import CheckIcon from '../Icons/Check';
+import MoreIcon from '../Icons/More';
+import TrashIcon from '../Icons/Trash';
 
 export default class UIGrid extends Component {
 
 	render () {
 		return (
 			<section id="data">
-        <div className="container">
+        <div className="container wide">
           <h5>Standard Table/List</h5>
           <ul className="ui-list">
             <li className="row list-header">
@@ -82,8 +87,26 @@ export default class UIGrid extends Component {
               </div>
               <div className="cell no-grow">
                 <Button
-                  buttonClass="small tertiary circle"
-                  icon={RightArrow}
+                  buttonClass="small tertiary circle transparent"
+                  icon={EditIcon}
+                  data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                  data-tooltip-paragraph="true"
+                />
+                <Button
+                  buttonClass="small tertiary circle transparent"
+                  icon={TrashIcon}
+                  data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                  data-tooltip-paragraph="true"
+                />
+                <Button
+                  buttonClass="small tertiary circle transparent"
+                  icon={CheckIcon}
+                  data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                  data-tooltip-paragraph="true"
+                />
+                <Button
+                  buttonClass="small tertiary circle transparent"
+                  icon={MoreIcon}
                   data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
                   data-tooltip-paragraph="true"
                 />
@@ -133,10 +156,8 @@ export default class UIGrid extends Component {
             </li>
             <li className="row">
               <div className="cell">
-                <div className="data">
-                  <div className="truncate">
-                    A piece of data so long it must wrap onto multiple lines even at larger widths. Its Crazy how long this data is
-                  </div>
+                <div className="data truncate">
+                  Add a class of .truncate to the cell's data. This will truncate the text so it dot dot dots out of the cell instead of wraps
                 </div>
               </div>
               <div className="cell">

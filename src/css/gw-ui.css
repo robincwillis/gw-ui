@@ -6,6 +6,12 @@ h5 {
 	margin-top: 2rem;
 }
 
+.container {
+	&.wide {
+		max-width: 2000px;
+	}
+}
+
 .gw-nav {
 	position: fixed;
 	top: 0;

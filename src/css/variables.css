@@ -21,7 +21,7 @@
 	--small-type: .875rem;
 
 	/* Layout & Grid Variables */
-	--siteWidth: 85%;
+	--siteWidth: 90%;
 	--maxSiteWidth: 1000px;
 	--margin: calc( (100% - var(--siteWidth))/2 );
 	--gutter: 20px;
@@ -82,7 +82,7 @@
 	--input-focus-border : none;
 	--placeholder-color : var(--light-text-color);
 	--placeholder-focus-color : transparent;
-	--input-padding : 0px 1rem 0px;
+	--input-padding : 0px .875rem 0px;
 	--input-line-height : 26px;
 
 	/* Tooltips */

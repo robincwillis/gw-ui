@@ -60,10 +60,16 @@
   background: var(--input-focus-bg);
   border: var(--input-focus-border);
 }
-.is-open > .Select-control .Select-arrow {
+.is-open > .Select-control .Select-arrow-zone {
   transform: rotate(225deg);
   margin-top: -3px;
+  display: none;
 }
+
+.is-open > .Select-control .Select-clear {
+  display: inline-block;
+}
+
 .is-searchable.is-focused:not(.is-open) > .Select-control {
   cursor: text;
 }
@@ -167,21 +173,26 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 16px;
+  width: 41px;
+  padding: var(--input-padding);
+  padding-top: 0;
+  padding-bottom: 0;
   transition: color var(--md-speed) var(--ease);
 }
 .Select-clear-zone:hover {
   color: var(--alert-color);
 }
 .Select-clear {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   width: 2px;
   height: 16px;
-  margin: 0 auto;
+  margin: -4px auto 0;
   background: currentcolor;
   position: relative;
   transform: rotate(45deg);
   text-indent: -999px;
+  display: none;
   &:after {
     content: '';
     display: block;
@@ -203,16 +214,15 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 48px;
+  width: 1px;
   padding-right: 5px;
   padding: var(--input-padding);
   padding-top: 0;
   padding-bottom: 0;
 }
 .Select-arrow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  display: inline-block;
+  vertical-align: middle;
   width: 10px;
   height: 10px;
   margin: -7px 0 0 -5px;

@@ -23,6 +23,11 @@
 	font-size: 1.25rem;
 }
 
+.small :--inputs {
+	height: var(--btn-small-height);
+	font-size: var(--small-type);
+}
+
 :--inputs::placeholder {
 	color: var(--placeholder-color);
 	transition: color var(--md-speed) var(--ease);
@@ -171,6 +176,11 @@ input[type='radio'] {
 			height: var(--btn-large-height);
 		}
 	}
+	&.small {
+		& .icon {
+			height: var(--btn-small-height);
+		}
+	}
 	& .icon {
 		padding: var(--input-padding);
 		padding-top: 0;
@@ -182,5 +192,8 @@ input[type='radio'] {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		&.light-text-color {
+			color: var(--light-text-color);
+		}
 	}
 }
