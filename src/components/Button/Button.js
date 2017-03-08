@@ -34,6 +34,14 @@ export default class Button extends Component {
     return icon;
   }
 
+  buttonRightIcon () {
+    var icon = '';
+    if (this.props.rightIcon) {
+        icon = (<InlineSVG src={this.props.rightIcon} element="span" className="icon" />);
+    }
+    return icon;
+  }
+
   clickHandler (event) {
     this.props.clickEvent(event);
   }
@@ -57,7 +65,7 @@ export default class Button extends Component {
           <div className="css-icon-x"></div>
         </div>
         <div className="button-content">
-          {this.buttonIcon()}{this.buttonLabel()}
+          {this.buttonIcon()}{this.buttonLabel()}{this.buttonRightIcon()}
         </div>
       </button>
 		);

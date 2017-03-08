@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
 
 import Button from '../Button/Button';
+import Input from '../Input/Input';
+// import DataTest from './DataTest'
 
 import RightArrow from '../Icons/ArrowRight';
 import EditIcon from '../Icons/Edit';
@@ -76,6 +78,121 @@ export default class UIGrid extends Component {
             </li>
           </ul>
 
+          <h5>Tight Table/List</h5>
+          <p>Add a class of <code>.tight</code> to <code>.ui-list</code></p>
+          <ul className="ui-list tight">
+            <li className="row list-header">
+              <div className="cell no-grow">
+                <Input
+                  inputType="checkbox"
+                  inputName="selectRow"
+                  inputValue="Select All"
+                  hideLabel="true"
+                />
+              </div>
+              <div className="cell">
+                <div className="data">Data Title</div>
+              </div>
+              <div className="cell sorted-by">
+                <div className="data">Number of Datas</div>
+              </div>
+              <div className="cell">
+                <div className="data">Soup/Deliciousness</div>
+              </div>
+              <div className="cell">
+                <div className="data">Nonsense</div>
+              </div>
+            </li>
+            <li className="row">
+              <div className="cell no-grow">
+                <Input
+                  inputType="checkbox"
+                  inputName="selectRow"
+                  inputValue="Row 1"
+                  hideLabel="true"
+                />
+              </div>
+              <div className="cell">
+                <div className="data">A Piece of Date 30, 17, 24</div>
+              </div>
+              <div className="cell">
+                <div className="data">Data 2</div>
+              </div>
+              <div className="cell">
+                <Input
+                  inputClass="minimal"
+                  inputType="select"
+                  options={[
+                    'Minimal Select',
+                    'Option',
+                    'Another Option'
+                  ]}
+                />
+              </div>
+              <div className="cell">
+                <div className="data">Crownsourcing</div>
+              </div>
+            </li>
+            <li className="row">
+              <div className="cell no-grow">
+                <Input
+                  inputType="checkbox"
+                  inputName="selectRow"
+                  inputValue="Row 2"
+                  hideLabel="true"
+                />
+              </div>
+              <div className="cell">
+                <div className="data">A Piece of Date 30, 17, 24</div>
+              </div>
+              <div className="cell">
+                <div className="data">1922</div>
+              </div>
+              <div className="cell">
+                <Input
+                  inputClass="minimal"
+                  inputType="typeahead"
+                  options={[
+                    'So Minimal',
+                    'Option',
+                    'Another Longer Option'
+                  ]}
+                />
+              </div>
+              <div className="cell">
+                <div className="data">Unity</div>
+              </div>
+            </li>
+            <li className="row">
+              <div className="cell no-grow">
+                <Input
+                  inputType="checkbox"
+                  inputName="selectRow"
+                  inputValue="Row 3"
+                  hideLabel="true"
+                />
+              </div>
+              <div className="cell">
+                <div className="data"><a href="#">Another Piece of Date 2017</a></div>
+              </div>
+              <div className="cell">
+                <div className="data">1922</div>
+              </div>
+              <div className="cell">
+                <Input
+                  inputType="toggle"
+                  inputName="selectRow"
+                  inputValue="Row 4"
+                  offLabel="Unpaid"
+                  onLabel="Paid"
+                />
+              </div>
+              <div className="cell">
+                <div className="data">Unity</div>
+              </div>
+            </li>
+          </ul>
+
           <h5 className="section-title">List Items with Avatars</h5>
           <ul className="ui-list">
             <li className="row">
@@ -123,11 +240,11 @@ export default class UIGrid extends Component {
               <div className="cell">
                 <span className="data wrap">A piece of data so long it must wrap onto multiple lines even at larger widths. Its Crazy how long this data is</span>
               </div>
-              <div className="cell no-grow">
+              <div className="cell align-right">
                 <Button
                   buttonClass="small tertiary"
                   label="View User"
-                  icon={RightArrow}
+                  rightIcon={RightArrow}
                   data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
                   data-tooltip-paragraph="true"
                 />
@@ -144,11 +261,11 @@ export default class UIGrid extends Component {
               <div className="cell">
                 <span className="data wrap">It's no secret that potatos are wonderful.</span>
               </div>
-              <div className="cell no-grow">
+              <div className="cell align-right">
                 <Button
                   buttonClass="small tertiary"
                   label="View User"
-                  icon={RightArrow}
+                  rightIcon={RightArrow}
                   data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
                   data-tooltip-paragraph="true"
                 />

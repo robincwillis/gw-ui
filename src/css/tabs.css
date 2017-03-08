@@ -1,0 +1,121 @@
+/* Styles support up to 6 tabs */
+
+.ui-tabs {
+	display: flex;
+	background: #fff;
+	position: relative;
+	
+	& .tab {
+		width: 100%;
+		flex-grow: 1;
+		text-align: center;
+		padding: 15px;
+		color: #999;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		cursor: pointer;
+		transition: color var(--md-speed) var(--ease);
+		&:hover {
+			color: #333;
+		}
+		& + .tab { /* 2 tabs */
+			&:hover {
+				& ~ .underline {
+					transform: translate3d(100%, 0, 0);
+				}
+			}
+			& ~ .underline {
+				width: calc(100% / 2);
+			}
+			& + .tab { /* 3 tabs */
+				&:hover {
+						& ~ .underline {
+							transform: translate3d(200%, 0, 0);
+						}
+					}
+				& ~ .underline {
+					width: calc(100% / 3);
+				}
+				& + .tab { /* 4 tabs */
+					&:hover {
+						& ~ .underline {
+							transform: translate3d(300%, 0, 0);
+						}
+					}
+					& ~ .underline {
+						width: calc(100% / 4);
+					}
+					& + .tab { /* 5 tabs */
+						&:hover {
+							& ~ .underline {
+								transform: translate3d(400%, 0, 0);
+							}
+						}
+						& ~ .underline {
+							width: calc(100% / 5);
+						}
+						& + .tab { /* 6 tabs */
+							&:hover {
+								& ~ .underline {
+									transform: translate3d(500%, 0, 0);
+								}
+							}
+							& ~ .underline {
+								width: calc(100% / 6);
+							}
+						} /* end 6 tabs */
+					} /* end 5 tabs */
+				} /* end 4 tabs */
+			} /* end 3 tabs */
+		} /* end 2 tabs */
+	}
+	
+	& .underline {
+		display: block;
+		height: 2px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background: var(--main-color);
+		transition: transform var(--md-speed) var(--ease);
+	}
+}
+
+.button-tabs {
+	&.large {
+		& .ui-tabs {
+			height: var(--btn-large-height);
+		}	
+	}
+	&.small {
+		& .ui-tabs {
+			height: var(--btn-small-height);
+			& .tab {
+				font-size: 10px;
+			}
+		}	
+	}
+	& .ui-tabs {
+		color: var(--light-grey);
+		background: currentcolor;
+		border-radius: var(--btn-radius);
+		height: var(--btn-height);
+		& .tab {
+			position: relative;
+			z-index: 2;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		& .underline {
+			z-index: 1;
+			top: 0;
+			height: 100%;
+			border: 3px solid currentcolor;
+			border-radius: calc(var(--btn-radius) + 1px);
+			background: var(--bg-color);
+		}
+	}
+}

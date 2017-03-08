@@ -1,11 +1,20 @@
 :root {
 	--vertical-spacing: .85rem;
 	--horizontal-spacing: 0;
+	--tight-vertical-spacing: .4rem;
+	--tight-horizontal-spacing: 0;
 	--horizontal-lines: 1px solid var(--line-color);
 	--vertical-lines: none;
 }
 
 .ui-list {
+	&.tight {
+		& .row {
+			& .cell {
+				padding: var(--tight-vertical-spacing) var(--tight-vertical-spacing) var(--tight-vertical-spacing) var(--tight-horizontal-spacing);
+			}
+		}
+	}
 	& a {
 		border-bottom: 1px solid var(--line-color);
 		&:hover {
@@ -14,6 +23,9 @@
 	}
 	& strong {
 		font-weight: 600;
+	}
+	& .input-wrap {
+		margin: 0;
 	}
 	& .row {
 		display: flex;
@@ -51,15 +63,18 @@
 		}
 		& .cell {
 			vertical-align: middle;
-			padding: var(--vertical-spacing) var(--vertical-spacing) calc(var(--vertical-spacing) * 1.15) var(--horizontal-spacing);
+			padding: var(--vertical-spacing) var(--vertical-spacing) var(--vertical-spacing) var(--horizontal-spacing);
 			flex-grow: 1;
 			min-width: 100px;
-			width: 50%;
+			width: 10%;
 			font-size: var(--small-type);
 			line-height: var(--tight-line-height);
 			border-left: var(--vertical-lines);
 			&:last-child {
 				padding-right: 0;
+			}
+			&.align-right {
+				text-align: right;
 			}
 			&.no-grow {
 				flex-grow: 0;
@@ -76,11 +91,11 @@
 				text-align: center;
 				line-height: calc(var(--btn-small-height) - 1px);
 				border-radius: 50%;
-				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.4) ) / -2) 0 calc(var(--vertical-spacing) * -1);
+				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.25) ) / -2) 0 calc(var(--vertical-spacing) * -1);
 			}
 			& .button,
 			& button {
-				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.4) ) / -2) 0 calc(var(--vertical-spacing) * -1);
+				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.25) ) / -2) 0 calc(var(--vertical-spacing) * -1);
 				display: inline-block;
 				vertical-align: top;
 			}

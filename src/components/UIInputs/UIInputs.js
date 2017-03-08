@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import Input from '../Input/Input.js';
+import InlineSVG from 'svg-inline-react';
+
+import Input from '../Input/Input';
+
+import SearchIcon from '../Icons/Search';
+import PlusIcon from '../Icons/Plus';
 
 export default class UIInputs extends Component {
 
 	render () {
+
 		return (
       <section id="inputs">
         <div className="container">
@@ -18,6 +24,7 @@ export default class UIInputs extends Component {
               <hr className="space-below" />
               <h5>Text Inputs</h5>
               <Input
+                inputId="validate"
                 inputClass="large"
                 placeholder="Large Text Input"
               />
@@ -27,6 +34,19 @@ export default class UIInputs extends Component {
               <Input
                 inputClass="small"
                 placeholder="Small Text Input"
+              />
+              <h5>With Icons</h5>
+              <Input
+                leftIcon={SearchIcon}
+                placeholder="Use A Search Icon"
+              />
+              <Input
+                leftIcon={PlusIcon}
+                placeholder="Add Item"
+              />
+              <Input
+                rightIcon={PlusIcon}
+                placeholder="Add Icon On the Right"
               />
               <h5>Textareas</h5>
               <Input
@@ -64,6 +84,14 @@ export default class UIInputs extends Component {
                 inputType="radio"
                 inputName="radio options"
                 inputValue="Radio 3"
+              />
+              <h5>Toggle</h5>
+              <Input
+                inputType="toggle"
+                inputName="switch"
+                inputValue="On"
+                offLabel="Off"
+                onLabel="On"
               />
               <h5>Selects</h5>
               <Input
@@ -103,6 +131,46 @@ export default class UIInputs extends Component {
                   { value : 'this', label: 'This' },
                   { value : 'that', label: 'That' },
                   { value : 'other', label: 'Other' }
+                ]}
+              />
+              <h5>Tabs</h5>
+              <Input
+                inputType="tabs"
+                options={[
+                  'Option 01',
+                  'Option 2',
+                  'Third Option'
+                ]}
+              />
+              <Input
+                inputClass="button-tabs large"
+                inputType="tabs"
+                options={[
+                  'Tab 01',
+                  'Another Tab',
+                  'Tab Three'
+                ]}
+              />
+              <Input
+                inputClass="button-tabs"
+                inputType="tabs"
+                options={[
+                  'Tab 01',
+                  'Another Tab',
+                  'Tab Three',
+                  'Tab 4'
+                ]}
+              />
+              <Input
+                inputClass="button-tabs small"
+                inputType="tabs"
+                options={[
+                  '01',
+                  '02',
+                  '03',
+                  '04',
+                  '05',
+                  '06'
                 ]}
               />
             </div>

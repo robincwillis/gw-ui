@@ -26,15 +26,18 @@
   padding-left: .75em;
   margin-left: -.75em;
   margin-bottom: calc(var(--base-line-height) * 1.25);
-}
-
-.rich-text blockquote:before {
-  content: '“';
-  position: absolute;
-  left: 0;
-}
-.rich-text blockquote:after {
-  // content: '”';
+  & p {
+    font-size: 1.75rem;
+    line-height: var(--short-line-height);
+  }
+  &:before {
+    content: '“';
+    position: absolute;
+    left: 0;
+  }
+  &:after {
+    // content: '”';
+  }
 }
 
 .rich-text ul {

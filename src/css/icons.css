@@ -21,22 +21,22 @@ svg {
 }
 
 .css-icon-arrow {
-	width: 10px;
-	height: 10px;
+	width: 8px;
+	height: 8px;
 	border-bottom: 2px solid currentcolor;
 	border-right: 2px solid currentcolor;
 	transform: rotate(45deg);
 	margin: 0 auto;
-	transform: rotate(45deg) translate3d(-2px, -2px, 0);
+	transform: rotate(45deg) translate3d(-15%, -15%, 0);
 	transition: border var(--md-speed) var(--ease), transform var(--md-speed) var(--ease);
 	&.up {
-		transform: rotate(-135deg) translate3d(-1px, -1px, 0);
+		transform: rotate(-135deg) translate3d(-15%, -15%, 0);
 	}
 	&.right {
-		transform: rotate(-45deg) translate3d(-2px, -2px, 0);
+		transform: rotate(-45deg) translate3d(-15%, -15%, 0);
 	}
 	&.left {
-		transform: rotate(-225deg) translate3d(-2px, -2px, 0);
+		transform: rotate(-225deg) translate3d(-15%, -15%, 0);
 	}
 }
 

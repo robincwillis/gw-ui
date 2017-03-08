@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import InlineSVG from 'svg-inline-react';
 
 import Typeahead from '../Typeahead/Typeahead';
-import InlineSVG from 'svg-inline-react';
+
+import ErrorIcon from '../Icons/Check';
+import CheckIcon from '../Icons/Check';
+import DownArrow from '../Icons/ArrowDown';
 
 export default class Input extends Component {
 
   constructor (props) {
     super(props);
     this.state = {
-        inputClass: this.props.inputClass
+      inputClass: this.props.inputClass
     };
   }
 
@@ -18,6 +22,14 @@ export default class Input extends Component {
       inputType = this.props.inputType;
     }
     return inputType;
+  }
+
+  inputId () {
+    var inputId = '';
+    if (this.props.inputId) {
+      inputId += ' ' + this.state.inputId;
+    }
+    return inputId;
   }
 
   inputClass () {
@@ -42,6 +54,22 @@ export default class Input extends Component {
     return placeholderText;
   }
 
+  inputLeftIcon () {
+    var icon = '';
+    if (this.props.leftIcon) {
+      icon = (<InlineSVG src={this.props.leftIcon} element="span" className="icon left" />);
+    }
+    return icon;
+  }
+
+  inputRightIcon () {
+    var icon = '';
+    if (this.props.rightIcon) {
+      icon = (<InlineSVG src={this.props.rightIcon} element="span" className="icon right" />);
+    }
+    return icon;
+  }
+
   // TO DO Only works on the first textarea on the page. not THIS one
   autoResize () {
     var textarea = document.querySelector(this.props.inputType);
@@ -64,9 +92,7 @@ export default class Input extends Component {
           >
             {listOptions}
           </select>
-          <div className="icon light-text-color">
-            <div className="css-icon-arrow" />
-          </div>
+          <InlineSVG src={DownArrow} element="span" className="icon right" />
         </div>
       )
     }
@@ -76,17 +102,51 @@ export default class Input extends Component {
       )
     }
     else if (this.props.inputType === 'checkbox' || this.props.inputType === 'radio') {
+      var inputLabel = <div className="text">{this.props.inputValue}</div>;
+      if (this.props.hideLabel == 'true') {
+        inputLabel = '';
+      }
       return (
         <div>
         <input
           type={this.inputType()}
-          placeholder={this.inputPlaceholder()}
           value={this.props.inputValue}
           id={this.props.inputValue}
           name={this.props.inputName}
           {...this.props.extraProps}
         />
-        <label htmlFor={this.props.inputValue}><span/>{this.props.inputValue}</label>
+        <label htmlFor={this.props.inputValue}><span/>{inputLabel}</label>
+        </div>
+      )
+    }
+    else if (this.props.inputType === 'toggle') {
+      var inputLabel = <div className="text"><span className="off-label">{this.props.offLabel}</span><span className="on-label">{this.props.onLabel}</span></div>;
+      if (this.props.hideLabel == 'true') {
+        inputLabel = '';
+      }
+      return (
+        <div>
+        <input
+          className="toggle"
+          type="checkbox"
+          value={this.props.inputValue}
+          id={this.props.inputValue}
+          name={this.props.inputName}
+          {...this.props.extraProps}
+        />
+        <label htmlFor={this.props.inputValue}><div className="switch"/>{inputLabel}</label>
+        </div>
+      )
+    }
+    else if (this.props.inputType === 'tabs') {
+      var options = this.props.options
+      var listOptions = options.map((option) =>
+        <div className="tab">{option}</div>
+      );
+      return (
+        <div className="ui-tabs">
+          {listOptions}
+          <span className="underline"/>
         </div>
       )
     }
@@ -103,15 +163,33 @@ export default class Input extends Component {
         />
       )
     }
+    else if (this.props.inputType === 'search') {
+      return (
+        <div class="search-wrap">
+          <InlineSVG src={SearchIcon} element="span" className="icon" />
+          <input
+            type="text"
+            placeholder={this.inputPlaceholder()}
+            value={this.props.inputValue}
+            name={this.props.inputName}
+            {...this.props.extraProps}
+          />
+        </div>
+      )
+    }
     else {
       return (
-        <input
-          type={this.inputType()}
-          placeholder={this.inputPlaceholder()}
-          value={this.props.inputValue}
-          name={this.props.inputName}
-          {...this.props.extraProps}
-        />
+        <div>
+          {this.inputLeftIcon()}
+          {this.inputRightIcon()}
+          <input
+            type={this.inputType()}
+            placeholder={this.inputPlaceholder()}
+            value={this.props.inputValue}
+            name={this.props.inputName}
+            {...this.props.extraProps}
+          />
+        </div>
       )
     }
   }
