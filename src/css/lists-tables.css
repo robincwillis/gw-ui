@@ -1,7 +1,7 @@
 :root {
 	--vertical-spacing: .85rem;
-	--horizontal-spacing: 0;
-	--tight-vertical-spacing: .4rem;
+	--horizontal-spacing: calc(var(--vertical-spacing) / 1.5);
+	--tight-vertical-spacing: .5rem;
 	--tight-horizontal-spacing: 0;
 	--horizontal-lines: 1px solid var(--line-color);
 	--vertical-lines: none;
@@ -11,7 +11,41 @@
 	&.tight {
 		& .row {
 			& .cell {
-				padding: var(--tight-vertical-spacing) var(--tight-vertical-spacing) var(--tight-vertical-spacing) var(--tight-horizontal-spacing);
+				padding: var(--tight-vertical-spacing) var(--horizontal-spacing) var(--tight-vertical-spacing) var(--horizontal-spacing);
+			}
+		}
+	}
+	&.links {
+		& .row {
+			border-radius: var(--input-border-radius);
+			cursor: pointer;
+			&:hover {
+				background: var(--light-grey);
+			}
+			& .cell:first-child {
+				padding-left: var(--horizontal-spacing);
+			}
+			& .cell:last-child {
+				padding-right: var(--horizontal-spacing);
+			}
+		}
+	}
+	&.minimal {
+		& .row {
+			border-top: none;
+			align-items: center;
+			min-height: 50px;
+			& .cell {
+				padding: calc(var(--vertical-spacing) * .4) var(--horizontal-spacing) calc(var(--vertical-spacing) * .4) var(--horizontal-spacing);
+				& .avatar,
+				& .button,
+				& button {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+			}
+			&:last-child {
+				border-bottom: none;
 			}
 		}
 	}
@@ -32,6 +66,7 @@
 		align-items: flex-start;
 		align-items: stretch;
 		border-top: var(--horizontal-lines);
+		transition: background var(--md-speed) var(--ease), border var(--md-speed) var(--ease);
 		&.list-header {
 			border-top: none;
 			font-weight: 600;
@@ -63,7 +98,7 @@
 		}
 		& .cell {
 			vertical-align: middle;
-			padding: var(--vertical-spacing) var(--vertical-spacing) var(--vertical-spacing) var(--horizontal-spacing);
+			padding: var(--vertical-spacing) var(--horizontal-spacing) var(--vertical-spacing) var(--horizontal-spacing);
 			flex-grow: 1;
 			min-width: 100px;
 			width: 10%;
@@ -72,6 +107,9 @@
 			border-left: var(--vertical-lines);
 			&:last-child {
 				padding-right: 0;
+			}
+			&:first-child {
+				padding-left: 0;
 			}
 			&.align-right {
 				text-align: right;
@@ -91,11 +129,16 @@
 				text-align: center;
 				line-height: calc(var(--btn-small-height) - 1px);
 				border-radius: 50%;
-				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.25) ) / -2) 0 calc(var(--vertical-spacing) * -1);
+				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.3) ) / -2) calc(var(--horizontal-spacing) * -1) calc(var(--vertical-spacing) * -1) 0;
+			}
+			/* Offset elements to be centered with data */
+			& .button,
+			& button,
+			& .input-wrap.text {
+				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.3) ) / -2) 0 calc(var(--vertical-spacing) * -1);
 			}
 			& .button,
 			& button {
-				margin: calc((var(--btn-small-height) - (var(--small-type) * 1.25) ) / -2) 0 calc(var(--vertical-spacing) * -1);
 				display: inline-block;
 				vertical-align: top;
 			}

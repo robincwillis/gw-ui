@@ -36,6 +36,8 @@ export default class Input extends Component {
     var inputClass = 'input-wrap';
     if (this.props.inputType) {
       inputClass += ' ' + this.props.inputType;
+    } else {
+      inputClass += ' text';
     }
     if (this.props.inputClass) {
       inputClass += ' ' + this.state.inputClass;

@@ -10,6 +10,7 @@ import EditIcon from '../Icons/Edit';
 import CheckIcon from '../Icons/Check';
 import MoreIcon from '../Icons/More';
 import TrashIcon from '../Icons/Trash';
+import CirclePlus from '../Icons/PlusCircle';
 
 export default class UIGrid extends Component {
 
@@ -202,7 +203,14 @@ export default class UIGrid extends Component {
               <div className="cell">
                 <div className="data"><strong>Robin Willis</strong></div>
               </div>
-              <div className="cell no-grow">
+              <div className="cell">
+                <Input
+                  inputClass="small"
+                  rightIcon={CirclePlus}
+                  placeholder="Use small inputs in the list"
+                />
+              </div>
+              <div className="cell align-right">
                 <Button
                   buttonClass="small tertiary circle transparent"
                   icon={EditIcon}
@@ -285,6 +293,118 @@ export default class UIGrid extends Component {
               </div>
             </li>
           </ul>
+
+          <div className="float-grid">
+            <div className="col-6">
+              <h5>Minimal List</h5>
+              <ul className="ui-list minimal links">
+                <li className="row">
+                  <div className="cell no-grow">
+                    <span className="avatar">R</span>
+                  </div>
+                  <div className="cell">
+                    <div className="data"><strong>Robin Willis</strong></div>
+                  </div>
+                  <div className="cell no-grow">
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={EditIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={TrashIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={CheckIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={MoreIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                  </div>
+                </li>
+                <li className="row">
+                  <div className="cell no-grow">
+                    <span className="avatar">M</span>
+                  </div>
+                  <div className="cell">
+                    <div className="data"><strong>Matthew Gordils</strong></div>
+                    <div className="data secondary">Designer</div>
+                  </div>
+                  <div className="cell no-grow">
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={EditIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={TrashIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={CheckIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={MoreIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                  </div>
+                </li>
+                <li className="row">
+                  <div className="cell no-grow">
+                    <span className="avatar">X</span>
+                  </div>
+                  <div className="cell">
+                    <div className="data"><strong>Secret Ingredient</strong></div>
+                    <div className="data secondary">Potato</div>
+                  </div>
+                  <div className="cell no-grow">
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={EditIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={TrashIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={CheckIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                    <Button
+                      buttonClass="small tertiary circle transparent"
+                      icon={MoreIcon}
+                      data-tooltip-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quodsi ipsam honestatem undique pertectam atque absolutam. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Nunc ita separantur, ut disiuncta sint" 
+                      data-tooltip-paragraph="true"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>  
         </div>
       </section>
 		);
