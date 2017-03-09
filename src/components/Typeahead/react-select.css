@@ -112,7 +112,7 @@
 }
 .Select-input {
   height: var(--btn-height);
-  padding: var(--input-padding);
+  padding: 0;
   vertical-align: middle;
 }
 .Select-input > input {
@@ -126,10 +126,8 @@
   font-size: inherit;
   margin: 0;
   outline: none;
-  line-height: 14px;
-  /* For IE 8 compatibility */
-  padding: 8px 0 12px;
-  /* For IE 8 compatibility */
+  line-height: calc(var(--btn-height) - 2px);
+  padding: var(--input-padding);
   -webkit-appearance: none;
 }
 .is-focused .Select-input > input {

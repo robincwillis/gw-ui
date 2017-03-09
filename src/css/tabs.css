@@ -4,82 +4,132 @@
 	display: flex;
 	background: #fff;
 	position: relative;
-	
+	height: var(--btn-height);
 	& .tab {
 		width: 100%;
 		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
-		padding: 15px;
 		color: #999;
 		font-size: 12px;
 		text-transform: uppercase;
 		letter-spacing: .1em;
 		cursor: pointer;
+		border-bottom: 1px solid var(--line-color);
 		transition: color var(--md-speed) var(--ease);
+		& input[type='radio'] {
+			display: inline-block !important;
+			& + label {
+				display: block;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
 		&:hover {
 			color: #333;
 		}
-		& + .tab { /* 2 tabs */
-			&:hover {
+	}
+
+	& input[type='radio'] {
+		& ~ .underline {
+			display: block;
+			height: 2px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background: var(--main-color);
+			transition: transform var(--md-speed) var(--ease);
+		}
+		& ~ label:nth-of-type(1) {
+			color: var(--light-text-color);
+		}
+		&:nth-of-type(1) {
+			&:checked {
+				& ~ .underline {
+					transform: translate3d(0, 0, 0);
+				}
+				& ~ label:nth-of-type(1) {
+					color: var(--text-color);
+				}
+			}
+			& ~ .underline {
+				width: calc(100% / 1);
+			}
+		}
+		&:nth-of-type(2) {
+			&:checked {
 				& ~ .underline {
 					transform: translate3d(100%, 0, 0);
+				}
+				& ~ label:nth-of-type(2) {
+					color: var(--text-color);
 				}
 			}
 			& ~ .underline {
 				width: calc(100% / 2);
 			}
-			& + .tab { /* 3 tabs */
-				&:hover {
-						& ~ .underline {
-							transform: translate3d(200%, 0, 0);
-						}
-					}
+		}
+		&:nth-of-type(3) {
+			&:checked {
 				& ~ .underline {
-					width: calc(100% / 3);
+					transform: translate3d(200%, 0, 0);
 				}
-				& + .tab { /* 4 tabs */
-					&:hover {
-						& ~ .underline {
-							transform: translate3d(300%, 0, 0);
-						}
-					}
-					& ~ .underline {
-						width: calc(100% / 4);
-					}
-					& + .tab { /* 5 tabs */
-						&:hover {
-							& ~ .underline {
-								transform: translate3d(400%, 0, 0);
-							}
-						}
-						& ~ .underline {
-							width: calc(100% / 5);
-						}
-						& + .tab { /* 6 tabs */
-							&:hover {
-								& ~ .underline {
-									transform: translate3d(500%, 0, 0);
-								}
-							}
-							& ~ .underline {
-								width: calc(100% / 6);
-							}
-						} /* end 6 tabs */
-					} /* end 5 tabs */
-				} /* end 4 tabs */
-			} /* end 3 tabs */
-		} /* end 2 tabs */
+				& ~ label:nth-of-type(3) {
+					color: var(--text-color);
+				}
+			}
+			& ~ .underline {
+				width: calc(100% / 3);
+			}
+		}
+		&:nth-of-type(4) {
+			&:checked {
+				& ~ .underline {
+					transform: translate3d(300%, 0, 0);
+				}
+				& ~ label:nth-of-type(4) {
+					color: var(--text-color);
+				}
+			}
+			& ~ .underline {
+				width: calc(100% / 4);
+			}
+		}
+		&:nth-of-type(5) {
+			&:checked {
+				& ~ .underline {
+					transform: translate3d(400%, 0, 0);
+				}
+				& ~ label:nth-of-type(5) {
+					color: var(--text-color);
+				}
+			}
+			& ~ .underline {
+				width: calc(100% / 5);
+			}
+		}
+		&:nth-of-type(6) {
+			&:checked {
+				& ~ .underline {
+					transform: translate3d(500%, 0, 0);
+				}
+				& ~ label:nth-of-type(6) {
+					color: var(--text-color);
+				}
+			}
+			& ~ .underline {
+				width: calc(100% / 6);
+			}
+		}
+
 	}
-	
-	& .underline {
-		display: block;
-		height: 2px;
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		background: var(--main-color);
-		transition: transform var(--md-speed) var(--ease);
-	}
+
 }
 
 .button-tabs {
@@ -100,22 +150,21 @@
 		color: var(--light-grey);
 		background: currentcolor;
 		border-radius: var(--btn-radius);
-		height: var(--btn-height);
 		& .tab {
 			position: relative;
 			z-index: 2;
 			padding: 0;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			border: none;
 		}
-		& .underline {
-			z-index: 1;
-			top: 0;
-			height: 100%;
-			border: 3px solid currentcolor;
-			border-radius: calc(var(--btn-radius) + 1px);
-			background: var(--bg-color);
+		& input[type='radio'] {
+			& ~ .underline {
+				z-index: 1;
+				top: 0;
+				height: 100%;
+				border: 3px solid currentcolor;
+				border-radius: calc(var(--btn-radius) + 1px);
+				background: var(--bg-color);
+			}
 		}
 	}
 }

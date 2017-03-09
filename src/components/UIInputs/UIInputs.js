@@ -135,33 +135,30 @@ export default class UIInputs extends Component {
               />
               <h5>Tabs</h5>
               <Input
-                inputType="tabs"
-                options={[
-                  'Option 01',
-                  'Option 2',
-                  'Third Option'
-                ]}
-              />
-              <Input
+                tabName="tabGroup2"
                 inputClass="button-tabs large"
                 inputType="tabs"
                 options={[
                   'Tab 01',
                   'Another Tab',
-                  'Tab Three'
+                  'Tab Three',
+                  'Tab 04'
                 ]}
               />
               <Input
+                tabName="tabGroup3"
                 inputClass="button-tabs"
                 inputType="tabs"
                 options={[
-                  'Tab 01',
-                  'Another Tab',
-                  'Tab Three',
-                  'Tab 4'
+                  'Tab 1',
+                  'Tab 2',
+                  'Tab 3',
+                  'Tab 4',
+                  'Tab 5'
                 ]}
               />
               <Input
+                tabName="tabGroup4"
                 inputClass="button-tabs small"
                 inputType="tabs"
                 options={[
@@ -171,6 +168,15 @@ export default class UIInputs extends Component {
                   '04',
                   '05',
                   '06'
+                ]}
+              />
+              <Input
+                tabName="tabGroup1"
+                inputType="tabs"
+                options={[
+                  'Option 01',
+                  'Option 2',
+                  'Third Option'
                 ]}
               />
             </div>

@@ -140,14 +140,18 @@ export default class Input extends Component {
     }
     else if (this.props.inputType === 'tabs') {
       var options = this.props.options
+      var listRadios = options.map((option) =>
+        <input type="radio" name={this.props.tabName} id={option}/>
+      );
       var listOptions = options.map((option) =>
-        <div className="tab">{option}</div>
+        <label className="tab" htmlFor={option}>{option}</label>
       );
       return (
-        <div className="ui-tabs">
+        <form name={this.props.tabName} className="ui-tabs">
+          {listRadios}
           {listOptions}
           <span className="underline"/>
-        </div>
+        </form>
       )
     }
     else if (this.props.inputType === 'textarea') {
