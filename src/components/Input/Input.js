@@ -7,6 +7,8 @@ import ErrorIcon from '../Icons/Check';
 import CheckIcon from '../Icons/Check';
 import DownArrow from '../Icons/ArrowDown';
 
+import './input';
+
 export default class Input extends Component {
 
   constructor (props) {

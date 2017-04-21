@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
+import './button';
 
 export default class Button extends Component {
 

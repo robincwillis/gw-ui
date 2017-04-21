@@ -1,8 +1,36 @@
-@import url('../../css/variables.css');
+@import '../../css/includes';
+
+.input-wrap.typeahead.minimal {
+  // display: inline-block;
+  // vertical-align: middle;
+  .Select-clear-zone,
+  .Select-arrow-zone {
+    display: none;
+  }
+  .Select-control {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+  }
+  &:hover {
+    .Select-value {
+      text-decoration: underline;
+    }
+  }
+}
+
+.input-wrap.typeahead {
+  .has-fixed-btn {
+    .Select {
+      // margin-bottom: 20px;
+    }
+  }
+}
 
 .Select {
   position: relative;
 }
+
 .Select,
 .Select div,
 .Select input,
@@ -22,33 +50,55 @@
   pointer-events: none;
 }
 .Select-control {
-  background: var(--input-bg);
-  border: var(--input-border);
-  border-radius: var(--input-border-radius);
-  color: var(--input-color);
+  background: $input-bg;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  color: $input-color;
   cursor: default;
   display: table;
   border-spacing: 0;
-  line-height: var(--input-line-height);
+  line-height: $input-line-height;
   border-collapse: separate;
-  height: var(--btn-height);
+  height: $btn-height;
   outline: none;
   overflow: hidden;
   position: relative;
   width: 100%;
-  transition: background var(--md-speed) var(--ease), border var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
-}
-.Select-control:hover {
-  background: var(--input-hover-bg);
-  color: var(--input-hover-color);
-  border: var(--input-hover-border);
+  padding-right: 20px;
+  transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+  .large & {
+    height: $input-large-height;
+  }
+  .small & {
+    height: $input-small-height;
+  }
+  .tiny & {
+    height: $input-tiny-height;
+    line-height: $input-tiny-height - 1px;
+  }
+  .minimal & {
+    background: transparent;
+    color: currentcolor;
+  }
+  &:hover {
+    background: $input-hover-bg;
+    color: $input-hover-color;
+    border: $input-hover-border;
+    .minimal & {
+      background: transparent;
+      color: currentcolor;
+    }
+  }
 }
 .Select-control .Select-input:focus {
-  background: var(--input-focus-bg);
-  color: var(--input-focus-color);
-  border: var(--input-focus-border);
+  background: $input-focus-bg;
+  color: $input-focus-color;
+  border: $input-focus-border;
   &::placeholder {
-    color: var(--placeholder-focus-color);
+    color: $placeholder-focus-color;
+  }
+  .minimal & {
+    background: transparent;
   }
 }
 .is-searchable.is-open > .Select-control {
@@ -57,8 +107,11 @@
 .is-open > .Select-control {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background: var(--input-focus-bg);
-  border: var(--input-focus-border);
+  background: $input-focus-bg;
+  border: $input-focus-border;
+  .minimal & {
+    background: transparent;
+  }
 }
 .is-open > .Select-control .Select-arrow-zone {
   transform: rotate(225deg);
@@ -78,11 +131,11 @@
 .Select-placeholder,
 .Select--single > .Select-control .Select-value {
   bottom: 0;
-  color: #aaa;
   left: 0;
-  line-height: calc(var(--btn-height) - 2px);
-  padding: var(--input-padding);
-  position: absolute;
+  color: $input-color;
+  line-height: $btn-height - 2px;
+  padding: $input-padding;
+  // position: absolute;
   right: 0;
   top: 0;
   max-width: 100%;
@@ -90,10 +143,35 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   outline: none;
+  .large & {
+    line-height: $input-large-height - 2px;
+    font-size: $input-large-font-size;
+  }
+  .small & {
+    line-height: $input-small-height + 1px;
+    font-size: $input-small-font-size;
+  }
+  .tiny & {
+    line-height: $input-tiny-height;
+    font-size: $input-tiny-font-size;
+    padding: $input-padding;
+    padding-left: .75em;
+    padding-right: .75em;
+  }
+  .minimal & {
+    padding-left: 0;
+    padding-right: 0;
+    color: inherit;
+  }
 }
+
+.Select-placeholder {
+  color: $placeholder-color;
+}
+
 .has-value.Select--single > .Select-control .Select-value .Select-value-label,
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
-  color: #333;
+  color: currentcolor;
   outline: none;
 }
 .has-value.Select--single > .Select-control .Select-value a.Select-value-label,
@@ -111,9 +189,22 @@
   text-decoration: underline;
 }
 .Select-input {
-  height: var(--btn-height);
+  height: $btn-height;
   padding: 0;
   vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  .large & {
+    height: $input-large-height;
+  }
+  .small & {
+    height: $input-small-height;
+  }
+  .tiny & {
+    height: $input-tiny-height;
+  }
 }
 .Select-input > input {
   width: 100%;
@@ -126,9 +217,27 @@
   font-size: inherit;
   margin: 0;
   outline: none;
-  line-height: calc(var(--btn-height) - 2px);
-  padding: var(--input-padding);
+  line-height: $btn-height - 2px;
+  padding: $input-padding;
   -webkit-appearance: none;
+  .large & {
+    line-height: $input-large-height - 2px;
+    font-size: $input-large-font-size;
+  }
+  .small & {
+    line-height: $input-small-height + 1px;
+    font-size: $input-small-font-size;
+  }
+  .tiny & {
+    line-height: $input-tiny-height;
+    font-size: $input-tiny-font-size;
+    padding-left: .75em;
+    padding-right: .75em;
+  }
+  .minimal & {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .is-focused .Select-input > input {
   cursor: text;
@@ -168,38 +277,50 @@
   color: #999;
   cursor: pointer;
   display: table-cell;
-  position: relative;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
   text-align: center;
   vertical-align: middle;
-  width: 41px;
-  padding: var(--input-padding);
+  width: 34px;
+  padding: $input-padding;
   padding-top: 0;
   padding-bottom: 0;
-  transition: color var(--md-speed) var(--ease);
+  transition: color $md-speed $ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  // .is-focused.is-open.is-searchable.has-value & {
+  //   display: none;
+  // }
 }
 .Select-clear-zone:hover {
-  color: var(--alert-color);
+  color: $alert;
 }
 .Select-clear {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: 2px;
-  height: 16px;
-  margin: -4px auto 0;
+  height: 12px;
+  margin: -7px -2px 0 -2px;
   background: currentcolor;
   position: relative;
   transform: rotate(45deg);
   text-indent: -999px;
   display: none;
+  top: 50%;
   &:after {
     content: '';
     display: block;
-    width: 16px;
+    width: 12px;
     height: 2px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -1px -8px;
+    margin: -1px -6px;
     background: currentcolor;
   }
 }
@@ -214,24 +335,30 @@
   vertical-align: middle;
   width: 1px;
   padding-right: 5px;
-  padding: var(--input-padding);
+  padding: $input-padding;
   padding-top: 0;
   padding-bottom: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .Select-arrow {
   display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 10px;
-  margin: -7px 0 0 -5px;
+  vertical-align: top;
+  width: 7px;
+  height: 7px;
+  position: relative;
+  top: 50%;
+  margin: -6px 0 0 -7px;
   transform: rotate(45deg);
-  border-bottom: 2px solid var(--placeholder-color);
-  border-right: 2px solid var(--placeholder-color);
-  transition: border var(--md-speed) var(--ease);
+  border-bottom: 2px solid $placeholder-color;
+  border-right: 2px solid $placeholder-color;
+  transition: border $md-speed $ease;
 }
 
 .Select-arrow-zone:hover > .Select-arrow {
-  border-color: var(--input-color);
+  border-color: $input-color;
 }
 .Select--multi .Select-multi-value-wrapper {
   display: inline-block;
@@ -262,12 +389,12 @@
   }
 }
 .Select-menu-outer {
-  border-bottom-right-radius: var(--input-border-radius);
-  border-bottom-left-radius: var(--input-border-radius);
-  background-color: var(--input-focus-bg);
-  border: var(--input-focus-border);
+  border-bottom-right-radius: $input-border-radius;
+  border-bottom-left-radius: $input-border-radius;
+  background-color: $input-focus-bg;
+  border: $input-focus-border;
   border-top: none;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05), 0 20px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05), 0 20px 20px rgba($text-color, 0.1);
   box-sizing: border-box;
   margin-top: 0px;
   max-height: 200px;
@@ -276,6 +403,15 @@
   width: 100%;
   z-index: 1;
   -webkit-overflow-scrolling: touch;
+  .minimal & {
+    box-shadow: 0 10px 30px rgba($text-color, 0.2);
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: $input-border-radius;
+    padding-top: $input-border-radius;
+    padding-bottom: $input-border-radius;
+    background: $bg-color;
+  }
 }
 .Select-menu {
   max-height: 198px;
@@ -284,26 +420,75 @@
 }
 .Select-option {
   box-sizing: border-box;
-  background-color: var(--input-focus-bg);
-  color: var(--text-color);
+  background-color: $input-focus-bg;
+  color: $text-color;
   cursor: pointer;
   display: block;
-  padding: var(--input-padding);
+  padding: $input-padding;
   padding-top: .5rem;
   padding-bottom: .5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .large & {
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+    font-size: $input-large-font-size;
+  }
+  .small & {
+    height: $input-small-height;
+    line-height: $input-small-height;
+    font-size: $input-small-font-size;
+    padding: $input-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .tiny & {
+    height: $input-tiny-height;
+    line-height: $input-tiny-height;
+    font-size: $input-tiny-font-size;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: .75em;
+    padding-right: .75em;
+  }
+  .minimal & {
+    height: $input-small-height;
+    line-height: $input-small-height;
+    font-size: $input-small-font-size;
+    padding: $input-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: $bg-color;
+    color: $light-text-color;
+  }
 }
 .Select-option:last-child {
-  border-bottom-right-radius: var(--input-border-radius);
-  border-bottom-left-radius: var(--input-border-radius);
+  border-bottom-right-radius: $input-border-radius;
+  border-bottom-left-radius: $input-border-radius;
+}
+.Select-option:first-child,
+.Select-option:last-child {
+  .minimal & {
+    border-radius: 0;
+  }
 }
 .Select-option.is-selected {
   background-color: #f5faff;
   /* Fallback color for IE 8 */
   background-color: rgba(255, 255, 255, 0.04);
-  color: var(--main-color);
+  color: $main-color;
+  &.is-focused,
+  .minimal &.is-focused {
+    color: $main-color;
+  }
 }
 .Select-option.is-focused {
-  background-color: var(--bg-color);
+  background-color: $bg-color;
+  .minimal & {
+    color: $text-color;
+    background-color: $input-bg;
+  }
 }
 .Select-option.is-disabled {
   color: #cccccc;
@@ -314,7 +499,37 @@
   color: #999999;
   cursor: default;
   display: block;
-  padding: 8px 10px;
+  // padding: 8px 10px;
+  padding: $input-padding;
+  .large & {
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+    font-size: $input-large-font-size;
+  }
+  .small &,
+  .minimal & {
+    height: $input-small-height;
+    line-height: $input-small-height;
+    font-size: $input-small-font-size;
+    padding: $input-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .tiny & {
+    height: $input-tiny-height;
+    line-height: $input-tiny-height;
+    font-size: $input-tiny-font-size;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: .75em;
+    padding-right: .75em;
+  }
+  .minimal & {
+    background: $bg-color;
+    padding: $input-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 .Select--multi .Select-input {
   vertical-align: middle;
@@ -340,6 +555,18 @@
   margin-top: 5px;
   vertical-align: top;
   outline: none;
+  .large & {
+    line-height: $input-large-height - 2px;
+    font-size: $input-large-font-size;
+  }
+  .small & {
+    line-height: $input-small-height + 1px;
+    font-size: $input-small-font-size;
+  }
+  .tiny & {
+    line-height: $input-tiny-height;
+    font-size: $input-tiny-font-size;
+  }
 }
 .Select--multi .Select-value-icon,
 .Select--multi .Select-value-label {
@@ -398,5 +625,19 @@
 @-webkit-keyframes Select-animation-spin {
   to {
     -webkit-transform: rotate(1turn);
+  }
+}
+
+.input-wrap.typeahead {
+  .has-fixed-btn {
+    .fixed-typeahead-btn {
+      background: $input-focus-bg;
+      color: $main-color;
+      text-align: left;
+      padding: $input-padding;
+      max-width: 100%;
+      border-radius: 0 0 $input-border-radius $input-border-radius;
+      border-top: 1px solid $hr-color;
+    }
   }
 }

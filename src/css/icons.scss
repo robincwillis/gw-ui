@@ -28,7 +28,7 @@ svg {
 	transform: rotate(45deg);
 	margin: 0 auto;
 	transform: rotate(45deg) translate3d(-15%, -15%, 0);
-	transition: border var(--md-speed) var(--ease), transform var(--md-speed) var(--ease);
+	transition: border $md-speed $ease, transform $md-speed $ease;
 	&.up {
 		transform: rotate(-135deg) translate3d(-15%, -15%, 0);
 	}
@@ -67,25 +67,22 @@ svg {
 	background: currentcolor;
 	position: relative;
 	margin: 6px 0;
-}
-
-.css-icon-menu:before,
-.css-icon-menu:after {
-	content: '';
-	display: block;
-	height: 2px;
-	min-width: 16px;
-	width: 100%;
-	background: currentcolor;
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-.css-icon-menu:before {
-	bottom: 300%;
-}
-
-.css-icon-menu:after {
-	top: 300%;
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		height: 2px;
+		min-width: 16px;
+		width: 100%;
+		background: currentcolor;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	&:before {
+		bottom: 300%;
+	}
+	&:after {
+		top: 300%;
+	}
 }

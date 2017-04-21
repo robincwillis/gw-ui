@@ -9,7 +9,7 @@ import Typography from '../UITypography/UITypography.js';
 import Data from '../UIData/UIData.js';
 
 import '../../css/style';
-import './app.css';
+import './app';
 
 export default class Order extends Component {
 

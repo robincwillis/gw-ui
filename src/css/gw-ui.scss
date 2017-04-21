@@ -1,5 +1,5 @@
 section {
-	padding: var(--margin) 0;
+	padding: $margin 0;
 }
 
 h5 {
@@ -22,12 +22,12 @@ h5 {
 		opacity: 0;
 		visibility: hidden;
 		transform: translate3d(-100%, 0, 0);
-		transition: opacity var(--md-speed) var(--ease), visibility var(--md-speed) var(--ease), transform var(--md-speed) var(--ease);
+		transition: opacity $md-speed $ease, visibility $md-speed $ease, transform $md-speed $ease;
 		& a {
 			display: block;
 			border-radius: 3px;
 			padding: .5rem 1.5rem .5rem .75rem;
-			transition: background var(--md-speed) var(--ease), color var(--md-speed) var(--ease), opacity var(--md-speed) var(--ease);
+			transition: background $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
 			opacity: .4;
 			cursor: pointer;
 			margin: 0 -.75rem;
@@ -59,7 +59,7 @@ h5 {
 		align-items: center;
 		justify-content: center;
 		opacity: .4;
-		transition: opacity var(--md-speed) var(--ease);
+		transition: opacity $md-speed $ease;
 		&:hover {
 			opacity: 1;
 		}
@@ -72,7 +72,7 @@ h5 {
 
 .section-info {
 	display: block;
-	border-top: 1px solid var(--text-color);
+	border-top: 1px solid $text-color;
 	padding: 1.25rem 0 3rem;
 }
 
@@ -108,21 +108,21 @@ section h4 {
 	border-top: 1px solid #eee;
 	margin: 3rem 0 1rem;
 	padding: 1.25rem 0 0;
-	color: var(--light-text-color);
+	color: $light-text-color;
 }
 
 .gw-example {
-	margin-bottom: calc(var(--gutter) * 2);
+	margin-bottom: calc(#{$gutter} * 2);
 }
 
  *[class^="col"] .placeholder {
 	background: #eee;
 	height: 40px;
-	margin-bottom: var(--gutter);
+	margin-bottom: $gutter;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--light-text-color);
+	color: $light-text-color;
 	border-radius: 3px;
 	font-weight: 600;
 	font-size: .875em;
@@ -139,7 +139,7 @@ section h4 {
 
  *[class^="col"] .ui-box {
 	background: #f2f2f2;
-	margin-bottom: var(--gutter);
+	margin-bottom: $gutter;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -150,9 +150,9 @@ section h4 {
 
  *[class^="col"] .ui-box + code {
 	display: block;
-	margin-top: calc(var(--gutter) * -1);
+	margin-top: calc($gutter * -1);
 	padding-top: 4px;
-	margin-bottom: var(--gutter);
+	margin-bottom: $gutter;
 	font-size: 12px;
 }
 
