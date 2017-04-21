@@ -1,0 +1,152 @@
+@import '../../../sass/setup/variables';
+@import '../../../sass/setup/mixins';
+
+.product-list {
+	align-items: stretch;
+	.col {
+		margin-bottom: $mobile-margin;
+		flex-shrink: 0;
+		width: 100%;
+		@include respond($md) {
+			margin-bottom: $gutter;
+		}
+		@include respond($lg) {
+			width: 50%;
+		}
+		@include respond($xlg) {
+			width: 33.333%;
+		}
+		@include respond($huge) {
+			width: 25%;
+		}
+		&.hide-lg {
+			@include respond-smaller-than($lg) {
+				display: none !important;
+			}
+		}
+		&.options {
+			max-width: 0;
+		}
+		.empty-area {
+			padding: 4rem 1.5rem;
+			height: 100%;
+			.label {
+				text-align: center;
+				.icon {
+					display: block;
+					margin: 0 auto 1rem;
+				}
+				.text {
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+.card.product {
+	display: flex;
+	flex-direction: column;
+	padding-top: 0;
+	@include respond($lg) {
+		min-height: 275px;
+		height: 100%;
+	}
+	.product-card-row {
+		margin-top: 1rem;
+	}
+	.product-image {
+		height: 200px;
+		background: rgba($text-color, .06);
+		margin: 0 -1.25rem;
+		border-radius: $input-border-radius $input-border-radius 0 0;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		overflow:hidden;
+		position: relative;
+		.icon.placeholder-icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -35px 0 0 -35px;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			color: $text-color;
+			border: 4px solid $text-color;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: .12;
+			svg {
+				transform: scale(2);
+			}
+		}
+		img {
+	    max-width: 100%;
+	    min-height: 100%;
+		}
+	}
+	.general-info {
+		// margin-top: 1rem;
+		flex-grow: 1;
+		position: relative;
+	}
+	.product-stats {
+		// padding-top: 1.25rem;
+		flex-grow: 0;
+		flex-shrink: 0;
+		ul {
+			li {
+				display: flex;
+				align-items: baseline;
+				border-top: 1px solid rgba($text-color, .07);
+				padding: .3rem 0;
+				&:last-child {
+					padding-bottom: 0;
+				}
+				.label {
+					flex-grow: 0;
+					@include all-caps();
+					color: $light-text-color;
+					font-size: 10px;
+				}
+				.value {
+					font-size: .875rem;
+					text-align: right;
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+	.title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		line-height: $base-line-height;
+		display: block;
+		margin-right: $btn-small-height;
+		white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+	.cost {
+		color: $main-color;
+		display: block;
+		margin-right: $btn-small-height;
+		white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+	.delete-btn {
+		position: absolute;
+		top: -3px + $btn-small-height;
+    right: -12px;
+	}
+	.edit-btn {
+		position: absolute;
+		top: -3px;
+    right: -12px;
+	}
+}

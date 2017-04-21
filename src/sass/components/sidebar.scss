@@ -1,0 +1,185 @@
+@import '../setup/variables';
+@import '../setup/mixins';
+
+.sidebar {
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	background: $light-grey;
+	display: flex;
+	flex-grow: 0;
+	width: $sidebar-width - $margin;
+	min-width: $sidebar-width - $margin;
+	position: fixed;
+	top: 0;
+	right: 100%;
+	bottom: 0;
+	@include respond($md) {
+		position: static;
+	}
+	@include respond($xlg) {
+		width: $sidebar-width;
+		min-width: $sidebar-width;
+	}
+	&.disabled {
+		.account:not(.loading):hover {
+			pointer-event: none;
+			background: transparent;
+			// color: $text-color;
+			.avatar {
+				background: darken($light-grey, 10%);
+				color: $light-text-color;
+			}
+		}
+		.avatar {
+			background: darken($light-grey, 10%);
+			color: $light-text-color;
+		}
+		.logo {
+			.icon {
+				color: $light-text-color;
+			}
+		}
+	}
+	.sidebar-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.container {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 $margin/2;
+	}
+	.logo {
+		height: 80px;
+		padding: 0 $margin/2;
+		flex-shrink: 0;
+		.container {
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			height: 100%;
+		}
+		.icon {
+			padding-right: 2px;
+			color: $main-color;
+		}
+	}
+	.add {
+		button {
+			margin-top: $margin;
+			flex-shrink: 0;
+			width: 100%;
+		}
+	}
+	nav {
+		margin-top: $margin/2;
+		flex-grow: 1;
+		&.loading {
+			pointer-events: none;
+			.nav-item .icon {
+				color: $light-text-color;
+			}
+		}
+		.nav-item {
+			height: 50px;
+			margin-bottom: 5px;
+			border-radius: $base-border-radius;
+			display: flex;
+			align-items: center;
+			padding: 0 20px;
+			cursor: pointer;
+			opacity: .5;
+			color: $text-color;
+			text-decoration: none;
+			transition: opacity $md-speed $ease, color $md-speed $ease, background $md-speed $ease;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:hover {
+				opacity: 1;
+			}
+			&.active {
+				opacity: 1;
+				background: #fff;
+				color: $main-color;
+			}
+			.label {
+				display: inline-block;
+				vertical-align: middle;
+				width: 100%;
+				line-height: 1em;
+				margin-left: 16px;
+				font-size: 18px;
+				.loading-text {
+					height: 18px;
+				}
+			}
+			.icon {
+				display: flex;
+			}
+		}
+	}
+
+	.account {
+		border-top: $hr-styles;
+		padding: $margin/2 0;
+		color: $light-text-color;
+		.container {
+			display: flex;
+			align-items: center;
+		}
+		&:not(.loading):hover {
+			background: darken($light-grey, 5%);
+			// color: $text-color;
+			.avatar {
+				background: darken($main-color, 5%);
+				color: $bg-color;
+			}
+		}
+		&.loading {
+			.avatar {
+				background: darken($light-grey, 10%);
+			}
+			.label {
+				> div {
+					overflow: visible;
+					white-space: normal;
+					text-overflow: initial;
+				}
+			}
+		}
+		.avatar {
+			margin-right: .5rem;
+			margin-top: -4px;
+		}
+		.logout {
+			margin-left: .5rem;
+			button {
+				pointer-events: all;
+			}
+		}
+		.label {
+			overflow: hidden;
+			line-height: 1.2em;
+			width: 100%;
+			> div {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				display: inline-block;
+				vertical-align: top;
+				width: 100%;
+				font-size: $md-text-size;
+				&.name {
+					color: $text-color;
+				}
+				&.email {
+					font-size: $md-text-size;
+				}
+			}
+		}
+	}
+
+}

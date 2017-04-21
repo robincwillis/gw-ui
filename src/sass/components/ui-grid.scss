@@ -1,0 +1,23 @@
+@import '../setup/variables';
+
+.container.ui-grid {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	left: 0;
+	z-index: 0;
+	.row,
+	.inline-grid {
+		height: 100%;
+		*[class^="col"] {
+			height: 100%;
+			&:after {
+				content: '';
+				display: block;
+				background: darken($bg-color, 2%);
+				height: 100%;
+			}
+		}
+	}
+}

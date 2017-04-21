@@ -1,0 +1,34 @@
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+@import 'tooltips';
+@import 'scrollbars';
+@import 'grid';
+@import '../components/cards';
+@import '../components/global';
+
+* {
+	box-sizing-border: box;
+}
+
+html {
+	background-color: $bg-color;
+}
+
+svg {
+	color: currentcolor;
+	* {
+		transition: fill $md-speed $ease;
+		fill: currentcolor;
+	}
+}
+
+a {
+	color: $main-color;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, opacity $md-speed $ease;
+	&:hover {
+		color: darken($main-color, 20%);
+	}
+}

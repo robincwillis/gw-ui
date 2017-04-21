@@ -1,0 +1,138 @@
+@import '../../../sass/setup/variables';
+
+.gw-modal-container {
+	z-index: 1000;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  * {
+  	appearance: none;
+  }
+	.gw-modal {
+		&:focus {
+			outline: none;
+		}
+		background: $bg-color;
+		border-radius: $btn-radius;
+		width: 26rem;
+		max-width: 90%;
+		position: relative;
+		.gw-modal-content {
+			padding: 2.5rem calc(#{$btn-small-height} + 2rem) 2.75rem;
+		}
+		.modal-actions {
+			button {
+				+ button {
+					margin-left: $tight-gutter;
+				}
+			}
+		}
+		.close-modal {
+			position: absolute;
+			top: 15px;
+			right: 1rem;
+			z-index: 1;
+			&.left {
+				left: 0;
+				right: auto;
+			}
+		}
+		.gw-modal-header {
+			height: 61px;
+			position: relative;
+			.title {
+				border-bottom: $hr-styles;
+				height: 100%;
+				padding: 0 calc(#{$btn-small-height} + 2rem);
+				font-size: 1.125rem;
+				font-weight: 700;
+				text-align: center;
+				line-height: 3.75rem;
+				span {
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					display: block;
+					overflow: hidden;
+				}
+			}
+			+ .gw-modal-content {
+				padding: 1.75rem 1.5rem 2.75rem;
+			}
+		}
+	}
+}
+
+.modal-container-enter {
+	.gw-overlay {
+	  opacity: 0;
+	}
+  .gw-modal-container {
+  	transform: translate3d(100%, 0, 0);
+  	&.full {
+  		transform: translate3d(0, 100%, 0);
+  	}
+  }
+}
+
+.modal-container-enter.modal-container-enter-active {
+	.gw-overlay {
+	  opacity: 1;
+  	transition: opacity .6s $ease;
+	}
+  .gw-modal-container {
+  	transition: transform .5s $ease;
+  	transform: translate3d(0, 0, 0);
+  }
+}
+
+.modal-container-leave {
+	.gw-overlay {
+	  opacity: 1;
+	}
+  .gw-modal-container {
+  	transform: translate3d(0, 0, 0);
+  }
+}
+
+.modal-container-leave.modal-container-leave-active {
+	.gw-overlay {
+	  opacity: 0;
+	  transition: opacity .6s $ease;
+	}
+  .gw-modal-container {
+  	transition: transform .5s $ease;
+
+  	&.full {
+ 			transform: translate3d(0, 100%, 0);
+  	}
+  }
+}
+
+.ReactModalPortal > * {
+    // When the modal is closed, overlay div has no css class
+    // This selector should be overridden by the `&--after-open` class below
+    opacity: 0;
+}
+
+.ReactModal__Overlay {
+  transition: opacity 0.4s $ease;
+  background: rgba(0, 0, 0, 0.15);
+  &--after-open {
+    opacity: 1;
+  }
+  &--before-close {
+    opacity: 0;
+  }
+}
+
+.ReactModal__Content {
+	transition: transform 0.4s $ease, opacity 0.4s $ease;
+	transform: scale(1.1);
+  &--after-open {
+  	transform: scale(1);
+  }
+  &--before-close {
+    transform: scale(.9);
+  }
+}
+

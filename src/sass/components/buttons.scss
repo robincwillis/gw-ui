@@ -1,0 +1,396 @@
+@import '../setup/variables';
+
+button,
+.button,
+input[type=submit].button {
+  appearance: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background: $btn-bg;
+  border: $btn-border;
+  height: $btn-height;
+  padding: $btn-padding;
+  cursor: pointer;
+  line-height: $btn-height;
+  text-transform: $btn-text-transform;
+  letter-spacing: $btn-letter-spacing;
+  border-radius: $btn-radius;
+  color: $btn-color;
+  font-size: $btn-font-size;
+  font-family: $btn-font;
+  font-weight: $btn-weight;
+  min-width: 8rem;
+  text-align: center;
+  transition: background $md-speed $ease,
+              color $md-speed $ease, 
+              border $md-speed $ease, 
+              opacity $md-speed $ease;
+  overflow: hidden;
+  &:not(.disabled):not(.loading):hover {
+    border: $btn-hover-border;
+    background: $btn-hover-bg;
+    color: $btn-hover-color;
+    &.hover-red,
+    &.hover-red.transparent {
+      opacity: 1;
+      color: $alert;
+    }
+    &.hover-blue,
+    &.hover-blue.transparent {
+      opacity: 1;
+      color: $main-color;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+    
+  & .button-content {
+    transition: transform $md-speed $ease, opacity $md-speed $ease, visibility $md-speed $ease;
+    white-space: nowrap;
+    display: inline;
+    & .label {
+      display: inline-block;
+      line-height: 1rem;
+      & + .icon {
+        margin-left: 8px;
+      }
+    }
+    & .icon {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1rem;
+      transition: transform $md-speed $ease, opacity $md-speed $ease, visibility $md-speed $ease;
+      margin-top: -3px;
+      & svg {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        min-width: 12px;
+        min-height: 12px;
+        width: inherit;
+        height: inherit;
+        & * {
+          fill: currentcolor;
+        }
+      }
+      & + .label {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  & .state-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px;
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform $md-speed $ease, opacity $md-speed $ease, visibility $md-speed $ease;
+  }
+
+  /* Button Sizes */
+  &.tiny {
+    height: $btn-tiny-height;
+    padding: $btn-padding;
+    padding-left: .75em;
+    padding-right: .75em;
+    line-height: $btn-tiny-height;
+    font-size: $btn-tiny-font-size;
+    min-width: 80px;
+    &.circle,
+    &.square {
+      min-width: $btn-tiny-height;
+      max-width: $btn-tiny-height;
+      font-size: 10px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.small {
+    height: $btn-small-height;
+    padding: $btn-padding;
+    line-height: $btn-small-height;
+    font-size: $btn-small-font-size;
+    min-width: 100px;
+    &.circle,
+    &.square {
+      min-width: $btn-small-height;
+      max-width: $btn-small-height;
+      font-size: 10px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.large {
+    height: $btn-large-height;
+    padding: $btn-padding;
+    line-height: $btn-large-height;
+    font-size: $btn-large-font-size;
+    min-width: 10rem;
+    &.circle,
+    &.square {
+      min-width: $btn-large-height;
+      max-width: $btn-large-height;
+      font-size: $btn-large-font-size;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  /* Button Types */
+  &.circle,
+  &.square {
+    min-width: $btn-height;
+    max-width: $btn-height;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 12px;
+    & .label {
+      // display: none;
+    }
+    & .icon {
+      // margin: 0 !important;
+    }
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &.secondary {
+    background: $btn-secondary-bg;
+    border: $btn-secondary-border;
+    color: $btn-secondary-color;
+  }
+
+  &.secondary:not(.disabled):not(.loading):hover {
+    background: $btn-secondary-hover-bg;
+    border: $btn-secondary-hover-border;
+    color: $btn-secondary-hover-color;
+  }
+
+  &.tertiary {
+    background: $btn-tertiary-bg;
+    border: $btn-tertiary-border;
+    color: $btn-tertiary-color;
+  }
+
+  &.tertiary:not(.disabled):not(.loading):hover {
+    background: $btn-tertiary-hover-bg;
+    border: $btn-tertiary-hover-border;
+    color: $btn-tertiary-hover-color;
+  }
+
+  &.transparent {
+    background: transparent;
+    border-color: transparent;
+    color: $text-color;
+    opacity: .5;
+  }
+
+  &.transparent:not(.disabled):not(.loading):hover {
+    background: transparent;
+    border-color: transparent;
+    opacity: 1;
+    color: $text-color;
+  }
+
+  &.secondary {
+    background: $btn-secondary-bg;
+    border: $btn-secondary-border;
+    color: $btn-secondary-color;
+  }
+
+  &.secondary:not(.disabled):not(.loading):hover {
+    background: $btn-secondary-hover-bg;
+    border: $btn-secondary-hover-border;
+    color: $btn-secondary-hover-color;
+  }
+
+  &.tertiary {
+    background: $btn-tertiary-bg;
+    border: $btn-tertiary-border;
+    color: $btn-tertiary-color;
+  }
+
+  &.tertiary:not(.disabled):not(.loading):hover {
+    background: $btn-tertiary-hover-bg;
+    border: $btn-tertiary-hover-border;
+    color: $btn-tertiary-hover-color;
+  }
+
+  /* Hide button text during button state */
+  &.loading,
+  &.success,
+  &.error {
+    & .button-content {
+      transform: translate3d(0, 10px, 0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    & .state-icon {
+      transform: translate3d(0, 10px, 0);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  /* Button Colors */
+  &.red,
+  &.red.transparent {
+    opacity: 1;
+    color: $alert;
+    &:not(.disabled):not(.loading):hover {
+      opacity: 1;
+      color: darken($alert, 15%);
+    }
+  }
+
+  &.blue,
+  &.blue.transparent {
+    opacity: 1;
+    color: $main-color;
+    &:not(.disabled):not(.loading):hover {
+      opacity: 1;
+      color: darken($main-color, 15%);
+    }
+  }
+
+  &.alert-btn,
+  &.alert-btn {
+    opacity: 1;
+    background: $alert;
+    border-color: $alert;
+    color: $btn-alert-color;
+    &:not(.disabled):not(.loading):hover {
+      opacity: 1;
+      color: $btn-alert-color;
+      background: darken($alert, 10%);
+      border-color: darken($alert, 10%);
+    }
+  }
+
+  &.notify-btn,
+  &.notify-btn {
+    opacity: 1;
+    background: $notify;
+    border-color: $notify;
+    color: $btn-notify-color;
+    &:not(.disabled):not(.loading):hover {
+      opacity: 1;
+      color: $btn-notify-color;
+      background: darken($notify, 10%);
+      border-color: darken($notify, 10%);
+    }
+  }
+
+  &.success-btn,
+  &.success-btn {
+    opacity: 1;
+    background: $success;
+    border-color: $success;
+    color: $btn-success-color;
+    &:not(.disabled):not(.loading):hover {
+      opacity: 1;
+      color: $btn-success-color;
+      background: darken($success, 10%);
+      border-color: darken($success, 10%);
+    }
+  }
+
+  /* Button Loading */
+  &.loading {
+    pointer-events: none;
+    & .state-icon.loader {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  /* Button Success */
+  &.success {
+    pointer-events: none;
+    background: $btn-hover-bg;
+    border: $btn-hover-border;
+    &.secondary {
+      background: $btn-secondary-hover-bg;
+    }
+    &.tertiary {
+      background: $btn-tertiary-hover-bg;
+    }
+    &.alert-btn {
+      background: darken($alert, 10%);
+    }
+    &.notify-btn {
+      background: darken($notify, 10%);
+    }
+    &.success-btn {
+      background: darken($success, 10%);
+    }
+    & .state-icon {
+      &.success {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+      &.loader {
+        transform: translate3d(0, -10px, 0);
+      }
+    }
+  }
+
+  /* Button Error */
+  &.error {
+    pointer-events: none;
+    background: $btn-hover-bg;
+    border: $btn-hover-border;
+    &.secondary {
+      background: $btn-secondary-hover-bg;
+    }
+    &.tertiary {
+      background: $btn-tertiary-hover-bg;
+    }
+    &.alert-btn {
+      background: darken($alert, 10%);
+    }
+    &.notify-btn {
+      background: darken($notify, 10%);
+    }
+    &.success-btn {
+      background: darken($success, 10%);
+    }
+    & .state-icon.error {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    & .state-icon.loader {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+
+  /* Disabled Buttons */
+  &.disabled,
+  &[disabled="disabled"] {
+    pointer-events: none;
+    opacity: .5;
+    cursor: default;
+    background: rgba($text-color, .2);
+    border-color: rgba($text-color, .2);
+    color: rgba($text-color, .6);
+  }
+
+}

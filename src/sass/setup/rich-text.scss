@@ -1,0 +1,134 @@
+.rich-text {
+
+  *:first-child {
+    margin-top: 0;
+  }
+
+  h1, 
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2em;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.2em;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: $short-line-height;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: $short-line-height;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: $short-line-height;
+  }
+
+  h6 {
+    @include all-caps();
+    line-height: 1em;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre {
+    margin-top: $base-line-height;
+    margin-bottom: $base-line-height;
+  }
+
+  blockquote {
+    font-size: 1.75rem;
+    line-height: $short-line-height;
+    position: relative;
+    padding-left: .75em;
+    margin-left: -.75em;
+    margin-bottom: calc($base-line-height * 1.25);
+    & p {
+      font-size: 1.75rem;
+      line-height: $short-line-height;
+    }
+    &:before {
+      content: '“';
+      position: absolute;
+      left: 0;
+    }
+    &:after {
+      // content: '”';
+    }
+  }
+
+  ul {
+    list-style: disc;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+  }
+
+  ol {
+    list-style: decimal;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+  }
+
+  li,
+  dd {
+    // margin-bottom: 1rem;
+  }
+
+  dl {
+    list-style: disc;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    color: $light-text-color;
+  }
+
+  pre {
+    background: #eee;
+    border-radius: 3px;
+    overflow-x: auto;
+    padding: .5rem .85rem .85rem;
+  }
+
+  code {
+    background: #eee;
+    padding: .075em .4em .25em;
+    border-radius: 3px;
+  }
+
+  hr.tiny {
+    width: 50px;
+    height: 2px;
+    border: none;
+    outline: none;
+    margin: $base-line-height 0;
+    background: $main-color;
+    display: block;
+    &.centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}

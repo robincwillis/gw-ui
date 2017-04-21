@@ -1,0 +1,80 @@
+@import 'mixins';
+@import 'fonts';
+@import 'rich-text';
+
+body {
+	letter-spacing: .02em;
+}
+
+p {
+	font-size: 1rem;
+	margin-bottom: 1em;
+	line-height: $base-line-height;
+	.sm &,
+	.small &,
+	&.sm,
+	&.small {
+		font-size: $md-text-size;
+	}
+	.lg &,
+	.large &,
+	&.lg,
+	&.large {
+		font-size: 1.125rem;
+	}
+	.normal & {
+		font-size: 1rem;
+	}
+	.light &,
+	&.light-text-color {
+		color: $light-text-color;
+		a {
+			color: $text-color;
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+}
+
+strong,
+.bold,
+b {
+	font-weight: 700;
+}
+
+.small-caps {
+	@include all-caps();
+}
+
+.light-text-color {
+	color: $light-text-color;
+	a {
+		color: $light-text-color;
+		border-bottom: 1px solid $hr-color;
+		&:hover {
+			color: $main-color;
+			border-color: currentcolor;
+		}
+	}
+}
+
+.text-color {
+	color: $text-color;
+}
+
+.main-color {
+	color: $text-color;
+}
+
+.success-color {
+	color: $success;
+}
+
+.small-text {
+	font-size: $md-text-size;
+}
+
+.normal-size {
+	font-size: 1rem;
+}

@@ -1,0 +1,12 @@
+/* CSS Only Icons for Buttons  */
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+svg {
+	display: block;
+	& * {
+		fill: currentcolor;
+	}
+}

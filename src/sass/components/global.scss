@@ -1,0 +1,29 @@
+@import './loaders';
+
+// Vertical centering
+.flex-center-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+	width: $btn-small-height;
+	height: $btn-small-height;
+	background: $main-color;
+	color: $bg-color;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+	line-height: $btn-small-height + 1px;
+	font-size: 12px;
+	border-radius: 50%;
+	flex-grow: 0;
+	flex-shrink: 0;
+	transition: color $md-speed $ease, background $md-speed $ease, border $md-speed $ease;
+}

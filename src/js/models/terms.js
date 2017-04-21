@@ -1,0 +1,4 @@
+export const terms = `<p>Lorem ipsum dolor 100 licenses for Pup’s Quest 1 to be spread across as many classes as you like sit amet, consectetur adipiscing elit. Efficiens dici potest. Hoc Hieronymus summum bonum esse dixit. An hoc usque quaque, aliter in vita? Quoniam, si dis placet, ab.</p>
+<p>Lorem ipsum dolor 100 licenses for Pup’s Quest 1 to be spread across as many classes as you like sit amet, consectetur adipiscing elit. Efficiens dici potest. Hoc Hieronymus summum bonum esse dixit. An hoc usque quaque, aliter in vita? Quoniam, si dis placet, ab Epicuro loqui discimus. Lorem ipsum dolor 100 licenses for Pup’s Quest 1 to be spread across as many classes as you like sit amet, consectetur adipiscing elit. Efficiens dici potest. Hoc Hieronymus summum bonum esse dixit. An hoc usque quaque, aliter in vita? Quoniam, si dis placet, ab Epicuro loqui discimus.</p>`;
+
+export default { terms };

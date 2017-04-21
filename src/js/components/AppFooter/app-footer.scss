@@ -1,0 +1,23 @@
+@import '../../../sass/setup/variables';
+@import '../../../sass/setup/mixins';
+
+.app-footer {
+	padding: $margin 0;
+	color: $light-text-color;
+	@include respond($md) {
+		flex-grow: 0;
+		flex-shrink: 0;
+		display: flex;
+	}
+	span {
+		display: block;
+		@include respond($lg) {
+			display: inline;
+		}
+	}
+	a {
+		@include respond($lg) {
+			margin-left: 2rem;
+		}
+	}
+}

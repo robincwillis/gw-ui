@@ -1,0 +1,98 @@
+@import '../setup/variables';
+@import '../setup/mixins';
+
+.react-datepicker {
+  font-family: $main-font;
+  font-size: auto;
+  background-color: $bg-color;
+  color: $text-color;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  box-shadow: 0 0px 40px rgba($text-color, .2);
+}
+
+.react-datepicker__header {
+	background: transparent;
+	border-bottom: $hr-styles;
+}
+
+.react-datepicker__tether-element-attached-top .react-datepicker__triangle {
+	border-bottom-color: $bg-color;
+	&:before {
+		display: none;
+	}
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+	border-radius: 50%;
+	color: $text-color;
+	transition: color $md-speed $ease, background $md-speed $ease;
+	margin: 2px;
+}
+
+.react-datepicker__day-name {
+	font-size: $sm-text-size;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-weight: 700;
+	color: $light-text-color;
+	height: auto;
+}
+
+.react-datepicker__day {
+	border-radius: 50%;
+	border: 2px solid transparent;
+	width: 27px;
+	height: 27px;
+	line-height: 23px;
+	font-size: 12px;
+	&:hover {
+		border-radius: 50%;
+		background: $light-grey;
+	}
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range, {
+  background-color: $main-color;
+  color: $bg-color;
+  &:hover {
+  	background: darken($main-color, 10%);
+  	border-color: darken($main-color, 10%);
+  }
+}
+
+.react-datepicker__day--keyboard-selected {
+	border-color: $main-color;
+	color: $text-color;
+	background: transparent;
+}
+
+.react-datepicker__day.react-datepicker__day--outside-month {
+	color: $light-text-color;
+}
+
+.react-datepicker__navigation {
+	top: 12px;
+	opacity: .3;
+	&:hover {
+		opacity: 1;
+	}
+	&.react-datepicker__navigation--previous {
+		border-right-color: $text-color;
+		border-left: none;
+		left: 14px;
+	}
+	&.react-datepicker__navigation--next {
+		border-left-color: $text-color;
+		border-right: none;
+		right: 14px;
+	}
+}
+
+.react-datepicker__current-month {
+	color: $text-color;
+	font-weight: 700;
+}
