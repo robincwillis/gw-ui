@@ -171,12 +171,12 @@
 				display: inline-block;
 				vertical-align: top;
 				width: 100%;
-				font-size: $md-text-size;
+				font-size: $sm-font-size;
 				&.name {
 					color: $text-color;
 				}
 				&.email {
-					font-size: $md-text-size;
+					font-size: $sm-font-size;
 				}
 			}
 		}

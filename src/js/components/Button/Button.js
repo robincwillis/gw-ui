@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
 
-import 'sass/components/buttons';
 import CheckIcon from 'assets/icons/check';
 import XIcon from 'assets/icons/x';
+
+import './buttons';
 
 export default class Button extends Component {
 
@@ -68,7 +69,7 @@ export default class Button extends Component {
         {...this.props.extraProps}
       >
         <div className="state-icon loader">
-          <div className="spinner"></div>
+          <div className="spinner"><div className="spinner"/></div>
         </div>
         <div className="state-icon success">
           <InlineSVG src={CheckIcon} element="span" className="icon" />

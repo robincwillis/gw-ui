@@ -234,7 +234,7 @@ input.toggle {
 				& .on-label {
 					opacity: 0;
 					visibility: hidden;
-					transform: translate3d(0, 40%, 0);
+					transform: translate3d(-.5rem, 0, 0);
 				}
 			}
 		}
@@ -251,7 +251,7 @@ input.toggle {
 				& .off-label {
 					opacity: 0;
 					visibility: hidden;
-					transform: translate3d(0, -40%, 0);
+					transform: translate3d(.5rem, 0, 0);
 				}
 				& .on-label {
 					opacity: 1;
@@ -264,7 +264,7 @@ input.toggle {
 }
 
 .input-label {
-	font-size: $md-text-size;
+	font-size: $sm-font-size;
 	color: $light-text-color;
 	display: inline-block;
 	vertical-align: middle;

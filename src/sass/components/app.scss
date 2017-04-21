@@ -1,17 +1,6 @@
 @import '../setup/variables';
 @import '../setup/typography';
 
-body{
-	font-family: $main-font;
-  text-rendering: auto;
-  -webkit-text-size-adjust:none;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  color: $text-color;
-  font-weight: normal;
-  overflow: hidden;
-}
-
 .app-wrapper {
   display: flex;
   flex-grow: 1;
@@ -70,13 +59,10 @@ body{
 .container {
   position: relative;
   z-index: 1;
-  margin: 0 auto;
-  width: calc(#{$site-width} + 40px);
-  max-width: calc(#{$max-site-width} + 40px);
-  @include respond($md) {
-    width: $site-width;
-    max-width: $max-site-width;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  width: $site-width;
+  max-width: $max-site-width;
 }
 
 .gw-overlay {

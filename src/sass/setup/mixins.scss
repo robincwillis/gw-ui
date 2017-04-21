@@ -21,51 +21,6 @@
   -o-transition:      $transition;
 }
 
-// Animation
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}
-
-@mixin animation($animate...) {
-  $max: length($animate);
-  $animations: '';
-
-  @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
-
-    @if $i < $max {
-      $animations: #{$animations + ", "};
-    }
-  }
-  -webkit-animation: $animations;
-  -moz-animation:    $animations;
-  -o-animation:      $animations;
-  animation:         $animations;
-}
-
-@mixin opacity($opactiy: .5) {
-  -moz-opacity: $opactiy;
-  -khtml-opacity: $opactiy;
-  opacity: $opactiy;
-}
-
-@mixin border-radius($radius: 5px) {
-  border-radius: $radius;
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-}
-
 // Greyscale/ Color
 @mixin greyscale() {
   -webkit-filter: grayscale(100%);
@@ -98,39 +53,15 @@
   }
 }
 
-// Vertical Centering
-@mixin vertical-center($axis: "both"){
-  position:absolute;
-  @if $axis == "y"{
-    top:50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-  @if $axis == "x"{
-    left:50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-  @if $axis == "both"{
-    top:50%;
-    left:50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-}
-
 @mixin font-smooth() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin scrollable() {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 @mixin clearfix() {
@@ -154,8 +85,9 @@
 @mixin all-caps () {
   text-transform: uppercase;
   letter-spacing: $tracked-out;
-  font-size: $sm-text-size;
-  font-weight: 700;
+  font-size: $sm-font-size;
+  font-weight: $medium;
+  line-height: 1em;
 }
 
 // Placeholders

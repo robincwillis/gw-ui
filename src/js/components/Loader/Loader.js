@@ -25,7 +25,7 @@ export default class Loader extends Component {
 				key="loader"
 			>
 				<div className={this.loaderClass()}>
-					<div className="spinner"/>
+					<div className="spinner"><div className="spinner"/></div>
 				</div>
 			</ReactCSSTransitionGroup>
 		);

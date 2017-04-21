@@ -14,8 +14,7 @@ import Recover from './containers/Recover/Recover';
 import NotFound from './containers/NotFound/NotFound';
 import Signup from './containers/Signup/Signup';
 
-import UIKit from './containers/UIKit';
-import UIGrid from './containers/UIGrid/UIGrid';
+import UIKit from './containers/UIKit/UIKit';
 
 const initialState = window.__INITIAL_STATE__ || {firebase: { authError: null }};
 

@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'animations';
+@import 'icons';
 @import 'tooltips';
 @import 'scrollbars';
 @import 'grid';
@@ -11,7 +12,8 @@
 	box-sizing-border: box;
 }
 
-html {
+html,
+body {
 	background-color: $bg-color;
 }
 
