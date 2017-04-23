@@ -4,8 +4,8 @@ import InlineSVG from 'svg-inline-react';
 import Button from 'components/Button';
 import PlusIcon from 'assets/icons/plus';
 import CheckIcon from 'assets/icons/check';
-import TrashIcon from 'assets/icons/fun-icons/trash';
-import HistoryIcon from 'assets/icons/fun-icons/history';
+import TrashIcon from 'assets/icons/trash2';
+import HistoryIcon from 'assets/icons/history';
 
 export default class UIButtons extends Component {
 
@@ -34,7 +34,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button or .button</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -44,7 +44,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.loading</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -54,7 +54,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.success</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -64,7 +64,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.error</p>
             </div>
-            
+
             {/* Secondary Buttons */}
             <div className="col-3">
               <div className="ui-box">
@@ -75,7 +75,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.secondary</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -85,7 +85,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.secondary.loading</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -95,7 +95,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.secondary.success</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -116,7 +116,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.tertiary</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -126,7 +126,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.tertiary.loading</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -136,7 +136,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.tertiary.success</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -146,7 +146,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.tertiary.error</p>
             </div>
-            
+
             {/* Button Sizes */}
             <div className="col-3">
               <div className="ui-box">
@@ -157,7 +157,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.large</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -167,7 +167,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.medium</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button
@@ -187,7 +187,7 @@ export default class UIButtons extends Component {
               </div>
               <p className="code">button.tiny</p>
             </div>
-            
+
             <div className="col-3">
               <div className="ui-box">
                 <Button

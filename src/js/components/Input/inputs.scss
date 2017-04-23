@@ -1,0 +1,273 @@
+@import '~sass/setup/variables';
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+input[type='password'],
+select,
+textarea {
+	background: $input-bg;
+	border: $input-border;
+	border-radius: $input-border-radius;
+	padding: $input-padding;
+	line-height: $input-line-height;
+	color: $input-color;
+	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+	display: block;
+	width: 100%;
+	font-family: $input-font;
+	font-size: 1em;
+	text-align: inherit;
+	.large & {
+		font-size: $input-large-font-size;
+	}
+	.small &,
+	.tiny & {
+		font-size: $input-small-font-size;
+	}
+	&::-webkit-input-placeholder {
+		color: $placeholder-color;
+		transition: color $md-speed $ease;
+	}
+	&:-moz-placeholder {
+		color: $placeholder-color;
+		transition: color $md-speed $ease;
+	}
+	&::-moz-placeholder {
+		color: $placeholder-color;
+		transition: color $md-speed $ease;
+	}
+	&:-ms-input-placeholder {
+	   color: $placeholder-color;
+	   transition: color $md-speed $ease;
+	}
+	&:hover {
+		background: $input-hover-bg;
+		color: $input-hover-color;
+		border: $input-hover-border;
+	}
+	&:focus {
+		background: $input-focus-bg;
+		color: $input-focus-color;
+		border: $input-focus-border;
+		&::-webkit-input-placeholder {
+			color: $placeholder-focus-color;
+		}
+		&:-moz-placeholder {
+			color: $placeholder-focus-color;
+		}
+		&::-moz-placeholder {
+			color: $placeholder-focus-color;
+		}
+		&:-ms-input-placeholder {
+		   color: $placeholder-focus-color;
+		}
+	}
+	.disabled &,
+	&:disabled {
+		color: $placeholder-color;
+		background: darken($input-bg, 2%);
+	}
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+input[type='password'],
+select {
+	height: $btn-height;
+	.large & {
+		height: $input-large-height;
+	}
+	.small & {
+		height: $input-small-height;
+	}
+	.tiny & {
+		height: $input-tiny-height;
+		padding: 0 .75em;
+		display: inline-block;
+	}
+}
+
+
+textarea {
+	line-height: $base-line-height;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	resize: none;
+}
+
+label {
+	cursor: pointer;
+	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	margin: -1px 10px 0 0;
+	border: 1px solid $light-text-color;
+	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+	~ label {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&:checked {
+		border-color: $main-color;
+		~ label {
+			color: $main-color;
+		}
+	}
+}
+
+input[type='checkbox'] {
+	border-radius: 4px;
+	position: relative;
+	&:checked {
+		background: $main-color;
+		&:after {
+			opacity: 1;
+		}
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+    width: 3px;
+    height: 8px;
+    top: 1px;
+    left: 5px;
+		border-bottom: 1px solid $bg-color;
+		border-right: 1px solid $bg-color;
+		transform: rotate(45deg);
+		transition: opacity $md-speed $ease;
+		opacity: 0;
+	}
+}
+
+input[type='radio'] {
+	border-radius: 50%;
+	border: 2px solid $light-text-color;
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		background: $main-color;
+		border-radius: 50%;
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		bottom: 2px;
+		left: 2px;
+		width: 8px;
+		height: 8px;
+		opacity: 0;
+		transform: scale(.25);
+		transition: transform $md-speed $ease, opacity $md-speed $ease;
+	}
+	&:checked {
+		&:after {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+.react-datepicker__input-container {
+	width: 100%;
+}
+
+
+input[type='checkbox'].toggle {
+	display:none;
+}
+
+input.toggle {
+	& + label {
+		& .switch {
+			display: inline-block;
+			width: 40px;
+			height: 20px;
+			margin: -5px 0 -2px 0;
+			vertical-align: middle;
+			color: $input-hover-bg;
+			background: currentcolor;
+			border-radius: 20px;
+			transition: background 0.3s $ease, border 0.3s $ease, color 0.3s $ease, opacity 0.3s $ease;
+			&:after {
+				content: '';
+				display: block;
+				width: 14px;
+				height: 14px;
+				border: 3px solid currentcolor;
+				background: $bg-color;
+				border-radius: 50%;
+				transition: transform 0.3s $ease;
+			}
+			& + .text {
+				display: inline-block;
+				margin-left: .625rem;
+				position: relative;
+		    height: 20px;
+		    vertical-align: middle;
+		    margin-top: -.2em;
+				& .off-label,
+				& .on-label {
+					transition: transform 0.3s $ease, opacity 0.3s $ease, visibility 0.3s $ease;
+					position: absolute;
+					top: 0;
+					left: 0;
+					line-height: 20px;
+					pointer-events: none;
+				}
+				& .off-label {
+					color: $light-text-color;
+				}
+				& .on-label {
+					opacity: 0;
+					visibility: hidden;
+					transform: translate3d(-.5rem, 0, 0);
+				}
+			}
+		}
+	}
+	&:checked {
+		& + label {
+			& .switch {
+				color: $main-color;
+				&:after {
+					transform: translate3d(100%, 0, 0);
+				}
+			}
+			& .text {
+				& .off-label {
+					opacity: 0;
+					visibility: hidden;
+					transform: translate3d(.5rem, 0, 0);
+				}
+				& .on-label {
+					opacity: 1;
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+	}
+}
+
+.input-label {
+	font-size: $sm-font-size;
+	color: $light-text-color;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
