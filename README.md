@@ -1,5 +1,7 @@
 
-##Webpack React
+#Gordils & Willis UI Kit
+
+##Dev
 
 ````
 ~ npm install
@@ -8,8 +10,10 @@
 http://localhost:3000
 ````
 
-if stuff gets screwed up
+##if stuff gets screwed up
 
 ````
 ~ rm -rf node_modules && npm install
 ````
+
+##Install
