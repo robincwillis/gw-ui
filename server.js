@@ -1,15 +1,17 @@
-var path = require('path');
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 5000;
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('./webpack.config');
 
-app.use(express.static(path.join(__dirname, 'build')));
+const PORT = process.env.PORT || 5000;
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/build/index.html'));
-});
-
-var server = app.listen(port, function() {
-    var host = server.address().address;
-    console.log('Listening at http://%s:%s', host, port);
+new WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
+  hot: true,
+  historyApiFallback: true
+}).listen(PORT, 'localhost', function (err, result) {
+  if (err) {
+    console.log(err);
+  } else {
+		console.log('Listening at localhost:'+PORT);
+  }
 });
