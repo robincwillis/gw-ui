@@ -1,13 +1,8 @@
-const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const path = require('path');
-const fs = require('fs');
-const postcss = require('postcss');
-const apply = require('postcss-apply');
 
 var DEV;
 
@@ -83,10 +78,6 @@ const config = {
 						presets: ['es2015', 'react', 'stage-0']
 					}
 				},
-				// {
-				// 	test  : /\/es6-promise\.js$/,
-				// 	loader: 'imports?this=>window'
-				// },
 				{
 					test: /\.svg$/,
 					loader: 'svg-inline-loader'
@@ -104,7 +95,10 @@ const config = {
 			path.resolve(__dirname, 'src/images'),
 			path.resolve(__dirname, 'node_modules')
 		],
-		extensions: ['.js', '.json', '.hbs', '.jpg', '.png', '.svg', '.sass', '.scss', '.css'],
+		alias : {
+			handlebars: 'handlebars/dist/handlebars.min.js'
+		},
+		extensions: ['.js', '.json', '.jpg', '.png', '.svg', '.sass', '.scss', '.css'],
 	}
 };
 

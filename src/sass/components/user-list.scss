@@ -1,0 +1,18 @@
+@import '../setup/variables';
+
+.ui-list.user-list {
+	.list-row {
+		.avatar {
+			background: $light-text-color;
+			&.admin {
+				background: $success;
+			}
+			&.customer {
+				background: $notify;
+			}
+			&.teacher {
+				background: $main-color;
+			}
+		}
+	}
+}

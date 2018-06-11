@@ -1,17 +1,8 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+// Main package function
+function isNullOrEmpty(input) {
+    // Returns true if the input is either undefined, null, or empty, false otherwise
+    return (input === undefined || input === null || input === '');
+}
 
-const WEBPACK_PORT = 3000;
-
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true
-}).listen(WEBPACK_PORT, 'localhost', function (err, result) {
-  if (err) {
-    console.log(err);
-  } else {
-		console.log('Listening at localhost:' + WEBPACK_PORT);
-  }
-});
+// Make the main function available to other packages that require us
+module.exports = isNullOrEmpty;

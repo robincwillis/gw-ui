@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
 
-import App from '../components/App/App';
+import UIKit from 'containers/UIKit/UIKit';
 
 ReactDOM.render(
-	<App />,
+	<Router history={browserHistory}>
+		<Route path='*' component={UIKit} />
+	</Router>,
 	document.getElementById('root')
 );
-
-
