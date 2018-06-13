@@ -5,7 +5,7 @@ import Button from 'components/Button';
 
 import './FileUpload';
 
-export class FileUploader extends Component {
+export class FileUpload extends Component {
 
 	static defaultProps = {
 		accept : 'audio/*,video/*,image/*',

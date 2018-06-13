@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './toggle.scss';
+import './Toggle';
 
 class Toggle extends Component {
 

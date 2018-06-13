@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Collapse from 'components/Collapse';
 
-import './accordion.scss';
+import './Accordion';
 
 export class Accordion extends Component {
 

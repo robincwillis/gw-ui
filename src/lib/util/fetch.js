@@ -1,21 +1,31 @@
-import environments from 'environments';
-const config = environments[process.env.NODE_ENV]();
-
 import { getToken } from 'util/storage';
 
-export const defaultHeaders = () => {
-	return {
-		'Content-Type' : 'application/vnd.api+json',
-		'Accept' : 'application/vnd.api+json',
-		'Authorization' : `JWT ${getToken()}`,
+export const defaultHeaders = (auth, token) => {
+	let headers = {
+		'Content-Type' : 'application/json',
+		'Accept' : 'application/json'
 	};
+
+	if (auth) {
+		headers['Authorization'] = token || `${getToken()}`;
+	}
+
+	return headers;
+
 };
 
-export const formHeaders = () => {
+export const formHeaders = (auth, token) => {
 	return {
 		'Accept' : 'application/vnd.api+json',
 		'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-		'Authorization' : `JWT ${getToken()}`
+		'Authorization' : token || `${getToken()}`
+	}
+}
+
+export const uploadHeaders = (auth, token) => {
+	return {
+		'Accept' : '*/*',
+		'Authorization' : token || `${getToken()}`
 	}
 }
 
@@ -27,27 +37,30 @@ export const status = (response) => {
 	if (response.status >= 200 && response.status < 300) {
 		return Promise.resolve(response);
 	} else {
-		return response.json().then( (responseJson)=> {
-			//BACKEND TODO : Errors are not coming back in a consistent format
-			var message = '';
+		return Promise.reject(response);
+		// console.log(response);
+		// return response;
+		// return response.json().then( (responseJson)=> {
+		// 	//BACKEND TODO : Errors are not coming back in a consistent format
+		// 	var message = '';
 
-			if(response.url.includes('/api/api-token-auth/')) {
-				message = responseJson.errors.non_field_errors[0];
-			}
-			else if (Array.isArray(responseJson.errors)) {
-				message = responseJson.errors.map( (error)=> {
-					return error.detail;
-				}).join(' ');
-			} else {
-				message = Object.keys(responseJson.errors).map( (key) => {
-					message = responseJson.errors[key].join(' ');
-					return message;
-				})
-			}
-			var error = new Error(message);
-			error.code = response.status || response.statusText;
-			return Promise.reject(error);
-		});
+		// 	if(response.url.includes('/api/api-token-auth/')) {
+		// 		message = responseJson.errors.non_field_errors[0];
+		// 	}
+		// 	else if (Array.isArray(responseJson.errors)) {
+		// 		message = responseJson.errors.map( (error)=> {
+		// 			return error.detail;
+		// 		}).join(' ');
+		// 	} else {
+		// 		message = Object.keys(responseJson.errors).map( (key) => {
+		// 			message = responseJson.errors[key].join(' ');
+		// 			return message;
+		// 		})
+		// 	}
+		// 	var error = new Error(message);
+		// 	error.code = response.status || response.statusText;
+		// 	return Promise.reject(error);
+		// });
 	}
 };
 

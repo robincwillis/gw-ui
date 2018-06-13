@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
-//import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
-import './collapse.scss';
+import './Collapse';
 
 export class Collapse extends Component {
 

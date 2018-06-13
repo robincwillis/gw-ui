@@ -1,4 +1,8 @@
 
+//util
+
+export * as storage from './util/storage';
+
 // Inputs
 
 export Button from './components/Button';
@@ -15,10 +19,11 @@ export ContentEditable from 'components/ContentEditable';
 export EditableItem from 'components/EditableItem';
 export Typeahead from 'components/Typeahead';
 export SearchButton from './components/SearchButton';
-export FileUpload from 'components/FileUpload';
-export AddContentBetween from 'components/AddContentBetween';
+export FileUpload from './components/FileUpload';
+export AddContentBetween from './components/AddContentBetween';
 
 // Table
+import Table from './components/Table';
 
 export Table, {
 	Column,

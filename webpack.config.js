@@ -1,3 +1,5 @@
+
+const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -10,7 +12,7 @@ module.exports = {
 
 	entry: {
 		index : 'index.js',
-		//vendor : ['moment', 'numeral'],
+		//vendor : ['moment', 'numeral', ...],
 		"postcss.config" : 'postcss.config.js'}
 	,
 
@@ -24,6 +26,7 @@ module.exports = {
 	externals: [nodeExternals()],
 
 	plugins : [
+		new webpack.NamedModulesPlugin(),
 
 		new CopyWebpackPlugin([
 			{

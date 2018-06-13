@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import Button from 'components/Button';
 
-import './Table';
+import './Table.scss';
 
 export class ImageCell extends Component {
 	render () {
@@ -198,10 +198,10 @@ export class Column extends Component {
 	}
 }
 
-export class Table extends Component {
+export default class Table extends Component {
 
 	listClass () {
-    var listClass = 'ui-list';
+    var listClass = 'table';
     if(this.props.listClass) {
       listClass += ' ' + this.props.listClass;
     }

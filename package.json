@@ -1,12 +1,12 @@
 {
   "name": "gw-ui",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Gordils & Willis UI Kit, react + sass",
   "main": "./dist/index.js",
   "scripts": {
     "prepublish": "npm run build",
     "start": "./node_modules/.bin/parcel src/docs/index.html",
-    "watch": "./node_modules/.bin/webpack --watch --mode=development",
+    "watch": "./node_modules/.bin/webpack --watch --mode=none",
     "build": "./node_modules/.bin/webpack --mode=production",
     "build:docs": "./node_modules/.bin/parcel build src/docs/index.js -d dist/docs/"
   },
