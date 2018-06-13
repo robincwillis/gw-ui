@@ -1,0 +1,49 @@
+@import '~sass/setup/variables';
+
+.graph {
+	svg {
+		overflow: visible;
+
+
+		path,
+		g,
+		.circle {
+	    pointer-events: none;
+		}
+
+	}
+
+}
+
+
+
+.d3-tip {
+  line-height: 1;
+  padding: 12px;
+  background: $main-color;
+  color: $white;
+  border-radius: 6px;
+  pointer-events: none !important;
+	font-family: $main-font;
+	font-size: 14px;
+	letter-spacing: 0.49px;
+	min-width: 50px;
+	text-align: center;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: $main-color;
+	border-width: 12px;
+	margin-left: -12px;
+}
+

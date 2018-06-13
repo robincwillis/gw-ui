@@ -1,0 +1,9 @@
+{
+  "presets":[
+    "env",
+    "es2017",
+    "stage-1",
+    "react"
+  ],
+  "plugins": ["transform-export-default"]
+}

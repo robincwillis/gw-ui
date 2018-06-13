@@ -1,0 +1,144 @@
+body,
+html {
+	height: 100%;
+}
+
+.unscrollable-frame {
+	overflow: hidden !important;
+}
+
+.scrollable-frame {
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	height: 100%;
+}
+
+.dot-indecator {
+	color: $light-text-color;
+	background: currentcolor;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 50%;
+	margin: -2px .4rem 0 0;
+	&.main-color-2 {
+		color: $main-color;
+	}
+	&.success {
+		color: $main-color;
+	}
+}
+
+.white-bg {
+	background: $white;
+}
+
+.dark-section {
+	background: $black;
+	color: $main-color;
+	.button {
+		&.transparent {
+			color: rgba($main-color, .65);
+			&:not(.disabled):not(.loading):hover {
+				color: $white;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.flex-center-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// General Section headers
+.section-header {
+	min-height: $btn-height;
+	margin-bottom: 1.5rem;
+	&.no-space-below {
+		margin-bottom: 0;
+	}
+	&.space-above {
+		margin-top: 1rem;
+	}
+	&.with-border {
+		border-bottom: 1px solid $text-color;
+	}
+	h1, h2, h3, h4, h5, h6, p,
+	.h1, .h2, .h3, .h4, .h5, .h6, .p {
+		margin: 0;
+	}
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.main-content-sidebar {
+	@include respond($md) {
+		width: $sidebar-width;
+		transition: all $slow-speed $ease;
+		overflow: hidden;
+	}
+	&.fixed {
+		.content {
+			@include respond($md) {
+				position: fixed;
+				left: 0;
+				width: $sidebar-width + $margin + $margin;
+				padding-top: $margin;
+				padding-right: $margin;
+				padding-left: $margin;
+				overflow-y: auto;
+				top: $header-height;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+.centered-content {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+}
+
+.max-text-width {
+	max-width: $rich-text-max-width;
+}
+
+.hide-xlg {
+	@include respond-smaller-than($xlg) {
+		display: none;
+	}
+}
+
+.hide-lg {
+	@include respond-smaller-than($lg) {
+		display: none;
+	}
+}
+
+.hide-md {
+	@include respond-smaller-than($md) {
+		display: none;
+	}
+}
+
+.hide-sm {
+	@include respond-smaller-than($sm) {
+		display: none;
+	}
+}

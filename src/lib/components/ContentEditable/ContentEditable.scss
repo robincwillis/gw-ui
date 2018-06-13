@@ -1,0 +1,93 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+*[contentEditable="true"] {
+	outline: none;
+	border: none;
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	max-width: 100%;
+	transition: color $md-speed $ease;
+	min-width: 20px;
+	vertical-align: top;
+	&.no-border {
+		display: block;
+		&:before {
+			display: none;
+		}
+	}
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -.4rem;
+		right: -.5rem;
+		bottom: -.3rem;
+		left: -.5rem;
+		background: rgba($main-color, .1);
+		border: 2px solid transparent;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: $base-border-radius;
+		opacity: 0;
+		transition: opacity $md-speed $ease, background $md-speed $ease, border $md-speed $ease;
+	}
+	&:active {
+		&:before {
+			background: rgba($main-color, .15);
+		}
+	}
+	&:hover {
+		&:before {
+			opacity: 1;
+		}
+	}
+	&:focus,
+	&:active {
+		color: $text-color;
+		&:before {
+			opacity: 1;
+			background: transparent;
+			border: 2px solid rgba($main-color, .15);
+		}
+	}
+	br {
+		// display: none;
+	}
+}
+
+.rich-text {
+		p[contentEditable="true"],
+		.p[contentEditable="true"] {
+			&:not(:first-child):not(.no-space-before) {
+				&:before {
+					top: calc(-.4rem + 1em);
+				}
+			}
+		}
+		h1[contentEditable="true"], 
+		.h1[contentEditable="true"],
+		h2[contentEditable="true"], 
+		.h2[contentEditable="true"],
+		h3[contentEditable="true"], 
+		.h3[contentEditable="true"],
+		h4[contentEditable="true"], 
+		.h4[contentEditable="true"],
+		h5[contentEditable="true"], 
+		.h5[contentEditable="true"], 
+		h6[contentEditable="true"],
+		.h6[contentEditable="true"], {
+			&:before {
+				bottom: -.2rem;
+			}
+			& ~ p[contentEditable="true"],
+			& ~ .p[contentEditable="true"] {
+				&:not(:first-child) {
+					&:before {
+						top: calc(-.4rem + .4rem);
+					}
+				}
+			}
+		}
+	}

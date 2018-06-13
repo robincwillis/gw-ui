@@ -1,0 +1,35 @@
+@import '~sass/setup/variables';
+// @import '~sass/setup/mixins';
+
+.right-sidebar {
+	.sponsorship-uploads {
+
+    .tiny-caps {
+      margin: .25rem 0;
+    }
+
+    > div {
+        vertical-align: top;
+        padding: $tight-gutter/2 0 $tight-gutter/1.5;
+        border-top: 1px solid $hr-color;
+    	margin: .025rem 0;
+
+        &:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+		.image-name {
+			&:hover {
+				background: $nav-hover-color;
+			}
+
+			&.selected {
+
+			}
+			cursor: pointer;
+		}
+
+    }
+  }
+}

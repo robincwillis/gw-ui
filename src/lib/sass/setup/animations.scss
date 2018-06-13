@@ -1,0 +1,178 @@
+$stagger-time : .45s;
+$stagger-delay : .05s;
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes transition-in {
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		visibility: visible;
+	}
+}
+
+@keyframes fade-in {
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.transition-in {
+	opacity: 0;
+	animation: transition-in $slow-speed $ease forwards;	
+}
+
+.stagger-in-1 { animation: transition-in $stagger-time $stagger-delay * 0 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-2 { animation: transition-in $stagger-time $stagger-delay * 1 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-3 { animation: transition-in $stagger-time $stagger-delay * 2 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-4 { animation: transition-in $stagger-time $stagger-delay * 3 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-5 { animation: transition-in $stagger-time $stagger-delay * 4 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-6 { animation: transition-in $stagger-time $stagger-delay * 5 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-7 { animation: transition-in $stagger-time $stagger-delay * 6 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-8 { animation: transition-in $stagger-time $stagger-delay * 7 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-9 { animation: transition-in $stagger-time $stagger-delay * 8 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+.stagger-in-10 { animation: transition-in $stagger-time $stagger-delay * 9 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+
+.stagger-in-items {
+	> * {
+		opacity: 0;
+		transform: translate3d(0, 1.5rem, 0);
+		animation: transition-in $stagger-time ease forwards;
+		animation-delay: $stagger-delay * 0;
+		&:nth-child(2) {
+			animation-delay: $stagger-delay * 1;
+		}
+		&:nth-child(3) {
+			animation-delay: $stagger-delay * 2;
+		}
+		&:nth-child(4) {
+			animation-delay: $stagger-delay * 3;
+		}
+		&:nth-child(5) {
+			animation-delay: $stagger-delay * 4;
+		}
+		&:nth-child(6) {
+			animation-delay: $stagger-delay * 5;
+		}
+		&:nth-child(7) {
+			animation-delay: $stagger-delay * 6;
+		}
+		&:nth-child(8) {
+			animation-delay: $stagger-delay * 7;
+		}
+		&:nth-child(9) {
+			animation-delay: $stagger-delay * 8;
+		}
+		&:nth-child(10) {
+			animation-delay: $stagger-delay * 9;
+		}
+		&:nth-child(11) {
+			animation-delay: $stagger-delay * 10;
+		}
+		&:nth-child(12) {
+			animation-delay: $stagger-delay * 11;
+		}
+		&:nth-child(13) {
+			animation-delay: $stagger-delay * 12;
+		}
+		&:nth-child(14) {
+			animation-delay: $stagger-delay * 13;
+		}
+		&:nth-child(15) {
+			animation-delay: $stagger-delay * 14;
+		}
+		&:nth-child(16) {
+			animation-delay: $stagger-delay * 15;
+		}
+		&:nth-child(17) {
+			animation-delay: $stagger-delay * 16;
+		}
+		&:nth-child(18) {
+			animation-delay: $stagger-delay * 17;
+		}
+		&:nth-child(19) {
+			animation-delay: $stagger-delay * 18;
+		}
+		&:nth-child(20) {
+			animation-delay: $stagger-delay * 19;
+		}
+	}
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+// Left to Right React Transition
+.left-right-enter,
+.left-appear-enter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+  opacity: 0.01;
+  transform-origin: top;
+  transform: translate3d(20px, 0, 0);
+}
+
+.left-right-enter.left-right-enter-active,
+.left-right-appear.left-right-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity .3s $ease, transform .3s $ease;
+}
+
+.left-right-leave {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+  opacity: 1;
+  transform-origin: top;
+}
+
+.left-right-leave.left-right-leave-active {
+  opacity: 0.01;
+  transform: translate3d(-20px, 0, 0);
+  transition: opacity .3s $ease, transform .3s $ease;
+}
+
+// Right to Left React Transition
+.right-left-enter,
+.right-left-appear {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+  opacity: 0.01;
+  transform-origin: top;
+  transform: translate3d(-20px, 0, 0);
+}
+
+.right-left-enter.right-left-enter-active,
+.right-left-appear.right-left-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity .3s $ease, transform .3s $ease;
+}
+
+.right-left-leave {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+  opacity: 1;
+  transform-origin: top;
+}
+
+.right-left-leave.right-left-leave-active {
+  opacity: 0.01;
+  transform: translate3d(20px, 0, 0);
+  transition: opacity .3s $ease, transform .3s $ease;
+}

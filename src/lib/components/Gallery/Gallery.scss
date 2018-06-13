@@ -1,0 +1,15 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.gw-gallery {
+	margin: -30px -15px;
+	.photo {
+		position: relative;
+		&.cursor-grab {
+	    cursor: grab;
+	    &:active {
+	      cursor: grabbing;
+	    }
+	  }
+  }
+}

@@ -1,0 +1,94 @@
+// @import '~sass/setup/variables';
+// @import '~sass/setup/mixins';
+
+* {
+	box-sizing-border: box;
+}
+
+html,
+body {
+	background-color: $bg-color;
+}
+
+.loader-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $main-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+	color: $light-text-color;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, opacity $md-speed $ease;
+	&:hover,
+  &:focus {
+    outline: none;
+		color: $text-color;
+	}
+  &.text-color {
+    &:hover,
+    &:focus {
+      color: $main-color;
+    }
+  }
+}
+
+.overlay {
+  background: $text-color;
+  opacity: .07;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  width: $site-width;
+  max-width: $max-site-width;
+  &.full-width {
+    width: 100%;
+  }
+  &.padded {
+    padding-top: $margin;
+    padding-bottom: $margin;
+  }
+  &.padded-top {
+    padding-top: $margin;
+  }
+  &.padded-bottom {
+    padding-bottom: $margin;
+  }
+  &.narrow {
+    max-width: 35rem;
+  }
+  &.very-narrow {
+    max-width: 20rem;
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+

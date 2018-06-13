@@ -1,0 +1,133 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+$ui-grey : lighten($text-color, 63%);
+
+.ui-kit {
+	.ui-component {
+		&.list-style {
+			display: flex;
+			align-items: center;
+			.code-block {
+				margin-left: $tight-gutter;
+			}
+			.tight-space-before {
+				margin-top: 0;
+			}
+		}
+		.measured {
+			position: relative;
+			.button {
+				display: block;
+			}
+			> * {
+				position: relative;
+				z-index: 2;
+			}
+			.measurements {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+				.height {
+					position: absolute;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background: $alert;
+					color: $white;
+					border-radius: $base-border-radius;
+					font-size: $sm-p-font-size;
+					font-weight: $medium;
+					right: calc(100% + 12px);
+					top: 50%;
+					transform: translate3d(0, -50%, 0);
+					padding: 0 .45rem;
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						border: 5px solid transparent;
+						border-right: none;
+						border-left-color: $alert;
+						left: 100%;
+						top: 50%;
+						margin-top: -5px;
+						margin-left: -1px;
+					}
+				}
+				// Height line
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					right: calc(100% + 2px);
+					top: 0;
+					bottom: 0;
+					width: 2px;
+					border-top: 1px solid $alert;
+					border-bottom: 1px solid $alert;
+					border-left: 1px solid $alert;
+				}
+			}
+		}
+	}
+	.ui-kit-grid-item {
+		background: darken($bg-color, 5%);
+		border-radius: $base-border-radius;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: $h5-font-size;
+		font-weight: $h5-font-weight;
+		h5-letter-spacing: $h5-letter-spacing;
+		line-height: 1em;
+		color: $light-text-color;
+		height: 6rem;
+		&.short {
+			height: 3rem;
+		}
+		&.tall {
+			height: 9rem;
+		}
+	}
+	.container {
+		max-width: 65rem
+	}
+	.ui-section {
+		.title {
+			font-size: 3.5rem;
+		}
+	}
+	.ui-sub-section {
+		&.no-border {
+			> hr {
+				display: none;
+			}
+		}
+	}
+	.rich-text p,
+	p {
+		code,
+		.code {
+			color: $text-color;
+			background: transparent;
+			&:not(.minimal) {
+				background: $ui-grey;
+				background: darken($bg-color, 5%);
+			}
+		}
+	}
+	pre.code:not(.minimal),
+	.code-block {
+		background: transparent;
+		&:not(.minimal) {
+			code {
+				background: $ui-grey;
+				background: darken($bg-color, 5%);
+			}
+		}
+	}
+}

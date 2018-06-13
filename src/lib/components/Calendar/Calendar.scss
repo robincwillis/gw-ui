@@ -1,0 +1,324 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+$cal-border-color : $main-color;
+$week-day-margins : 70px;
+
+.rbc-calendar {
+	.rbc-time-view {
+		background: $light-grey; // match the scrollbar color
+		border-top: 1px solid $main-color;
+		position: relative;
+		z-index: 1;
+	}
+	.change-view-buttons {
+		button {
+			float: left;
+	    min-width: 0;
+	    padding-left: 1.25em;
+	    padding-right: 1.25em;
+	    margin: 0 .1rem;
+	    &.active {
+	    	background: $main-color;
+	    	color: $bg-color;
+	    }
+		}
+	}
+	.content-header {
+		position: relative;
+		z-index: 2;
+		.left,
+		.right {
+			@include respond($xlg) {
+				min-width: 325px;
+			}
+			@include respond($xlg + 140) {
+				min-width: 25rem;
+			}
+		}
+		.center {
+			.content {
+				&.searching {
+					@include respond-smaller-than($xlg + 50) {
+						display: none;
+					}	
+				}
+				@include respond($xlg) {
+					&:not(.searching) {
+						// position: absolute;
+						// left: 50%;
+						// width: 200px;
+						// margin-left: -100px;
+						// top: 50%;
+						// margin-top: -$btn-small-height/2;
+					}
+				}
+			}
+		}
+	}
+
+	.date-nav {
+	  text-align: center;
+		> * {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 .15rem;
+		}
+		.btn-current {
+			margin-right: .5rem;
+		}
+		.current-date {
+			line-height: 1em;
+		}
+	}
+
+	.rbc-event {
+		border-radius: 0;
+		background: transparent;
+		height: auto;
+		padding: 1px 2px;
+		margin: 0;
+		.event-month {
+			background: $main-color;
+			border-radius: 30px;
+			display: flex;
+			font-size: $tiny-font-size;
+			font-weight: $normal;
+			line-height: 1em;
+			color: $text-color;
+			transition: background $md-speed $ease;
+			&:hover {
+				background: darken($main-color, 4%);
+			}
+			.event-title {
+				padding: 3px 0 4px 6px;
+				flex-grow: 1;
+				white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		    width: 20px;
+			}
+			.event-time {
+				padding: 3px 6px 4px;
+				flex-grow: 0;
+				flex-shrink: 0;
+			}
+		}
+		.event {
+			background: $light-grey;
+			border-radius: 30px;
+			color: $text-color;
+			padding: 5px 7px 5px;
+			border-radius: $base-border-radius;
+			border-left: $base-border-radius solid $main-color;
+			transition: background $md-speed $ease;
+			position: relative;
+			&:hover {
+				background: darken($light-grey, 4%);
+				.view-event {
+					opacity: 1;
+					i {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+			}
+			.event-title,
+			.event-desc {
+				padding: 0;
+				white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		    font-size: $tiny-font-size;
+				font-weight: $normal;
+				line-height: $short-line-height;
+				display: block;
+				letter-spacing: .02em;
+			}
+			.event-title {
+				font-weight: $medium;
+			}
+			.event-desc {
+				color: $main-color;
+			}
+			.event-time {
+				padding: 3px 6px 4px;
+				flex-grow: 0;
+				flex-shrink: 0;
+			}
+			.view-event {
+				opacity: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				position: absolute;
+				width: 40px;
+				color: $main-color;
+				// cursor: ew-resize;
+				border-radius: 0 $base-border-radius $base-border-radius 0;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				transition: color $md-speed $ease, opacity $md-speed $ease;
+				background: linear-gradient(90deg, rgba(darken($light-grey, 4%), 0) 0%, rgba(darken($light-grey, 4%), 1) 100%);
+				i {
+					transition: transform $md-speed $ease;
+					transform: translate3d(5px, 0, 0);
+				}
+				&:hover {
+					color: $text-color;
+				}
+			}
+		}
+	}
+
+	// Month View
+	.rbc-month-view {
+		border: none;
+		.rbc-header {
+			text-align: center;
+			@include small-caps();
+			border-color: $bg-color;
+			border-bottom: 2px solid $bg-color;
+			background: $main-color;
+			padding: .5rem .5rem 0.6rem;
+		}
+	}
+
+	.rbc-month-row {
+		+ .rbc-month-row {
+			border-color: $cal-border-color;
+		}
+	}
+
+	.rbc-day-bg {
+		+ .rbc-day-bg {
+			border-color: $cal-border-color;
+			&.rbc-today {
+				background: rgba($cal-border-color, .3);
+			}
+		}
+	}
+
+	.rbc-today {
+		background: transparent;
+	}
+
+	.rbc-time-header.rbc-overflowing {
+		border-right: 0;
+    box-shadow: 0 1px 0 $cal-border-color;
+    z-index: 9;
+    background: $bg-color;
+	}
+
+	.rbc-time-content {
+		background: $bg-color;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	// Hide All Day
+	.rbc-time-view .rbc-time-header > .rbc-row:first-child {
+		border: 0;
+	}
+	.rbc-time-view .rbc-time-header .rbc-row:nth-child(2) {
+    min-height: 0px;
+    height: 0;
+    display: none;
+    border: none;
+	}
+
+	.rbc-header-gutter,
+	.rbc-label.rbc-header-gutter {
+		@include small-caps();
+		min-height: 2rem;
+		line-height: 1.4rem;
+		color: $light-text-color;
+	}
+
+	.rbc-header {
+		@include all-caps();
+		line-height: 3rem;
+		text-align: left;
+		a {
+			color: $text-color;
+			&:hover {
+				color: $text-color;
+			}
+		}
+	}
+
+	.rbc-row-segment {
+		padding-right: 0;
+	}
+
+	.rbc-time-content {
+		border-top: 0;
+		> * + * > * {
+			border-color: $cal-border-color;
+			border-left: none;
+			border: none;
+			overflow: visible;
+		}
+	}
+
+	.rbc-timeslot-group {
+		border-color: $cal-border-color;
+		border-bottom-color: $bg-color;
+	}
+
+	.rbc-day-slot .rbc-time-slot {
+		border-top: 1px solid $cal-border-color;
+		+ .rbc-time-slot {
+			border-color: rgba($cal-border-color, .3);
+		}
+	}
+
+	.rbc-time-gutter.rbc-time-column {
+		.rbc-timeslot-group {
+			background: $main-color;
+			@include small-caps();
+			line-height: 1.25rem;
+			border-bottom: 1px solid $bg-color;
+		}
+	}
+
+	.rbc-current-time-indicator {
+		background: $text-color;
+		z-index: 9;
+		&:before {
+			background: $text-color;
+		}
+	}
+
+	.rbc-time-content > .rbc-time-gutter,
+	.rbc-label {
+		width: $week-day-margins !important;
+	}
+
+	.rbc-event-label {
+		display: none;
+	}
+
+	.rbc-time-header > .rbc-row > * + * {
+		border-left: none;
+	}
+
+	// Align Events to Bottom on Month View
+	.rbc-row-content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		.rbc-row {
+			&:first-child {
+				flex-grow: 1;
+				border-color: $cal-border-color;
+				.rbc-date-cell {
+					font-weight: $light;
+					font-size: $sm-p-font-size;
+					padding: .5rem .75rem 0 0;
+				}
+			}
+		}
+	}
+}

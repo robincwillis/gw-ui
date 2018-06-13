@@ -1,0 +1,274 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+@import '~sass/setup/scrollbars';
+
+.gw-modal-container {
+	z-index: 1000;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	padding: $margin 0;
+	min-width: $min-site-width;
+	overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  @include dark-scrollbar();
+  * {
+  	appearance: none;
+  }
+
+	.gw-modal {
+		display: flex;
+    flex-direction: column;
+		margin: auto;
+		background: $white;
+		box-shadow: 0 2px 3px rgba($text-color, .1);
+		max-width: 30rem;
+		width: 90%;
+		position: relative;
+		border-radius: $base-border-radius;
+		&:focus {
+			outline: none;
+		}
+		&.wide {
+			max-width: 38rem;
+		}
+		&.very-wide {
+			max-width: 48rem;
+		}
+		&.scrollable {
+			max-height: calc(100vh - #{$margin} * 2);
+		}
+		&.wide,
+		&.very-wide {
+			@include respond($lg) {
+				.container {
+					width: calc(100% - #{$margin} * 2);
+				}
+				.close-modal {
+					position: absolute;
+					top: calc(#{$margin} - 6px);
+					right: calc(#{$margin} - 6px);
+				}
+			}
+		}
+
+		.modal-inner {
+	    min-height: 100%;
+	    display: flex;
+	    flex-direction: column;
+	    .gw-modal-header {
+				position: relative;
+				border-radius: $base-border-radius $base-border-radius 0 0;
+				border-bottom: 1px solid $hr-color;
+				flex-shrink: 0;
+				flex-grow: 0;
+				.title,
+				.modal-steps {
+					font-size: $modal-header-font-size;
+				}
+				.close-modal {
+					margin-right: -6px;
+			    position: relative;
+			    top: auto;
+			    right: auto;
+				}
+				.container {
+					padding: ($modal-padding * .75) 0;
+				}
+			}
+
+			.gw-modal-content {
+				display: flex;
+				flex-direction: column;
+				flex-shrink: 1;
+				flex-grow: 1;
+				> .container {
+					display: flex;
+					flex-direction: column;
+					flex-grow: 1;
+					margin: 0;
+					max-width: 100%;
+					width: 100%;
+					> div {
+						padding: $modal-padding;
+						&.scrollable-content {
+							display: flex;
+							flex-grow: 1;
+							flex-direction: column;
+							height: 100%;
+					    overflow-x: hidden;
+					    overflow-y: auto;
+					    -webkit-overflow-scrolling: touch;
+					    margin-bottom: $modal-padding;
+					    border-bottom: $hr-styles;
+						}
+					}
+				}
+			}
+
+			.gw-modal-footer {
+				flex-shrink: 0;
+				flex-grow: 0;
+				margin-bottom: -1px;
+				justify-content: center;
+				position :relative;
+				z-index : 1;
+				.button {
+					display: block;
+					width: 100%;
+					min-width: 50%;
+				}
+			}
+    }
+		.container {
+			width: calc(100% - #{$modal-padding} * 2);
+		}
+
+		&.close-outside {
+			.close-modal {
+				top: -8px;
+		    left: calc(100% - 8px + 1rem);
+		    color: rgba($text-color, .75);
+				.icon {
+					font-size: 24px;
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+
+		.close-modal {
+			position: absolute;
+			z-index: 6;
+			top: calc(#{$modal-padding} - 6px);
+			right: calc(#{$modal-padding} - 6px);
+		}
+
+		&.no-padding {
+			.gw-modal-content {
+				margin: 0;
+				> .container {
+					width: 100%;
+				}
+			}
+		}
+
+		.modal-actions {
+			padding: 0 $modal-padding $modal-padding $modal-padding;
+			display: flex;
+			justify-content: center;
+			.button {
+				flex-grow: 1;
+				margin-right: $tight-gutter;
+				width: 1px;
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+			&.full-bleed {
+				display: flex;
+				justify-content: stretch;
+				align-items: center;
+				overflow: hidden;
+				padding: 0;
+				border-radius: 0 0 $base-border-radius $base-border-radius;
+				.button {
+					margin-right: 0;
+					border-radius: 0;
+				}
+			}
+		}
+
+	}
+}
+
+.modal-container-enter,
+.modal-container-appear {
+	.gw-overlay {
+		overflow: hidden;
+	  opacity: 0;
+	}
+  .gw-modal-container {
+  	overflow: hidden;
+  	transform: translate3d(100%, 0, 0);
+  	&.full {
+  		transform: translate3d(0, 100%, 0);
+  	}
+  }
+}
+
+.modal-container-enter.modal-container-enter-active,
+.modal-container-appear.modal-container-appear-active {
+	.gw-overlay {
+		overflow: hidden;
+	  opacity: 1;
+  	transition: opacity .6s $ease;
+	}
+  .gw-modal-container {
+  	overflow: hidden;
+  	transition: transform .5s $ease;
+  	transform: translate3d(0, 0, 0);
+  }
+}
+
+.modal-container-leave {
+	.gw-overlay {
+		overflow: hidden;
+	  opacity: 1;
+	}
+  .gw-modal-container {
+  	overflow: hidden;
+  	transform: translate3d(0, 0, 0);
+  }
+}
+
+.modal-container-leave.modal-container-leave-active {
+	.gw-overlay {
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: opacity .6s $ease;
+	}
+  .gw-modal-container {
+  	overflow: hidden;
+  	transition: transform .5s $ease;
+  	&.full {
+ 			transform: translate3d(0, 100%, 0);
+  	}
+  }
+}
+
+.ReactModalPortal > * {
+    // When the modal is closed, overlay div has no css class
+    // This selector should be overridden by the `&--after-open` class below
+    opacity: 0;
+}
+
+.ReactModal__Overlay {
+  transition: opacity 0.4s $ease;
+  background: rgba($text-color, 0.85);
+  &--after-open {
+    opacity: 1;
+  }
+  &--before-close {
+    opacity: 0;
+  }
+}
+
+.ReactModal__Content {
+	transition: transform 0.4s $ease, opacity 0.4s $ease;
+	transform: scale(1.1);
+  &--after-open {
+  	transform: scale(1);
+  }
+  &--before-close {
+    transform: scale(.9);
+  }
+}
+

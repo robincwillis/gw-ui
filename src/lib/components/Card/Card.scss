@@ -1,0 +1,138 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.card {
+	padding-top: 0;
+	background: $main-color;
+	border-radius: $base-border-radius;
+	position: relative;
+	transition: background $md-speed $ease, opactiy $md-speed $ease, box-shadow $md-speed $ease;
+	padding: 1.25rem;
+
+	@include respond($lg) {
+		min-height: 100%;
+	}
+
+	&.hoverable:hover {
+		background: lighten($main-color, 2%);
+		box-shadow: 0 .5rem 1rem rgba($main-color, .4);
+		.card-image {
+			.play-button {
+				opacity: 1;
+			}
+		}
+	}
+
+	.close-card {
+		position: absolute;
+		top: $tight-gutter;
+		right: $tight-gutter;
+		z-index: 2;
+	}
+
+	hr {
+		border-color: $white;
+	}
+
+	.fancy-input,
+	.underlined {
+		input {
+			border-color: $white;
+		}
+	}
+
+	.card-row {
+		margin-top: 1rem;
+	}
+
+	.button {
+		&.disabled {
+			background: transparent;
+			color: $main-color;
+		}
+	}
+
+	.card-image {
+		background: rgba($text-color, .06);
+		margin: -1.25rem -1.25rem 0;
+		border-radius: $base-border-radius $base-border-radius 0 0;
+		position: relative;
+		img {
+			border-radius: $base-border-radius $base-border-radius 0 0;
+			display: block;
+		}
+		.actions {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			padding: .65rem .8rem .75rem;
+			text-align: right;
+			border-radius: $base-border-radius $base-border-radius 0 0;
+			background: linear-gradient(0deg, rgba($black, 0) 0%, rgba($black, 0.3) 100%);
+			> * {
+				margin-right: .25rem;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.icon {
+	  		font-size: 20px;
+	  		&.material-icon {
+	  			width: 20px;
+	  			height: 20px;
+	  		}
+	  	}
+		}
+		.play-button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -2.5rem;
+			max-width: 5rem;
+			min-width: 5rem;
+			height: 5rem;
+			background: rgba($black, .5);
+			color: $main-color;
+			opacity: 0;
+			&:not(.disabled):not(.loading):hover {
+				background: $text-color;
+				color: $main-color;
+			}
+			.icon {
+				width: 2rem;
+				padding-left: .25rem;
+			}
+		}
+		img {
+	    max-width: 100%;
+	    min-height: 100%;
+		}
+	}
+
+	.general-info {
+		.title {
+			display: block;
+			@include ellipsis();
+			font-size: $sm-p-font-size;
+			line-height: $short-line-height;
+		}
+		.description {
+			display: block;
+			@include ellipsis();
+			font-size: $sm-p-font-size;
+			line-height: $short-line-height;
+		}
+		.category {
+			display: block;
+			@include ellipsis();
+			font-size: $sm-font-size;
+			color: $light-text-color;
+			line-height: $base-line-height;
+			margin-top: .25rem;
+		}
+	}
+	.card-actions {
+		margin: .75rem 0 0 -.55rem;
+	}
+}

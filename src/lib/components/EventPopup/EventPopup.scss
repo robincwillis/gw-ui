@@ -1,0 +1,89 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.event-popup {
+  width: 625px;
+  min-height: 265px;
+  position: relative;
+  background: $main-color;
+  z-index: 9;
+  display: flex;
+  padding: 2rem 1.25rem;
+
+  .top-right {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+  }
+  .left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 230px;
+    border-right: 1px solid $bg-color;
+    padding-right: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .right {
+    flex-grow: 1;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    .actions {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .user {
+    .avatar {
+      margin: 0 auto;
+    }
+  }
+  .title,
+  .description {
+    margin: 0;
+    padding-right: 2rem;
+  }
+  .destinations {
+    margin: .5rem 0;
+    .icon {
+      margin: 0 .75rem 0 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .event-meta {
+    margin: .2rem 0 .5rem;
+    p {
+      display: inline-block;
+      line-height: 1rem;
+      &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 1px;
+        background: $bg-color;
+        height: 1.2rem;
+        margin: -2px .5rem 0;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .destinations {
+  }
+
+  .collaborators {
+    .avatar {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 .2rem .4rem;
+    }
+    margin: 0 -.2rem -.4rem;
+  }
+}

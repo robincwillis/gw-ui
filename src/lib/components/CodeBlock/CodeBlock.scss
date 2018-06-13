@@ -1,0 +1,35 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.code-block {
+	font-family: $code-font;
+	font-size: $p-font-size;
+	line-height: 1.5em;
+	overflow: auto;
+	&.sm {
+		font-size: $sm-p-font-size;
+	}
+	&:not(.minimal) {
+		code {
+		  padding: .75em (.75em * 1.25) (.75em * 1.333);
+		  background: $light-grey;
+		  border-radius: $base-border-radius;
+		  color: $text-color;
+	  }
+	}
+	.minimal {
+		code {
+			padding: 0;
+			border-radius: 0;
+			background: transparent;
+		}
+	}
+	code {
+		font-size: inherit;
+	}
+	.hljs {
+		// edit theme to fit the ui a bit better
+		padding: 0;
+		background: transparent;
+	}
+}

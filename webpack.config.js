@@ -1,106 +1,73 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
+const nodeExternals = require('webpack-node-externals');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const path = require('path');
 
-var DEV;
 
-if(process.argv.indexOf('--dev') !== -1) {
-	process.env.ENV = 'dev';
-	DEV = true;
-} else {
-	process.env.ENV = 'prod';
-	DEV = false;
-}
+module.exports = {
 
-const config = {
+	context: path.resolve(__dirname, 'src/lib'),
 
-	context: path.resolve(__dirname, 'src'),
 	entry: {
-		app	 : ['./js/application.js']
-	},
+		index : 'index.js',
+		//vendor : ['moment', 'numeral'],
+		"postcss.config" : 'postcss.config.js'}
+	,
+
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: '[name].js',
-		publicPath: '/'
+		library: '',
+		libraryTarget: 'commonjs'
 	},
 
-	plugins: [
-		new WebpackNotifierPlugin(),
+	externals: [nodeExternals()],
 
-		new ExtractTextPlugin('[name].css'),
+	plugins : [
 
-		new webpack.HotModuleReplacementPlugin(),
+		new CopyWebpackPlugin([
+			{
+				from: 'sass',
+				to: 'sass/[name].[ext]',
+				toType: 'template'
+			}
+		])
 
-		new HtmlWebpackPlugin({
-			title : 'Webpack React Boilerplate',
-			template: './templates/index.html',
-			filename: 'index.html',
-			inject:'body'
-		})
 	],
-
 	module: {
-
-		loaders: [
-				{
-					test:	/\.(otf|eot|ttf|woff|woff2)$/,
-					loader: 'file-loader?name=fonts/[name].[ext]'
-				},
-				{
-					test:	/\.(png|jpg|gif|ico)$/,
-					loader: 'file-loader?name=images/[name].[ext]'
-				},
-				{
-				test: /\.css$/,
-				loader: ExtractTextPlugin.extract({
-						fallback: 'style-loader',
-						use: 'css-loader?importLoaders=1!postcss-loader'
-					})
-				},
-				{
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /(node_modules|bower_components)/,
+				loader: 'babel-loader'
+			},
+			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract({
-						fallback: 'style-loader',
-						use:'css-loader?importLoaders=1!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
-					})
-				},
-				{
-					test:	/\.json$/,
-					loader: 'json-loader'
-				},
-				{
-					test:	 /\.js$/,
-					loader:	 'babel-loader',
-					exclude: /node_modules/,
-					query:	 {
-						presets: ['es2015', 'react', 'stage-0']
-					}
-				},
-				{
-					test: /\.svg$/,
-					loader: 'svg-inline-loader'
-				}
-			]
+				use: ['file-loader?name=[name].[ext]'],
+			}
+		]
 	},
 
-	devtool: 'source-map',
-
-	resolve: {
+	resolve : {
 		modules: [
 			path.resolve(__dirname, 'src'),
-			path.resolve(__dirname, 'src/js'),
-			path.resolve(__dirname, 'src/sass'),
-			path.resolve(__dirname, 'src/images'),
+			path.resolve(__dirname, 'src/lib'),
 			path.resolve(__dirname, 'node_modules')
 		],
-		alias : {
-			handlebars: 'handlebars/dist/handlebars.min.js'
-		},
-		extensions: ['.js', '.json', '.jpg', '.png', '.svg', '.sass', '.scss', '.css'],
-	}
+		extensions: ['.js', '.json', '.hbs', '.jpg', '.png', '.svg', '.sass', '.scss', '.css']
+	},
+
+	// optimization: {
+	// 	splitChunks: {
+	// 		cacheGroups: {
+	// 			vendor: {
+	// 			 test: /node_modules/,
+	// 			 chunks: 'initial',
+	// 			 name: 'vendor',
+	// 			 enforce: true
+	// 			},
+	// 		}
+	// 	}
+	// }
+
 };
-
-
-module.exports = config;
