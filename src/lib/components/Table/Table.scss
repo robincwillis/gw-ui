@@ -1,20 +1,20 @@
 .table {
 	position: relative;
 	&.tight {
-		.list-row {
+		.table-row {
 			min-height: 2.5rem;
 			font-size: $sm-font-size;
-			.list-cell {
+			.table-cell {
 				padding: $tight-vertical-cell-padding $tight-horizontal-cell-padding;
 			}
 		}
 	}
 	&.align-top {
-		.list-row {
+		.table-row {
 			align-items: flex-start;
 		}
 	}
-	.main-list-area & {
+	.main-table-area & {
 		padding-top: 32px;
 		.header-container {
 			padding-top: 0;
@@ -40,7 +40,7 @@
 			@include respond($xlg) {
 				left: $sidebar-width;
 			}
-			.list-row {
+			.table-row {
 				height: 32px;
 				&.header {
 					border-radius: 0 0 $btn-radius $btn-radius;
@@ -49,7 +49,7 @@
 			}
 		}
 	}
-	.list-row {
+	.table-row {
 		display: flex;
 		align-items: center;
 		border-bottom: 1px solid $light-grey;
@@ -85,16 +85,13 @@
 			@include small-caps();
 			line-height: 1em;
 			min-height: 2rem;
-			background: $light-grey;
-			border: none;
+			border-bottom : 1px solid $text-color;
 			height: 32px;
-			border-radius: $base-border-radius;
 			color: $light-text-color;
 		}
-		.list-cell {
+		.table-cell {
 			padding: $vertical-cell-padding $horizontal-cell-padding;
 			width: 20%;
-			min-width: 85px;
 			flex-grow: 1;
 			&.no-left-pad {
 				padding-left: 0;
@@ -157,7 +154,7 @@
 			}
 		}
 	}
-	&.align-top .list-row {
+	&.align-top .table-row {
 		align-items: top;
 	}
 	.kill-xlg {

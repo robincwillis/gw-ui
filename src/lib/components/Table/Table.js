@@ -134,7 +134,7 @@ export class ButtonCell extends Component {
 export class Cell extends Component {
 
 	className () {
-		let className = "list-cell";
+		let className = "table-cell";
 		if(this.props.className) {
 			className += " " + this.props.className;
 		}
@@ -182,10 +182,10 @@ export class Cell extends Component {
 
 export class Row extends Component {
 	className () {
-		return this.props.className ? "list-row " + this.props.className : "list-row";
+		return this.props.className ? "table-row " + this.props.className : "table-row";
 	}
 	render () {
-		return (<div className={this.className()}>{this.props.children}</div>);
+		return (<div onClick={this.props.rowOnClick ? () => {this.props.rowOnClick(this.props.data[this.props.index])} : ()=>{} } className={this.className()}>{this.props.children}</div>);
 	}
 }
 
@@ -200,15 +200,15 @@ export class Column extends Component {
 
 export default class Table extends Component {
 
-	listClass () {
-    var listClass = 'table';
-    if(this.props.listClass) {
-      listClass += ' ' + this.props.listClass;
+	tableClass () {
+    var tableClass = 'table';
+    if(this.props.tableClass) {
+      tableClass += ' ' + this.props.tableClass;
     }
     if(this.props.alignment) {
-      listClass += ' align-' + this.props.alignment;
+      tableClass += ' align-' + this.props.alignment;
     }
-    return listClass;
+    return tableClass;
   }
 
 	render () {
@@ -265,12 +265,12 @@ export default class Table extends Component {
 				}
 				return cell;
 			});
-			return (<Row key={rowIndex}>{cells}</Row>);
+			return (<Row key={rowIndex} index={rowIndex} {...this.props}>{cells}</Row>);
 		});
 
 		return (
 			<div>
-				<div className={this.listClass()}>
+				<div className={this.tableClass()}>
 					{header}
 					{body}
 				</div>

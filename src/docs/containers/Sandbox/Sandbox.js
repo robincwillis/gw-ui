@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 
-import { connect } from 'react-redux';
-import actionWrapper from 'util/actionWrapper';
-
 // Basic Inputs
 
-import Input from 'components/Input';
-import TextArea from 'components/TextArea';
-import Select from 'components/Select';
-import Checkbox from 'components/Checkbox';
-import Radio from 'components/Radio';
+import Input from 'lib/components/Input';
+import TextArea from 'lib/components/TextArea';
+import Select from 'lib/components/Select';
+import Checkbox from 'lib/components/Checkbox';
+import Radio from 'lib/components/Radio';
 
 // Custom Inputs
 
-import ContentEditable from 'components/ContentEditable';
-import EditableItem from 'components/EditableItem';
-import Typeahead from 'components/Typeahead';
-import Toggle from 'components/Toggle';
-import Swatch from 'components/Swatch';
-import FileUpload from 'components/FileUpload'
-import DatePicker from 'components/DatePicker';
+import ContentEditable from 'lib/components/ContentEditable';
+import EditableItem from 'lib/components/EditableItem';
+import Typeahead from 'lib/components/Typeahead';
+import Toggle from 'lib/components/Toggle';
+import Swatch from 'lib/components/Swatch';
+import FileUpload from 'lib/components/FileUpload'
+import DatePicker from 'lib/components/DatePicker';
 
 //Loaders
 
@@ -295,15 +292,6 @@ class Sandbox extends Component {
 }
 
 
-const mapStateToProps = (state) => {
-	return {};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return actionWrapper({}, dispatch);
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Sandbox);
+export default Sandbox;
 
 

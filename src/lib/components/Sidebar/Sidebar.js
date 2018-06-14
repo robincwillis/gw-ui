@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './Sidebar.scss';
 
-export class Sidebar extends Component {
+class Sidebar extends Component {
 
 	logout = (event) => {
 		event.preventDefault();
@@ -29,7 +29,7 @@ export class Sidebar extends Component {
 							to="/"
 							onClick={this.closeFeed}
 						>
-							<InlineSVG src={LogoIcon} element="span" className="logo-icon" />
+
 						</div>
 					</div>
 
@@ -131,8 +131,7 @@ export class Sidebar extends Component {
 						className="profile" to="/profile"
 						onClick={this.closeFeed}
 					>
-						<Avatar className="large" image="https://unsplash.it/100/100" />
-						<span className="label">Profile</span>
+
 					</div>
 
 				</div>

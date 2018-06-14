@@ -47,11 +47,12 @@ export Table, {
 
 export Header from './components/Header';
 export Navigation from './components/Navigation';
-import Sidebar from './components/Sidebar';
+export Sidebar from './components/Sidebar';
 export Tabs from './components/Tabs';
 export Collapse from './components/Collapse';
 export Drawer from './components/Drawer';
 export Accordion from './components/Accordion';
+export CenteredForm from './components/CenteredForm';
 
 // Loaders
 export Loader, {

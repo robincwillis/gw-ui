@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
 
-import './Collapse';
+import './Collapse.scss';
 
 export class Collapse extends Component {
 

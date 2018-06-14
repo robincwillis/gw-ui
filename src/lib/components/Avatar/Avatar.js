@@ -5,6 +5,10 @@ import './Avatar.scss';
 
 export class Avatar extends Component {
 
+	static defaultProps = {
+		editable : false
+	}
+
 	randomColor () {
 		var color = '';
 		var colors = [
@@ -21,7 +25,7 @@ export class Avatar extends Component {
 	render () {
 
 		var backgroundColor = {
-			backgroundColor: this.randomColor()
+			backgroundColor: this.props.color ? this.props.color : this.randomColor()
 		}
 
 		return (

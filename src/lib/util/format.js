@@ -16,3 +16,7 @@ export const dateTimeToISO = (date, timeValue, timeFormat) => {
 export const pluralize = (count, singular, plural) => {
 	return Number(count) > 1 ? plural : singular;
 };
+
+export const decimalToPercent = (number) => {
+	return (number * 100).toFixed(1) + "%";
+}

@@ -31,7 +31,7 @@ class Header extends Component {
 		return (
 			<header className={this.className()}>
 				<div className="container">
-					<div className="grid-flex baseline">
+					<div className="grid-flex">
 						<div className="col grow align-left">
 							{ this.props.leftContent ? this.props.leftContent : (<h1 className="h4">{this.props.title}</h1>) }
 						</div>
