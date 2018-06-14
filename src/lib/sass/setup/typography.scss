@@ -1,4 +1,3 @@
-
 html,
 body,
 input,
@@ -6,20 +5,17 @@ textarea,
 button {
 	font-family: $main-font;
 	line-height: $base-line-height;
-	font-size: calc(#{$base-font-size} - 2px);
+	// font-size: calc(#{$base-font-size} - 2px);
+	font-size: $base-font-size;
 	color: $text-color;
 	letter-spacing: $base-letter-spacing;
-	// @include font-smooth();
+	@include font-smooth();
 	@include respond($md) {
 		font-size: $base-font-size;
 	}
 	@include respond($huge) {
-		font-size: calc(#{$base-font-size} + 2px);
+		// font-size: calc(#{$base-font-size} + 2px);
 	}
-}
-
-body {
-	font-size: 1rem;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -29,7 +25,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1,
-.h1 {
+.h1,
+.h1 p {
+	font-family: $h1-font-family;
+	text-transform: $h1-text-transform;
 	font-size: $h1-font-size * .75;
 	font-weight: $h1-font-weight;
 	line-height: $h1-line-height;
@@ -40,7 +39,10 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+.h2 p {
+	font-family: $h2-font-family;
+	text-transform: $h2-text-transform;
 	font-size: $h2-font-size * .85;
 	font-weight: $h2-font-weight;
 	line-height: $h2-line-height;
@@ -52,7 +54,9 @@ h2,
 
 h3,
 .h3,
-blockquote {
+.h3 p {
+	font-family: $h3-font-family;
+	text-transform: $h3-text-transform;
 	font-size: $h3-font-size;
 	font-weight: $h3-font-weight;
 	line-height: $h3-line-height;
@@ -60,7 +64,10 @@ blockquote {
 }
 
 h4,
-.h4 {
+.h4,
+.h4 p {
+	font-family: $h4-font-family;
+	text-transform: $h4-text-transform;
 	font-size: $h4-font-size;
 	font-weight: $h4-font-weight;
 	line-height: $h4-line-height;
@@ -68,7 +75,10 @@ h4,
 }
 
 h5,
-.h5 {
+.h5,
+.h5 p {
+	font-family: $h5-font-family;
+	text-transform: $h5-text-transform;
 	font-size: $h5-font-size;
 	font-weight: $h5-font-weight;
 	line-height: $h5-line-height;
@@ -76,31 +86,43 @@ h5,
 }
 
 h6,
-.h6 {
+.h6,
+.h6 p {
 	@include small-caps();
 }
 
 p,
-.p,
-dt,
-dd,
-li {
+.p {
+	font-family: $main-font;
 	font-size: $p-font-size;
-	line-height: $p-line-height;
+	line-height: $base-line-height;
 	letter-spacing: $p-letter-spacing;
 	font-weight: $p-font-weight;
 	text-transform: none;
+	&.max-width,
+	.max-width & {
+		max-width: 32em;
+	}
+	&.tight-line-height {
+		line-height: $tight-line-height;
+	}
+	&.short-line-height {
+		line-height: $short-line-height;
+	}
+	&.no-spacing {
+		margin: 0;
+	}
 	.icon {
 		margin-top: -2px;
 	}
 	a {
-		display: inline-block;
 		color: currentcolor;
-		border-bottom: 1px solid darken($hr-color, 5%);
+		border-bottom: 1px solid transparent;
 		line-height: 1em;
-		padding-bottom: 1px;
+		padding-bottom: .1em;
 		&:hover {
-			border-color: $main-color;
+			color: $main-color;
+			border-color: currentcolor;
 		}
 		&.hover-alert {
 			&:hover {
@@ -122,9 +144,6 @@ li {
 	&.small,
 	&.caption {
 		font-size: $sm-p-font-size;
-		line-height: $sm-p-line-height;
-		letter-spacing: $sm-p-letter-spacing;
-		font-weight: $sm-p-font-weight;
 		.material-icons.md-12 {
 			margin-top: -1px 4px;
 		}
@@ -133,42 +152,51 @@ li {
 		max-width: 30em;
 		color: $light-text-color;
 	}
+	.tiny &,
+	&.tiny {
+		font-size: $tiny-font-size;
+		.material-icons.md-12 {
+			margin-top: -1px 4px;
+		}
+	}
 	.lg &,
 	.large &,
 	&.lg,
 	&.large {
 		font-size: $lg-p-font-size;
-		line-height: $lg-p-line-height;
-		letter-spacing: $lg-p-letter-spacing;
-		font-weight: $lg-p-font-weight;
+		font-weight: $light;
+		line-height: $short-line-height;
+		letter-spacing: 0;
+	}
+	.xlg &,
+	&.xlg {
+		font-size: 1.5rem;
+		font-weight: $light;
+		line-height: $short-line-height;
+		letter-spacing: 0;
 	}
 	.md &,
 	.medium &,
 	&.md,
 	&.medium {
 		font-size: $md-p-font-size;
-		line-height: $md-p-line-height;
-		letter-spacing: $md-p-letter-spacing;
-		font-weight: $md-p-font-weight;
+		font-weight: $normal;
+		// line-height: $short-line-height;
+		line-height: $base-line-height;
 	}
-	&.normal,
-	&.regular {
-		font-size: $p-font-size;
-		line-height: $p-line-height;
-		letter-spacing: $p-letter-spacing;
-		font-weight: $p-font-weight;
-		text-transform: none;
+	.light &,
+	&.light-text-color {
+		color: $light-text-color;
+		a {
+			color: inherit;
+			&:hover {
+				color: $main-color;
+				border-color: currentcolor;
+			}
+		}
 	}
 	.material-icons {
 		margin-top: -2px;
-	}
-	code,
-	.code {
-		background: $light-grey;
-		border-radius: $base-border-radius;
-		padding: .15em .4em .2em;
-		margin: -.15em 0 -.2em;
-		font-size: inherit;
 	}
 }
 
@@ -177,11 +205,13 @@ ol {
 	font-size: $p-font-size;
 	line-height: $base-line-height;
 	letter-spacing: $p-letter-spacing;
+	counter-reset: list-counter;
 	.sm > &,
 	.small > &,
 	&.sm,
 	&.small {
 		font-size: $sm-font-size;
+		font-weight: $medium;
 	}
 }
 
@@ -208,6 +238,8 @@ b {
 	font-weight: $bold !important;
 }
 
+em,
+i,
 .italic {
 	font-style: italic;
 }
@@ -236,6 +268,14 @@ b {
 	color: $bg-color;
 }
 
+.black {
+	color: $black;
+}
+
+.white {
+	color: $white;
+}
+
 .main-color {
 	color: $main-color;
 }
@@ -248,8 +288,7 @@ b {
 	color: $success;
 }
 
-.alert-color,
-.error-color {
+.alert-color {
 	color: $alert;
 }
 
@@ -280,14 +319,11 @@ hr {
 	&.text-color {
 		border-color: $text-color;
 	}
-	&.light-text-color {
-		border-color: $light-text-color;
-	}
 	&.main-color {
 		border-color: $main-color;
 	}
 	&.tight-spacing {
-		margin: $tight-gutter 0;
+		margin: $gutter-tight 0;
 	}
 	&.no-space {
 		margin: 0;
@@ -301,26 +337,39 @@ hr {
 	&.thick {
 		border-width: 2px;
 	}
-	&.small {
-		width: 3.5rem;
-		margin-left: auto;
-		margin-right: auto;
+	&.small,
+	&.short {
+		width: 2.5rem;
 	}
 }
 
 ::selection {
-  background: $highlight-bg;
-  color: $highlight-color;
+  background: rgba($main-color, .15);
+  color: darken($main-color, 5%);
+}
+::-moz-selection {
+  background: rgba($main-color, .15);
+  color: darken($main-color, 5%);
 }
 
 .underlined-link {
-	@include small-caps();
+	cursor: pointer;
+	font-weight: $medium;
 	border-bottom: 1px solid currentcolor;
-	color: currentcolor;
 	display: inline-block;
 	cursor: pointer;
-	padding-bottom: .2em;
+	padding-bottom: .25em;
+	font-size: $p-font-size;
+	@include small-caps();
 	transition: opacity $md-speed $ease, color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, transform $md-speed $ease;
+}
+
+.hover-underline {
+	border-bottom: 1px solid transparent;
+	&:hover {
+		color: inherit;
+		border-color: currentcolor;
+	}
 }
 
 .ellipsis {
@@ -334,16 +383,11 @@ code,
 .code {
 	letter-spacing: 0;
   font-family: $code-font;
-  font-size: $p-font-size;
+  font-size: $sm-font-size;
   line-height: $base-line-height;
 }
 
 .medium-weight {
 	font-weight: $medium !important;
-	// @include font-smooth();
-}
-
-.legal-line-height,
-.legal-line-height p {
-	line-height: 1.4em;
+	@include font-smooth();
 }

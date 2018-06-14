@@ -4,6 +4,10 @@ import './Header';
 
 class Header extends Component {
 
+	static defaultProps = {
+		title : 'Title'
+	}
+
 	children () {
 		if (this.props.children) {
 			return (
@@ -16,7 +20,7 @@ class Header extends Component {
 	}
 
 	className () {
-		let className = 'content-header';
+		let className = 'gw-header';
 		if (this.props.className) {
 			className += ' ' + this.props.className;
 		}
@@ -25,27 +29,27 @@ class Header extends Component {
 
 	render () {
 		return (
-			<div className={this.className()}>
+			<header className={this.className()}>
 				<div className="container">
-					{this.props.leftContent ? (
-						<div className="left">
-							{this.props.leftContent ? this.props.leftContent : false}
+					<div className="grid-flex baseline">
+						<div className="col grow align-left">
+							{ this.props.leftContent ? this.props.leftContent : (<h1 className="h4">{this.props.title}</h1>) }
 						</div>
-					) : (this.props.title ? (<h1 className="page-title h4">{this.props.title}</h1>) : false)}
 
-					{this.props.centerContent ? (
-						<div className="center">
-							{this.props.centerContent ? this.props.centerContent : false}
-						</div>
-					) : false }
+						{this.props.centerContent ? (
+							<div className="col grow align-center">
+								{this.props.centerContent ? this.props.centerContent : false}
+							</div>
+						) : false }
 
-					{this.props.rightContent ? (
-						<div className="right">
-							{this.props.rightContent ? this.props.rightContent : false}
-						</div>
-					) : false }
+						{this.props.rightContent ? (
+							<div className="col grow align-right">
+								{this.props.rightContent ? this.props.rightContent : false}
+							</div>
+						) : false }
+					</div>
 				</div>
-			</div>
+			</header>
 		);
 	}
 }

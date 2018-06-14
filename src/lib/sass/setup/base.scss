@@ -87,8 +87,11 @@ a {
   z-index: 1;
   margin-left: auto;
   margin-right: auto;
-  width: $site-width;
+  width: calc(100% - #{$mobile-margin} * 2);
   max-width: $max-site-width;
+  @include respond($lg) {
+    width: $site-width;
+  }
   &.full-width {
     width: 100%;
   }
