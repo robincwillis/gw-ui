@@ -1,6 +1,6 @@
 {
   "name": "gw-ui",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Gordils & Willis UI Kit, react + sass",
   "main": "./dist/index.js",
   "scripts": {
