@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PopperJS, { referenceObject } from 'popper.js';
 
-import './popup.scss';
+import './Popup.scss';
 
 import ClickOutside from 'react-click-outside';
 

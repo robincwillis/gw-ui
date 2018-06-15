@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 import Loader from 'components/Loader';
 
-import './Button';
+import './Button.scss';
 
 export class Button extends Component {
 

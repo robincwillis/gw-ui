@@ -8,7 +8,7 @@ import Button from 'components/Button';
 import Input from 'components/Input';
 import ProfileCircle from 'components/Avatar';
 
-import './Navigation';
+import './Navigation.scss';
 
 class Navigation extends Component {
 

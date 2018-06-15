@@ -4,7 +4,7 @@ import InlineSVG from 'svg-inline-react';
 import Input from 'components/Input';
 import Avatar from 'components/Avatar';
 
-import './CheckListItem';
+import './CheckListItem.scss';
 
 export class CheckListItem extends Component {
 

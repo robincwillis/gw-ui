@@ -7,7 +7,7 @@ import Loader from 'components/Loader';
 import SuccessModal from 'components/SuccessModal';
 import TermsOfService from './TermsOfService';
 
-import './stripe_card.scss';
+import './StripeCard.scss';
 
 export class StripeCardResult extends Component {
 

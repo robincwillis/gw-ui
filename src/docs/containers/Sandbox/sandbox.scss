@@ -1,9 +1,20 @@
 @import '~sass/setup/variables';
 @import '~sass/setup/mixins';
 
+@import '~sass/setup/reset';
+
+@import '~sass/setup/base';
+@import '~sass/setup/fonts';
+@import '~sass/setup/grid';
+@import '~sass/setup/icons';
+@import '~sass/setup/inputs';
+@import '~sass/setup/spacing';
+@import '~sass/setup/typography';
+
+
 .app {
 	height: 100%;
-	overflow: hidden;
+
 	.app-root {
 		height: 100%;
 		display: flex;

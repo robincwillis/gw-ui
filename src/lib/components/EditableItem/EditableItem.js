@@ -4,7 +4,7 @@ import ClickOutside from 'react-click-outside';
 
 import ContentEditable from 'components/ContentEditable';
 
-import './EditableItem';
+import './EditableItem.scss';
 
 class EditableItem extends Component {
 

@@ -7,7 +7,7 @@ import 'highlight.js/styles/atom-one-light.css';
 // import 'highlight.js/styles/github-gist.css';
 // https://highlightjs.org/static/demo/ for style choices. Above are some favorites
 
-import './code_block.scss';
+import './CodeBlock.scss';
 
 export class CodeBlock extends Component {
 

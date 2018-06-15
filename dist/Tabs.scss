@@ -1,0 +1,293 @@
+@import '~sass/setup/variables';
+
+/* Styles support up to 6 tabs */
+
+.ui-tabs {
+	display: flex;
+	background: #fff;
+	position: relative;
+	height: $btn-height;
+	input[type='radio'] {
+		display: none;
+		&:checked {
+			~ label {
+				color: currentcolor;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.tab {
+		width: 100%;
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		overflow: hidden;
+		margin: 0;
+		color: $text-color;
+		font-size: $btn-font-size;
+		font-weight: $btn-weight;
+		text-transform: $btn-text-transform;
+		letter-spacing: $btn-letter-spacing;
+		cursor: pointer;
+		border-bottom: 1px solid $hr-color;
+		transition: color $md-speed $ease;
+		padding: $btn-padding;
+		> div {
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+		}
+		input[type='radio'] {
+			display: inline-block !important;
+		}
+		display: block;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: .4;
+		transition: opacity $md-speed $ease, background $md-speed $ease, color $md-speed $ease;
+		&:hover {
+			color: $text-color;
+			opacity: 1;
+		}
+	}
+
+	input[type='radio'] {
+		~ .underline {
+			display: block;
+			height: 2px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background: $main-color;
+			transition: transform $md-speed $ease;
+		}
+		// ~ label:nth-of-type(1) {
+		// 	color: $light-text-color;
+		// }
+		&:checked {
+			~ label {
+				opacity: .4;
+				color: $text-color;
+			}
+		}
+		&:nth-of-type(1) {
+			&:checked {
+				~ .underline {
+					transform: translate3d(0, 0, 0);
+				}
+				~ label:nth-of-type(1) {
+					color: $text-color;
+					opacity: 1;
+					span {
+						&.step {
+						}
+					}
+				}
+			}
+			~ .underline {
+				width: calc(100% / 1);
+			}
+		}
+		&:nth-of-type(2) {
+			&:checked {
+				~ .underline {
+					transform: translate3d(100%, 0, 0);
+				}
+				~ label:nth-of-type(2) {
+					color: $text-color;
+					opacity: 1;
+					span {
+						&.step {
+						}
+					}
+				}
+			}
+			~ .underline {
+				width: calc(100% / 2);
+			}
+		}
+		&:nth-of-type(3) {
+			&:checked {
+				~ .underline {
+					transform: translate3d(200%, 0, 0);
+				}
+				~ label:nth-of-type(3) {
+					color: $text-color;
+					opacity: 1;
+					span {
+						&.step {
+						}
+					}
+				}
+			}
+			~ .underline {
+				width: calc(100% / 3);
+			}
+		}
+		&:nth-of-type(4) {
+			&:checked {
+				~ .underline {
+					transform: translate3d(300%, 0, 0);
+				}
+				~ label:nth-of-type(4) {
+					color: $text-color;
+					opacity: 1;
+					span {
+						&.step {
+						}
+					}
+				}
+			}
+			~ .underline {
+				width: calc(100% / 4);
+			}
+		}
+		&:nth-of-type(5) {
+			&:checked {
+				~ .underline {
+					transform: translate3d(400%, 0, 0);
+				}
+				~ label:nth-of-type(5) {
+					color: $text-color;
+					opacity: 1;
+					span {
+						&.step {
+						}
+					}
+				}
+			}
+			~ .underline {
+				width: calc(100% / 5);
+			}
+		}
+		&:nth-of-type(6) {
+			&:checked {
+				~ .underline {
+					transform: translate3d(500%, 0, 0);
+				}
+				~ label:nth-of-type(6) {
+					color: $text-color;
+					opacity: 1;
+					span {
+						&.step {
+						}
+					}
+				}
+			}
+			~ .underline {
+				width: calc(100% / 6);
+			}
+		}
+
+	}
+
+}
+
+.button-tabs {
+	&.large {
+		& .ui-tabs {
+			height: $btn-large-height;
+			.tab {
+				font-size: $btn-large-font-size;
+			}
+		}	
+	}
+	&.small {
+		& .ui-tabs {
+			height: $btn-small-height;
+			& .tab {
+				font-size: $btn-small-font-size;
+			}
+		}	
+	}
+	& .ui-tabs {
+		color: $light-grey;
+		background: currentcolor;
+		border-radius: $btn-radius;
+		& .tab {
+			position: relative;
+			z-index: 2;
+			padding-bottom: 2px;
+			border: none;
+		}
+		& input[type='radio'] {
+			& ~ .underline {
+				z-index: 1;
+				top: 0;
+				height: 100%;
+				border: 3px solid currentcolor;
+				border-radius: calc(#{$btn-radius} + 1px);
+				background: $bg-color;
+			}
+		}
+	}
+}
+
+.daisychain {
+	overflow: hidden;
+	.ui-tabs {
+		align-items: flex-end;
+	}
+	&.large {
+		& .ui-tabs {
+			height: $btn-large-height;
+			.tab {
+				font-size: $btn-large-font-size;
+			}
+		}	
+	}
+	&.small {
+		& .ui-tabs {
+			height: $btn-small-height;
+			& .tab {
+				font-size: $btn-small-font-size;
+			}
+		}	
+	}
+	& .ui-tabs {
+		color: darken($light-grey, 6%);
+		background: darken($light-grey, 6%);
+		& .tab {
+			position: relative;
+			z-index: 2;
+			padding-bottom: 2px;
+			border: none;
+		}
+		& input[type='radio'] {
+			& ~ .underline {
+				z-index: 1;
+				top: 0;
+				height: 100%;
+				background: $bg-color;
+				&:after {
+					display: block;
+					content: '';
+					border-left: 9px solid $bg-color;
+					border-top: ($btn-height / 2) solid transparent;
+					border-bottom: ($btn-height / 2) solid transparent;
+					position: absolute;
+					top: 0;
+					right: -9px;
+				}
+				&:before {
+					display: block;
+					content: '';
+					border-left: 9px solid currentcolor;
+					border-top: ($btn-height / 2) solid $bg-color;
+					border-bottom: ($btn-height / 2) solid $bg-color;
+					position: absolute;
+					top: 0;
+					left: -9px;
+				}
+			}
+		}
+	}
+}

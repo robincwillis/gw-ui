@@ -6,7 +6,7 @@ import FileUpload from 'components/FileUpload';
 
 import ClickOutside from 'react-click-outside';
 
-import './AddContentBetween';
+import './AddContentBetween.scss';
 
 class AddContentBetween extends Component {
 

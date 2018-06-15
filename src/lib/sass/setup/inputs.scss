@@ -215,7 +215,7 @@ input[type='radio'] {
 		color: $light-text-color;
 		font-weight: $medium;
 		margin-top: 0;
-		margin-left: $tight-gutter/2;
+		margin-left: $gutter-tight/2;
 	}
 	&:checked {
 		border-color: $main-color;

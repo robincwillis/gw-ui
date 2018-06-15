@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InlineSVG from 'svg-inline-react';
 
-import './Tabs';
+import './Tabs.scss';
 
 export default class Tabs extends Component {
 

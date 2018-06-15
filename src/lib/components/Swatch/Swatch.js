@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './swatch.scss';
+import './Swatch.scss';
 
 class Swatch extends Component {
 

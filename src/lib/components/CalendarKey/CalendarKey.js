@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import actionWrapper from 'util/actionWrapper';
 import * as streamSessionActions from 'actions/streamSessions';
 
-import './calendar_key.scss';
+import './CalendarKey.scss';
 
 export class CalendarKey extends Component {
 

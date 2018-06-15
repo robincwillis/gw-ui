@@ -7,7 +7,7 @@ import { hideModal } from 'actions/modal';
 import Button from 'components/Button';
 import Cross from 'assets/icons/cross';
 
-import './modal.scss';
+import './Modal.scss';
 import './takeover.scss';
 
 export class ModalContent extends Component {

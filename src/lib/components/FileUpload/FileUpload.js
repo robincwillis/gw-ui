@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import Button from 'components/Button';
 
-import './FileUpload';
+import './FileUpload.scss';
 
 export class FileUpload extends Component {
 

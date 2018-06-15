@@ -7,15 +7,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
-const devMode = process.env.NODE_ENV !== 'production'
-
+const mode = process.env.NODE_ENV !== 'production' ?  'development' : 'production';
 
 const config = {
+
+	mode : mode,
 
 	context: path.resolve(__dirname, 'src/docs'),
 
 	entry: {
-		docs	 : 'index.js'
+		docs	 : './index.js'
 	},
 
 	output: {
@@ -29,8 +30,8 @@ const config = {
 		new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
 
 		new HtmlWebpackPlugin({
@@ -62,9 +63,10 @@ const config = {
 			{
         test: /\.(sa|sc|c)ss$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
+          'resolve-url-loader',
           'sass-loader',
         ],
       },

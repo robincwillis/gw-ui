@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 import Input from 'components/Input';
 
-import './ToggleListItem';
+import './ToggleListItem.scss';
 
 export class ToggleListItem extends Component {
 

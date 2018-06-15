@@ -9,7 +9,7 @@ $ui-grey : lighten($text-color, 63%);
 			display: flex;
 			align-items: center;
 			.code-block {
-				margin-left: $tight-gutter;
+				margin-left: $gutter-tight;
 			}
 			.tight-space-before {
 				margin-top: 0;

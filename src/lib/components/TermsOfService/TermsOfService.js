@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Button from 'components/Button';
 
-import './TermsOfService';
+import './TermsOfService.scss';
 
 export class TermsOfService extends Component {
 

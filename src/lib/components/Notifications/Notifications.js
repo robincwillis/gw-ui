@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { removeNotification } from 'actions/notifications';
 import { NotificationStack } from 'react-notification';
 
-import './notifications.scss';
+import './Notifications.scss';
 
 const COLORS = {
 	defaultColor : '#2c3b46', // Header bg color

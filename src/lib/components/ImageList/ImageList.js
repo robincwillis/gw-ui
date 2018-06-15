@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './ImageList';
+import './ImageList.scss';
 
 export class ImageList extends Component {
 

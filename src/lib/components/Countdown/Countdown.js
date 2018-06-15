@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactTimeout from 'react-timeout';
 
-import './countdown.scss';
+import './Countdown.scss';
 
 export class Countdown extends Component {
 

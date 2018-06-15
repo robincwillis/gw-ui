@@ -2,7 +2,7 @@
 @import '~sass/setup/mixins';
 
 label.check-list-item {
-	padding: 0 0 ($tight-gutter * .5) 0;
+	padding: 0 0 ($gutter-tight * .5) 0;
 	border-radius: $base-border-radius;
 	color: $main-color;
 	.icon {

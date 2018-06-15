@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './ContentEditable';
+import './ContentEditable.scss';
 
 export class ContentEditable extends Component {
 

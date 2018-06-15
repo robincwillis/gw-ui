@@ -1,3 +1,8 @@
+
+
+$scrollbar-width : 6px !default;
+
+
 @mixin minimal-scrollbar() {
 	&::-webkit-scrollbar {
 		background: transparent;
@@ -52,7 +57,7 @@
 * {
 	::-webkit-scrollbar {
 		-webkit-appearance: none;
-		width: $scrollbar-width; 
+		width: $scrollbar-width;
 	}
 	::-webkit-scrollbar-button {
 		border-radius: 30px;

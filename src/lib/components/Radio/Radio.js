@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Radio';
+import './Radio.scss';
 
 class Checkbox extends Component {
 

@@ -8,7 +8,7 @@ import Twitch from 'assets/icons/twitch';
 import Button from 'components/Button';
 import Modal from 'components/Modal';
 
-import './event_popup.scss';
+import './EventPopup.scss';
 
 export class EventPopup extends Component {
 

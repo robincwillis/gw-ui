@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Button from 'components/Button';
 import Input from 'components/Input';
 
-import './SearchButton';
+import './SearchButton.scss';
 
 export class SearchButton extends Component {
 

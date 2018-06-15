@@ -168,7 +168,7 @@
 		color: $text-color !important;
 	}
 	&.react-datepicker__navigation--previous {
-		left: $tight-gutter/2;
+		left: $gutter-tight/2;
 		width: 24px;
 		height: 24px;
 		border: none;
@@ -185,7 +185,7 @@
 		}
 	}
 	&.react-datepicker__navigation--next {
-		right: $tight-gutter/2;
+		right: $gutter-tight/2;
 		width: 24px;
 		height: 24px;
 		border: none;

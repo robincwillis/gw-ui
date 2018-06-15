@@ -8,7 +8,7 @@ import actionWrapper from 'util/actionWrapper';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import './date_picker.scss';
+import './DatePicker.scss';
 
 export class InlineDatePicker extends Component {
 

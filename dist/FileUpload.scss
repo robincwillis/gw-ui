@@ -1,0 +1,63 @@
+@import '~sass/setup/variables';
+
+.file-uploader {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	.button-actions {
+		padding-left: $gutter;
+		flex-grow: 1;
+	}
+
+	.uploader-area {
+		display: inline-block;
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		.image-wrap {
+			cursor: pointer;
+			border-radius: $base-border-radius;
+			transition: border $md-speed $ease, color $md-speed $ease, background $md-speed $ease;
+			text-align: center;
+			height: 7rem;
+			width: 7rem;
+			background: $light-grey;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: darken($light-grey, 20%);
+			&:hover {
+				background: darken($light-grey, 4%);
+				color: $text-color;
+			}
+		}
+
+	}
+
+	.empty-area.empty-area-active {
+		.uploader-area > .image-wrap {
+			background : yellow;
+		}
+	}
+
+	.empty-area.empty-area-accepted {
+		.uploader-area > .image-wrap {
+			background : green;
+		}
+	}
+
+	.empty-area.empty-area-rejected {
+		.uploader-area > .image-wrap {
+			background : red;
+		}
+	}
+
+	.empty-area.empty-area-disabled {
+		.uploader-area > .image-wrap {
+			background : blue;
+		}
+	}
+
+
+}

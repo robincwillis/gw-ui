@@ -1,0 +1,109 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.add-content-between {
+	color: $main-color;
+	margin: 0 !important;
+	padding: 0 !important;
+	cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: $btn-tiny-height;
+  position: relative;
+  z-index: 5;
+  &.adding-content {
+  	z-index: 6;
+  }
+
+  .flex-grid {
+		width: 100%;
+  }
+
+	div.add-line {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		> * {
+			transition: color $md-speed $ease, opacity $md-speed $ease;
+			opacity: 0;
+		}
+	}
+	&.h3 {
+		margin: $gutter 0;
+	}
+	&.visible-text {
+		.label {
+			opacity: 1;
+		}
+	}
+	&.visible {
+		div.add-line > * {
+			opacity: 1;
+		}
+	}
+	&:hover,
+	&:focus {
+		div.add-line > * {
+			opacity: 1;
+			outline: none;
+		}
+	}
+	&.empty {
+		div.add-line {
+			.label {
+				opacity: 1;
+				outline: none;
+			}
+		}
+		&:hover {
+			.label {
+				color: $main-color;
+			}
+		}
+	}
+	.button-wrap {
+		// margin-top: 0 !important;
+		padding: 0 0 0 2px;
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin: -5px 0 !important;
+		.button {
+			.icon {
+				font-size: 18px;
+				line-height: 18px;
+			}
+		}
+	}
+	.line {
+		flex-grow: 1;
+		flex-shrink: 0;
+		height: 4px;
+		margin: 0 !important;
+		background: rgba($main-color, .2);
+	}
+	.label {
+		flex-grow: 0;
+		flex-shrink: 1;
+		padding-right: .75em;
+		line-height: 1em;
+		color: rgba($main-color, 1);
+		@include ellipsis();
+		.label-text {
+			display: block;
+			margin-top: 1px;
+		}
+	}
+	&.has-left-icon {
+		.icon.left {
+			// position: absolute;
+			// top: 50%;
+			// left: 0;
+			margin-top: -3px;
+			font-size: 18px;
+			width: 1.5rem;
+			text-align: left;
+			color: inherit;
+			transform: none;
+		}
+	}
+}

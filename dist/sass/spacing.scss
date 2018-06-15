@@ -73,7 +73,7 @@
 .mxn-3 { margin-left: -$space-3; margin-right: -$space-3; }
 .mxn-4 { margin-left: -$space-4; margin-right: -$space-4; }
 .mxn-gutter { margin-left: -$gutter; margin-right: -$gutter; }
-.mxn-tight-gutter { margin-left: -$gutter-tight; margin-right: -$gutter-tight; }
+.mxn-gutter-tight { margin-left: -$gutter-tight; margin-right: -$gutter-tight; }
 .mxn-wide-gutter { margin-left: -$gutter-wide; margin-right: -$gutter-wide; }
 
 .myn-1 { margin-top: -$space-1; margin-bottom: -$space-1; }
@@ -81,7 +81,7 @@
 .myn-3 { margin-top: -$space-3; margin-bottom: -$space-3; }
 .myn-4 { margin-top: -$space-4; margin-bottom: -$space-4; }
 .myn-gutter { margin-top: -$gutter; margin-bottom: -$gutter; }
-.myn-tight-gutter { margin-top: -$gutter-tight; margin-bottom: -$gutter-tight; }
+.myn-gutter-tight { margin-top: -$gutter-tight; margin-bottom: -$gutter-tight; }
 .myn-wide-gutter { margin-top: -$gutter-wide; margin-bottom: -$gutter-wide; }
 
 .ml-auto { margin-left: auto }
@@ -89,20 +89,20 @@
 .mx-auto { margin-left: auto; margin-right: auto; }
 
 // Gutter Margin Spacing
-.m-tight-gutter  { margin:        $gutter-tight }
-.mn-tight-gutter  { margin:        -$gutter-tight }
-.mt-tight-gutter { margin-top:    $gutter-tight }
-.mtn-tight-gutter { margin-top:    -$gutter-tight }
-.mr-tight-gutter { margin-right:  $gutter-tight }
-.mrn-tight-gutter { margin-right:  -$gutter-tight }
-.mb-tight-gutter { margin-bottom: $gutter-tight }
-.mbn-tight-gutter { margin-bottom: -$gutter-tight }
-.ml-tight-gutter { margin-left:   $gutter-tight }
-.mln-tight-gutter { margin-left:   -$gutter-tight }
-.mx-tight-gutter { margin-left:   $gutter-tight; margin-right:  $gutter-tight }
-.mxn-tight-gutter { margin-left:   -$gutter-tight; margin-right:  -$gutter-tight }
-.my-tight-gutter { margin-top:    $gutter-tight; margin-bottom: $gutter-tight }
-.myn-tight-gutter { margin-top:    -$gutter-tight; margin-bottom: -$gutter-tight }
+.m-gutter-tight  { margin:        $gutter-tight }
+.mn-gutter-tight  { margin:        -$gutter-tight }
+.mt-gutter-tight { margin-top:    $gutter-tight }
+.mtn-gutter-tight { margin-top:    -$gutter-tight }
+.mr-gutter-tight { margin-right:  $gutter-tight }
+.mrn-gutter-tight { margin-right:  -$gutter-tight }
+.mb-gutter-tight { margin-bottom: $gutter-tight }
+.mbn-gutter-tight { margin-bottom: -$gutter-tight }
+.ml-gutter-tight { margin-left:   $gutter-tight }
+.mln-gutter-tight { margin-left:   -$gutter-tight }
+.mx-gutter-tight { margin-left:   $gutter-tight; margin-right:  $gutter-tight }
+.mxn-gutter-tight { margin-left:   -$gutter-tight; margin-right:  -$gutter-tight }
+.my-gutter-tight { margin-top:    $gutter-tight; margin-bottom: $gutter-tight }
+.myn-gutter-tight { margin-top:    -$gutter-tight; margin-bottom: -$gutter-tight }
 
 .m-gutter  { margin:        $gutter }
 .mn-gutter  { margin:        -$gutter }
@@ -227,13 +227,13 @@
 .px-4 { padding-left:   $space-4; padding-right:  $space-4 }
 
 // Gutter Padding Spacing
-.p-tight-gutter  { padding:        $gutter-tight; }
-.pt-tight-gutter { padding-top:    $gutter-tight; }
-.pr-tight-gutter { padding-right:  $gutter-tight; }
-.pb-tight-gutter { padding-bottom: $gutter-tight; }
-.pl-tight-gutter { padding-left:   $gutter-tight; }
-.px-tight-gutter { padding-left:   $gutter-tight; padding-right:  $gutter-tight }
-.py-tight-gutter { padding-top:    $gutter-tight; padding-bottom: $gutter-tight }
+.p-gutter-tight  { padding:        $gutter-tight; }
+.pt-gutter-tight { padding-top:    $gutter-tight; }
+.pr-gutter-tight { padding-right:  $gutter-tight; }
+.pb-gutter-tight { padding-bottom: $gutter-tight; }
+.pl-gutter-tight { padding-left:   $gutter-tight; }
+.px-gutter-tight { padding-left:   $gutter-tight; padding-right:  $gutter-tight }
+.py-gutter-tight { padding-top:    $gutter-tight; padding-bottom: $gutter-tight }
 
 .p-gutter  { padding:        $gutter }
 .pt-gutter { padding-top:    $gutter }

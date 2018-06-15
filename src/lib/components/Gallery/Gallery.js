@@ -5,7 +5,7 @@ import Gallery from 'react-photo-gallery';
 import Photo from './Photo';
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
 
-import './gallery.scss';
+import './Gallery.scss';
 
 const SortablePhoto = SortableElement(Photo);
 const SortableGallery = SortableContainer(({images}) => {

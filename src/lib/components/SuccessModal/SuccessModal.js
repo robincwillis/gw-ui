@@ -8,7 +8,7 @@ import InlineSVG from 'svg-inline-react';
 
 import Input from 'components/Input';
 import Button from 'components/Button';
-import './success_modal.scss';
+import './SuccessModal.scss';
 
 
 export class SuccessModal extends Component {
