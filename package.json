@@ -4,8 +4,7 @@
   "description": "Gordils & Willis UI Kit, react + sass",
   "main": "./dist/index.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "postinstall": "npm run build",
+    "prepare": "npm run build",
     "start": "./node_modules/.bin/parcel watch src/docs/index.html",
     "watch": "./node_modules/.bin/webpack --watch --mode=none",
     "build": "./node_modules/.bin/webpack --mode=production",
