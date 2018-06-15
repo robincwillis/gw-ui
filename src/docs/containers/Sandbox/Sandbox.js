@@ -16,7 +16,8 @@ import Typeahead from 'lib/components/Typeahead';
 import Toggle from 'lib/components/Toggle';
 import Swatch from 'lib/components/Swatch';
 import FileUpload from 'lib/components/FileUpload'
-import DatePicker from 'lib/components/DatePicker';
+
+//import DatePicker from 'lib/components/DatePicker';
 
 //Loaders
 

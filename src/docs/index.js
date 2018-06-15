@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//import Sandbox from 'docs/contaienrs'
+import Sandbox from './containers/Sandbox';
 
 const App = () => (
   <div>
@@ -12,4 +12,4 @@ const App = () => (
 );
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Sandbox />, document.getElementById('root'));

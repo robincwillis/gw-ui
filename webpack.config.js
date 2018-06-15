@@ -13,8 +13,8 @@ module.exports = {
 	entry: {
 		index : 'index.js',
 		//vendor : ['moment', 'numeral', ...],
-		"postcss.config" : 'postcss.config.js'}
-	,
+		"postcss.config" : 'postcss.config.js'
+	},
 
 	output: {
 		path: path.resolve(__dirname, 'dist'),
