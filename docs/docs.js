@@ -950,7 +950,11 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /** @license React v16.4.0
+=======
+/** @license React v16.4.1
+>>>>>>> add sidebar, try and add fonts.
  * react.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -976,7 +980,11 @@ var checkPropTypes = __webpack_require__(10);
 
 // TODO: this is special because it gets imported during build.
 
+<<<<<<< HEAD
 var ReactVersion = '16.4.0';
+=======
+var ReactVersion = '16.4.1';
+>>>>>>> add sidebar, try and add fonts.
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -1040,9 +1048,12 @@ var enableSuspense = false;
 // Gather advanced timing metrics for Profiler subtrees.
 
 
+<<<<<<< HEAD
 // Fires getDerivedStateFromProps for state *or* props changes
 
 
+=======
+>>>>>>> add sidebar, try and add fonts.
 // Only used in www builds.
 
 /**
@@ -1839,7 +1850,11 @@ function forEachSingleChild(bookKeeping, child, name) {
 /**
  * Iterates through children that are typically specified as `props.children`.
  *
+<<<<<<< HEAD
  * See https://reactjs.org/docs/react-api.html#react.children.foreach
+=======
+ * See https://reactjs.org/docs/react-api.html#reactchildrenforeach
+>>>>>>> add sidebar, try and add fonts.
  *
  * The provided forEachFunc(child, index) will be called for each
  * leaf child.
@@ -1891,7 +1906,11 @@ function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
 /**
  * Maps children that are typically specified as `props.children`.
  *
+<<<<<<< HEAD
  * See https://reactjs.org/docs/react-api.html#react.children.map
+=======
+ * See https://reactjs.org/docs/react-api.html#reactchildrenmap
+>>>>>>> add sidebar, try and add fonts.
  *
  * The provided mapFunction(child, key, index) will be called for each
  * leaf child.
@@ -1914,7 +1933,11 @@ function mapChildren(children, func, context) {
  * Count the number of children that are typically specified as
  * `props.children`.
  *
+<<<<<<< HEAD
  * See https://reactjs.org/docs/react-api.html#react.children.count
+=======
+ * See https://reactjs.org/docs/react-api.html#reactchildrencount
+>>>>>>> add sidebar, try and add fonts.
  *
  * @param {?*} children Children tree container.
  * @return {number} The number of children.
@@ -1927,7 +1950,11 @@ function countChildren(children) {
  * Flatten a children object (typically specified as `props.children`) and
  * return an array with appropriately re-keyed children.
  *
+<<<<<<< HEAD
  * See https://reactjs.org/docs/react-api.html#react.children.toarray
+=======
+ * See https://reactjs.org/docs/react-api.html#reactchildrentoarray
+>>>>>>> add sidebar, try and add fonts.
  */
 function toArray(children) {
   var result = [];
@@ -1939,7 +1966,11 @@ function toArray(children) {
  * Returns the first child in a collection of children and verifies that there
  * is only one child in the collection.
  *
+<<<<<<< HEAD
  * See https://reactjs.org/docs/react-api.html#react.children.only
+=======
+ * See https://reactjs.org/docs/react-api.html#reactchildrenonly
+>>>>>>> add sidebar, try and add fonts.
  *
  * The current implementation of this function assumes that a single child gets
  * passed without a wrapper, but the purpose of this helper function is to
@@ -2082,10 +2113,23 @@ var getStackAddendum = function () {};
       return '#text';
     } else if (typeof element.type === 'string') {
       return element.type;
+<<<<<<< HEAD
     } else if (element.type === REACT_FRAGMENT_TYPE) {
       return 'React.Fragment';
     } else {
       return element.type.displayName || element.type.name || 'Unknown';
+=======
+    }
+
+    var type = element.type;
+    if (type === REACT_FRAGMENT_TYPE) {
+      return 'React.Fragment';
+    } else if (typeof type === 'object' && type !== null && type.$$typeof === REACT_FORWARD_REF_TYPE) {
+      var functionName = type.render.displayName || type.render.name || '';
+      return functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef';
+    } else {
+      return type.displayName || type.name || 'Unknown';
+>>>>>>> add sidebar, try and add fonts.
     }
   };
 
@@ -2229,22 +2273,49 @@ function validateChildKeys(node, parentType) {
  * @param {ReactElement} element
  */
 function validatePropTypes(element) {
+<<<<<<< HEAD
   var componentClass = element.type;
   if (typeof componentClass !== 'function') {
     return;
   }
   var name = componentClass.displayName || componentClass.name;
   var propTypes = componentClass.propTypes;
+=======
+  var type = element.type;
+  var name = void 0,
+      propTypes = void 0;
+  if (typeof type === 'function') {
+    // Class or functional component
+    name = type.displayName || type.name;
+    propTypes = type.propTypes;
+  } else if (typeof type === 'object' && type !== null && type.$$typeof === REACT_FORWARD_REF_TYPE) {
+    // ForwardRef
+    var functionName = type.render.displayName || type.render.name || '';
+    name = functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef';
+    propTypes = type.propTypes;
+  } else {
+    return;
+  }
+>>>>>>> add sidebar, try and add fonts.
   if (propTypes) {
     currentlyValidatingElement = element;
     checkPropTypes(propTypes, element.props, 'prop', name, getStackAddendum);
     currentlyValidatingElement = null;
+<<<<<<< HEAD
   } else if (componentClass.PropTypes !== undefined && !propTypesMisspellWarningShown) {
     propTypesMisspellWarningShown = true;
     warning(false, 'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', name || 'Unknown');
   }
   if (typeof componentClass.getDefaultProps === 'function') {
     !componentClass.getDefaultProps.isReactClassApproved ? warning(false, 'getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.') : void 0;
+=======
+  } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {
+    propTypesMisspellWarningShown = true;
+    warning(false, 'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', name || 'Unknown');
+  }
+  if (typeof type.getDefaultProps === 'function') {
+    !type.getDefaultProps.isReactClassApproved ? warning(false, 'getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.') : void 0;
+>>>>>>> add sidebar, try and add fonts.
   }
 }
 
@@ -21195,6 +21266,7 @@ if(false) {}
 
 /***/ }),
 /* 152 */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -21206,6 +21278,11 @@ exports.push([module.i, ".table {\n  position: relative; }\n  .table.tight .tabl
 
 // exports
 
+=======
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from /Users/mattg/github/gw-ui/node_modules/sass-loader/lib/loader.js):\n\n\t\t\tfont-size: $sm-font-size;\n             ^\n      Undefined variable: \"$sm-font-size\".\n      in /Users/mattg/github/gw-ui/src/lib/components/Table/Table.scss (line 6, column 15)");
+>>>>>>> add sidebar, try and add fonts.
 
 /***/ }),
 /* 153 */
@@ -23998,7 +24075,11 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /** @license React v16.4.0
+=======
+/** @license React v16.4.1
+>>>>>>> add sidebar, try and add fonts.
  * react-dom.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -26213,7 +26294,13 @@ var DOCUMENT_FRAGMENT_NODE = 11;
  * @return {DOMEventTarget} Target node.
  */
 function getEventTarget(nativeEvent) {
+<<<<<<< HEAD
   var target = nativeEvent.target || window;
+=======
+  // Fallback to nativeEvent.srcElement for IE9
+  // https://github.com/facebook/react/issues/12506
+  var target = nativeEvent.target || nativeEvent.srcElement || window;
+>>>>>>> add sidebar, try and add fonts.
 
   // Normalize SVG <use> element events #4963
   if (target.correspondingUseElement) {
@@ -27110,6 +27197,7 @@ function updateWrapper(element, props) {
   }
 }
 
+<<<<<<< HEAD
 function postMountWrapper(element, props) {
   var node = element;
 
@@ -27118,12 +27206,34 @@ function postMountWrapper(element, props) {
     // from being lost during SSR hydration.
     if (node.value === '') {
       node.value = '' + node._wrapperState.initialValue;
+=======
+function postMountWrapper(element, props, isHydrating) {
+  var node = element;
+
+  if (props.hasOwnProperty('value') || props.hasOwnProperty('defaultValue')) {
+    var _initialValue = '' + node._wrapperState.initialValue;
+    var currentValue = node.value;
+
+    // Do not assign value if it is already set. This prevents user text input
+    // from being lost during SSR hydration.
+    if (!isHydrating) {
+      // Do not re-assign the value property if there is no change. This
+      // potentially avoids a DOM write and prevents Firefox (~60.0.1) from
+      // prematurely marking required inputs as invalid
+      if (_initialValue !== currentValue) {
+        node.value = _initialValue;
+      }
+>>>>>>> add sidebar, try and add fonts.
     }
 
     // value must be assigned before defaultValue. This fixes an issue where the
     // visually displayed value of date inputs disappears on mobile Safari and Chrome:
     // https://github.com/facebook/react/issues/7233
+<<<<<<< HEAD
     node.defaultValue = '' + node._wrapperState.initialValue;
+=======
+    node.defaultValue = _initialValue;
+>>>>>>> add sidebar, try and add fonts.
   }
 
   // Normally, we'd just do `node.checked = node.checked` upon initial mount, less this bug
@@ -27396,6 +27506,7 @@ function getTargetInstForInputOrChangeEvent(topLevelType, targetInst) {
   }
 }
 
+<<<<<<< HEAD
 function handleControlledInputBlur(inst, node) {
   // TODO: In IE, inst is occasionally null. Why?
   if (inst == null) {
@@ -27404,6 +27515,10 @@ function handleControlledInputBlur(inst, node) {
 
   // Fiber and ReactDOM keep wrapper state in separate places
   var state = inst._wrapperState || node._wrapperState;
+=======
+function handleControlledInputBlur(node) {
+  var state = node._wrapperState;
+>>>>>>> add sidebar, try and add fonts.
 
   if (!state || !state.controlled || node.type !== 'number') {
     return;
@@ -27460,7 +27575,11 @@ var ChangeEventPlugin = {
 
     // When blurring, set the value attribute for number inputs
     if (topLevelType === TOP_BLUR) {
+<<<<<<< HEAD
       handleControlledInputBlur(targetInst, targetNode);
+=======
+      handleControlledInputBlur(targetNode);
+>>>>>>> add sidebar, try and add fonts.
     }
   }
 };
@@ -28951,9 +29070,20 @@ function isInDocument(node) {
  * Input selection module for React.
  */
 
+<<<<<<< HEAD
 function hasSelectionCapabilities(elem) {
   var nodeName = elem && elem.nodeName && elem.nodeName.toLowerCase();
   return nodeName && (nodeName === 'input' && elem.type === 'text' || nodeName === 'textarea' || elem.contentEditable === 'true');
+=======
+/**
+ * @hasSelectionCapabilities: we get the element types that support selection
+ * from https://html.spec.whatwg.org/#do-not-apply, looking at `selectionStart`
+ * and `selectionEnd` rows.
+ */
+function hasSelectionCapabilities(elem) {
+  var nodeName = elem && elem.nodeName && elem.nodeName.toLowerCase();
+  return nodeName && (nodeName === 'input' && (elem.type === 'text' || elem.type === 'search' || elem.type === 'tel' || elem.type === 'url' || elem.type === 'password') || nodeName === 'textarea' || elem.contentEditable === 'true');
+>>>>>>> add sidebar, try and add fonts.
 }
 
 function getSelectionInformation() {
@@ -28974,7 +29104,11 @@ function restoreSelection(priorSelectionInformation) {
   var priorFocusedElem = priorSelectionInformation.focusedElem;
   var priorSelectionRange = priorSelectionInformation.selectionRange;
   if (curFocusedElem !== priorFocusedElem && isInDocument(priorFocusedElem)) {
+<<<<<<< HEAD
     if (hasSelectionCapabilities(priorFocusedElem)) {
+=======
+    if (priorSelectionRange !== null && hasSelectionCapabilities(priorFocusedElem)) {
+>>>>>>> add sidebar, try and add fonts.
       setSelection(priorFocusedElem, priorSelectionRange);
     }
 
@@ -28991,7 +29125,13 @@ function restoreSelection(priorSelectionInformation) {
       }
     }
 
+<<<<<<< HEAD
     priorFocusedElem.focus();
+=======
+    if (typeof priorFocusedElem.focus === 'function') {
+      priorFocusedElem.focus();
+    }
+>>>>>>> add sidebar, try and add fonts.
 
     for (var i = 0; i < ancestors.length; i++) {
       var info = ancestors[i];
@@ -29213,11 +29353,19 @@ injection.injectEventPluginsByName({
   BeforeInputEventPlugin: BeforeInputEventPlugin
 });
 
+<<<<<<< HEAD
 {
   if (ExecutionEnvironment.canUseDOM && typeof requestAnimationFrame !== 'function') {
     warning(false, 'React depends on requestAnimationFrame. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
   }
 }
+=======
+// We capture a local reference to any global, in case it gets polyfilled after
+// this module is initially evaluated.
+// We want to be using a consistent implementation.
+
+var localRequestAnimationFrame$1 = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : undefined;
+>>>>>>> add sidebar, try and add fonts.
 
 /**
  * A scheduling library to allow scheduling work with more granular priority and
@@ -29240,10 +29388,21 @@ injection.injectEventPluginsByName({
 // layout, paint and other browser work is counted against the available time.
 // The frame rate is dynamically adjusted.
 
+<<<<<<< HEAD
+=======
+// We capture a local reference to any global, in case it gets polyfilled after
+// this module is initially evaluated.
+// We want to be using a consistent implementation.
+var localDate = Date;
+var localSetTimeout = setTimeout;
+var localClearTimeout = clearTimeout;
+
+>>>>>>> add sidebar, try and add fonts.
 var hasNativePerformanceNow = typeof performance === 'object' && typeof performance.now === 'function';
 
 var now$1 = void 0;
 if (hasNativePerformanceNow) {
+<<<<<<< HEAD
   now$1 = function () {
     return performance.now();
   };
@@ -29254,10 +29413,23 @@ if (hasNativePerformanceNow) {
 }
 
 // TODO: There's no way to cancel, because Fiber doesn't atm.
+=======
+  var Performance = performance;
+  now$1 = function () {
+    return Performance.now();
+  };
+} else {
+  now$1 = function () {
+    return localDate.now();
+  };
+}
+
+>>>>>>> add sidebar, try and add fonts.
 var scheduleWork = void 0;
 var cancelScheduledWork = void 0;
 
 if (!ExecutionEnvironment.canUseDOM) {
+<<<<<<< HEAD
   var callbackIdCounter = 0;
   // Timeouts are objects in Node.
   // For consistency, we'll use numbers in the public API anyway.
@@ -29266,6 +29438,19 @@ if (!ExecutionEnvironment.canUseDOM) {
   scheduleWork = function (callback, options) {
     var callbackId = callbackIdCounter++;
     var timeoutId = setTimeout(function () {
+=======
+  var timeoutIds = new Map();
+
+  scheduleWork = function (callback, options) {
+    // keeping return type consistent
+    var callbackConfig = {
+      scheduledCallback: callback,
+      timeoutTime: 0,
+      next: null,
+      prev: null
+    };
+    var timeoutId = localSetTimeout(function () {
+>>>>>>> add sidebar, try and add fonts.
       callback({
         timeRemaining: function () {
           return Infinity;
@@ -29274,6 +29459,7 @@ if (!ExecutionEnvironment.canUseDOM) {
         didTimeout: false
       });
     });
+<<<<<<< HEAD
     timeoutIds[callbackId] = timeoutId;
     return callbackId;
   };
@@ -29301,6 +29487,30 @@ if (!ExecutionEnvironment.canUseDOM) {
   // Then we skip calling any callback which is not registered.
   // This means cancelling is an O(1) time complexity instead of O(n).
   var registeredCallbackIds = {};
+=======
+    timeoutIds.set(callback, timeoutId);
+    return callbackConfig;
+  };
+  cancelScheduledWork = function (callbackId) {
+    var callback = callbackId.scheduledCallback;
+    var timeoutId = timeoutIds.get(callback);
+    timeoutIds.delete(callbackId);
+    localClearTimeout(timeoutId);
+  };
+} else {
+  {
+    if (typeof localRequestAnimationFrame$1 !== 'function') {
+      warning(false, 'React depends on requestAnimationFrame. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+    }
+  }
+
+  var localRequestAnimationFrame = typeof localRequestAnimationFrame$1 === 'function' ? localRequestAnimationFrame$1 : function (callback) {
+    invariant(false, 'React depends on requestAnimationFrame. Make sure that you load a polyfill in older browsers. https://fb.me/react-polyfills');
+  };
+
+  var headOfPendingCallbacksLinkedList = null;
+  var tailOfPendingCallbacksLinkedList = null;
+>>>>>>> add sidebar, try and add fonts.
 
   // We track what the next soonest timeoutTime is, to be able to quickly tell
   // if none of the scheduled callbacks have timed out.
@@ -29324,6 +29534,7 @@ if (!ExecutionEnvironment.canUseDOM) {
     }
   };
 
+<<<<<<< HEAD
   var safelyCallScheduledCallback = function (callback, callbackId) {
     if (!registeredCallbackIds[callbackId]) {
       // ignore cancelled callbacks
@@ -29335,6 +29546,29 @@ if (!ExecutionEnvironment.canUseDOM) {
     } finally {
       // always clean up the callbackId, even if the callback throws
       delete registeredCallbackIds[callbackId];
+=======
+  /**
+   * Handles the case where a callback errors:
+   * - don't catch the error, because this changes debugging behavior
+   * - do start a new postMessage callback, to call any remaining callbacks,
+   * - but only if there is an error, so there is not extra overhead.
+   */
+  var callUnsafely = function (callbackConfig, arg) {
+    var callback = callbackConfig.scheduledCallback;
+    var finishedCalling = false;
+    try {
+      callback(arg);
+      finishedCalling = true;
+    } finally {
+      // always remove it from linked list
+      cancelScheduledWork(callbackConfig);
+
+      if (!finishedCalling) {
+        // an error must have been thrown
+        isIdleScheduled = true;
+        window.postMessage(messageKey, '*');
+      }
+>>>>>>> add sidebar, try and add fonts.
     }
   };
 
@@ -29344,7 +29578,11 @@ if (!ExecutionEnvironment.canUseDOM) {
    * Keeps doing this until there are none which have currently timed out.
    */
   var callTimedOutCallbacks = function () {
+<<<<<<< HEAD
     if (pendingCallbacks.length === 0) {
+=======
+    if (headOfPendingCallbacksLinkedList === null) {
+>>>>>>> add sidebar, try and add fonts.
       return;
     }
 
@@ -29361,6 +29599,7 @@ if (!ExecutionEnvironment.canUseDOM) {
       // We know that none of them have timed out yet.
       return;
     }
+<<<<<<< HEAD
     nextSoonestTimeoutTime = -1; // we will reset it below
 
     // keep checking until we don't find any more timed out callbacks
@@ -29379,6 +29618,40 @@ if (!ExecutionEnvironment.canUseDOM) {
         }
       }
     }
+=======
+    // NOTE: we intentionally wait to update the nextSoonestTimeoutTime until
+    // after successfully calling any timed out callbacks.
+    // If a timed out callback throws an error, we could get stuck in a state
+    // where the nextSoonestTimeoutTime was set wrong.
+    var updatedNextSoonestTimeoutTime = -1; // we will update nextSoonestTimeoutTime below
+    var timedOutCallbacks = [];
+
+    // iterate once to find timed out callbacks and find nextSoonestTimeoutTime
+    var currentCallbackConfig = headOfPendingCallbacksLinkedList;
+    while (currentCallbackConfig !== null) {
+      var _timeoutTime = currentCallbackConfig.timeoutTime;
+      if (_timeoutTime !== -1 && _timeoutTime <= currentTime) {
+        // it has timed out!
+        timedOutCallbacks.push(currentCallbackConfig);
+      } else {
+        if (_timeoutTime !== -1 && (updatedNextSoonestTimeoutTime === -1 || _timeoutTime < updatedNextSoonestTimeoutTime)) {
+          updatedNextSoonestTimeoutTime = _timeoutTime;
+        }
+      }
+      currentCallbackConfig = currentCallbackConfig.next;
+    }
+
+    if (timedOutCallbacks.length > 0) {
+      frameDeadlineObject.didTimeout = true;
+      for (var i = 0, len = timedOutCallbacks.length; i < len; i++) {
+        callUnsafely(timedOutCallbacks[i], frameDeadlineObject);
+      }
+    }
+
+    // NOTE: we intentionally wait to update the nextSoonestTimeoutTime until
+    // after successfully calling any timed out callbacks.
+    nextSoonestTimeoutTime = updatedNextSoonestTimeoutTime;
+>>>>>>> add sidebar, try and add fonts.
   };
 
   // We use the postMessage trick to defer idle work until after the repaint.
@@ -29389,7 +29662,11 @@ if (!ExecutionEnvironment.canUseDOM) {
     }
     isIdleScheduled = false;
 
+<<<<<<< HEAD
     if (pendingCallbacks.length === 0) {
+=======
+    if (headOfPendingCallbacksLinkedList === null) {
+>>>>>>> add sidebar, try and add fonts.
       return;
     }
 
@@ -29398,6 +29675,7 @@ if (!ExecutionEnvironment.canUseDOM) {
 
     var currentTime = now$1();
     // Next, as long as we have idle time, try calling more callbacks.
+<<<<<<< HEAD
     while (frameDeadline - currentTime > 0 && pendingCallbacks.length > 0) {
       var latestCallbackConfig = pendingCallbacks.shift();
       frameDeadlineObject.didTimeout = false;
@@ -29411,6 +29689,20 @@ if (!ExecutionEnvironment.canUseDOM) {
         // Schedule another animation callback so we retry later.
         isAnimationFrameScheduled = true;
         requestAnimationFrame(animationTick);
+=======
+    while (frameDeadline - currentTime > 0 && headOfPendingCallbacksLinkedList !== null) {
+      var latestCallbackConfig = headOfPendingCallbacksLinkedList;
+      frameDeadlineObject.didTimeout = false;
+      // callUnsafely will remove it from the head of the linked list
+      callUnsafely(latestCallbackConfig, frameDeadlineObject);
+      currentTime = now$1();
+    }
+    if (headOfPendingCallbacksLinkedList !== null) {
+      if (!isAnimationFrameScheduled) {
+        // Schedule another animation callback so we retry later.
+        isAnimationFrameScheduled = true;
+        localRequestAnimationFrame(animationTick);
+>>>>>>> add sidebar, try and add fonts.
       }
     }
   };
@@ -29445,7 +29737,11 @@ if (!ExecutionEnvironment.canUseDOM) {
     }
   };
 
+<<<<<<< HEAD
   scheduleWork = function (callback, options) {
+=======
+  scheduleWork = function (callback, options) /* CallbackConfigType */{
+>>>>>>> add sidebar, try and add fonts.
     var timeoutTime = -1;
     if (options != null && typeof options.timeout === 'number') {
       timeoutTime = now$1() + options.timeout;
@@ -29454,6 +29750,7 @@ if (!ExecutionEnvironment.canUseDOM) {
       nextSoonestTimeoutTime = timeoutTime;
     }
 
+<<<<<<< HEAD
     var newCallbackId = getCallbackId();
     var scheduledCallbackConfig = {
       scheduledCallback: callback,
@@ -29463,12 +29760,36 @@ if (!ExecutionEnvironment.canUseDOM) {
     pendingCallbacks.push(scheduledCallbackConfig);
 
     registeredCallbackIds[newCallbackId] = true;
+=======
+    var scheduledCallbackConfig = {
+      scheduledCallback: callback,
+      timeoutTime: timeoutTime,
+      prev: null,
+      next: null
+    };
+    if (headOfPendingCallbacksLinkedList === null) {
+      // Make this callback the head and tail of our list
+      headOfPendingCallbacksLinkedList = scheduledCallbackConfig;
+      tailOfPendingCallbacksLinkedList = scheduledCallbackConfig;
+    } else {
+      // Add latest callback as the new tail of the list
+      scheduledCallbackConfig.prev = tailOfPendingCallbacksLinkedList;
+      // renaming for clarity
+      var oldTailOfPendingCallbacksLinkedList = tailOfPendingCallbacksLinkedList;
+      if (oldTailOfPendingCallbacksLinkedList !== null) {
+        oldTailOfPendingCallbacksLinkedList.next = scheduledCallbackConfig;
+      }
+      tailOfPendingCallbacksLinkedList = scheduledCallbackConfig;
+    }
+
+>>>>>>> add sidebar, try and add fonts.
     if (!isAnimationFrameScheduled) {
       // If rAF didn't already schedule one, we need to schedule a frame.
       // TODO: If this rAF doesn't materialize because the browser throttles, we
       // might want to still have setTimeout trigger scheduleWork as a backup to ensure
       // that we keep performing work.
       isAnimationFrameScheduled = true;
+<<<<<<< HEAD
       requestAnimationFrame(animationTick);
     }
     return newCallbackId;
@@ -29476,6 +29797,75 @@ if (!ExecutionEnvironment.canUseDOM) {
 
   cancelScheduledWork = function (callbackId) {
     delete registeredCallbackIds[callbackId];
+=======
+      localRequestAnimationFrame(animationTick);
+    }
+    return scheduledCallbackConfig;
+  };
+
+  cancelScheduledWork = function (callbackConfig /* CallbackConfigType */
+  ) {
+    if (callbackConfig.prev === null && headOfPendingCallbacksLinkedList !== callbackConfig) {
+      // this callbackConfig has already been cancelled.
+      // cancelScheduledWork should be idempotent, a no-op after first call.
+      return;
+    }
+
+    /**
+     * There are four possible cases:
+     * - Head/nodeToRemove/Tail -> null
+     *   In this case we set Head and Tail to null.
+     * - Head -> ... middle nodes... -> Tail/nodeToRemove
+     *   In this case we point the middle.next to null and put middle as the new
+     *   Tail.
+     * - Head/nodeToRemove -> ...middle nodes... -> Tail
+     *   In this case we point the middle.prev at null and move the Head to
+     *   middle.
+     * - Head -> ... ?some nodes ... -> nodeToRemove -> ... ?some nodes ... -> Tail
+     *   In this case we point the Head.next to the Tail and the Tail.prev to
+     *   the Head.
+     */
+    var next = callbackConfig.next;
+    var prev = callbackConfig.prev;
+    callbackConfig.next = null;
+    callbackConfig.prev = null;
+    if (next !== null) {
+      // we have a next
+
+      if (prev !== null) {
+        // we have a prev
+
+        // callbackConfig is somewhere in the middle of a list of 3 or more nodes.
+        prev.next = next;
+        next.prev = prev;
+        return;
+      } else {
+        // there is a next but not a previous one;
+        // callbackConfig is the head of a list of 2 or more other nodes.
+        next.prev = null;
+        headOfPendingCallbacksLinkedList = next;
+        return;
+      }
+    } else {
+      // there is no next callback config; this must the tail of the list
+
+      if (prev !== null) {
+        // we have a prev
+
+        // callbackConfig is the tail of a list of 2 or more other nodes.
+        prev.next = null;
+        tailOfPendingCallbacksLinkedList = prev;
+        return;
+      } else {
+        // there is no previous callback config;
+        // callbackConfig is the only thing in the linked list,
+        // so both head and tail point to it.
+        headOfPendingCallbacksLinkedList = null;
+        tailOfPendingCallbacksLinkedList = null;
+        return;
+      }
+    }
+>>>>>>> add sidebar, try and add fonts.
   };
 }
 
@@ -31405,7 +31795,11 @@ function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement)
       // TODO: Make sure we check if this is still unmounted or do any clean
       // up necessary since we never stop tracking anymore.
       track(domElement);
+<<<<<<< HEAD
       postMountWrapper(domElement, rawProps);
+=======
+      postMountWrapper(domElement, rawProps, false);
+>>>>>>> add sidebar, try and add fonts.
       break;
     case 'textarea':
       // TODO: Make sure we check if this is still unmounted or do any clean
@@ -31860,7 +32254,11 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
       // TODO: Make sure we check if this is still unmounted or do any clean
       // up necessary since we never stop tracking anymore.
       track(domElement);
+<<<<<<< HEAD
       postMountWrapper(domElement, rawProps);
+=======
+      postMountWrapper(domElement, rawProps, true);
+>>>>>>> add sidebar, try and add fonts.
       break;
     case 'textarea':
       // TODO: Make sure we check if this is still unmounted or do any clean
@@ -32666,9 +33064,12 @@ var warnAboutLegacyContextAPI = false;
 // Gather advanced timing metrics for Profiler subtrees.
 var enableProfilerTimer = true;
 
+<<<<<<< HEAD
 // Fires getDerivedStateFromProps for state *or* props changes
 var fireGetDerivedStateFromPropsOnStateUpdates = true;
 
+=======
+>>>>>>> add sidebar, try and add fonts.
 // Only used in www builds.
 
 // Prefix measurements so that it's possible to filter them.
@@ -33470,6 +33871,11 @@ function FiberNode(tag, pendingProps, key, mode) {
   this.alternate = null;
 
   if (enableProfilerTimer) {
+<<<<<<< HEAD
+=======
+    this.actualDuration = 0;
+    this.actualStartTime = 0;
+>>>>>>> add sidebar, try and add fonts.
     this.selfBaseTime = 0;
     this.treeBaseTime = 0;
   }
@@ -33540,6 +33946,18 @@ function createWorkInProgress(current, pendingProps, expirationTime) {
     workInProgress.nextEffect = null;
     workInProgress.firstEffect = null;
     workInProgress.lastEffect = null;
+<<<<<<< HEAD
+=======
+
+    if (enableProfilerTimer) {
+      // We intentionally reset, rather than copy, actualDuration & actualStartTime.
+      // This prevents time from endlessly accumulating in new commits.
+      // This has the downside of resetting values for different priority renders,
+      // But works for yielding (the common case) and should support resuming.
+      workInProgress.actualDuration = 0;
+      workInProgress.actualStartTime = 0;
+    }
+>>>>>>> add sidebar, try and add fonts.
   }
 
   workInProgress.expirationTime = expirationTime;
@@ -33665,6 +34083,7 @@ function createFiberFromProfiler(pendingProps, mode, expirationTime, key) {
   var fiber = createFiber(Profiler, pendingProps, key, mode | ProfileMode);
   fiber.type = REACT_PROFILER_TYPE;
   fiber.expirationTime = expirationTime;
+<<<<<<< HEAD
   if (enableProfilerTimer) {
     fiber.stateNode = {
       elapsedPauseTimeAtStart: 0,
@@ -33672,6 +34091,8 @@ function createFiberFromProfiler(pendingProps, mode, expirationTime, key) {
       startTime: 0
     };
   }
+=======
+>>>>>>> add sidebar, try and add fonts.
 
   return fiber;
 }
@@ -33735,6 +34156,11 @@ function assignFiberPropertiesInDEV(target, source) {
   target.expirationTime = source.expirationTime;
   target.alternate = source.alternate;
   if (enableProfilerTimer) {
+<<<<<<< HEAD
+=======
+    target.actualDuration = source.actualDuration;
+    target.actualStartTime = source.actualStartTime;
+>>>>>>> add sidebar, try and add fonts.
     target.selfBaseTime = source.selfBaseTime;
     target.treeBaseTime = source.treeBaseTime;
   }
@@ -35004,9 +35430,15 @@ function markActualRenderTimeStarted(fiber) {
   {
     fiberStack$1.push(fiber);
   }
+<<<<<<< HEAD
   var stateNode = fiber.stateNode;
   stateNode.elapsedPauseTimeAtStart = totalElapsedPauseTime;
   stateNode.startTime = now();
+=======
+
+  fiber.actualDuration = now() - fiber.actualDuration - totalElapsedPauseTime;
+  fiber.actualStartTime = now();
+>>>>>>> add sidebar, try and add fonts.
 }
 
 function pauseActualRenderTimerIfRunning() {
@@ -35023,10 +35455,17 @@ function recordElapsedActualRenderTime(fiber) {
     return;
   }
   {
+<<<<<<< HEAD
     !(fiber === fiberStack$1.pop()) ? warning(false, 'Unexpected Fiber popped.') : void 0;
   }
   var stateNode = fiber.stateNode;
   stateNode.duration += now() - (totalElapsedPauseTime - stateNode.elapsedPauseTimeAtStart) - stateNode.startTime;
+=======
+    !(fiber === fiberStack$1.pop()) ? warning(false, 'Unexpected Fiber (%s) popped.', getComponentName(fiber)) : void 0;
+  }
+
+  fiber.actualDuration = now() - totalElapsedPauseTime - fiber.actualDuration;
+>>>>>>> add sidebar, try and add fonts.
 }
 
 function resetActualRenderTimer() {
@@ -35633,10 +36072,15 @@ function updateClassInstance(current, workInProgress, renderExpirationTime) {
   }
 
   if (typeof getDerivedStateFromProps === 'function') {
+<<<<<<< HEAD
     if (fireGetDerivedStateFromPropsOnStateUpdates || oldProps !== newProps) {
       applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, newProps);
       newState = workInProgress.memoizedState;
     }
+=======
+    applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, newProps);
+    newState = workInProgress.memoizedState;
+>>>>>>> add sidebar, try and add fonts.
   }
 
   var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress, oldProps, newProps, oldState, newState, newContext);
@@ -36518,7 +36962,12 @@ function ChildReconciler(shouldTrackSideEffects) {
     // Handle top level unkeyed fragments as if they were arrays.
     // This leads to an ambiguity between <>{[...]}</> and <>...</>.
     // We treat the ambiguous cases above the same.
+<<<<<<< HEAD
     if (typeof newChild === 'object' && newChild !== null && newChild.type === REACT_FRAGMENT_TYPE && newChild.key === null) {
+=======
+    var isUnkeyedTopLevelFragment = typeof newChild === 'object' && newChild !== null && newChild.type === REACT_FRAGMENT_TYPE && newChild.key === null;
+    if (isUnkeyedTopLevelFragment) {
+>>>>>>> add sidebar, try and add fonts.
       newChild = newChild.props.children;
     }
 
@@ -36555,7 +37004,11 @@ function ChildReconciler(shouldTrackSideEffects) {
         warnOnFunctionType();
       }
     }
+<<<<<<< HEAD
     if (typeof newChild === 'undefined') {
+=======
+    if (typeof newChild === 'undefined' && !isUnkeyedTopLevelFragment) {
+>>>>>>> add sidebar, try and add fonts.
       // If the new child is undefined, and the return fiber is a composite
       // component, throw an error. If Fiber return types are disabled,
       // we already threw above.
@@ -36967,11 +37420,14 @@ function updateMode(current, workInProgress) {
 function updateProfiler(current, workInProgress) {
   var nextProps = workInProgress.pendingProps;
   if (enableProfilerTimer) {
+<<<<<<< HEAD
     // Start render timer here and push start time onto queue
     markActualRenderTimeStarted(workInProgress);
 
     // Let the "complete" phase know to stop the timer,
     // And the scheduler to record the measured time.
+=======
+>>>>>>> add sidebar, try and add fonts.
     workInProgress.effectTag |= Update;
   }
   if (workInProgress.memoizedProps === nextProps) {
@@ -37679,11 +38135,14 @@ function bailoutOnLowPriority(current, workInProgress) {
     case ContextProvider:
       pushProvider(workInProgress);
       break;
+<<<<<<< HEAD
     case Profiler:
       if (enableProfilerTimer) {
         markActualRenderTimeStarted(workInProgress);
       }
       break;
+=======
+>>>>>>> add sidebar, try and add fonts.
   }
   // TODO: What if this is currently in progress?
   // How can that happen? How is this not being cloned?
@@ -37702,6 +38161,15 @@ function memoizeState(workInProgress, nextState) {
 }
 
 function beginWork(current, workInProgress, renderExpirationTime) {
+<<<<<<< HEAD
+=======
+  if (enableProfilerTimer) {
+    if (workInProgress.mode & ProfileMode) {
+      markActualRenderTimeStarted(workInProgress);
+    }
+  }
+
+>>>>>>> add sidebar, try and add fonts.
   if (workInProgress.expirationTime === NoWork || workInProgress.expirationTime > renderExpirationTime) {
     return bailoutOnLowPriority(current, workInProgress);
   }
@@ -37906,6 +38374,16 @@ if (supportsMutation) {
 
 function completeWork(current, workInProgress, renderExpirationTime) {
   var newProps = workInProgress.pendingProps;
+<<<<<<< HEAD
+=======
+
+  if (enableProfilerTimer) {
+    if (workInProgress.mode & ProfileMode) {
+      recordElapsedActualRenderTime(workInProgress);
+    }
+  }
+
+>>>>>>> add sidebar, try and add fonts.
   switch (workInProgress.tag) {
     case FunctionalComponent:
       return null;
@@ -38038,9 +38516,12 @@ function completeWork(current, workInProgress, renderExpirationTime) {
     case Mode:
       return null;
     case Profiler:
+<<<<<<< HEAD
       if (enableProfilerTimer) {
         recordElapsedActualRenderTime(workInProgress);
       }
+=======
+>>>>>>> add sidebar, try and add fonts.
       return null;
     case HostPortal:
       popHostContainer(workInProgress);
@@ -38770,11 +39251,15 @@ function commitWork(current, finishedWork) {
       {
         if (enableProfilerTimer) {
           var onRender = finishedWork.memoizedProps.onRender;
+<<<<<<< HEAD
           onRender(finishedWork.memoizedProps.id, current === null ? 'mount' : 'update', finishedWork.stateNode.duration, finishedWork.treeBaseTime, finishedWork.stateNode.startTime, getCommitTime());
 
           // Reset actualTime after successful commit.
           // By default, we append to this time to account for errors and pauses.
           finishedWork.stateNode.duration = 0;
+=======
+          onRender(finishedWork.memoizedProps.id, current === null ? 'mount' : 'update', finishedWork.actualDuration, finishedWork.treeBaseTime, finishedWork.actualStartTime, getCommitTime());
+>>>>>>> add sidebar, try and add fonts.
         }
         return;
       }
@@ -38981,6 +39466,15 @@ function throwException(root, returnFiber, sourceFiber, value, renderIsExpired, 
 }
 
 function unwindWork(workInProgress, renderIsExpired, renderExpirationTime) {
+<<<<<<< HEAD
+=======
+  if (enableProfilerTimer) {
+    if (workInProgress.mode & ProfileMode) {
+      recordElapsedActualRenderTime(workInProgress);
+    }
+  }
+
+>>>>>>> add sidebar, try and add fonts.
   switch (workInProgress.tag) {
     case ClassComponent:
       {
@@ -39029,6 +39523,17 @@ function unwindWork(workInProgress, renderIsExpired, renderExpirationTime) {
 }
 
 function unwindInterruptedWork(interruptedWork) {
+<<<<<<< HEAD
+=======
+  if (enableProfilerTimer) {
+    if (interruptedWork.mode & ProfileMode) {
+      // Resume in case we're picking up on work that was paused.
+      resumeActualRenderTimerIfPaused();
+      recordElapsedActualRenderTime(interruptedWork);
+    }
+  }
+
+>>>>>>> add sidebar, try and add fonts.
   switch (interruptedWork.tag) {
     case ClassComponent:
       {
@@ -39052,6 +39557,7 @@ function unwindInterruptedWork(interruptedWork) {
     case ContextProvider:
       popProvider(interruptedWork);
       break;
+<<<<<<< HEAD
     case Profiler:
       if (enableProfilerTimer) {
         // Resume in case we're picking up on work that was paused.
@@ -39059,6 +39565,8 @@ function unwindInterruptedWork(interruptedWork) {
         recordElapsedActualRenderTime(interruptedWork);
       }
       break;
+=======
+>>>>>>> add sidebar, try and add fonts.
     default:
       break;
   }
@@ -39198,6 +39706,13 @@ if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
       clearCaughtError();
 
       if (enableProfilerTimer) {
+<<<<<<< HEAD
+=======
+        if (failedUnitOfWork.mode & ProfileMode) {
+          recordElapsedActualRenderTime(failedUnitOfWork);
+        }
+
+>>>>>>> add sidebar, try and add fonts.
         // Stop "base" render timer again (after the re-thrown error).
         stopBaseRenderTimerIfRunning();
       }
@@ -39431,6 +39946,11 @@ function commitRoot(finishedWork) {
   stopCommitSnapshotEffectsTimer();
 
   if (enableProfilerTimer) {
+<<<<<<< HEAD
+=======
+    // Mark the current commit time to be shared by all Profilers in this batch.
+    // This enables them to be grouped later.
+>>>>>>> add sidebar, try and add fonts.
     recordCommitTime();
   }
 
@@ -39959,7 +40479,11 @@ function captureCommitPhaseError(fiber, error) {
 function computeAsyncExpiration(currentTime) {
   // Given the current clock time, returns an expiration time. We use rounding
   // to batch like updates together.
+<<<<<<< HEAD
   // Should complete within ~1000ms. 1200ms max.
+=======
+  // Should complete within ~5000ms. 5250ms max.
+>>>>>>> add sidebar, try and add fonts.
   var expirationMs = 5000;
   var bucketSizeMs = 250;
   return computeExpirationBucket(currentTime, expirationMs, bucketSizeMs);
@@ -40146,7 +40670,11 @@ var firstScheduledRoot = null;
 var lastScheduledRoot = null;
 
 var callbackExpirationTime = NoWork;
+<<<<<<< HEAD
 var callbackID = -1;
+=======
+var callbackID = void 0;
+>>>>>>> add sidebar, try and add fonts.
 var isRendering = false;
 var nextFlushedRoot = null;
 var nextFlushedExpirationTime = NoWork;
@@ -40175,9 +40703,17 @@ function scheduleCallbackWithExpiration(expirationTime) {
       // Existing callback has sufficient timeout. Exit.
       return;
     } else {
+<<<<<<< HEAD
       // Existing callback has insufficient timeout. Cancel and schedule a
       // new one.
       cancelDeferredCallback(callbackID);
+=======
+      if (callbackID !== null) {
+        // Existing callback has insufficient timeout. Cancel and schedule a
+        // new one.
+        cancelDeferredCallback(callbackID);
+      }
+>>>>>>> add sidebar, try and add fonts.
     }
     // The request callback timer is already running. Don't start a new one.
   } else {
@@ -40366,7 +40902,11 @@ function performWork(minExpirationTime, isAsync, dl) {
   // If we're inside a callback, set this to false since we just completed it.
   if (deadline !== null) {
     callbackExpirationTime = NoWork;
+<<<<<<< HEAD
     callbackID = -1;
+=======
+    callbackID = null;
+>>>>>>> add sidebar, try and add fonts.
   }
   // If there's work left over, schedule a new callback.
   if (nextFlushedExpirationTime !== NoWork) {
@@ -40433,7 +40973,10 @@ function performWorkOnRoot(root, expirationTime, isAsync) {
       // This root is already complete. We can commit it.
       completeRoot(root, finishedWork, expirationTime);
     } else {
+<<<<<<< HEAD
       root.finishedWork = null;
+=======
+>>>>>>> add sidebar, try and add fonts.
       finishedWork = renderRoot(root, expirationTime, false);
       if (finishedWork !== null) {
         // We've completed the root. Commit it.
@@ -40447,7 +40990,10 @@ function performWorkOnRoot(root, expirationTime, isAsync) {
       // This root is already complete. We can commit it.
       completeRoot(root, _finishedWork, expirationTime);
     } else {
+<<<<<<< HEAD
       root.finishedWork = null;
+=======
+>>>>>>> add sidebar, try and add fonts.
       _finishedWork = renderRoot(root, expirationTime, true);
       if (_finishedWork !== null) {
         // We've completed the root. Check the deadline one more time
@@ -40802,7 +41348,11 @@ implementation) {
 
 // TODO: this is special because it gets imported during build.
 
+<<<<<<< HEAD
 var ReactVersion = '16.4.0';
+=======
+var ReactVersion = '16.4.1';
+>>>>>>> add sidebar, try and add fonts.
 
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
@@ -41248,6 +41798,11 @@ var ReactDOM = {
 
   unstable_deferredUpdates: deferredUpdates,
 
+<<<<<<< HEAD
+=======
+  unstable_interactiveUpdates: interactiveUpdates$1,
+
+>>>>>>> add sidebar, try and add fonts.
   flushSync: flushSync,
 
   unstable_flushControlled: flushControlled,
@@ -46867,6 +47422,7 @@ if(false) {}
 
 /***/ }),
 /* 217 */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -46878,6 +47434,11 @@ exports.push([module.i, ".sidebar {\n  background: #f2f2f2;\n  display: block;\n
 
 // exports
 
+=======
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from /Users/mattg/github/gw-ui/node_modules/sass-loader/lib/loader.js):\n\n\twidth: $sidebar-width;\n       ^\n      Undefined variable: \"$sidebar-width\".\n      in /Users/mattg/github/gw-ui/src/lib/components/Sidebar/Sidebar.scss (line 10, column 9)");
+>>>>>>> add sidebar, try and add fonts.
 
 /***/ }),
 /* 218 */
@@ -49167,6 +49728,7 @@ if(false) {}
 
 /***/ }),
 /* 241 */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -49178,6 +49740,11 @@ exports.push([module.i, "* ::-webkit-scrollbar {\n  -webkit-appearance: none;\n 
 
 // exports
 
+=======
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from /Users/mattg/github/gw-ui/node_modules/sass-loader/lib/loader.js):\n\n\ttransition: background $md-speed $ease;\n                       ^\n      Undefined variable: \"$md-speed\".\n      in /Users/mattg/github/gw-ui/src/lib/components/CenteredForm/CenteredForm.scss (line 9, column 25)");
+>>>>>>> add sidebar, try and add fonts.
 
 /***/ }),
 /* 242 */
@@ -49616,6 +50183,7 @@ if(false) {}
 
 /***/ }),
 /* 249 */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -49627,6 +50195,11 @@ exports.push([module.i, ".card {\n  padding-top: 0;\n  background: #3700FF;\n  b
 
 // exports
 
+=======
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from /Users/mattg/github/gw-ui/node_modules/sass-loader/lib/loader.js):\n\n\t\ttop: $tight-gutter;\n      ^\n      Undefined variable: \"$tight-gutter\".\n      in /Users/mattg/github/gw-ui/src/lib/components/Card/Card.scss (line 28, column 8)");
+>>>>>>> add sidebar, try and add fonts.
 
 /***/ }),
 /* 250 */
@@ -50020,6 +50593,7 @@ if(false) {}
 
 /***/ }),
 /* 255 */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -50031,6 +50605,11 @@ exports.push([module.i, ".video-js {\n  width: 100%;\n  height: 100%; }\n\n/* Vi
 
 // exports
 
+=======
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from /Users/mattg/github/gw-ui/node_modules/sass-loader/lib/loader.js):\n\n  padding: $tight-gutter $tight-gutter $gutter;\n          ^\n      Undefined variable: \"$tight-gutter\".\n      in /Users/mattg/github/gw-ui/src/lib/components/Video/Video.scss (line 77, column 12)");
+>>>>>>> add sidebar, try and add fonts.
 
 /***/ })
 /******/ ]);
