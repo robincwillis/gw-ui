@@ -4,5 +4,4 @@ bower_components
 .sass-cache
 .cache
 npm-debug.log
-dist
 yarn.lock

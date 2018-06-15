@@ -1,0 +1,32 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.collapse {
+	width: 100%;
+	position: relative;
+	.collapse-header {
+			cursor: pointer;
+			position: relative;
+			transition: background $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+			.icon {
+				transition: transform $md-speed $ease;
+				&.upside-down {
+					transform: rotate(-180deg);
+				}
+			}
+	}
+}
+
+.collapse-transition-enter {
+  transition: transform 500ms ease-in-out;
+}
+
+.collapse-transition-enter.collapse-transition-enter-active {
+}
+
+.collapse-transition-leave {
+  transition: transform 500ms ease-in-out;
+}
+
+.collapse-transition-leave.collapse-transition-leave-active {
+}

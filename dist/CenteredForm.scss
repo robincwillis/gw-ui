@@ -1,0 +1,131 @@
+
+.centered-form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	transition: background $md-speed $ease;
+	&.scrollable {
+		.main-content {
+			overflow-y: scroll;
+		}
+	}
+	+ .content-header {
+		display: none;
+	}
+	input[type="email"],
+	input[type="password"] {
+		background: $bg-color !important;
+	}
+	&.dark-bg {
+		input {
+			background: $text-color !important;
+		}
+	}
+	.payment-exp {
+		display: flex;
+		position: relative;
+		.input-wrap {
+			flex-grow: 1;
+			&:first-child {
+				width: 50px;
+				flex-grow: 0;
+				flex-shrink: 0;
+				&:after {
+					content: '/';
+					position: absolute;
+					color: $light-text-color;
+					right: 13px;
+					line-height: 1em;
+					bottom: 13px;
+					font-weight: $light;
+					@include respond($md) {
+						bottom: 10px;
+						right: 10px;
+					}
+				}
+			}
+		}
+	}
+	> div {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+		&.main-content {
+			@include scrollable();
+		}
+		&.fixed-footer,
+		&.fixed-header {
+			height: auto;
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+		.header,
+		.footer {
+			flex-grow: 0;
+			flex-shrink: 0;
+			line-height: 1em;
+			.content {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				&.padded {
+					padding: $margin 0;
+				}
+				> * {
+					margin-right: $tight-gutter;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+		> .content {
+			flex-grow: 1;
+			flex-shrink: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			overflow-x: hidden;
+			overflow: hidden;
+			position: relative;
+			> * {
+				width: 100%;
+			}
+		}
+	}
+	.logo {
+		display: inline-block;
+		vertical-align: top;
+		svg {
+			vertical-align: top;
+			height: 20px;
+			* {
+				fill: $text-color;
+			}
+		}
+	}
+	.animation-wrap {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		@include scrollable();
+		@include minimal-scrollbar();
+		overflow-y: scroll;
+		> div {
+			width: 100%;
+			margin: auto;
+		}
+	}
+}
