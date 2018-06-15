@@ -5,10 +5,10 @@
   "main": "./dist/index.js",
   "scripts": {
     "prepare": "npm run build",
-    "start": "./node_modules/.bin/parcel watch src/docs/index.html",
+    "start": "./node_modules/.bin/webpack --config webpack.config.docs.js --watch --mode=none",
+    "build:docs": "./node_modules/.bin/webpack --config webpack.config.docs.js --mode=production",
     "watch": "./node_modules/.bin/webpack --watch --mode=none",
-    "build": "./node_modules/.bin/webpack --mode=production",
-    "build:docs": "./node_modules/.bin/parcel build src/docs/index.js -d dist/docs/"
+    "build": "./node_modules/.bin/webpack --mode=production"
   },
   "repository": {
     "type": "git",
