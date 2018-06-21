@@ -23,8 +23,8 @@ Alternatively, you can use just `.col` and the column will take on the width of 
 
 #### Extra Col Classes
 
-`.col.grow` will have the column take up the avaliable space
-`.col.no-grow` will prevents the column from growing and just keep it the width it is given.
+* `.col.grow` will have the column take up the avaliable space
+* `.col.no-grow` will prevents the column from growing and just keep it the width it is given.
 
 
 ## Alignment
@@ -33,16 +33,16 @@ Since the grid uses flexbox, the default of the grid will be `space-between`.
 
 #### Horizontal
 
-`.left` aligns columns to the left
-`.right` aligns columns to the right
-`.center` aligns columns to the center
+* `.left` aligns columns to the left
+* `.right` aligns columns to the right
+* `.center` aligns columns to the center
 
 #### Vertical
 
-`.top` aligns columns to the top
-`.bottom` aligns columns to the bottom
-`.middle` aligns columns to the middle
-`.baseline` aligns columns to the baseline
+* `.top` aligns columns to the top
+* `.bottom` aligns columns to the bottom
+* `.middle` aligns columns to the middle
+* `.baseline` aligns columns to the baseline
 
 
 ## Gutters
@@ -54,12 +54,13 @@ The varibables `$gutter`, `$gutter-tight`, `$gutter-wide` are used throughout th
 
 By default the grid will collapse at the `$md` variable.
 change when the grid breaks by adding the classes below to `.grid-flex`.
-`.no-break` will not-collapse
-`.break-lg` will break at the varibale `$lg`
-`.break-xlg` will break at the varibale `$xlg`
-`.break-huge` will break at the varibale `$huge`
+
+* `.no-break` will not-collapse
+* `.break-lg` will break at the varibale `$lg`
+* `.break-xlg` will break at the varibale `$xlg`
+* `.break-huge` will break at the varibale `$huge`
 
 
 ## Helper Classes
 
-.v-spaced
+`.v-spaced` will add the `$gutter` space below all of the `.col` elements in `.grid-flex`. It also removes this space from the bottom of the `.grid-flex` container with a negative margin so it wrapper takes up the same height.
