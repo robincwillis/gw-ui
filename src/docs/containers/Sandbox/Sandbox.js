@@ -330,6 +330,15 @@ class Sandbox extends Component {
 								<div className="col"><Loader className="large" /></div>
 							</div>
 
+							<TextLoader className="h1"/>
+							<TextLoader className="h2"/>
+							<TextLoader className="h3"/>
+							<TextLoader className="h4"/>
+							<TextLoader className="h5"/>
+							<TextLoader className="h6"/>
+							<hr/>
+								<TextLoader lines={5}/>
+							<hr/>
 							<TextLoader />
 							{this.gap()}
 

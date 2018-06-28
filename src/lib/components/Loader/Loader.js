@@ -9,24 +9,21 @@ export class TextLoader extends Component {
 	}
 
 	render () {
+		console.log('this.props.lines')
+		if(this.props.lines) {
+			var lines = [];
+			lines.length = this.props.lines;
+			console.log('lines: ' + lines);
+		}
 		return (
 			<span className={this.props.className ? ('text-loader ' + this.props.className) : ('text-loader')}>
-				{this.props.className == "paragraph" ? (
+				{this.props.lines ? (
 					<span className="p-wrap">
-						<span/>
-						<span/>
-						<span/>
-						<span/>
-						<span/>
-						<span/>
-						<span/>
-						<span/>
-						<span/>
-						<span/>
+					{lines.map( (option, index) => {
+						return (<span/>);
+					})}
 					</span>
-				) : (
-					<span/>
-				)}
+				) : <span/>}
 			</span>
 		);
 	}
