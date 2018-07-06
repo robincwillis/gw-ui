@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 import Input from 'components/Input';
+import Toggle from 'components/Toggle';
 import Section from './UISection'
 import UIComponent from './UIComponent'
 
 export class UIOtherInputs extends Component {
+
+	state = {}
 
 	defaultModal = () => {
 		this.props.modalActions.showModal('default-modal');
@@ -15,7 +18,7 @@ export class UIOtherInputs extends Component {
 		return (
 			<div>
 				<Section 
-					id="OtherInputs"
+					id={this.props.id}
 					title="Other Inputs"
 					description={
 						<div>
@@ -23,20 +26,19 @@ export class UIOtherInputs extends Component {
 						</div>
 					}
 				>
-					<div className="flex-grid wide-gutter v-spaced-wide">
+					<div className="grid-flex wide-gutter v-spaced-wide">
 						<div className="col-6">
 							<h5 className="space-after">Toggles</h5>
 							<UIComponent
-								component="Input"
-								type="toggle"
+								component="Toggle"
 								offLabel="Off"
 								onLabel="On"
 								id="UIToggle"
+								// onChange={(event) => { this.setState({ UIToggle : event.target.value })}}
 							/>
 							<h5 className="space-after">Texareas</h5>
 							<UIComponent
-								component="Input"
-								type="textarea"
+								component="Textarea"
 								placeholder="A text area"
 								labelAbove="Textarea"
 							/>
@@ -44,14 +46,12 @@ export class UIOtherInputs extends Component {
 						<div className="col-6">
 							<h5 className="space-after">Checkboxes and Radios</h5>
 							<UIComponent
-								component="Input"
-								type="checkbox"
+								component="Checkbox"
 								label="Checkbox"
 								id="UICheckbox"
 							/>
 							<UIComponent
-								component="Input"
-								type="radio"
+								component="Radio"
 								label="Radio City"
 								id="UIRadio"
 							/>

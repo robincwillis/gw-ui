@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Highlight from 'react-highlight.js';
-import 'highlight.js/styles/atom-one-light.css';
+// import 'highlight.js/styles/atom-one-light.css';
 // import 'highlight.js/styles/atom-one-dark.css';
 // import 'highlight.js/styles/github.css';
 // import 'highlight.js/styles/github-gist.css';

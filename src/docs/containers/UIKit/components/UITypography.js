@@ -15,7 +15,7 @@ export class UIInputs extends Component {
 
 		return (
 			<Section 
-				id="Typography"
+				id={this.props.id}
 				title="Typography"
 				description={
 					<div>
@@ -25,6 +25,7 @@ export class UIInputs extends Component {
 			>
 				<SubSection
 					title="Headers"
+					id={this.props.id + "Headers"}
 					description={
 						<div>
 							<p>The header font sizes for h1-6 and paragraphs, font weights, line heights, and letter spacing can all be adjusted easily in the <code>variables.scss</code> stylesheet</p>
@@ -34,7 +35,7 @@ export class UIInputs extends Component {
 					}
 				/>
 
-				<div className="flex-grid v-spaced-tight baseline">
+				<div className="grid-flex v-spaced-tight baseline">
 					<div className="col-4 align-right">
 						<code className="light-text-color">{'<h1>'} or .h1</code>
 					</div>
@@ -63,6 +64,7 @@ export class UIInputs extends Component {
 
 				<SubSection
 					title="Paragraphs"
+					id={this.props.id + "Paragraphs"}
 					description={
 						<div>
 							<p>There are 3 paragraph sizes and can be used by either wrapping a <code>p</code> with a <code>.sm</code>, <code>.md</code>, or <code>.lg</code> class or adding the class directly onto the <code>p</code></p>
@@ -70,7 +72,7 @@ export class UIInputs extends Component {
 					}
 				/>
 
-				<div className="flex-grid v-spaced baseline">
+				<div className="grid-flex v-spaced baseline">
 					<div className="col-4 align-right"><code className="light-text-color">p.sm</code></div>
 					<div className="col-8"><p className="sm max-text-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tertium autem omnibus aut maximis rebus iis, quae secundum naturam sint, fruentem vivere. Quae cum dixisset, finem ille. Videmus igitur ut conquiescere ne infantes quidem possint. Hoc loco tenere se Triarius non potuit. Ergo id est convenienter naturae vivere, a natura discedere. Traditur, inquit, ab Epicuro ratio neglegendi doloris.</p></div>
 
@@ -86,13 +88,14 @@ export class UIInputs extends Component {
 
 				<SubSection
 					title="Rich Text"
+					id={this.props.id + "RichText"}
 					description={
 						<div>
 							<p>Dump it text...WIP</p>
 						</div>
 					}
 				/>
-				<div className="flex-grid right">
+				<div className="grid-flex right">
 					<div className="col-8">
 						<div id="RichText" className="rich-text">
 							<h1>Quid est enim aliud esse versutum?</h1>
@@ -167,16 +170,48 @@ export class UIInputs extends Component {
 
 				<SubSection
 					title="Code Blocks"
+					id={this.props.id + "CodeBlocks"}
 					description={
 						<div>
 							<p>Code blocks description</p>
 						</div>
 					}
 				/>
-				<div className="flex-grid right">
+				<div className="grid-flex right">
 					<div className="col-8">
 						<CodeBlock language="javascript">
-							{"var='test'"}
+{`function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+              class="{cls}";
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+}
+
+export  $initHighlight;`}
+						</CodeBlock>
+						<CodeBlock className="dark mt-gutter" language="javascript">
+{`function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+              class="{cls}";
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+}
+
+export  $initHighlight;`}
 						</CodeBlock>
 					</div>
 				</div>

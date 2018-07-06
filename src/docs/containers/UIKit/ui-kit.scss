@@ -1,18 +1,38 @@
 @import '~sass/setup/variables';
 @import '~sass/setup/mixins';
 
-$ui-grey : lighten($text-color, 63%);
-
-.ui-kit {
+.screen-ui-kit {
+	.empty {
+		a {
+			color: $alert;
+		}
+	}
+	.sidebar-col {
+		width: 16rem;
+		line-height: $short-line-height;
+		height: 100vh;
+		.ui-sidebar {
+			background: $light-grey;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			z-index: 2;
+			width: 16rem;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+		ul {
+			padding-left: 1em;
+			padding-bottom: 1em;
+			line-height: $short-line-height;
+		}
+	}
 	.ui-component {
 		&.list-style {
 			display: flex;
 			align-items: center;
 			.code-block {
 				margin-left: $gutter-tight;
-			}
-			.tight-space-before {
-				margin-top: 0;
 			}
 		}
 		.measured {
@@ -41,6 +61,7 @@ $ui-grey : lighten($text-color, 63%);
 					border-radius: $base-border-radius;
 					font-size: $sm-p-font-size;
 					font-weight: $medium;
+					@include font-smooth($btn-font-smoothing);
 					right: calc(100% + 12px);
 					top: 50%;
 					transform: translate3d(0, -50%, 0);
@@ -75,58 +96,67 @@ $ui-grey : lighten($text-color, 63%);
 		}
 	}
 	.ui-kit-grid-item {
-		background: darken($bg-color, 5%);
+		background: darken($light-grey, 3%);
 		border-radius: $base-border-radius;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: $h5-font-size;
-		font-weight: $h5-font-weight;
-		h5-letter-spacing: $h5-letter-spacing;
+		font-size: $sm-p-font-size;
+		font-weight: $medium;
+		letter-spacing: 0;
 		line-height: 1em;
 		color: $light-text-color;
-		height: 6rem;
+		height: 4rem;
 		&.short {
-			height: 3rem;
+			height: 2rem;
 		}
 		&.tall {
-			height: 9rem;
+			height: 6rem;
 		}
-	}
-	.container {
-		max-width: 65rem
 	}
 	.ui-section {
 		.title {
 			font-size: 3.5rem;
 		}
 	}
-	.ui-sub-section {
-		&.no-border {
-			> hr {
-				display: none;
+	.ui-color-swatch {
+		.swatch {
+			padding-bottom: 66.666%;
+			border-radius: $base-border-radius;
+		}
+		&.ui-main-color {
+			.swatch {
+				background: $main-color;
 			}
 		}
-	}
-	.rich-text p,
-	p {
-		code,
-		.code {
-			color: $text-color;
-			background: transparent;
-			&:not(.minimal) {
-				background: $ui-grey;
-				background: darken($bg-color, 5%);
+		&.ui-text-color {
+			.swatch {
+				background: $text-color;
 			}
 		}
-	}
-	pre.code:not(.minimal),
-	.code-block {
-		background: transparent;
-		&:not(.minimal) {
-			code {
-				background: $ui-grey;
-				background: darken($bg-color, 5%);
+		&.ui-light-text-color {
+			.swatch {
+				background: $light-text-color;
+			}
+		}
+		&.ui-success-color {
+			.swatch {
+				background: $success;
+			}
+		}
+		&.ui-notify-color {
+			.swatch {
+				background: $notify;
+			}
+		}
+		&.ui-alert-color {
+			.swatch {
+				background: $alert;
+			}
+		}
+		&.ui-light-grey-color {
+			.swatch {
+				background: $light-grey;
 			}
 		}
 	}

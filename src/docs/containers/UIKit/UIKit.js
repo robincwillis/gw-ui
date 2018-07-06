@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 import DocumentTitle from 'react-document-title';
-
-import actionWrapper from 'util/actionWrapper';
-import * as modalActions from 'actions/modal';
-import * as notificationActions from 'actions/notifications';
-
 import Navigation from 'components/Navigation';
 
 import InlineSVG from 'svg-inline-react';
 
+import UIPhilosophy from './components/UIPhilosophy';
 import Button from 'components/Button'
 import UIButtons from './components/UIButtons';
 import UITextInputs from './components/UITextInputs';
@@ -18,131 +14,166 @@ import UIOtherInputs from './components/UIOtherInputs';
 import UITypography from './components/UITypography';
 import UIGrid from './components/UIGrid';
 import UITest from './components/UITest';
+import UILoaders from './components/UILoaders';
+import UIMisc from './components/UIMisc';
+import UIColors from './components/UIColors';
 
 import UISection from './components/UISection';
 
-import Modal from 'components/Modal';
-
 import './ui-kit.scss';
-
 
 const examples = [
 	{
-		title : "Buttons",
-		sectionComponent : <UIButtons/>
+		title : 'Philosophy',
+		id : 'Philosophy',
+		sectionComponent : <UIPhilosophy id="Philosophy" />
 	},
 	{
-		title : "Typography",
-		sectionComponent : <UITypography/>
+		title : 'Buttons',
+		id : 'UIButtons',
+		sectionComponent : <UIButtons id="UIButtons" />,
+		subsections : [
+			'Colors',
+			'Shapes',
+			'States',
+			'Icons',
+		]
 	},
 	{
-		title : "Grid",
-		sectionComponent : <UIGrid/>
+		title : 'Typography',
+		id : 'UITypography',
+		sectionComponent : <UITypography id="UITypography" />,
+		subsections : [
+			'Headers',
+			'Paragraphs',
+			'RichText',
+			'CodeBlocks'
+		]
 	},
 	{
-		title : "Form Elements",
-		sectionComponent : "..."
+		title : 'Grid',
+		id : 'UIGrid',
+		sectionComponent : <UIGrid id="UIGrid" />,
+		subsections : [
+			'HorzAlignment',
+			'VertAlignment',
+			'Breakpoints',
+			'Helpers'
+		]
 	},
 	{
-		title : "Text Inputs",
-		sectionComponent : <UITextInputs/>
+		title : 'Text Inputs',
+		id : 'UITextInputs',
+		sectionComponent : <UITextInputs id="UITextInputs" />
 	},
 	{
-		title : "Selects",
-		sectionComponent : <UISelectInputs/>
+		title : 'Selects',
+		id : 'UISelectInputs',
+		sectionComponent : <UISelectInputs id="UISelectInputs" />
 	},
 	{
-		title : "Other Inputs",
-		sectionComponent : <UIOtherInputs/>
+		title : 'Other Inputs',
+		id : 'UIOtherInputs',
+		sectionComponent : <UIOtherInputs id="UIOtherInputs" />
 	},
 	{
-		title : "Spacing",
+		title : 'Loaders',
+		id : 'Loaders',
+		sectionComponent : <UILoaders id="Loaders" />
+	},
+	{
+		title : 'Spacing',
+		id : 'Spacing',
 		// sectionComponent : <UIButtons/>
 	},
 	{
-		title : "Colors",
+		title : 'Colors',
+		id : 'UIColors',
+		sectionComponent : <UIColors id="UIColors" />
+	},
+	{
+		title : 'Icons',
+		id : 'Icons',
 		// sectionComponent : <UIButtons/>
 	},
 	{
-		title : "Icons",
+		title : 'Components',
+		id : 'Components',
 		// sectionComponent : <UIButtons/>
 	},
 	{
-		title : "Components",
+		title : 'Table',
+		id : 'Table',
 		// sectionComponent : <UIButtons/>
 	},
 	{
-		title : "Data Lists",
-		// sectionComponent : <UIButtons/>
+		title : 'Misc',
+		id : 'UIMisc',
+		sectionComponent : <UIMisc id="UIMisc"/>,
+		subsections : [
+			'Tooltips',
+			'HelperClasses',
+		]
 	},
 	{
-		title : "Misc",
-		// sectionComponent : <UIButtons/>
-	},
-	{
-		title : "Animations",
+		title : 'Animations',
+		id : 'Animations',
 		// sectionComponent : <UIButtons/>
 	}
 ];
 
 export class UIKit extends Component {
 
-	defaultModal = () => {
-		this.props.modalActions.showModal('default-modal');
-	}
-
 	render() {
 		return (
 			<DocumentTitle title={this.props.pageTitleLeader + "UI Kit"}>
-				<div className="main-content-region ui-kit">
-					<div className="container">
-						<div className="flex-grid left wide-space-before">
-							{examples.map( (section, index) => {
-								if (section.sectionComponent) {
-									return (
-										<div key={'ui-kit-nav-item-' + section.title + '-' + index} className="col">{section.title}</div>
-									);
-								}
-							})}
-						</div>
-						<div className="flex-grid">
-							<div className="col grow">
-								{/*
-
-								<UISelectInputs/>
-								<UIOtherInputs/>
-								<UITextInputs/>
-								*/}
+				<div className="screen-ui-kit">
+					<div className="grid-flex">
+						<div className="col no-grow sidebar-col">
+							<div className="ui-sidebar p-gutter">
 								{examples.map( (section, index) => {
-									if (section.sectionComponent) {
-										return (
-											section.sectionComponent
-										);
-									}
+									return (
+										<div key={'ui-kit-nav-item-' + section.title + '-' + index} className={section.sectionComponent ? '' : 'empty'}>
+											<a className="p sm medium-weight" href={'#' + section.id}>{section.title}</a>
+											{section.subsections ? (
+												<ul>
+													{section.subsections.map( (subsection) => { return(
+														<li><a className="p sm medium-weight" href={'#' + section.id + subsection}>{subsection}</a></li>
+													); } )}
+												</ul>
+											) : false}
+										</div>
+									);
 								})}
 							</div>
 						</div>
+						<div className="col grow">
+							<div className="ui-kit container">
+								<div className="grid-flex">
+									<div className="col grow">
+										{examples.map( (section, index) => {
+											if (section.sectionComponent) {
+												return (
+													section.sectionComponent
+												);
+											} else {
+												return (
+													<UISection id={section.id} title={section.title} />
+												);
+											}
+										})}
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-
-					<Modal
-						title="Default Modal"
-						id="default-modal"
-						className="modal-class"
-					/>
-
 				</div>
 			</DocumentTitle>
 		);
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return actionWrapper({
-		modalActions
-	}, dispatch);
-};
-
-export default connect(mapDispatchToProps)(UIKit);
+export default UIKit;
 
 
 

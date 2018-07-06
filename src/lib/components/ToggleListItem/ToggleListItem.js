@@ -20,7 +20,7 @@ export class ToggleListItem extends Component {
 
 	render() {
 		return (
-			<label htmlFor={this.props.title} className={this.state.selected === true ? ('toggle-list-item flex-grid tight-gutter no-break middle active') : ('toggle-list-item flex-grid tight-gutter no-break middle')}>
+			<label htmlFor={this.props.title} className={this.state.selected === true ? ('toggle-list-item grid-flex tight-gutter no-break middle active') : ('toggle-list-item grid-flex tight-gutter no-break middle')}>
 				{this.props.icon ? (
 					<div className="col no-grow">
 						<InlineSVG src={this.props.icon} element="span" className="icon" />

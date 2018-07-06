@@ -15,7 +15,7 @@ export class UIInputs extends Component {
 		return (
 			<div>
 				<Section 
-					id="TextInputs"
+					id={this.props.id}
 					title="Text Inputs"
 					description={
 						<div>
@@ -28,7 +28,7 @@ export class UIInputs extends Component {
 						</div>
 					}
 				>
-					<div className="flex-grid wide-gutter v-spaced-wide">
+					<div className="grid-flex wide-gutter v-spaced-wide">
 						<div className="col-6">
 							<h5 className="space-after">Normal Inputs</h5>
 							<UIComponent

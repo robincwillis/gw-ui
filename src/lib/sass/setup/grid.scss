@@ -91,7 +91,7 @@ $col: 100% / 12;
   }
 }
 
-@mixin flex-grid() {
+@mixin grid-flex() {
   display: flex !important;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -315,25 +315,25 @@ $col: 100% / 12;
   // Turn grid on at different breakpoints
   &:not(.no-break):not(.break-lg):not(.break-xlg):not(.break-sm) {
     @include respond($md) {
-      @include flex-grid();
+      @include grid-flex();
     }
   }
   &.no-break {
-    @include flex-grid();
+    @include grid-flex();
   }
   &.break-sm {
     @include respond($sm) {
-      @include flex-grid();
+      @include grid-flex();
     }
   }
   &.break-lg {
     @include respond($lg) {
-      @include flex-grid();
+      @include grid-flex();
     }
   }
   &.break-xlg {
     @include respond($xlg) {
-      @include flex-grid();
+      @include grid-flex();
     }
   }
 }

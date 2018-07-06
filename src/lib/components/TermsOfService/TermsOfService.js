@@ -38,7 +38,7 @@ export class TermsOfService extends Component {
 					<p>Mihi vero, inquit, placet agi subtilius et, ut ipse dixisti, pressius. Sed plane dicit quod intellegit. Sed ad haec, nisi molestum est, habeo quae velim. Itaque contra est, ac dicitis; <a href='http://loripsum.net/' target='_blank'>Sed nimis multa.</a> <a href='http://loripsum.net/' target='_blank'>Quid me istud rogas?</a> Inde sermone vario sex illa a Dipylo stadia confecimus. </p>
 
 					<p>Videsne quam sit magna dissensio? Expressa vero in iis aetatibus, quae iam confirmatae sunt. Apud ceteros autem philosophos, qui quaesivit aliquid, tacet; Ita graviter et severe voluptatem secrevit a bono. Itaque eos id agere, ut a se dolores, morbos, debilitates repellant. Nunc omni virtuti vitium contrario nomine opponitur. Ut necesse sit omnium rerum, quae natura vigeant, similem esse finem, non eundem. Quis istud, quaeso, nesciebat? Quam ob rem tandem, inquit, non satisfacit? Illud dico, ea, quae dicat, praeclare inter se cohaerere. Saepe ab Aristotele, a Theophrasto mirabiliter est laudata per se ipsa rerum scientia; Unum est sine dolore esse, alterum cum voluptate. </p>
-					<div className="button-actions align-center wide-space-before">
+					<div className="button-actions align-center mt-margin">
 						<Button icon="check" label="I Accept" className="large" onClick={this.props.acceptTos} />
 					</div>
 				</div>

@@ -99,10 +99,6 @@ p,
 	letter-spacing: $p-letter-spacing;
 	font-weight: $p-font-weight;
 	text-transform: none;
-	&.max-width,
-	.max-width & {
-		max-width: 32em;
-	}
 	&.tight-line-height {
 		line-height: $tight-line-height;
 	}
@@ -138,8 +134,8 @@ p,
 			}
 		}
 	}
-	.sm &,
-	.small &,
+	.sm > &,
+	.small > &,
 	&.sm,
 	&.small,
 	&.caption {
@@ -152,31 +148,29 @@ p,
 		max-width: 30em;
 		color: $light-text-color;
 	}
-	.tiny &,
+	.tiny > &,
 	&.tiny {
 		font-size: $tiny-font-size;
 		.material-icons.md-12 {
 			margin-top: -1px 4px;
 		}
 	}
-	.lg &,
-	.large &,
+	.lg > &,
+	.large > &,
 	&.lg,
 	&.large {
 		font-size: $lg-p-font-size;
-		font-weight: $light;
 		line-height: $short-line-height;
 		letter-spacing: 0;
 	}
-	.xlg &,
+	.xlg > &,
 	&.xlg {
 		font-size: 1.5rem;
-		font-weight: $light;
 		line-height: $short-line-height;
 		letter-spacing: 0;
 	}
-	.md &,
-	.medium &,
+	.md > &,
+	.medium > &,
 	&.md,
 	&.medium {
 		font-size: $md-p-font-size;
@@ -184,7 +178,7 @@ p,
 		// line-height: $short-line-height;
 		line-height: $base-line-height;
 	}
-	.light &,
+	.light > &,
 	&.light-text-color {
 		color: $light-text-color;
 		a {

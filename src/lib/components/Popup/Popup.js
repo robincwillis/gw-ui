@@ -98,12 +98,11 @@ export class Popup extends Component {
 				className='popup'
 				style={this.getPopperStyle(this.state.data)}
 			>
-				<div
+				{<div
 					ref={(el) => (this.arrow = el)}
 					className='arrow'
 					style={this.getArrowStyle(this.state.data)}
-				/>
-
+				/>}
 				{content}
 			</div>
 		);

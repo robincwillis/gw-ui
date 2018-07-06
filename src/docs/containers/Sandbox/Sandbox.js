@@ -10,6 +10,12 @@ import Select from 'lib/components/Select';
 import Checkbox from 'lib/components/Checkbox';
 import Radio from 'lib/components/Radio';
 
+import Collapse from 'lib/components/Collapse';
+import Accordion from 'lib/components/Accordion';
+
+import Popup from 'lib/components/Popup';
+import PopupTooltip from 'lib/components/PopupTooltip';
+
 // Custom Inputs
 
 import ContentEditable from 'lib/components/ContentEditable';
@@ -17,7 +23,22 @@ import EditableItem from 'lib/components/EditableItem';
 import Typeahead from 'lib/components/Typeahead';
 import Toggle from 'lib/components/Toggle';
 import Swatch from 'lib/components/Swatch';
-import FileUpload from 'lib/components/FileUpload'
+import FileUpload from 'lib/components/FileUpload';
+
+import { Table, Column, Cell } from 'lib/components/Table';
+
+var tableTestData = [
+	{
+		'title' : 'title',
+		'percent' : '12.2%',
+		'date' : 'date'
+	},
+	{
+		'title' : 'title',
+		'percent' : '12.2%',
+		'date' : 'date'
+	}
+];
 
 //import DatePicker from 'lib/components/DatePicker';
 
@@ -42,6 +63,31 @@ class Sandbox extends Component {
 		return (
 			<div className="container py-margin">
 
+				<h3>Popups</h3>
+				
+				<hr/>
+				<h3>Accordion</h3>
+				<Accordion
+					items={[
+						{
+							title : 'title',
+							content : <div>item1</div>,
+							icon : false
+						},
+						{
+							title : 'Another title',
+							content : <div>item2</div>
+						}
+					]}
+				/>
+
+				<hr/>
+				<h3>Collapse</h3>
+				<Collapse title="title" hasArrow={false}>
+					<div>content</div>
+				</Collapse>
+
+				<hr/>
 				<h2 className="h1">Basic</h2>
 				<section className="pb-3">
 					<hr/>

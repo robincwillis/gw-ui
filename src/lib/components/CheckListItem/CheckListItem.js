@@ -21,7 +21,7 @@ export class CheckListItem extends Component {
 
 	render() {
 		return (
-			<label htmlFor={this.props.title} className={this.state.selected === true ? ('check-list-item flex-grid tight-gutter no-break middle active') : ('check-list-item flex-grid tight-gutter no-break middle')}>
+			<label htmlFor={this.props.title} className={this.state.selected === true ? ('check-list-item grid-flex tight-gutter no-break middle active') : ('check-list-item grid-flex tight-gutter no-break middle')}>
 				{this.props.avatar ? (
 					<div className="col no-grow">
 						<Avatar image={this.props.avatar} />

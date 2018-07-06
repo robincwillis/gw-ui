@@ -30,6 +30,7 @@ input[type=submit].button {
   min-width: 8rem;
   text-align: center;
   box-shadow: $btn-shadow;
+  @include font-smooth($btn-font-smoothing);
   transition: background $md-speed $ease,
               color $md-speed $ease,
               border $md-speed $ease,

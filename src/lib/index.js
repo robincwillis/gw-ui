@@ -6,7 +6,7 @@ export * as storage from './util/storage';
 // Inputs
 
 export Button from './components/Button';
-export Input from './components/Input';
+export Input from './components/Input'; // rewrite styles
 export TextArea from './components/TextArea';
 export Select from './components/Select';
 export Checkbox from './components/Checkbox';

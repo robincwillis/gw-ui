@@ -53,9 +53,11 @@
   }
 }
 
-@mixin font-smooth() {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@mixin font-smooth($smooth : false) {
+  @if $smooth == true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 @mixin scrollable() {
