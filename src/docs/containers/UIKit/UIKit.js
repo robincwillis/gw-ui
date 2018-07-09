@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 import DocumentTitle from 'react-document-title';
-import Navigation from 'components/Navigation';
-
-import InlineSVG from 'svg-inline-react';
 
 import UIPhilosophy from './components/UIPhilosophy';
 import Button from 'components/Button'
@@ -46,8 +43,7 @@ const examples = [
 		subsections : [
 			'Headers',
 			'Paragraphs',
-			'RichText',
-			'CodeBlocks'
+			'RichText'
 		]
 	},
 	{

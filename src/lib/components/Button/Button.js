@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InlineSVG from 'svg-inline-react';
 
 import Loader from 'components/Loader';
 
@@ -63,8 +62,6 @@ export class Button extends Component {
 		if (this.props.icon) {
 			if (this.props.icon == "loader" || this.props.state == "loading") {
 				icon = <Loader className="normal icon" />;
-			} else if (this.props.icon.startsWith('<svg')) {
-				icon = (<InlineSVG src={this.props.icon} className="icon" />);
 			} else if (this.props.state == 'success') {
 				icon = (<i className="material-icons icon">check</i>);
 			} else if (this.props.state == 'error') {
@@ -101,8 +98,6 @@ export class Button extends Component {
 		if (this.props.rightIcon) {
 			if (this.props.rightIcon == "loader" || this.props.state == 'loading') {
 				icon = <Loader className="normal icon" />;
-			} else if (this.props.rightIcon.startsWith('<svg')) {
-				icon = (<InlineSVG src={this.props.rightIcon} className="icon" />);
 			} else if (this.props.state == 'success') {
 				icon = (<i className="material-icons icon">check</i>);
 			} else if (this.props.state == 'error') {

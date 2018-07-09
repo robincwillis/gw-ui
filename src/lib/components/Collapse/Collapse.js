@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InlineSVG from 'svg-inline-react';
 
 import './Collapse.scss';
 
@@ -56,10 +55,10 @@ export class Collapse extends Component {
   icon () {
     var icon = '';
     if (this.props.icon) {
-      if (this.props.icon.startsWith("<")) {
-        icon = (<InlineSVG src={this.props.icon} element="span" className="icon" />);
-      } else {
+      if (typeof this.props.icon === 'string') {
         icon = (<i className="material-icons icon">{this.props.icon}</i>);
+      } else {
+        icon = this.props.icon;
       }
     }
     return icon;
@@ -67,11 +66,12 @@ export class Collapse extends Component {
 
 	iconOpen () {
 		var icon = '';
-		if (this.props.iconOpen && typeof this.props.iconOpen === 'string') {
-			icon = (<i className="material-icons icon">{this.props.iconOpen}</i>);
-		}
-		if (this.props.iconOpen && typeof this.props.iconOpen !== 'string') {
-			icon = (<InlineSVG src={this.props.iconOpen} element="span" className="icon" />);
+		if (this.props.iconOpen) {
+			if (typeof this.props.iconOpen === 'string') {
+				icon = (<i className="material-icons icon">{this.props.iconOpen}</i>);
+			} else {
+				icon = this.props.iconOpen;
+			}
 		}
 		return icon;
 	}

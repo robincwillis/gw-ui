@@ -14,7 +14,6 @@ import Collapse from 'lib/components/Collapse';
 import Accordion from 'lib/components/Accordion';
 
 import Popup from 'lib/components/Popup';
-import PopupTooltip from 'lib/components/PopupTooltip';
 
 // Custom Inputs
 
@@ -22,7 +21,6 @@ import ContentEditable from 'lib/components/ContentEditable';
 import EditableItem from 'lib/components/EditableItem';
 import Typeahead from 'lib/components/Typeahead';
 import Toggle from 'lib/components/Toggle';
-import Swatch from 'lib/components/Swatch';
 import FileUpload from 'lib/components/FileUpload';
 
 import { Table, Column, Cell } from 'lib/components/Table';
@@ -40,7 +38,7 @@ var tableTestData = [
 	}
 ];
 
-//import DatePicker from 'lib/components/DatePicker';
+import DatePicker from 'lib/components/DatePicker';
 
 //Loaders
 
@@ -62,6 +60,8 @@ class Sandbox extends Component {
 
 		return (
 			<div className="container py-margin">
+
+				<DatePicker />
 
 				<h3>Popups</h3>
 				
@@ -302,20 +302,6 @@ class Sandbox extends Component {
 								label="Test 2"
 								value={this.state.toggle1}
 								onChange={(event) => { this.setState({toggle1 : event.target.value})}}
-							/>
-						</div>
-					</div>
-				</section>
-
-				<section className="pb-3">
-					<hr/>
-					<div className="grid-flex">
-						<div className="col-4">
-							<h3>Swatch</h3>
-						</div>
-						<div className="col-8">
-							<Swatch
-								value="red"
 							/>
 						</div>
 					</div>

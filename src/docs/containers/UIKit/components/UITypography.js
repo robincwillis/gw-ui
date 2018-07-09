@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Input from 'components/Input';
 import Section from './UISection'
 import SubSection from './UISubSection'
-import CodeBlock from 'components/CodeBlock'
 
 export class UIInputs extends Component {
 
@@ -165,54 +164,6 @@ export class UIInputs extends Component {
 							</ol>
 	
 						</div>
-					</div>
-				</div>
-
-				<SubSection
-					title="Code Blocks"
-					id={this.props.id + "CodeBlocks"}
-					description={
-						<div>
-							<p>Code blocks description</p>
-						</div>
-					}
-				/>
-				<div className="grid-flex right">
-					<div className="col-8">
-						<CodeBlock language="javascript">
-{`function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-              class="{cls}";
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i < classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log('undefined');
-  }
-}
-
-export  $initHighlight;`}
-						</CodeBlock>
-						<CodeBlock className="dark mt-gutter" language="javascript">
-{`function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-              class="{cls}";
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i < classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log('undefined');
-  }
-}
-
-export  $initHighlight;`}
-						</CodeBlock>
 					</div>
 				</div>
 

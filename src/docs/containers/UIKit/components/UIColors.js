@@ -7,21 +7,43 @@ import UIComponent from './UIComponent';
 
 export class UIColorSwatch extends Component {
 
-	// componentDidUpdate () {
-	// 	this.getComponentColor();
-	// }
+	state = {}
 
-	// getComponentColor () {
-	// 	var componentColor = this.refs.swatchComponent.style.backgroundColor;
-	// 	console.log(componentColor);
-	// } 
+	componentDidMount () {
+		this.getComponentColor();
+	}
+
+	getComponentColor () {
+		var componentColor = this.refs.swatchComponent.style.backgroundColor;
+		var swatchComponent = this.refs.swatchComponent;
+		var swatchColor = window.getComputedStyle(swatchComponent, null).getPropertyValue("background-color");
+
+		var a = swatchColor.split("(")[1].split(")")[0];
+		a = a.split(",");
+
+		function componentToHex(c) {
+	    var hex = Number(c).toString(16);
+	    return hex.length == 1 ? "0" + hex : hex;
+		}
+
+		function rgbToHex(r, g, b) {
+	    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+		}
+
+		console.log(swatchColor)
+
+
+		const hex = rgbToHex(a[0], a[1], a[2])
+
+		this.setState({hex, alpha: a[3]});
+	} 
 
 	render() {
 		return (
 			<div className={"ui-color-swatch " + this.props.className}>
 				<div className="swatch mb-1" ref="swatchComponent"></div>
 				<p className="sm medium-weight">${this.props.variable}</p>
-				<p className="sm light-text-color">#</p>
+				<p className="sm light-text-color">{this.state.hex}{this.state.alpha ? (" alpha " + this.state.alpha) : false}</p>
 			</div>
 		);
 	}
