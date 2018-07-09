@@ -124,45 +124,49 @@ export class UIKit extends Component {
 		return (
 			<DocumentTitle title={this.props.pageTitleLeader + "UI Kit"}>
 				<div className="screen-ui-kit">
-					<div className="grid-flex">
-						<div className="col no-grow sidebar-col">
-							<div className="ui-sidebar p-gutter">
-								{examples.map( (section, index) => {
-									return (
-										<div key={'ui-kit-nav-item-' + section.title + '-' + index} className={section.sectionComponent ? '' : 'empty'}>
-											<a className="p sm medium-weight" href={'#' + section.id}>{section.title}</a>
-											{section.subsections ? (
-												<ul>
-													{section.subsections.map( (subsection) => { return(
-														<li><a className="p sm medium-weight" href={'#' + section.id + subsection}>{subsection}</a></li>
-													); } )}
-												</ul>
-											) : false}
-										</div>
-									);
-								})}
-							</div>
-						</div>
-						<div className="col grow">
-							<div className="ui-kit container">
-								<div className="grid-flex">
-									<div className="col grow">
-										{examples.map( (section, index) => {
-											if (section.sectionComponent) {
-												return (
-													section.sectionComponent
-												);
-											} else {
-												return (
-													<UISection id={section.id} title={section.title} />
-												);
-											}
-										})}
-									</div>
-								</div>
+
+					<div className="ui-sidebar p-gutter">
+						<div className="ui-kit-menu-icon">
+							<div className="material-icons md-24">menu</div>
+							<div className="sidebar">
+								<ul>
+									{examples.map( (section, index) => {
+										return (
+											<li key={'ui-kit-nav-item-' + section.title + '-' + index} className={section.sectionComponent ? '' : 'empty'}>
+												<a className="p sm medium-weight" href={'#' + section.id}>{section.title}</a>
+												{section.subsections ? (
+													<ul>
+														{section.subsections.map( (subsection) => { return(
+															<li><a className="p sm" href={'#' + section.id + subsection}>{subsection}</a></li>
+														); } )}
+													</ul>
+												) : false}
+											</li>
+										);
+									})}
+								</ul>
 							</div>
 						</div>
 					</div>
+
+					<div className="ui-kit container">
+						<div className="grid-flex">
+							<div className="col grow">
+								{examples.map( (section, index) => {
+									if (section.sectionComponent) {
+										return (
+											section.sectionComponent
+										);
+									} else {
+										return (
+											<UISection id={section.id} title={section.title} />
+										);
+									}
+								})}
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</DocumentTitle>
 		);

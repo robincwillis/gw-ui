@@ -69,6 +69,7 @@ a {
   max-width: $max-site-width;
   @include respond($lg) {
     width: $site-width;
+    width: calc(100% - #{$margin} * 2);
   }
   &.narrow {
     max-width: 35rem;
