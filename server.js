@@ -5,7 +5,7 @@ var app = express();
 
 var PORT = process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 app.get('*', function(req, res) {
 	res.sendFile(path.join(__dirname + '/docs/index.html'));
