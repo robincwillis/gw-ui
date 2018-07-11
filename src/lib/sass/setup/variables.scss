@@ -52,7 +52,7 @@ $system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans
 $main-font: $system-font;
 $secondary-font: $system-font;
 $code-font: 'Roboto Mono', monospace;
-$general-font-smoothing : false;
+$general-font-smoothing : true;
 $base-line-height : 1.5em;
 $base-letter-spacing : 0;
 $short-line-height : 1.25em;

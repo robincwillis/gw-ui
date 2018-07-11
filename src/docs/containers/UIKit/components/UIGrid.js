@@ -254,7 +254,7 @@ export class UIButtons extends Component {
 						<ul>
 							<h6>Gutter spacing</h6>
 							<li><code>.no-gutter</code><br/> will make the space between the grid's columns so there is no gap.</li>
-							<li><code>.tight-gutter</code><br/> will make the space between the grid's columns the <code>$tight-gutter</code> variable.</li>
+							<li><code>.tight-gutter</code><br/> will make the space between the grid's columns the <code>$gutter-tight</code> variable.</li>
 							<li><code>.wide-gutter</code><br/> will make the space between the grid's columns the <code>$wide-gutter</code> variable.</li>
 							
 							<h6>Vertical spacing</h6>
