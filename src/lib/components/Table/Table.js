@@ -33,7 +33,7 @@ export class ActionCell extends Component {
 						className="small transparent circle"
 						tooltipText="Edit"
 						tooltipPosition="top"
-						icon="edit"
+						materialIcon="edit"
 						onClick={this.props.edit.bind(this, this.props.item)}
 					/>
 				) : false}
@@ -42,7 +42,7 @@ export class ActionCell extends Component {
 						className="small transparent circle hover-alert"
 						tooltipText="Delete"
 						tooltipPosition="top"
-						icon="trash"
+						materialIcon="delete"
 						onClick={this.props.delete.bind(this, this.props.item)}
 					/>
 				) : false}
@@ -134,7 +134,8 @@ export class ButtonCell extends Component {
 export class Cell extends Component {
 
 	className () {
-		let className = "table-cell";
+
+		let className = "list-cell";
 		if(this.props.className) {
 			className += " " + this.props.className;
 		}
@@ -152,6 +153,9 @@ export class Cell extends Component {
 		var value;
 		if(this.props.children) {
 			value = this.props.children;
+
+		} else if(this.props.value && typeof this.props.value === "function" && !this.props.col) {
+			value = this.props.value(this.props.data[this.props.index])
 		} else if(this.props.value && typeof this.props.value === "function") {
 			value = this.props.value(this.props.data[this.props.index][this.props.col])
 		} else if (this.props.value){
@@ -169,23 +173,36 @@ export class Cell extends Component {
 
 		//var value = this.props.children ? this.props.children : this.props.data[this.props.index][this.props.col] ? this.props.data[this.props.index][this.props.col] : (<span className="empty-cell"/>);
 		return(
-			<div
+			<td
 				style={this.style()}
 				key={this.props.index}
 				className={this.className()}
 				>
 					<span className="data">{value}</span>
-			</div>
+			</td>
 			);
 	}
 }
 
 export class Row extends Component {
 	className () {
-		return this.props.className ? "table-row " + this.props.className : "table-row";
+		let className = "list-row";
+		if(this.props.className) {
+			className += " " + this.props.className;
+		}
+		if(this.props.trClass && typeof this.props.trClass === 'function') {
+			className += " " + this.props.trClass(this.props.data[this.props.index]);
+		} else if(this.props.trClass && typeof this.props.trClass === 'string') {
+			className += " " + this.props.trClass;
+		}
+		return className;
 	}
+
 	render () {
-		return (<div onClick={this.props.rowOnClick ? () => {this.props.rowOnClick(this.props.data[this.props.index])} : ()=>{} } className={this.className()}>{this.props.children}</div>);
+
+
+
+		return (<tr onClick={this.props.rowOnClick ? () => {this.props.rowOnClick(this.props.data[this.props.index])} : ()=>{} } className={this.className()}>{this.props.children}</tr>);
 	}
 }
 
@@ -200,15 +217,15 @@ export class Column extends Component {
 
 export default class Table extends Component {
 
-	tableClass () {
-    var tableClass = 'table';
-    if(this.props.tableClass) {
-      tableClass += ' ' + this.props.tableClass;
+	listClass () {
+    var listClass = 'gw-table';
+    if(this.props.listClass) {
+      listClass += ' ' + this.props.listClass;
     }
     if(this.props.alignment) {
-      tableClass += ' align-' + this.props.alignment;
+      listClass += ' align-' + this.props.alignment;
     }
-    return tableClass;
+    return listClass;
   }
 
 	render () {
@@ -240,7 +257,7 @@ export default class Table extends Component {
 			return (cell);
 		});
 
-		var header = (<div className="header-container"><Row className="header" key="header">{headerCells}</Row></div>);
+		var header = (<thead className="header-container"><Row className="header" key="header">{headerCells}</Row></thead>);
 
 		//Table Body
 		let body = this.props.data.map( (item, rowIndex)=> {
@@ -270,11 +287,11 @@ export default class Table extends Component {
 
 		return (
 			<div>
-				<div className={this.tableClass()}>
+				<table className={this.listClass()}>
 					{header}
-					{body}
-				</div>
+					<tbody className={this.props.tbodyClass}>{body}</tbody>
+				</table>
 			</div>
-		);
+			);
 	}
 }

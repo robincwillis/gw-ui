@@ -19,18 +19,18 @@ $gutter-wide: $gutter * 2;
 $grid-gutter: $gutter;
 
 // General UI Varibales
-$base-border-radius : 3px;
+$base-border-radius : 2px;
 
 // Colors
 $bg-color : #fff;
-$main-color: #2174D8;
+$main-color: #1D74F5; //#2174D8;
 $black : #000;
 $white : #fff;
-$alert : #DF693D;
-$notify : #F7C24E;
-$success : #37DCAF;
+$alert : #DF693D; // #F5445C;
+$notify :  #F7C24E; // #F4A146;
+$success : #37DCAF; // #2DE0A5;
 $text-color : #2F374C;//#333;
-$light-grey : lighten($text-color, 76%);
+$light-grey : lighten($text-color, 73%);
 $light-text-color : lighten($text-color, 40%);
 $hr-color : lighten($text-color, 70%);
 $hr-styles : 1px solid $hr-color;
@@ -42,6 +42,7 @@ $link-hover-color : $main-color;
 // Weird
 $tight-horizontal-cell-padding : 4px;
 $tight-vertical-cell-padding : 4px;
+$rich-text-max-width : 300px;
 $scrollbar-width : 6px;
 $sidebar-width : 100rem;
 $header-height : 40px;
@@ -50,10 +51,11 @@ $header-height : 40px;
 $system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $main-font: $system-font;
 $secondary-font: $system-font;
-$code-font: $system-font;
+$code-font: 'Roboto Mono', monospace;
+$general-font-smoothing : true;
 $base-line-height : 1.5em;
 $base-letter-spacing : 0;
-$short-line-height : 1.4em;
+$short-line-height : 1.25em;
 $tight-line-height : 1.1em;
 $tracked-out : .125em;
 	// General Text Sizes
@@ -68,54 +70,75 @@ $tracked-out : .125em;
 	$medium : 700;
 	$bold : 700;
 	// h1
-		$h1-font-family : $main-font;
+		$h1-font-family : inherit;
 		$h1-text-transform : none;
 		$h1-font-size : 2.5rem;
-		$h1-font-weight : $normal;
+		$h1-font-weight : $medium;
 		$h1-line-height : $short-line-height;
-		$h1-letter-spacing : -.03em;
+		$h1-letter-spacing : inherit;
+		$h1-font-smoothing : false;
 	// h2
-		$h2-font-family : $main-font;
+		$h2-font-family : inherit;
 		$h2-text-transform : none;
 		$h2-font-size : 2.25rem;
-		$h2-font-weight : $normal;
-		$h2-line-height : $base-line-height;
-		$h2-letter-spacing : -.03em;
+		$h2-font-weight : $medium;
+		$h2-line-height : $short-line-height;
+		$h2-letter-spacing : inherit;
+		$h2-font-smoothing : false;
 	// h3
-		$h3-font-family : $main-font;
+		$h3-font-family : inherit;
 		$h3-text-transform : none;
 		$h3-font-size : 1.75rem;
-		$h3-font-weight : $normal;
+		$h3-font-weight : $medium;
 		$h3-line-height : $short-line-height;
-		$h3-letter-spacing : -.03em;
+		$h3-letter-spacing : inherit;
+		$h3-font-smoothing : false;
 	// h4
-		$h4-font-family : $main-font;
+		$h4-font-family : inherit;
 		$h4-text-transform : none;
 		$h4-font-size : 1.25rem;
-		$h4-font-weight : $normal;
+		$h4-font-weight : $medium;
 		$h4-line-height : $base-line-height;
-		$h4-letter-spacing : 0;
+		$h4-letter-spacing : inherit;
+		$h4-font-smoothing : false;
 	// h5
-		$h5-font-family : $secondary-font;
+		$h5-font-family : inherit;
 		$h5-text-transform : none;
 		$h5-font-size : 1.25rem;
 		$h5-font-weight : $bold;
 		$h5-line-height : $base-line-height;
 		$h5-letter-spacing : inherit;
+		$h5-font-smoothing : false;
 	// h6 is tracked out all caps by default
-		$h6-font-family : $secondary-font;
-	// p
+		$h6-font-family : $main-font;
+	// p.sm
 		$sm-p-font-size : .875rem; //13px;
-		$p-font-size : 1rem;
-		$md-p-font-size : 1.125rem;
-		$lg-p-font-size : 1.25rem;
-		$p-font-weight : $normal;
-		$p-line-height : $base-line-height;
-		$p-letter-spacing : -.025em;
+		$sm-p-font-family : inherit;
+		$sm-p-font-weight : $normal;
+		$sm-p-line-height : $base-line-height;
+		$sm-p-letter-spacing : inherit;
+		// p
+			$p-font-size : 1rem;
+			$p-font-family : inherit;
+			$p-font-weight : $normal;
+			$p-line-height : $base-line-height;
+			$p-letter-spacing : inherit;
+		// p.md
+			$md-p-font-size : 1.125rem;
+			$md-p-font-family : inherit;
+			$md-p-font-weight : $normal;
+			$md-p-line-height : $base-line-height;
+			$md-p-letter-spacing : inherit;
+		// p.lg
+			$lg-p-font-size : 1.25rem;
+			$lg-p-font-family : inherit;
+			$lg-p-font-weight : $normal;
+			$lg-p-line-height : $base-line-height;
+			$lg-p-letter-spacing : inherit;
 
 // Text Highlights
-$highlight-bg : $light-text-color;
-$highlight-color : $bg-color;
+$highlight-bg : rgba($main-color, .1);
+$highlight-color : $main-color;
 
 // Button Variables
 $btn-radius: $base-border-radius;
@@ -125,9 +148,10 @@ $btn-letter-spacing: 0;
 $btn-weight: $bold;
 $btn-font-style: normal;
 $btn-vertical-offset: 1px;
+$btn-font-smoothing: true;
 
 // Button Sizes
-$btn-height: 44px;
+$btn-height: 50px;
 	$btn-small-height: 30px;
 		$btn-tiny-height: 24px;
 			$btn-large-height: 60px;
