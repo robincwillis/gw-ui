@@ -25,7 +25,7 @@ class Checkbox extends Component {
 	}
 
 	checkbox = () => (
-		<div className="flex-wrap">
+		<div className="gw-checkbox">
 			<input
 				disabled={this.props.disabled}
 				type="checkbox"
@@ -40,7 +40,12 @@ class Checkbox extends Component {
 				{...this.props.checkboxProps}
 			/>
 			{this.props.label ? (
-				<label htmlFor={this.props.id ? this.props.id : this.props.value}>{this.props.label}</label>
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
+					<div className="grid-flex no-break no-gutter left middle">
+						<div className="col"><div className="checkbox"/></div>
+						{this.props.label ? (<div className="col"><span className="pl-1">{this.props.label}</span></div>) : false}
+					</div>
+				</label>
 			) : false}
 		</div>
 	)

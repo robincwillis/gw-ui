@@ -1,0 +1,98 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+input[type='checkbox'].toggle {
+	display:none;
+}
+
+input.toggle {
+	& ~ label {
+		& .switch {
+			display: inline-block;
+			position: relative;
+			width: 32px;
+			height: 18px;
+			margin: 2px 0 2px 0;
+			vertical-align: middle;
+			color: $input-hover-bg;
+			background: rgba($text-color, .2);
+			border-radius: 20px;
+			transition: background 0.3s $ease, border 0.3s $ease, color 0.3s $ease, opacity 0.3s $ease;
+			&:after {
+				content: '';
+				display: block;
+				width: 14px;
+				height: 14px;
+				position: absolute;
+				top: 50%;
+				left: 2px;
+				margin-top: -7px;
+				border: none;
+				background: $white;
+				border-radius: 50%;
+				transition: transform $md-speed $ease, border $md-speed $ease, background $md-speed $ease, color $md-speed $ease, box-shadow $md-speed $ease;
+			}
+			& + .text {
+				display: inline-block;
+				margin-left: .625rem;
+				position: relative;
+		    height: 20px;
+		    vertical-align: middle;
+		    margin-top: -.2em;
+				& .off-label,
+				& .on-label {
+					transition: transform 0.3s $ease, opacity 0.3s $ease, visibility 0.3s $ease;
+					position: absolute;
+					top: 0;
+					left: 0;
+					line-height: 20px;
+					pointer-events: none;
+				}
+				& .off-label {
+					color: $light-text-color;
+				}
+				& .on-label {
+					opacity: 0;
+					visibility: hidden;
+					transform: translate3d(-.5rem, 0, 0);
+				}
+			}
+		}
+	}
+	&:hover {
+		& ~ label {
+			& .switch {
+				background: rgba($text-color, .3);
+				&:after {
+					background: $white;
+					box-shadow: 0 5px 10px rgba($text-color, .1);
+				}
+			}
+		}
+	}
+	&:checked {
+		& ~ label {
+			& .switch {
+				background: $main-color;
+				color: $main-color;
+				&:after {
+					background: $white;
+					transform: translate3d(14px, 0, 0);
+					box-shadow: 0 5px 10px rgba($text-color, .1);
+				}
+			}
+			& .text {
+				& .off-label {
+					opacity: 0;
+					visibility: hidden;
+					transform: translate3d(.5rem, 0, 0);
+				}
+				& .on-label {
+					opacity: 1;
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+	}
+}

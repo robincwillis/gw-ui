@@ -198,33 +198,6 @@ label {
 	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
-	display: block;
-	vertical-align: middle;
-	width: 18px;
-	height: 18px;
-	margin: -2px 0 0 0;
-	background: transparent !important;
-	border: 2px solid rgba($text-color, .4);
-	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
-	~ label {
-		display: block;
-		vertical-align: middle;
-		font-size: $p-font-size;
-		color: $light-text-color;
-		font-weight: $medium;
-		margin-top: 0;
-		margin-left: $gutter-tight/2;
-	}
-	&:checked {
-		border-color: $main-color;
-		~ label {
-			color: $text-color;
-		}
-	}
-}
-
 input[type='checkbox'] {
 	border-radius: 2px;
 	position: relative;

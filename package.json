@@ -9,7 +9,8 @@
     "watch": "./node_modules/.bin/webpack --watch --mode=none",
     "watch:docs": "./node_modules/.bin/webpack --config webpack.config.docs.js --watch --mode=none",
     "build": "./node_modules/.bin/webpack --mode=production",
-    "build:docs": "./node_modules/.bin/webpack --config webpack.config.docs.js --mode=production"
+    "build:docs": "./node_modules/.bin/webpack --config webpack.config.docs.js --mode=production",
+    "postinstall": "./node_modules/.bin/webpack --config webpack.config.docs.js --mode=production"
   },
   "repository": {
     "type": "git",
@@ -22,19 +23,20 @@
   },
   "homepage": "https://github.com/gordils-willis/gw-ui#readme",
   "dependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
-  },
-  "peerDependencies": {
-    "react-transition-group": "^2.3.1",
-    "react-select": "^1.2.1",
-    "react-dropzone": "^4.2.11",
-    "react-click-outside": "^3.0.1",
-    "svg-inline-react": "^3.1.0",
     "moment": "^2.22.2",
-    "numeral": "^2.0.6"
+    "numeral": "^2.0.6",
+    "popper.js": "^1.14.3",
+    "react": "^16.4.0",
+    "react-click-outside": "^3.0.1",
+    "react-datepicker": "^1.5.0",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.4.0",
+    "react-dropzone": "^4.2.11",
+    "react-select": "^1.2.1",
+    "react-transition-group": "^2.3.1"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-export-default": "^7.0.0-alpha.20",

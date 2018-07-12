@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Input from 'components/Input';
+import Select from 'components/Select';
 import Section from './UISection'
 import UIComponent from './UIComponent'
 
@@ -15,7 +15,7 @@ export class UISelectInputs extends Component {
 		return (
 			<div>
 				<Section 
-					id="SelectInputs"
+					id={this.props.id}
 					title="Selects"
 					description={
 						<div>
@@ -23,13 +23,14 @@ export class UISelectInputs extends Component {
 						</div>
 					}
 				>
-					<div className="flex-grid wide-gutter v-spaced-wide">
+					<div className="grid-flex wide-gutter v-spaced-wide">
 						<div className="col-6">
 							<UIComponent
-								component="Input"
+								component="Select"
 								type="select"
 								labelAbove="Underlined Select"
 								className="underlined"
+								onChange={(event) => { this.setState({select1 : event.target.value})}}
 								options={[
 									{ label : 'Select Option', value : 'Select Option'},
 									{ label : 'Another Option', value : 'Another Option'},
@@ -39,7 +40,7 @@ export class UISelectInputs extends Component {
 						</div>
 						<div className="col-6">
 							<UIComponent
-								component="Input"
+								component="Select"
 								type="typeahead"
 								labelAbove="Typeahead Select"
 								options={[

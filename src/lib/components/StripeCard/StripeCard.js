@@ -186,7 +186,7 @@ export default class StripeCard extends Component {
 						{this.props.headline || this.props.text ? (<div className="tight-space-after"/>) : false}
 
 						<form id="payment-form">
-							<div className="flex-grid v-spaced-tight tight-padding-after">
+							<div className="grid-flex v-spaced-tight tight-padding-after">
 								<div className="col-12">
 									<Input
 										className={this.inputClass('name')}

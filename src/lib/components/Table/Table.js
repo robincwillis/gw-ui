@@ -275,6 +275,6 @@ export default class Table extends Component {
 					{body}
 				</div>
 			</div>
-			);
+		);
 	}
 }

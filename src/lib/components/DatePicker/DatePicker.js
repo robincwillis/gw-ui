@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
 
 import moment from 'moment';
-import actionWrapper from 'util/actionWrapper';
 
 import DatePicker from 'react-datepicker';
 
@@ -68,10 +65,5 @@ export class InlineDatePicker extends Component {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return actionWrapper({
-	}, dispatch);
-};
-
-export default connect(null, mapDispatchToProps)(InlineDatePicker);
+export default InlineDatePicker;
 

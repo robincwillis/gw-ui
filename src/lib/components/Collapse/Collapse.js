@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InlineSVG from 'svg-inline-react';
 
 import './Collapse.scss';
 
@@ -57,10 +56,10 @@ export class Collapse extends Component {
   icon () {
     var icon = '';
     if (this.props.icon) {
-      if (this.props.icon.startsWith("<")) {
-        icon = (<InlineSVG src={this.props.icon} element="span" className="icon" />);
-      } else {
+      if (typeof this.props.icon === 'string') {
         icon = (<i className="material-icons icon">{this.props.icon}</i>);
+      } else {
+        icon = this.props.icon;
       }
     }
     return icon;
@@ -68,11 +67,12 @@ export class Collapse extends Component {
 
 	iconOpen () {
 		var icon = '';
-		if (this.props.iconOpen && typeof this.props.iconOpen === 'string') {
-			icon = (<i className="material-icons icon">{this.props.iconOpen}</i>);
-		}
-		if (this.props.iconOpen && typeof this.props.iconOpen !== 'string') {
-			icon = (<InlineSVG src={this.props.iconOpen} element="span" className="icon" />);
+		if (this.props.iconOpen) {
+			if (typeof this.props.iconOpen === 'string') {
+				icon = (<i className="material-icons icon">{this.props.iconOpen}</i>);
+			} else {
+				icon = this.props.iconOpen;
+			}
 		}
 		return icon;
 	}
@@ -84,7 +84,7 @@ export class Collapse extends Component {
 		return (
 			<div className={this.state.open ? ("collapse open " + className) : ("collapse " + className)}>
 				<div onClick={this.toggle} className="collapse-header">
-					<div className="flex-grid no-break tight-gutter">
+					<div className="grid-flex no-break tight-gutter">
 						{this.props.iconOpen ? (this.state.open ? (this.iconOpen()) : (this.icon())) : (this.icon())}
 						<div className="col grow">
 							<div className={this.props.ellipsis != false ? ("title ellipsis") : ("title")}>{this.state.open ? this.props.openTitle : this.props.title}</div>

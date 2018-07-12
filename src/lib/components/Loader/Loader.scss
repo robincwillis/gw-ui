@@ -17,8 +17,8 @@ $large-loader-size: 36px;
   justify-content: center;
 	position: relative;
 	svg {
-		width: $small-loader-size;
-		height: $small-loader-size;
+		width: $medium-loader-size;
+		height: $medium-loader-size;
 		padding: $loader-weight / 2;
 		display: block;
 		animation: rotate 1.5s ease-in-out infinite;
@@ -27,7 +27,7 @@ $large-loader-size: 36px;
 			stroke-dasharray: 1%, 320%;
 			stroke-dashoffset: 0;
 			animation: loader-dash 1.5s ease-in-out infinite;
-			stroke-width: ($loader-weight / $small-loader-size * 10) * $loader-weight;
+			stroke-width: ($loader-weight / $medium-loader-size * 10) * $loader-weight;
 			stroke: currentcolor;
 			transition: stroke $md-speed $ease;
 		}
@@ -74,12 +74,12 @@ $large-loader-size: 36px;
 			}
 		}
 	}
-	&.medium {
+	&.small {
 		svg {
-			width: $medium-loader-size;
-			height: $medium-loader-size;
+			width: $small-loader-size;
+			height: $small-loader-size;
 			circle {
-				stroke-width: ($loader-weight / $medium-loader-size * 10) * $loader-weight;
+				stroke-width: ($loader-weight / $small-loader-size * 10) * $loader-weight;
 			}
 		}
 	}
@@ -134,7 +134,7 @@ $large-loader-size: 36px;
 .text-loader {
 	display: block;
 	max-width: 100%;
-	width: 14em;
+	width: $max-text-width;
 	// padding: .1em 0;
 	&.short {
 		width: 10em;
@@ -143,20 +143,17 @@ $large-loader-size: 36px;
 	&.long {
 		width: 17em;
 	}
-	&.paragraph {
+	.p-wrap {
 		width: 100%;
-		span.p-wrap {
+		height: auto;
+		background: transparent;
+		&:after {
+			display: none;
+		}
+		span {
 			width: 100%;
-			height: auto;
-			background: transparent;
-			&:after {
-				display: none;
-			}
-			span {
-				width: 100%;
-				&:nth-child(even) {
-					width: 90%;
-				}
+			&:nth-child(even) {
+				width: 90%;
 			}
 		}
 	}

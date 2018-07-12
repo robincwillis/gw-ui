@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Highlight from 'react-highlight.js';
-import 'highlight.js/styles/atom-one-light.css';
+// import Highlight from 'react-highlight.js';
+// import 'highlight.js/styles/atom-one-light.css';
 // import 'highlight.js/styles/atom-one-dark.css';
 // import 'highlight.js/styles/github.css';
 // import 'highlight.js/styles/github-gist.css';
@@ -18,9 +18,9 @@ export class CodeBlock extends Component {
 				{this.props.simple ? (
 					<pre className="code">{this.props.children}</pre>
 				) : (
-					<Highlight language={this.props.language} innerHTML={true}>
+					<pre language={this.props.language} innerHTML={true}>
 						{this.props.children}
-					</Highlight>
+					</pre>
 				)}
 			</div>
 		);

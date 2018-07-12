@@ -54,18 +54,11 @@ const config = {
 				loader: 'file-loader?name=images/' + '[name].[ext]'
 			},
 			{
-				test:	/\.css$/,
-				loader: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: 'css-loader'
-				})
-			},
-			{
         test: /\.(sa|sc|c)ss$/,
         use: [
           mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader',
+          { loader: 'postcss-loader', options: { path: './src/docs/postcss.config.js' } },
           'resolve-url-loader',
           'sass-loader',
         ],

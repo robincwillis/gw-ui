@@ -1,0 +1,51 @@
+@import '~sass/setup/variables';
+@import '~sass/setup/mixins';
+
+.gw-radio {
+	input[type='radio'] {
+		display: none;
+		~ label {
+			font-size: $p-font-size;
+			color: $light-text-color;
+			&:hover {
+				color: $text-color;
+			}
+			.radio {
+				display: block;
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				background: transparent;
+				border: 2px solid currentcolor;
+				position: relative;
+				transition: background $md-speed $ease, border $md-speed $ease, opacity $md-speed $ease;
+				&:after {
+					content: '';
+					display: block;
+					background: $main-color;
+					border-radius: 50%;
+					position: absolute;
+					top: 2px;
+					right: 2px;
+					bottom: 2px;
+					left: 2px;
+					opacity: 0;
+					transform: scale(.25);
+					transition: transform $md-speed $ease, opacity $md-speed $ease;
+				}
+			}
+		}
+		&:checked {
+			~ label {
+				color: $text-color;
+				.radio {
+					border-color: $main-color;
+					&:after {
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}

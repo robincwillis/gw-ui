@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InlineSVG from 'svg-inline-react';
 
 import './Tabs.scss';
 

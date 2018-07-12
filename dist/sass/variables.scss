@@ -23,16 +23,16 @@ $base-border-radius : 3px;
 
 // Colors
 $bg-color : #fff;
-$main-color: #3700FF;
+$main-color: #2174D8;
 $black : #000;
 $white : #fff;
-$alert : #EF4F4F;
-$notify : #FFD780;
-$success : #77B305;
-$text-color : #211F6D;//#333;
-$light-grey : darken($bg-color, 5%);
-$light-text-color : rgba($text-color, .5);
-$hr-color : rgba($text-color, 1);
+$alert : #DF693D;
+$notify : #F7C24E;
+$success : #37DCAF;
+$text-color : #2F374C;//#333;
+$light-grey : lighten($text-color, 76%);
+$light-text-color : lighten($text-color, 40%);
+$hr-color : lighten($text-color, 70%);
 $hr-styles : 1px solid $hr-color;
 
 // Links
@@ -42,7 +42,6 @@ $link-hover-color : $main-color;
 // Weird
 $tight-horizontal-cell-padding : 4px;
 $tight-vertical-cell-padding : 4px;
-$rich-text-max-width : 300px;
 $scrollbar-width : 6px;
 $sidebar-width : 100rem;
 $header-height : 40px;
@@ -72,14 +71,14 @@ $tracked-out : .125em;
 		$h1-font-family : $main-font;
 		$h1-text-transform : none;
 		$h1-font-size : 2.5rem;
-		$h1-font-weight : $light;
+		$h1-font-weight : $normal;
 		$h1-line-height : $short-line-height;
 		$h1-letter-spacing : -.03em;
 	// h2
 		$h2-font-family : $main-font;
 		$h2-text-transform : none;
 		$h2-font-size : 2.25rem;
-		$h2-font-weight : $light;
+		$h2-font-weight : $normal;
 		$h2-line-height : $base-line-height;
 		$h2-letter-spacing : -.03em;
 	// h3
@@ -119,7 +118,7 @@ $highlight-bg : $light-text-color;
 $highlight-color : $bg-color;
 
 // Button Variables
-$btn-radius: 60px;
+$btn-radius: $base-border-radius;
 $btn-padding: 0 2em 0;
 $btn-text-transform: none;
 $btn-letter-spacing: 0;

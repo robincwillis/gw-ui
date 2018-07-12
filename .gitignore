@@ -5,3 +5,4 @@ bower_components
 .cache
 npm-debug.log
 yarn.lock
+docs
