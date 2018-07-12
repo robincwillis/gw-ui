@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import './Sandbox.scss';
 
+// Button
+
+import Button from 'lib/components/Button';
+
 // Basic Inputs
 
 import Input from 'lib/components/Input';
@@ -24,6 +28,10 @@ import Toggle from 'lib/components/Toggle';
 import FileUpload from 'lib/components/FileUpload';
 
 import { Table, Column, Cell } from 'lib/components/Table';
+
+// Modal
+
+import Modal, { ModalContent } from 'lib/components/Modal';
 
 var tableTestData = [
 	{
@@ -49,11 +57,21 @@ import Loader, {TextLoader, DotLoader, LinearLoader}  from 'components/Loader';
 class Sandbox extends Component {
 
 	state = {
-		input5 : 'Value'
+		input5 : 'Value',
+		modalOpen : false
 	}
 
 	gap () {
 		return (<div><br /><br /></div>);
+	}
+
+	openModal = (event) => {
+
+	}
+
+	onModalClose = (result, state) => {
+		console.log(result);
+		console.log(state);
 	}
 
 	render() {
@@ -65,8 +83,27 @@ class Sandbox extends Component {
 
 				<DatePicker />
 
+				<h3>Modal</h3>
+				<hr/>
+
+				<Button
+					onClick={() => this.setState({modalOpen : true})}
+					label="Show Modal"
+				/>
+
+				<Modal id="sandbox-modal"
+					title="My Modal"
+					modalOpen={this.state.modalOpen}
+					closeModal={() => this.setState({modalOpen:false})}
+					onClose={this.onModalClose}
+				>
+					<ModalContent>
+						<p>hello there i'm a modal</p>
+					</ModalContent>
+				</Modal>
+
 				<h3>Popups</h3>
-				
+
 				<hr/>
 				<h3>Accordion</h3>
 				<Accordion
@@ -383,7 +420,7 @@ class Sandbox extends Component {
 							<LinearLoader />
 						</div>
 					</div>
-				</section>				
+				</section>
 
 			</div>
 		);

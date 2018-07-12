@@ -28,7 +28,7 @@
 			}
 		}
 		&:first-child {
-			padding-left: $h-cell-padding;
+			padding-left: $horizontal-cell-padding;
 		}
 	}
 	thead,
@@ -129,9 +129,9 @@
 			flex: 1;
 			flex-shrink: 1;
 			align-items: center;
-			padding-right: $h-cell-padding;
-			padding-top: $v-cell-padding-top;
-			padding-bottom: $v-cell-padding-bottom;
+			padding-right: $horizontal-cell-padding;
+			padding-top: $vertical-cell-padding;
+			padding-bottom: $vertical-cell-padding;
 			border-bottom: 1px solid $hr-color;
 			&:last-child {
 				padding-right: $margin;

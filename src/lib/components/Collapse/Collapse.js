@@ -6,7 +6,7 @@ export class Collapse extends Component {
 
 	static defaultProps = {
 		open : false,
-		openTitle : this.props.title,
+		openTitle : '',
 		closable : true,
 		onOpen: () => {},
 		onClose: () => {}

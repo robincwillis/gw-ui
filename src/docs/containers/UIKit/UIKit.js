@@ -136,8 +136,8 @@ export class UIKit extends Component {
 												<a className="p sm medium-weight" href={'#' + section.id}>{section.title}</a>
 												{section.subsections ? (
 													<ul>
-														{section.subsections.map( (subsection) => { return(
-															<li><a className="p sm" href={'#' + section.id + subsection}>{subsection}</a></li>
+														{section.subsections.map( (subsection, index) => { return(
+															<li key={index}><a className="p sm" href={'#' + section.id + subsection}>{subsection}</a></li>
 														); } )}
 													</ul>
 												) : false}
@@ -159,7 +159,7 @@ export class UIKit extends Component {
 										);
 									} else {
 										return (
-											<UISection id={section.id} title={section.title} />
+											<UISection key={section.id} id={section.id} title={section.title} />
 										);
 									}
 								})}

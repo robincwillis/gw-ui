@@ -32,6 +32,7 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^16.4.0",
     "react-dropzone": "^4.2.11",
+    "react-modal": "^3.5.1",
     "react-select": "^1.2.1",
     "react-transition-group": "^2.3.1"
   },

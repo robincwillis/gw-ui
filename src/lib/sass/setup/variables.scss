@@ -1,5 +1,6 @@
 $margin: 7.5rem;
 $mobile-margin: 6.5%;
+$min-site-width : 800px;
 $max-site-width: 1500px;
 $site-width : 87%;
 
@@ -233,6 +234,10 @@ $select-color : $light-text-color;
 // Tables
 $vertical-cell-padding: .75rem;
 $horizontal-cell-padding: .75rem;
+
+// Modals
+$modal-padding: 1rem;
+$modal-header-font-size: .875rem;
 
 // Tooltips
 $nipple-size: 4px;

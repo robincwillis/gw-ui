@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
-import { hideModal } from 'actions/modal';
+// import { connect } from 'react-redux';
+// import { hideModal } from 'actions/modal';
 
 import Button from 'components/Button';
-import Cross from 'assets/icons/cross';
 
 import './Modal.scss';
 import './takeover.scss';
@@ -80,7 +79,7 @@ export class ConfirmComponent extends Component {
 	}
 
 	render () {
-		let message = this.props.modal.get('message');
+		let message = this.props.message;
 		return (
 			<div className="align-center">
 				<p className="lg">{message ? message : 'Are your sure you want to do this?'}</p>
@@ -148,8 +147,8 @@ class ModalContainer extends Component {
 
 	handleClose = (result) => {
 
-		let beforeClose = this.props.modal.get('beforeClose');
-		let onClose = this.props.modal.get('onClose');
+		let beforeClose = this.props.beforeClose;
+		let onClose = this.props.onClose;
 
 		if (beforeClose && result) {
 			const beforeClosePromise = beforeClose(result, this.state);
@@ -176,7 +175,7 @@ class ModalContainer extends Component {
 		const componentIndex = this.state.componentIndex + 1;
 		if(componentIndex < this.state.componentsLength) {
 			this.setState({ componentIndex });
-			let onNext = this.props.modal.get('onNext');
+			let onNext = this.props.onNext;
 			if(onNext) {
 				onNext(result, this.state, componentIndex);
 			}
@@ -184,7 +183,7 @@ class ModalContainer extends Component {
 	}
 
 	handleNext = (result) => {
-		let beforeNext = this.props.modal.get('beforeNext');
+		let beforeNext = this.props.beforeNext;
 		if (beforeNext) {
 			const beforeNextPromise = beforeNext(result, this.state);
 			if(beforeNextPromise instanceof Promise) {
@@ -204,7 +203,7 @@ class ModalContainer extends Component {
 
 		if(this.state.componentIndex > 0 ) {
 			this.setState({ componentIndex });
-			let onPrev = this.props.modal.get('onPrev');
+			let onPrev = this.props.onPrev;
 			if(onPrev) {
 				onPrev(componentIndex, this.state);
 			}
@@ -212,7 +211,7 @@ class ModalContainer extends Component {
 	}
 
 	renderTitle () {
-		let title = this.props.modal.get('title');
+		let title = this.props.title;
 		if (this.props.title) {
 			title = this.props.title
 		} else if (this.state.title) {
@@ -222,7 +221,7 @@ class ModalContainer extends Component {
 	}
 
 	getClassName (extraClasses) {
-		let className = "gw-modal " + this.props.modal.get('className');
+		let className = "gw-modal " + this.props.className;
 		if (this.props.className) {
 			className = "gw-modal " + this.props.className
 		}
@@ -233,7 +232,7 @@ class ModalContainer extends Component {
 	}
 
 	renderChildren () {
-		let modalProps = this.props.modal.toJS();
+		let modalProps = this.props;
 
 		const props = Object.assign({
 			handleClose : this.handleClose,
@@ -264,7 +263,7 @@ class ModalContainer extends Component {
 	}
 
 	render () {
-		let modalProps = this.props.modal.toJS();
+		let modalProps = this.props;
 
 		if(modalProps.id !== this.props.id) {
 			return false;
@@ -340,13 +339,11 @@ class ModalContainer extends Component {
 							updateState={this.updateState}
 							componentsLength={this.state.componentsLength}
 							componentIndex={this.state.componentIndex}
-
 							confirmLabel={this.state.confirmLabel}
 							confirmClass={this.state.confirmClass}
 							confirmDisabled={this.state.confirmDisabled}
 							confirmVisible={this.state.confirmVisible}
 							confirmAction={this.state.confirmAction}
-
 							cancelLabel={this.state.cancelLabel}
 							cancelClass={this.state.cancelClass}
 							cancelDisabled={this.state.cancelDisabled}
@@ -360,16 +357,18 @@ class ModalContainer extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {modal : state.modal};
-};
+// const mapStateToProps = (state) => {
+// 	return {modal : state.modal};
+// };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		closeModal : () => {dispatch(hideModal());}
-	};
-};
+// const mapDispatchToProps = (dispatch) => {
+// 	return {
+// 		closeModal : () => {dispatch(hideModal());}
+// 	};
+// };
 
-export default connect(mapStateToProps,
-	mapDispatchToProps)(ModalContainer);
+// export default connect(mapStateToProps,
+// 	mapDispatchToProps)(ModalContainer);
+
+export default ModalContainer;
 

@@ -30,13 +30,9 @@ export class UIColorSwatch extends Component {
 	    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 		}
 
-		console.log(swatchColor)
-
-
 		const hex = rgbToHex(a[0], a[1], a[2])
-
 		this.setState({hex, alpha: a[3]});
-	} 
+	}
 
 	render() {
 		return (
@@ -54,8 +50,8 @@ export class UIColors extends Component {
 	render() {
 
 		return (
-			<Section 
-				id={this.props.id} 
+			<Section
+				id={this.props.id}
 				title="Colors"
 			>
 
