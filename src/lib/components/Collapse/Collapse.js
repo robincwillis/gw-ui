@@ -7,7 +7,8 @@ export class Collapse extends Component {
 
 	static defaultProps = {
 		open : false,
-		closeable : true,
+		openTitle : this.props.title,
+		closable : true,
 		onOpen: () => {},
 		onClose: () => {}
 	};
@@ -25,7 +26,7 @@ export class Collapse extends Component {
 	}
 
 	close = (event) => {
-		if (this.props.closeable) {
+		if (this.props.closable) {
 			if(this.props.onClose && this.props.id) {
 				this.props.onClose(event);
 			} else {
@@ -86,7 +87,7 @@ export class Collapse extends Component {
 					<div className="flex-grid no-break tight-gutter">
 						{this.props.iconOpen ? (this.state.open ? (this.iconOpen()) : (this.icon())) : (this.icon())}
 						<div className="col grow">
-							<div className={this.props.ellipsis != false ? ("title ellipsis") : ("title")}>{this.props.title}</div>
+							<div className={this.props.ellipsis != false ? ("title ellipsis") : ("title")}>{this.state.open ? this.props.openTitle : this.props.title}</div>
 						</div>
 						{this.props.hasArrow != false ? (
 							this.state.open ? (<div className="col no-grow"><i className="material-icons icon right upside-down">keyboard_arrow_down</i></div>) : (<div className="col no-grow"><i className="material-icons icon right">keyboard_arrow_down</i></div>)

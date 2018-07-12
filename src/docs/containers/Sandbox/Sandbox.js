@@ -30,7 +30,9 @@ import Loader, {TextLoader, DotLoader, LinearLoader}  from 'components/Loader';
 
 class Sandbox extends Component {
 
-	state = {}
+	state = {
+		input5 : 'Value'
+	}
 
 	gap () {
 		return (<div><br /><br /></div>);
