@@ -153,3 +153,29 @@
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+@mixin material-icons($size: 18) {
+  // color: currentcolor;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: $size + px;  /* Preferred icon size */
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  @include font-smooth();
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+  &.md-12 { font-size: 12px; line-height: 12px; }
+  &.md-14 { font-size: 14px; line-height: 14px; }
+  &.md-18 { font-size: 18px; line-height: 18px; }
+  &.md-24 { font-size: 24px; line-height: 24px; }
+  &.md-36 { font-size: 36px; line-height: 36px; }
+  &.md-48 { font-size: 48px; line-height: 48px; }
+}
+

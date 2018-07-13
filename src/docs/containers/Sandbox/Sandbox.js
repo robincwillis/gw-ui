@@ -27,7 +27,7 @@ import Typeahead from 'lib/components/Typeahead';
 import Toggle from 'lib/components/Toggle';
 import FileUpload from 'lib/components/FileUpload';
 
-import { Table, Column, Cell } from 'lib/components/Table';
+import Table { Column, Cell } from 'lib/components/Table';
 
 // Modal
 
