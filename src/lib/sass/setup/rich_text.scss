@@ -25,8 +25,28 @@
   }
 
   p {
-    font-size: 1em;
     margin: 1rem 0 $p-line-height 0;
+    &.sm {
+      font-family: $sm-p-font-family;
+      font-size: $sm-p-font-size;
+      line-height: $sm-p-line-height;
+      letter-spacing: $sm-p-letter-spacing;
+      font-weight: $sm-p-font-weight;
+    }
+    &.md {
+      font-family: $md-p-font-family;
+      font-size: $md-p-font-size;
+      line-height: $md-p-line-height;
+      letter-spacing: $md-p-letter-spacing;
+      font-weight: $md-p-font-weight;
+    }
+    &.lg {
+      font-family: $lg-p-font-family;
+      font-size: $lg-p-font-size;
+      line-height: $lg-p-line-height;
+      letter-spacing: $lg-p-letter-spacing;
+      font-weight: $lg-p-font-weight;
+    }
   }
 
   code,
@@ -49,7 +69,7 @@
   .code,
   dl,
   blockquote {
-    margin: 2rem 0;
+    margin: $p-line-height 0;
   }
 
   blockquote {

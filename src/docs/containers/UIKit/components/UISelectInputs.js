@@ -16,6 +16,7 @@ export class UISelectInputs extends Component {
 			<div>
 				<Section 
 					id={this.props.id}
+					key={this.props.id}
 					title="Selects"
 					description={
 						<div>

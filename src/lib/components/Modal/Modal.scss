@@ -114,16 +114,8 @@
 			}
 
 			.gw-modal-footer {
-				flex-shrink: 0;
-				flex-grow: 0;
-				margin-bottom: -1px;
-				justify-content: center;
-				position :relative;
-				z-index : 1;
 				.button {
-					display: block;
 					width: 100%;
-					min-width: 50%;
 				}
 			}
     }
@@ -172,7 +164,7 @@
 					margin-right: 0;
 				}
 			}
-			&.full-bleed {
+			@if $modal-full-width-actions {
 				display: flex;
 				justify-content: stretch;
 				align-items: center;

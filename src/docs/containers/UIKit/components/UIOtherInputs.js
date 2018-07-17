@@ -19,6 +19,7 @@ export class UIOtherInputs extends Component {
 			<div>
 				<Section 
 					id={this.props.id}
+					key={this.props.id}
 					title="Other Inputs"
 					description={
 						<div>

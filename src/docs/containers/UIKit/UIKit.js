@@ -10,10 +10,12 @@ import UISelectInputs from './components/UISelectInputs';
 import UIOtherInputs from './components/UIOtherInputs';
 import UITypography from './components/UITypography';
 import UIGrid from './components/UIGrid';
+import UISpacing from './components/UISpacing';
 import UITest from './components/UITest';
 import UILoaders from './components/UILoaders';
 import UIMisc from './components/UIMisc';
 import UIColors from './components/UIColors';
+import UITables from './components/UITables';
 
 import UISection from './components/UISection';
 
@@ -58,6 +60,11 @@ const examples = [
 		]
 	},
 	{
+		title : 'Spacing',
+		id : 'UISpacing',
+		sectionComponent : <UISpacing id="UISpacing" />
+	},
+	{
 		title : 'Text Inputs',
 		id : 'UITextInputs',
 		sectionComponent : <UITextInputs id="UITextInputs" />
@@ -78,11 +85,6 @@ const examples = [
 		sectionComponent : <UILoaders id="Loaders" />
 	},
 	{
-		title : 'Spacing',
-		id : 'Spacing',
-		// sectionComponent : <UIButtons/>
-	},
-	{
 		title : 'Colors',
 		id : 'UIColors',
 		sectionComponent : <UIColors id="UIColors" />
@@ -90,7 +92,21 @@ const examples = [
 	{
 		title : 'Icons',
 		id : 'Icons',
-		// sectionComponent : <UIButtons/>
+		description : <div>
+			<div className="grid-flex tight-gutter no-break left mb-gutter">
+				<div className="col"><span className="material-icons md-48">check_circle</span></div>
+				<div className="col"><span className="material-icons md-48">arrow_forward</span></div>
+				<div className="col"><span className="material-icons md-48">photo</span></div>
+				<div className="col"><span className="material-icons md-48">attachment</span></div>
+				<div className="col"><span className="material-icons md-48">local_taxi</span></div>
+				<div className="col"><span className="material-icons md-48">videogame_asset</span></div>
+				<div className="col"><span className="material-icons md-48">add_circle_outline</span></div>
+				<div className="col"><span className="material-icons md-48">more_horiz</span></div>
+			</div>
+			<p className="bold">The UI Kit uses <a href="https://material.io/tools/icons/?style=baseline" target="_blank">Material Icons</a>.</p>
+			<p>Other than using the <code>.material-icons</code> class, we include the <code>material-icons</code> mixin for quick use.</p>
+			<p className="sm light-text-color"><strong>ie:</strong> <code>@include material-icons($size);</code> The default size is 18px</p>
+		</div>
 	},
 	{
 		title : 'Components',
@@ -99,13 +115,13 @@ const examples = [
 	},
 	{
 		title : 'Table',
-		id : 'Table',
-		// sectionComponent : <UIButtons/>
+		id : 'UITable',
+		sectionComponent : <UITables id="UITable"/>
 	},
 	{
 		title : 'Misc',
 		id : 'UIMisc',
-		sectionComponent : <UIMisc id="UIMisc"/>,
+		sectionComponent : <UIMisc id="UIMisc" />,
 		subsections : [
 			'Tooltips',
 			'HelperClasses',
@@ -122,7 +138,7 @@ export class UIKit extends Component {
 
 	render() {
 		return (
-			<DocumentTitle title={this.props.pageTitleLeader + "UI Kit"}>
+			<DocumentTitle title={this.props.pageTitleLeader ? this.props.pageTitleLeader + "UI Kit" : "UI Kit"}>
 				<div className="screen-ui-kit">
 
 					<div className="ui-sidebar p-gutter">
@@ -137,7 +153,7 @@ export class UIKit extends Component {
 												{section.subsections ? (
 													<ul>
 														{section.subsections.map( (subsection, index) => { return(
-															<li key={index}><a className="p sm" href={'#' + section.id + subsection}>{subsection}</a></li>
+															<li key={'ui-kit-nav-item-' + section.title + '-' + subsection + '-' + index}><a className="p sm" href={'#' + section.id + subsection}>{subsection}</a></li>
 														); } )}
 													</ul>
 												) : false}
@@ -159,7 +175,7 @@ export class UIKit extends Component {
 										);
 									} else {
 										return (
-											<UISection key={section.id} id={section.id} title={section.title} />
+											<UISection id={section.id} key={section.id} title={section.title} description={section.description} />
 										);
 									}
 								})}

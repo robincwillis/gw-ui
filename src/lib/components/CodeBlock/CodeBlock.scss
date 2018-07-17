@@ -28,6 +28,7 @@ $cb-dark-attr-2: lighten($notify, 10%);
 	font-size: $p-font-size * .85;
 	line-height: $short-line-height;
 	overflow: auto;
+	@include font-smooth($code-font-smoothing);
 	&.sm {
 		font-size: $sm-p-font-size * .85;
 	}

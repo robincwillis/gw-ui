@@ -16,6 +16,7 @@ export class UIInputs extends Component {
 			<div>
 				<Section 
 					id={this.props.id}
+					key={this.props.id}
 					title="Text Inputs"
 					description={
 						<div>

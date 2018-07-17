@@ -29,6 +29,7 @@ export class UIButtons extends Component {
 			<div>
 				<Section 
 					id={this.props.id}
+					key={this.props.id}
 					title="The Grid"
 					description={
 						<div>
@@ -83,7 +84,7 @@ export class UIButtons extends Component {
 								<ul>
 									<li><code>.col.grow</code> will have the column take up the avaliable space.</li>
 									<li><code>.col.no-grow</code> will prevents the column from growing and just keep it the width it is given.</li>
-									<li><code>.col.order-#</code> reorder the columns when the grid is not collapsed.</li>
+									<li><code>.col.order-#</code> will order the columns in the grid. The order only takes effect when the grid is not collapsed.<br/><span className="p sm light-text-color">Order ranges from 1 to 4</span></li>
 								</ul>
 							</div>
 						</div>
@@ -93,15 +94,15 @@ export class UIButtons extends Component {
 						className='no-border'
 						title='Horizontal Alignment'
 						id={this.props.id + 'HorzAlignment'}
-						description={
-							<div>
-								<p>The flex grid uses a default of <code>justify-content: space-between</code>. This means a <code>.col-3</code> and <code>.col-6</code> will put the 2 columns of extra space between the columns. This can be changed by adding <code>.left</code>, <code>.right</code>, or <code>.center</code> to the grid container.</p>
-							</div>
-						}
+						// description={
+							// <div>
+							// 	<p>The flex grid uses a default of <code>justify-content: space-between</code>. This means a <code>.col-3</code> and <code>.col-6</code> will put the 2 columns of extra space between the columns. This can be changed by adding <code>.left</code>, <code>.right</code>, or <code>.center</code> to the grid container.</p>
+							// </div>
+						// }
 					/>
 					<div>
 						<div className="grid-flex middle no-break no-gutter slim-space-after space-before">
-							<div className="col-4"><code className="medium-weight main-color mr-1">Default (space-between)</code></div>
+							<div className="col-4"><code className="main-color mr-1">Default (space-between)</code></div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced">
 									<GridItem col="3" className="short" />
@@ -152,16 +153,16 @@ export class UIButtons extends Component {
 						className="no-border"
 						title="Vertical Alignment"
 						id={this.props.id + 'VertAlignment'}
-						description={
-							<div>
-								<p>The flex grid uses a default of <code>align-items: flex-start</code> to align columns to the top. This can be changed by adding <code>.middle</code>, <code>.bottom</code>, or <code>.baseline</code></p>
-							</div>
-						}
+						// description={
+							// <div>
+							// 	<p>The flex grid uses a default of <code>align-items: flex-start</code> to align columns to the top. This can be changed by adding <code>.middle</code>, <code>.bottom</code>, or <code>.baseline</code></p>
+							// </div>
+						// }
 					/>
 					<div>
 						<div className="grid-flex middle no-break slim-space-after space-before">
 							<div className="col-4">
-								<div className="col no-grow"><code className="medium-weight main-color mr-1">Default (top)</code></div>
+								<div className="col no-grow"><code className="main-color mr-1">Default (top)</code></div>
 							</div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced">
@@ -212,7 +213,7 @@ export class UIButtons extends Component {
 								<div className="grid-flex no-break v-spaced baseline">
 									<GridItem col="3"/>
 									<div className="col-9">
-										<p className="sm medium-weight light-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hic ambiguo ludimur. Quodcumque in mentem incideret, et quodcumque tamquam occurreret. Itaque vides, quo modo loquantur, nova verba fingunt, deserunt usitata. Nemo nostrum istius generis asotos iucunde putat vivere. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Duo Reges: constructio interrete. Quis hoc dicit? Si quae forte-possumus.</p>
+										<p className="sm light-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hic ambiguo ludimur. Quodcumque in mentem incideret, et quodcumque tamquam occurreret. Itaque vides, quo modo loquantur, nova verba fingunt, deserunt usitata. Nemo nostrum istius generis asotos iucunde putat vivere. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Duo Reges: constructio interrete. Quis hoc dicit? Si quae forte-possumus.</p>
 									</div>
 								</div>
 							</div>
@@ -231,10 +232,10 @@ export class UIButtons extends Component {
 					>
 					<div className="rich-text">
 						<ul>
-							<li><code>.no-break</code> will not-collapse</li>
-							<li><code>.break-lg</code> will break at the varibale <code>$lg</code></li>
-							<li><code>.break-xlg</code> will break at the varibale <code>$xlg</code></li>
-							<li><code>.break-huge</code> will break at the varibale <code>$huge</code></li>
+							<li><code>.no-break</code> will not collapse</li>
+							<li><code>.break-lg</code> will collapse at the varibale <code>$lg</code></li>
+							<li><code>.break-xlg</code> will collapse at the varibale <code>$xlg</code></li>
+							<li><code>.break-huge</code> will collapse at the varibale <code>$huge</code></li>
 						</ul>
 					</div>
 					</SubSection>
@@ -259,11 +260,6 @@ export class UIButtons extends Component {
 							
 							<h6>Vertical spacing</h6>
 							<li><code>.v-spaced</code> will change the space under columns to be the same as the space between the columns.</li>
-						</ul>
-					
-						<h5>On columns</h5>
-						<ul>
-							<li><code>.order-#</code> will order the columns in the grid. The order only takes effect when the grid is not collapsed.<br/><span className="p sm light-text-color">Order ranges from 1 to 4</span></li>
 						</ul>
 
 					</div>
