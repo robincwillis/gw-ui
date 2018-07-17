@@ -45,7 +45,7 @@
 				pointer-events: none;
 				content: '';
 				display: block;
-				background: rgba($text-color, .1);
+				background: $modal-overlay-color;
 				position: fixed;
 				top: 0;
 				right: 0;

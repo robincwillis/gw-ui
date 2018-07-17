@@ -28,7 +28,7 @@
     flex-direction: column;
 		margin: auto;
 		background: $white;
-		box-shadow: 0 2px 3px rgba($text-color, .1);
+		box-shadow: $modal-shadow;
 		max-width: 30rem;
 		width: 90%;
 		position: relative;
@@ -244,7 +244,7 @@
 
 .ReactModal__Overlay {
   transition: opacity 0.4s $ease;
-  background: rgba($text-color, 0.85);
+  background: $modal-overlay-color;
   &--after-open {
     opacity: 1;
   }

@@ -6,8 +6,8 @@ class Toggle extends Component {
 
 	static defaultProps = {
 		hideLabel : false,
-		onLabel : 'On',
-		offLabel : 'Off',
+		onLabel : '',
+		offLabel : '',
 		className : ''
 	}
 
@@ -45,7 +45,9 @@ class Toggle extends Component {
 		} else if (this.props.label) {
 			return (
 				<div className="text">
-					{this.props.label}
+					<span className="label-text">
+						{this.props.label}
+					</span>
 				</div>
 			);
 		}
