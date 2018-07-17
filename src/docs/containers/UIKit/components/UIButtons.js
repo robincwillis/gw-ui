@@ -17,6 +17,7 @@ export class UIButtons extends Component {
 			<div>
 				<Section 
 					id={this.props.id}
+					key={this.props.id}
 					title="Buttons"
 					description={
 						<div>
@@ -161,7 +162,7 @@ export class UIButtons extends Component {
 								/>
 							</div>
 							<div className="col-12">
-								<div className="grid-flex no-gutter no-break middle padding-before">
+								<div className="grid-flex gutter-none no-break middle padding-before">
 									<div className="col no-grow">
 										<h4 className="all-caps light-text-color mr-1">Color Hovers</h4>
 									</div>

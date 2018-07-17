@@ -93,7 +93,7 @@ class EditableItem extends Component {
 
 	render() {
 		return (
-			<div className="editable-item grid-flex left no-break tight-gutter">
+			<div className="editable-item grid-flex left no-break gutter-tight">
 				{this.props.label ? (
 					<div className="col no-grow">
 						<p className="medium-weight light-text-color">{this.props.label}</p>

@@ -84,10 +84,10 @@ export class Collapse extends Component {
 		return (
 			<div className={this.state.open ? ("collapse open " + className) : ("collapse " + className)}>
 				<div onClick={this.toggle} className="collapse-header">
-					<div className="grid-flex no-break tight-gutter">
+					<div className="grid-flex no-break gutter-tight">
 						{this.props.iconOpen ? (this.state.open ? (this.iconOpen()) : (this.icon())) : (this.icon())}
 						<div className="col grow">
-							<div className={this.props.ellipsis != false ? ("title ellipsis") : ("title")}>{this.state.open ? this.props.openTitle : this.props.title}</div>
+							<div className={this.props.ellipsis != false ? ("title ellipsis") : ("title")}>{this.state.open && this.props.openTitle ? this.props.openTitle : this.props.title}</div>
 						</div>
 						{this.props.hasArrow != false ? (
 							this.state.open ? (<div className="col no-grow"><i className="material-icons icon right upside-down">keyboard_arrow_down</i></div>) : (<div className="col no-grow"><i className="material-icons icon right">keyboard_arrow_down</i></div>)

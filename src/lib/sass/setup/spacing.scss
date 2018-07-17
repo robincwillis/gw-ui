@@ -74,7 +74,7 @@
 .mxn-4 { margin-left: -$space-4; margin-right: -$space-4; }
 .mxn-gutter { margin-left: -$gutter; margin-right: -$gutter; }
 .mxn-gutter-tight { margin-left: -$gutter-tight; margin-right: -$gutter-tight; }
-.mxn-wide-gutter { margin-left: -$gutter-wide; margin-right: -$gutter-wide; }
+.mxn-gutter-wide { margin-left: -$gutter-wide; margin-right: -$gutter-wide; }
 
 .myn-1 { margin-top: -$space-1; margin-bottom: -$space-1; }
 .myn-2 { margin-top: -$space-2; margin-bottom: -$space-2; }
@@ -82,7 +82,7 @@
 .myn-4 { margin-top: -$space-4; margin-bottom: -$space-4; }
 .myn-gutter { margin-top: -$gutter; margin-bottom: -$gutter; }
 .myn-gutter-tight { margin-top: -$gutter-tight; margin-bottom: -$gutter-tight; }
-.myn-wide-gutter { margin-top: -$gutter-wide; margin-bottom: -$gutter-wide; }
+.myn-gutter-wide { margin-top: -$gutter-wide; margin-bottom: -$gutter-wide; }
 
 .ml-auto { margin-left: auto }
 .mr-auto { margin-right: auto }
@@ -119,20 +119,20 @@
 .my-gutter { margin-top:    $gutter; margin-bottom: $gutter }
 .myn-gutter { margin-top:    -$gutter; margin-bottom: -$gutter }
 
-.m-wide-gutter  { margin:        $gutter-wide; }
-.mn-wide-gutter  { margin:        -$gutter-wide; }
-.mt-wide-gutter { margin-top:    $gutter-wide; }
-.mtn-wide-gutter { margin-top:    -$gutter-wide; }
-.mr-wide-gutter { margin-right:  $gutter-wide; }
-.mrn-wide-gutter { margin-right:  -$gutter-wide; }
-.mb-wide-gutter { margin-bottom: $gutter-wide; }
-.mbn-wide-gutter { margin-bottom: -$gutter-wide; }
-.ml-wide-gutter { margin-left:   $gutter-wide; }
-.mln-wide-gutter { margin-left:   -$gutter-wide; }
-.mx-wide-gutter { margin-left:   $gutter-wide; margin-right:  $gutter-wide }
-.mxn-wide-gutter { margin-left:   -$gutter-wide; margin-right:  -$gutter-wide }
-.my-wide-gutter { margin-top:    $gutter-wide; margin-bottom: $gutter-wide }
-.myn-wide-gutter { margin-top:    -$gutter-wide; margin-bottom: -$gutter-wide }
+.m-gutter-wide  { margin:        $gutter-wide; }
+.mn-gutter-wide  { margin:        -$gutter-wide; }
+.mt-gutter-wide { margin-top:    $gutter-wide; }
+.mtn-gutter-wide { margin-top:    -$gutter-wide; }
+.mr-gutter-wide { margin-right:  $gutter-wide; }
+.mrn-gutter-wide { margin-right:  -$gutter-wide; }
+.mb-gutter-wide { margin-bottom: $gutter-wide; }
+.mbn-gutter-wide { margin-bottom: -$gutter-wide; }
+.ml-gutter-wide { margin-left:   $gutter-wide; }
+.mln-gutter-wide { margin-left:   -$gutter-wide; }
+.mx-gutter-wide { margin-left:   $gutter-wide; margin-right:  $gutter-wide }
+.mxn-gutter-wide { margin-left:   -$gutter-wide; margin-right:  -$gutter-wide }
+.my-gutter-wide { margin-top:    $gutter-wide; margin-bottom: $gutter-wide }
+.myn-gutter-wide { margin-top:    -$gutter-wide; margin-bottom: -$gutter-wide }
 
 .m-margin  {
 	margin: $mobile-margin;
@@ -243,13 +243,13 @@
 .px-gutter { padding-left:   $gutter; padding-right:  $gutter }
 .py-gutter { padding-top:    $gutter; padding-bottom: $gutter }
 
-.p-wide-gutter  { padding:        $gutter-wide }
-.pt-wide-gutter { padding-top:    $gutter-wide }
-.pr-wide-gutter { padding-right:  $gutter-wide }
-.pb-wide-gutter { padding-bottom: $gutter-wide }
-.pl-wide-gutter { padding-left:   $gutter-wide }
-.px-wide-gutter { padding-left:   $gutter-wide; padding-right:  $gutter-wide }
-.py-wide-gutter { padding-top:    $gutter-wide; padding-bottom: $gutter-wide }
+.p-gutter-wide  { padding:        $gutter-wide }
+.pt-gutter-wide { padding-top:    $gutter-wide }
+.pr-gutter-wide { padding-right:  $gutter-wide }
+.pb-gutter-wide { padding-bottom: $gutter-wide }
+.pl-gutter-wide { padding-left:   $gutter-wide }
+.px-gutter-wide { padding-left:   $gutter-wide; padding-right:  $gutter-wide }
+.py-gutter-wide { padding-top:    $gutter-wide; padding-bottom: $gutter-wide }
 
 .p-margin  {
 	padding: $mobile-margin;

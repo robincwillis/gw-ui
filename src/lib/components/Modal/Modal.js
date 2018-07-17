@@ -292,7 +292,7 @@ class ModalContainer extends Component {
 						{this.renderTitle() ? (
 							<div className="gw-modal-header">
 								<div className="container">
-									<div className="grid-flex no-break-tight-gutter middle">
+									<div className="grid-flex no-break-gutter-tight middle">
 										<div className="col grow">
 											<h5 className="title"><span>{this.renderTitle()}</span></h5>
 										</div>

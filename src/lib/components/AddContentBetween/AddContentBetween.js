@@ -122,7 +122,7 @@ class AddContentBetween extends Component {
 				{this.state.addingContent ? (
 					options ? (
 						this.props.iconLeft ? (
-							<div className="grid-flex no-gutter no-break top">
+							<div className="grid-flex gutter-none no-break top">
 								<div className="col no-grow"><span className="material-icons icon left">{this.props.iconLeft}</span></div>
 								<div className="col grow">
 									<Input
@@ -175,7 +175,7 @@ class AddContentBetween extends Component {
 						{this.props.label && !this.state.addingContent ? (
 							<div className="label">
 								{this.props.iconLeft ? (
-									<div className="grid-flex no-gutter no-break top">
+									<div className="grid-flex gutter-none no-break top">
 										<div className="col no-grow"><span className="material-icons icon left">{this.props.iconLeft}</span></div>
 										<div className="col grow"><span className="label-text">{this.props.label}</span></div>
 									</div>

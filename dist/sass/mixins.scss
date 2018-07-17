@@ -57,6 +57,9 @@
   @if $smooth == true {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
 }
 
@@ -78,12 +81,20 @@
   }
 }
 
-@mixin ellipsis() {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  line-height: 1em;
+@mixin ellipsis($clip : true) {
+  @if $clip == true {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    line-height: 1em;
+  } @else {
+    white-space: normal;
+    overflow: auto;
+    text-overflow: initial;
+    max-width: none;
+    line-height: inherit;
+  }
 }
 
 @mixin all-caps () {

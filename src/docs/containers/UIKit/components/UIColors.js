@@ -50,8 +50,9 @@ export class UIColors extends Component {
 	render() {
 
 		return (
-			<Section
+			<Section 
 				id={this.props.id}
+				key={this.props.id}
 				title="Colors"
 			>
 

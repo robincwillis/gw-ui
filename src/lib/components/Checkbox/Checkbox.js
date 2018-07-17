@@ -41,7 +41,7 @@ class Checkbox extends Component {
 			/>
 			{this.props.label ? (
 				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
-					<div className="grid-flex no-break no-gutter left middle">
+					<div className="grid-flex no-break gutter-none left middle">
 						<div className="col"><div className="checkbox"/></div>
 						{this.props.label ? (<div className="col"><span className="pl-1">{this.props.label}</span></div>) : false}
 					</div>

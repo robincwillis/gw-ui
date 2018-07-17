@@ -8,7 +8,7 @@ export class UISubSection extends Component {
 				<hr/>
 				<div className="grid-flex wide-space-after">
 					<div className="col-4">
-						<h4>{this.props.title}</h4>
+						<h3>{this.props.title}</h3>
 					</div>
 					<div className="col-8">
 						<div className={this.props.children && this.props.description ? "rich-text space-after" : "rich-text"}>

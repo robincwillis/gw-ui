@@ -279,6 +279,8 @@ export default class Table extends Component {
 					cell = React.cloneElement(column.props.cell, props);
 				} else if (typeof column.props.cell === 'function') {
 					cell = column.props.cell(props);
+				} else if (!column.props.cell) {
+					cell = Cell
 				}
 				return cell;
 			});

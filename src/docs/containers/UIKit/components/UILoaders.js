@@ -10,7 +10,8 @@ export class UILoaders extends Component {
 
 		return (
 			<Section 
-				id={this.props.id} 
+				id={this.props.id}
+				key={this.props.id}
 				title="Loaders"
 				description={<div><p>For different scenarios, different types of loaders should be used. There are 4 types of loaders. The <code>Loader</code>, <code>DotLoader</code>, <code>LinearLoader</code>, and <code>TextLoader</code>.</p></div>}
 			>

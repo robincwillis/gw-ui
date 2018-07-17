@@ -15,6 +15,7 @@ export class UIInputs extends Component {
 		return (
 			<Section 
 				id={this.props.id}
+				key={this.props.id}
 				title="Typography"
 				description={
 					<div>

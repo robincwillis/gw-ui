@@ -136,7 +136,7 @@ $col: 100% / 12;
 }
 
 @mixin wide-gutter() {
-  &.wide-gutter {
+  &.gutter-wide {
     @include wide-gutter-grid-setup();
     > *[class^="col"],
     > .col {
@@ -180,7 +180,7 @@ $col: 100% / 12;
 }
 
 @mixin no-gutter() {
-  &.no-gutter {
+  &.gutter-none {
     @include no-gutter-grid-setup();
     > *[class^="col"],
     > .col {

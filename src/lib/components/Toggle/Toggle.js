@@ -16,7 +16,7 @@ class Toggle extends Component {
 	}
 
 	className () {
-		let className = this.state.className  + ' ' + 'input-wrap';
+		let className = this.state.className  + ' ' + 'toggle-wrap';
 		if(this.state.error) { className += ' ' + 'error' }
 		if(this.state.validated) { className += ' ' + 'validated' }
 		if(this.state.hasValue) { className += ' has-value' }
@@ -66,7 +66,7 @@ class Toggle extends Component {
 				{...this.props.toggleProps}
 			/>
 			<label htmlFor={this.props.id ? this.props.id : this.props.name}>
-				<div className="grid-flex no-break no-gutter">
+				<div className="grid-flex no-break gutter-none left">
 					<div className="col">
 						<div className="switch mr-1"/>
 					</div>

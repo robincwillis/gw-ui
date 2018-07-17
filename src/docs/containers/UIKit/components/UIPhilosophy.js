@@ -10,7 +10,8 @@ export class UIPhilosphy extends Component {
 
 		return (
 			<Section 
-				id={this.props.id} 
+				id={this.props.id}
+				key={this.props.id}
 				title="The Philosophy"
 				description={<div>
 					<p>The UI kit is easily configurable with the a series of variables. The grid, typography styles, spacing, and sizing can all be configrued using these variables.</p>

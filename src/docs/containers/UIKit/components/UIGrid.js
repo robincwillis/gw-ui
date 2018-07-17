@@ -29,6 +29,7 @@ export class UIButtons extends Component {
 			<div>
 				<Section 
 					id={this.props.id}
+					key={this.props.id}
 					title="The Grid"
 					description={
 						<div>
@@ -48,7 +49,7 @@ export class UIButtons extends Component {
 						title="The Grid Wrapper"
 						description={
 							<div>
-								<p>The flex grid uses the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">flexbox</a> model. Using the flex grid requires a <code>div.grid-flex</code> and 1 or more direct descendants divs with a class of <code>.col-#</code> or <code>.col</code></p>
+								<p>The flex grid uses the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">flexbox</a> model. Using the flex grid requires a <code>div.grid-flex</code> and 1 or more <b>direct descendants</b> divs with a class of <code>.col-#</code> or <code>.col</code></p>
 							</div>
 						}
 					/>
@@ -62,7 +63,53 @@ export class UIButtons extends Component {
 							</div>
 						}
 					/>
-					<div className="grid-flex">
+					<p className="light-text-color"><code>.grid-flex.gutter-none</code></p>
+					<div className="grid-flex mb-3 gutter-none mt-1">
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall light-bg" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall light-bg" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall light-bg" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall light-bg" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall light-bg" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall light-bg" col="1" />
+					</div>
+					<p className="light-text-color"><code>.grid-flex.gutter-tight</code> uses the <code>$gutter-tight</code> variable.</p>
+					<div className="grid-flex mb-3 gutter-tight mt-1">
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+					</div>
+					<p className="light-text-color"><code className="main-color">Default</code> uses the <code>$gutter</code> variable.</p>
+					<div className="grid-flex mb-3 mt-1">
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+						<GridItem className="tall" col="1" />
+					</div>
+					<p className="light-text-color"><code>.grid-flex.gutter-wide</code> uses the <code>$gutter-wide</code> variable.</p>
+					<div className="grid-flex mb-3 gutter-wide mt-1">
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />
@@ -79,11 +126,17 @@ export class UIButtons extends Component {
 					<div className="grid-flex right mt-gutter">
 						<div className="col-8">
 							<div className="rich-text">
+								<h5>Gutter spacing</h5>
+								<ul>
+									<li><code>.gutter-none</code><br/> will make the space between the grid's columns so there is no gap.</li>
+									<li><code>.gutter-tight</code><br/> will make the space between the grid's columns the <code>$gutter-tight</code> variable.</li>
+									<li><code>.gutter-wide</code><br/> will make the space between the grid's columns the <code>$gutter-wide</code> variable.</li>
+								</ul>
 								<h5>Column Helper Classes</h5>
 								<ul>
 									<li><code>.col.grow</code> will have the column take up the avaliable space.</li>
 									<li><code>.col.no-grow</code> will prevents the column from growing and just keep it the width it is given.</li>
-									<li><code>.col.order-#</code> reorder the columns when the grid is not collapsed.</li>
+									<li><code>.col.order-#</code> will order the columns in the grid. The order only takes effect when the grid is not collapsed.<br/><span className="p sm light-text-color">Order ranges from 1 to 4</span></li>
 								</ul>
 							</div>
 						</div>
@@ -93,15 +146,15 @@ export class UIButtons extends Component {
 						className='no-border'
 						title='Horizontal Alignment'
 						id={this.props.id + 'HorzAlignment'}
-						description={
-							<div>
-								<p>The flex grid uses a default of <code>justify-content: space-between</code>. This means a <code>.col-3</code> and <code>.col-6</code> will put the 2 columns of extra space between the columns. This can be changed by adding <code>.left</code>, <code>.right</code>, or <code>.center</code> to the grid container.</p>
-							</div>
-						}
+						// description={
+							// <div>
+							// 	<p>The flex grid uses a default of <code>justify-content: space-between</code>. This means a <code>.col-3</code> and <code>.col-6</code> will put the 2 columns of extra space between the columns. This can be changed by adding <code>.left</code>, <code>.right</code>, or <code>.center</code> to the grid container.</p>
+							// </div>
+						// }
 					/>
 					<div>
-						<div className="grid-flex middle no-break no-gutter slim-space-after space-before">
-							<div className="col-4"><code className="medium-weight main-color mr-1">Default (space-between)</code></div>
+						<div className="grid-flex middle no-break gutter-none slim-space-after space-before">
+							<div className="col-4"><code className="main-color mr-1">Default (space-between)</code></div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced">
 									<GridItem col="3" className="short" />
@@ -112,7 +165,7 @@ export class UIButtons extends Component {
 					</div>
 					<div>
 						<hr className="light-grey my-1"/>
-						<div className="grid-flex middle no-break no-gutter slim-space-after space-before">
+						<div className="grid-flex middle no-break gutter-none slim-space-after space-before">
 							<div className="col-4"><code className="light-text-color mr-1">.grid-flex.left</code></div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced left">
@@ -124,7 +177,7 @@ export class UIButtons extends Component {
 					</div>
 					<div>
 						<hr className="light-grey my-1"/>
-						<div className="grid-flex middle no-break no-gutter slim-space-after space-before">
+						<div className="grid-flex middle no-break gutter-none slim-space-after space-before">
 							<div className="col-4"><code className="light-text-color mr-1">.grid-flex.center</code></div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced center">
@@ -136,7 +189,7 @@ export class UIButtons extends Component {
 					</div>
 					<div>
 						<hr className="light-grey my-1"/>
-						<div className="grid-flex middle no-break no-gutter slim-space-after space-before">
+						<div className="grid-flex middle no-break gutter-none slim-space-after space-before">
 							<div className="col-4"><code className="light-text-color mr-1">.grid-flex.right</code></div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced right">
@@ -152,16 +205,16 @@ export class UIButtons extends Component {
 						className="no-border"
 						title="Vertical Alignment"
 						id={this.props.id + 'VertAlignment'}
-						description={
-							<div>
-								<p>The flex grid uses a default of <code>align-items: flex-start</code> to align columns to the top. This can be changed by adding <code>.middle</code>, <code>.bottom</code>, or <code>.baseline</code></p>
-							</div>
-						}
+						// description={
+							// <div>
+							// 	<p>The flex grid uses a default of <code>align-items: flex-start</code> to align columns to the top. This can be changed by adding <code>.middle</code>, <code>.bottom</code>, or <code>.baseline</code></p>
+							// </div>
+						// }
 					/>
 					<div>
 						<div className="grid-flex middle no-break slim-space-after space-before">
 							<div className="col-4">
-								<div className="col no-grow"><code className="medium-weight main-color mr-1">Default (top)</code></div>
+								<div className="col no-grow"><code className="main-color mr-1">Default (top)</code></div>
 							</div>
 							<div className="col-8">
 								<div className="grid-flex no-break v-spaced">
@@ -212,7 +265,7 @@ export class UIButtons extends Component {
 								<div className="grid-flex no-break v-spaced baseline">
 									<GridItem col="3"/>
 									<div className="col-9">
-										<p className="sm medium-weight light-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hic ambiguo ludimur. Quodcumque in mentem incideret, et quodcumque tamquam occurreret. Itaque vides, quo modo loquantur, nova verba fingunt, deserunt usitata. Nemo nostrum istius generis asotos iucunde putat vivere. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Duo Reges: constructio interrete. Quis hoc dicit? Si quae forte-possumus.</p>
+										<p className="sm light-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hic ambiguo ludimur. Quodcumque in mentem incideret, et quodcumque tamquam occurreret. Itaque vides, quo modo loquantur, nova verba fingunt, deserunt usitata. Nemo nostrum istius generis asotos iucunde putat vivere. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Duo Reges: constructio interrete. Quis hoc dicit? Si quae forte-possumus.</p>
 									</div>
 								</div>
 							</div>
@@ -231,11 +284,12 @@ export class UIButtons extends Component {
 					>
 					<div className="rich-text">
 						<ul>
-							<li><code>.no-break</code> will not-collapse</li>
-							<li><code>.break-lg</code> will break at the varibale <code>$lg</code></li>
-							<li><code>.break-xlg</code> will break at the varibale <code>$xlg</code></li>
-							<li><code>.break-huge</code> will break at the varibale <code>$huge</code></li>
+							<li><code>.no-break</code> will not collapse</li>
+							<li><code>.break-lg</code> will collapse at the varibale <code>$lg</code></li>
+							<li><code>.break-xlg</code> will collapse at the varibale <code>$xlg</code></li>
+							<li><code>.break-huge</code> will collapse at the varibale <code>$huge</code></li>
 						</ul>
+						<p className="sm light-text-color">These classes will only effect the direction children columns. Nested grids will not inherit breakpoints unless a class is added to the grid container.</p>
 					</div>
 					</SubSection>
 
@@ -252,18 +306,8 @@ export class UIButtons extends Component {
 					<div className="rich-text">
 						<h5>On the grid wrapper</h5>
 						<ul>
-							<h6>Gutter spacing</h6>
-							<li><code>.no-gutter</code><br/> will make the space between the grid's columns so there is no gap.</li>
-							<li><code>.tight-gutter</code><br/> will make the space between the grid's columns the <code>$gutter-tight</code> variable.</li>
-							<li><code>.wide-gutter</code><br/> will make the space between the grid's columns the <code>$wide-gutter</code> variable.</li>
-							
 							<h6>Vertical spacing</h6>
 							<li><code>.v-spaced</code> will change the space under columns to be the same as the space between the columns.</li>
-						</ul>
-					
-						<h5>On columns</h5>
-						<ul>
-							<li><code>.order-#</code> will order the columns in the grid. The order only takes effect when the grid is not collapsed.<br/><span className="p sm light-text-color">Order ranges from 1 to 4</span></li>
 						</ul>
 
 					</div>

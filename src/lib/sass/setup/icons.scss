@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
 // Material Icons
 .icon {
   svg:not(.logo) {
@@ -52,13 +50,13 @@
   }
 }
 
-@mixin material-icons() {
+@mixin material-icons($size: 18px) {
   // color: currentcolor;
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 18px;  /* Preferred icon size */
-  line-height: 18px;
+  font-size: $size;  /* Preferred icon size */
+  line-height: $size;
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
@@ -67,7 +65,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  @include font-smooth();
+  @include font-smooth(true);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
   &.md-12 { font-size: 12px; line-height: 12px; }
