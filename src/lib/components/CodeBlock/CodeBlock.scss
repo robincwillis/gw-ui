@@ -26,7 +26,7 @@ $cb-dark-attr-2: lighten($notify, 10%);
 .code-block {
 	font-family: $code-font;
 	font-size: $p-font-size * .85;
-	line-height: $short-line-height;
+	line-height: $base-line-height;
 	overflow: auto;
 	@include font-smooth($code-font-smoothing);
 	&.sm {

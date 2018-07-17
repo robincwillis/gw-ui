@@ -1,11 +1,11 @@
 @import '~sass/setup/variables';
 @import '~sass/setup/mixins';
 
-$toggle-height-tiny : 12px;
+$toggle-height-tiny : 10px;
 $toggle-height-sm : 14px;
-$toggle-height-md : 16px;
-$toggle-height-lg : 20px;
-$toggle-height-xlg : 26px;
+$toggle-height-md : 18px;
+$toggle-height-lg : 22px;
+$toggle-height-xlg : 24px;
 
 input[type='checkbox'].toggle {
 	display:none;
@@ -20,8 +20,11 @@ input[type='checkbox'].toggle {
 				.switch {
 					width: $toggle-height-tiny * 2;
 					height: $toggle-height-tiny;
+					margin: 2px;
 					&:after {
-						width: calc(#{$toggle-height-tiny} + 6px);
+						margin: -2px;
+						width: calc(#{$toggle-height-tiny} + 4px);
+						height: calc(100% + 4px);
 					}
 				}
 				.text {
