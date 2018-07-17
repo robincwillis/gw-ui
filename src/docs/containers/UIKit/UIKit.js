@@ -24,8 +24,8 @@ import './ui-kit.scss';
 const examples = [
 	{
 		title : 'Philosophy',
-		id : 'Philosophy',
-		sectionComponent : <UIPhilosophy id="Philosophy" />
+		id : 'UIPhilosophy',
+		sectionComponent : <UIPhilosophy id="UIPhilosophy" />
 	},
 	{
 		title : 'Buttons',
