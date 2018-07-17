@@ -6,7 +6,7 @@ $col: 100% / 12;
   margin-right: calc(#{$gutter} * -.5);
 }
 
-@mixin wide-gutter-grid-setup() {
+@mixin gutter-wide-grid-setup() {
   display: block;
   margin-left: calc(#{$gutter-wide} * -.5);
   margin-right: calc(#{$gutter-wide} * -.5);
@@ -24,7 +24,7 @@ $col: 100% / 12;
   margin-right: calc(#{$gutter-tight} * -.25);
 }
 
-@mixin no-gutter-grid-setup() {
+@mixin gutter-none-grid-setup() {
   display: block;
   margin-left: 0;
   margin-right: 0;
@@ -135,9 +135,9 @@ $col: 100% / 12;
   }
 }
 
-@mixin wide-gutter() {
-  &.wide-gutter {
-    @include wide-gutter-grid-setup();
+@mixin gutter-wide() {
+  &.gutter-wide {
+    @include gutter-wide-grid-setup();
     > *[class^="col"],
     > .col {
       padding-left: calc(#{$gutter-wide} / 2);
@@ -179,9 +179,9 @@ $col: 100% / 12;
   }
 }
 
-@mixin no-gutter() {
-  &.no-gutter {
-    @include no-gutter-grid-setup();
+@mixin gutter-none() {
+  &.gutter-none {
+    @include gutter-none-grid-setup();
     > *[class^="col"],
     > .col {
       padding-left: 0;
@@ -198,28 +198,28 @@ $col: 100% / 12;
       @include grid-setup();
       @include col-setup();
       @include gutter-tight();
-      @include no-gutter();
+      @include gutter-none();
       @include slim-gutter();
     }
     @include respond($lg) {
-      @include wide-gutter();
+      @include gutter-wide();
     }
   }
   &.no-break {
     @include grid-setup();
     @include col-setup();
-    @include wide-gutter();
+    @include gutter-wide();
     @include gutter-tight();
-    @include no-gutter();
+    @include gutter-none();
     @include slim-gutter();
   }
   &.break-sm {
     @include respond($sm) {
       @include grid-setup();
       @include col-setup();
-      @include wide-gutter();
+      @include gutter-wide();
       @include gutter-tight();
-      @include no-gutter();
+      @include gutter-none();
       @include slim-gutter();
     }
   }
@@ -227,9 +227,9 @@ $col: 100% / 12;
     @include respond($lg) {
       @include grid-setup();
       @include col-setup();
-      @include wide-gutter();
+      @include gutter-wide();
       @include gutter-tight();
-      @include no-gutter();
+      @include gutter-none();
       @include slim-gutter();
     }
   }
@@ -237,9 +237,9 @@ $col: 100% / 12;
     @include respond($xlg) {
       @include grid-setup();
       @include col-setup();
-      @include wide-gutter();
+      @include gutter-wide();
       @include gutter-tight();
-      @include no-gutter();
+      @include gutter-none();
       @include slim-gutter();
     }
   }

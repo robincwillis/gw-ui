@@ -66,7 +66,7 @@ class Toggle extends Component {
 				{...this.props.toggleProps}
 			/>
 			<label htmlFor={this.props.id ? this.props.id : this.props.name}>
-				<div className="grid-flex no-break no-gutter left">
+				<div className="grid-flex no-break gutter-none left">
 					<div className="col">
 						<div className="switch mr-1"/>
 					</div>

@@ -27,7 +27,7 @@ export class UIOtherInputs extends Component {
 						</div>
 					}
 				>
-					<div className="grid-flex wide-gutter v-spaced-wide">
+					<div className="grid-flex gutter-wide v-spaced-wide">
 						<div className="col-6">
 							<h5 className="space-after">Toggles</h5>
 							<UIComponent

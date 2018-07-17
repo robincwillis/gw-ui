@@ -15,9 +15,8 @@ $space-4 : 4rem;
 // Grid Settings
 $columns: 12;
 $gutter: 1.75rem;
-$gutter-tight: $space-2;
+$gutter-tight: $gutter / 2;
 $gutter-wide: $gutter * 2;
-$grid-gutter: $gutter;
 
 // General UI Varibales
 $base-border-radius : 2px;

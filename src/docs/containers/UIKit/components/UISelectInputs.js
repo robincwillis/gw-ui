@@ -24,7 +24,7 @@ export class UISelectInputs extends Component {
 						</div>
 					}
 				>
-					<div className="grid-flex wide-gutter v-spaced-wide">
+					<div className="grid-flex gutter-wide v-spaced-wide">
 						<div className="col-6">
 							<UIComponent
 								component="Select"

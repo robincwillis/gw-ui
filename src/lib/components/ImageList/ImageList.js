@@ -26,7 +26,7 @@ export class ImageList extends Component {
 				<div className="sponsorship-uploads">
 					{ this.props.images.map( (image, index) => {
 						return(
-							<div  key={index} className="inline-grid tight-gutter v-spaced-normal">
+							<div  key={index} className="inline-grid gutter-tight v-spaced-normal">
 								<div
 									onClick={this.selectImage.bind(this, image.id)}
 									className={this.state.selected === image.id ? "col-1 grow align-left image-name selected" : "col-6 align-left image-name"}

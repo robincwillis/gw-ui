@@ -172,6 +172,9 @@
 		&.tall {
 			height: 6rem;
 		}
+		&.light-bg {
+			background: $light-grey;
+		}
 	}
 	.ui-section {
 		.title {

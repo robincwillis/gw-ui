@@ -93,7 +93,7 @@ const examples = [
 		title : 'Icons',
 		id : 'Icons',
 		description : <div>
-			<div className="grid-flex tight-gutter no-break left mb-gutter">
+			<div className="grid-flex gutter-tight no-break left mb-gutter">
 				<div className="col"><span className="material-icons md-48">check_circle</span></div>
 				<div className="col"><span className="material-icons md-48">arrow_forward</span></div>
 				<div className="col"><span className="material-icons md-48">photo</span></div>
