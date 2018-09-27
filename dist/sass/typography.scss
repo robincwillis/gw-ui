@@ -198,10 +198,12 @@ p,
 	&.light-text-color {
 		.code,
 		code {
-			color: $light-text-color;
 			background: transparent;
 			padding: 0;
 			border-radius: 0;
+			&:not(.main-color) {
+				color: inherit;
+			}
 		}
 		a {
 			color: inherit;

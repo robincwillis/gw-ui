@@ -1,5 +1,3 @@
-@import '~sass/setup/variables';
-@import '~sass/setup/mixins';
 
 $cb-base:    $light-grey;
 $cb-code-color:  $text-color;
@@ -39,7 +37,7 @@ $cb-dark-attr-2: lighten($notify, 10%);
 			background: transparent;
 		}
 	}
-	
+
 	&.dark {
 		// On Dark BG
 		&.minimal {

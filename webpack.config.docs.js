@@ -61,6 +61,14 @@ const config = {
           { loader: 'postcss-loader', options: { path: './src/docs/postcss.config.js' } },
           'resolve-url-loader',
           'sass-loader',
+          {
+          	loader : 'sass-resources-loader', options: { resources : [
+          			path.resolve(__dirname, 'src/lib/sass/setup/variables.scss'),
+          			path.resolve(__dirname, 'src/lib/sass/setup/mixins.scss'),
+          			path.resolve(__dirname, 'src/lib/sass/setup/scrollbars.scss')
+          		]
+          	}
+          }
         ],
       },
 			{

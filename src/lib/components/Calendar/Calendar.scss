@@ -1,5 +1,3 @@
-@import '~sass/setup/variables';
-@import '~sass/setup/mixins';
 
 $cal-border-color : $main-color;
 $week-day-margins : 70px;
@@ -41,7 +39,7 @@ $week-day-margins : 70px;
 				&.searching {
 					@include respond-smaller-than($xlg + 50) {
 						display: none;
-					}	
+					}
 				}
 				@include respond($xlg) {
 					&:not(.searching) {

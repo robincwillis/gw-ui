@@ -1,21 +1,15 @@
-@import '~sass/setup/variables';
 
 .graph {
 	svg {
 		overflow: visible;
-
 
 		path,
 		g,
 		.circle {
 	    pointer-events: none;
 		}
-
 	}
-
 }
-
-
 
 .d3-tip {
   line-height: 1;

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import DocumentTitle from 'react-document-title';
 
-import UIPhilosophy from './components/UIPhilosophy';
 import Button from 'components/Button'
+
+import UIPhilosophy from './components/UIPhilosophy';
 import UIButtons from './components/UIButtons';
 import UITextInputs from './components/UITextInputs';
 import UISelectInputs from './components/UISelectInputs';
@@ -19,7 +20,9 @@ import UITables from './components/UITables';
 
 import UISection from './components/UISection';
 
+
 import './ui-kit.scss';
+
 
 const examples = [
 	{

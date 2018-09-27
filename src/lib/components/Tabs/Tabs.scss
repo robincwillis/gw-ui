@@ -1,5 +1,3 @@
-@import '~sass/setup/variables';
-
 /* Styles support up to 6 tabs */
 
 .ui-tabs {
@@ -198,7 +196,7 @@
 			.tab {
 				font-size: $btn-large-font-size;
 			}
-		}	
+		}
 	}
 	&.small {
 		& .ui-tabs {
@@ -206,7 +204,7 @@
 			& .tab {
 				font-size: $btn-small-font-size;
 			}
-		}	
+		}
 	}
 	& .ui-tabs {
 		color: $light-grey;
@@ -242,7 +240,7 @@
 			.tab {
 				font-size: $btn-large-font-size;
 			}
-		}	
+		}
 	}
 	&.small {
 		& .ui-tabs {
@@ -250,7 +248,7 @@
 			& .tab {
 				font-size: $btn-small-font-size;
 			}
-		}	
+		}
 	}
 	& .ui-tabs {
 		color: darken($light-grey, 6%);

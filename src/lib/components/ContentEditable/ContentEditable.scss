@@ -1,5 +1,3 @@
-@import '~sass/setup/variables';
-@import '~sass/setup/mixins';
 
 *[contentEditable="true"] {
 	outline: none;
@@ -66,16 +64,16 @@
 				}
 			}
 		}
-		h1[contentEditable="true"], 
+		h1[contentEditable="true"],
 		.h1[contentEditable="true"],
-		h2[contentEditable="true"], 
+		h2[contentEditable="true"],
 		.h2[contentEditable="true"],
-		h3[contentEditable="true"], 
+		h3[contentEditable="true"],
 		.h3[contentEditable="true"],
-		h4[contentEditable="true"], 
+		h4[contentEditable="true"],
 		.h4[contentEditable="true"],
-		h5[contentEditable="true"], 
-		.h5[contentEditable="true"], 
+		h5[contentEditable="true"],
+		.h5[contentEditable="true"],
 		h6[contentEditable="true"],
 		.h6[contentEditable="true"], {
 			&:before {

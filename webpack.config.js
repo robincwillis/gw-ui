@@ -30,7 +30,7 @@ module.exports = {
 
 		new CopyWebpackPlugin([
 			{
-				from: 'sass',
+				from: 'sass/',
 				to: 'sass/[name].[ext]',
 				toType: 'template'
 			}
@@ -46,7 +46,7 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: ['file-loader?name=[name].[ext]'],
+				use: 'file-loader?name=[name].[ext]'
 			}
 		]
 	},
@@ -58,19 +58,6 @@ module.exports = {
 			path.resolve(__dirname, 'node_modules')
 		],
 		extensions: ['.js', '.json', '.hbs', '.jpg', '.png', '.svg', '.sass', '.scss', '.css']
-	},
-
-	// optimization: {
-	// 	splitChunks: {
-	// 		cacheGroups: {
-	// 			vendor: {
-	// 			 test: /node_modules/,
-	// 			 chunks: 'initial',
-	// 			 name: 'vendor',
-	// 			 enforce: true
-	// 			},
-	// 		}
-	// 	}
-	// }
+	}
 
 };
