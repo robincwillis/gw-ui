@@ -1,4 +1,5 @@
 
+
 $loader-weight: 2px;
 $tiny-loader-size: 12px;
 $small-loader-size: 16px;
@@ -162,39 +163,18 @@ $large-loader-size: 36px;
 		border-radius: $base-border-radius;
 		position: relative;
 		overflow: hidden;
-		// &:after {
-		// 	content: '';
-		// 	display: block;
-		// 	position: absolute;
-		// 	width: 200%;
-		// 	top: 0;
-		// 	bottom: 0;
-		// 	right: 0;
-		// 	animation: gradient-loader 2s linear infinite;
-		// }
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 200%;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			animation: gradient-loader 2s linear infinite;
+		}
 	}
 	&.on-grey span {
-		background: darken($bg-color, 5%);
-	}
-}
-
-.gradient-loader {
-	display: block;
-	border-radius: $base-border-radius;
-	background: $light-grey;
-	position: relative;
-	overflow: hidden;
-	// &:after {
-	// 	content: '';
-	// 	display: block;
-	// 	position: absolute;
-	// 	width: 200%;
-	// 	top: 0;
-	// 	bottom: 0;
-	// 	right: 0;
-	// 	animation: gradient-loader 2s linear infinite;
-	// }
-	&.on-grey {
 		background: darken($bg-color, 5%);
 	}
 }
@@ -217,12 +197,12 @@ $large-loader-size: 36px;
 		left: 0;
 		width: 100%;
 		transform: scaleX(.2) translate3d(-100%, 0, 0);
-		animation: linear-loader 2.4s linear infinite;
+		animation: linear-loader 2s linear infinite;
 		&.second {
-			animation-delay: .8s;
+			animation-delay: 2s * .333;
 		}
 		&.third {
-			animation-delay: 1.6s;
+			animation-delay: 2s * .666;
 		}
 	}
 }
@@ -273,12 +253,12 @@ $large-loader-size: 36px;
 }
 
 @keyframes gradient-loader {
-	0% {
-		background-image: linear-gradient(to right, rgba($text-color, 0) 0%,rgba($text-color, .04) 20%,rgba($text-color, 0) 40%,rgba($text-color, .04) 60%,rgba($text-color, 0) 80%,rgba($text-color, .04) 100%);
+	0%, 100% {
+		background-image: linear-gradient(to right, rgba($text-color, 0) 0%, rgba($text-color, .05) 50%, rgba($text-color, 0) 100%);
 		transform: translate3d(0, 0, 0);
 	}
-	100% {
-		background-image: linear-gradient(to right, rgba($text-color, 0) 0%,rgba($text-color, .04) 20%,rgba($text-color, 0) 40%,rgba($text-color, .04) 60%,rgba($text-color, 0) 80%,rgba($text-color, .04) 100%);
-		transform: translate3d(40%, 0, 0);
+	50% {
+		background-image: linear-gradient(to right, rgba($text-color, 0) 0%, rgba($text-color, .05) 50%, rgba($text-color, 0) 100%);
+		transform: translate3d(50%, 0, 0);
 	}
 }

@@ -239,6 +239,8 @@ $horizontal-cell-padding: .75rem;
 $modal-padding: $gutter;
 $modal-header-font-size: .875rem;
 $modal-full-width-actions: false;
+$modal-overlay-color: rgba($text-color, 0.15);
+$modal-shadow: 0 20px 40px rgba($text-color, .1);
 
 // Tooltips
 $nipple-size: 4px;

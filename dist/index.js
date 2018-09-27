@@ -4449,7 +4449,11 @@ var Toggle = function (_Component) {
 				return _react2.default.createElement(
 					'div',
 					{ className: 'text' },
-					_this.props.label
+					_react2.default.createElement(
+						'span',
+						{ className: 'label-text' },
+						_this.props.label
+					)
 				);
 			}
 			return false;
@@ -4519,8 +4523,8 @@ var Toggle = function (_Component) {
 
 Toggle.defaultProps = {
 	hideLabel: false,
-	onLabel: 'On',
-	offLabel: 'Off',
+	onLabel: '',
+	offLabel: '',
 	className: ''
 };
 exports.default = Toggle;

@@ -96,15 +96,17 @@ export class UIComponent extends Component {
 
 		return (
 			<div className={this.props.listStyle ? ("ui-component list-style") : "ui-component"}>
-				<div className={this.props.measured ? 'measured' : ''}>
-					{this.renderComponent()}
-					{this.props.measured ? (
-						<div className="measurements" ref="measuredComponent">
-							<div className="height">{this.state.componentHeight}px</div>
-						</div>
-					) : false}
+				<div className="ui-component-wrap">
+					<div className={this.props.measured ? 'measured' : ''}>
+						{this.renderComponent()}
+						{this.props.measured ? (
+							<div className="measurements" ref="measuredComponent">
+								<div className="height">{this.state.componentHeight}px</div>
+							</div>
+						) : false}
+					</div>
 				</div>
-				<div className="pt-2">
+				<div>
 					{this.props.classOnly ? (
 						<CodeBlock language="css" className="sm minimal" style="atom-one-dark">
 							{this.props.className ? (this.renderClasses()) : 'default'}

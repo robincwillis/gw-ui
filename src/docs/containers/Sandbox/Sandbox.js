@@ -337,37 +337,38 @@ class Sandbox extends Component {
 						</div>
 						<div className="col-8">
 							<Toggle
-								className="tiny"
+								className="tiny pb-1"
 								id="myToggle"
-								label="Test 1"
+								onLabel="Test 1"
+								offLabel="Test 1 off"
 								value={this.state.toggle1}
 								onChange={(event) => { this.setState({toggle1 : event.target.value})}}
 							/>
 							<Toggle
-								className="sm"
+								className="sm pb-1"
 								id="myToggle2"
 								label="Test 2"
 								value={this.state.toggle1}
 								onChange={(event) => { this.setState({toggle1 : event.target.value})}}
 							/>
 							<Toggle
-								className="default"
+								className="default pb-1"
 								id="myToggle3"
-								label="Test 3"
 								value={this.state.toggle1}
 								onChange={(event) => { this.setState({toggle1 : event.target.value})}}
 							/>
 							<Toggle
-								className="lg"
+								className="lg pb-1"
 								id="myToggle4"
 								label="Test 4"
 								value={this.state.toggle1}
 								onChange={(event) => { this.setState({toggle1 : event.target.value})}}
 							/>
 							<Toggle
-								className="xlg"
+								className="xlg pb-1"
 								id="myToggle5"
-								label="Test 5"
+								onLabel="Test 1"
+								offLabel="Test 1 off"
 								value={this.state.toggle1}
 								onChange={(event) => { this.setState({toggle1 : event.target.value})}}
 							/>

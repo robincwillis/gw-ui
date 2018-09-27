@@ -44,7 +44,7 @@
 				pointer-events: none;
 				content: '';
 				display: block;
-				background: rgba($text-color, .1);
+				background: $modal-overlay-color;
 				position: fixed;
 				top: 0;
 				right: 0;
@@ -86,12 +86,34 @@
 		}
 	}
 	.ui-component {
+		.ui-component-wrap {
+			min-height: $btn-large-height;
+			display: flex;
+			align-items: center;
+			margin-bottom: $space-2;
+			> div {
+				width: 100%;
+			}
+		}
 		&.list-style {
 			display: flex;
 			align-items: center;
+			.ui-component-wrap {
+				margin-bottom: 0;
+				display: block;
+				min-height: 0;
+			}
 			.code-block {
 				margin-left: $gutter-tight;
+				padding: 0;
+				border-radius: 0;
+				background: transparent;
 			}
+		}
+		.code-block {
+			background: $light-grey;
+			border-radius: $base-border-radius;
+			padding: $space-2;
 		}
 		.measured {
 			position: relative;

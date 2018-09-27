@@ -63,7 +63,7 @@ export class UIButtons extends Component {
 							</div>
 						}
 					/>
-					<p className="light-text-color"><code>.grid-flex.gutter-none</code></p>
+					<p className="light-text-color sm"><code>.grid-flex.gutter-none</code></p>
 					<div className="grid-flex mb-3 gutter-none mt-1">
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall light-bg" col="1" />
@@ -78,7 +78,7 @@ export class UIButtons extends Component {
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall light-bg" col="1" />
 					</div>
-					<p className="light-text-color"><code>.grid-flex.gutter-tight</code> uses the <code>$gutter-tight</code> variable.</p>
+					<p className="light-text-color sm"><code>.grid-flex.gutter-tight</code> uses the <code className="text-color">$gutter-tight</code> variable.</p>
 					<div className="grid-flex mb-3 gutter-tight mt-1">
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />
@@ -93,7 +93,7 @@ export class UIButtons extends Component {
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />
 					</div>
-					<p className="light-text-color"><code className="main-color">Default</code> uses the <code>$gutter</code> variable.</p>
+					<p className="light-text-color sm"><code className="main-color">Default</code> uses the <code className="text-color">$gutter</code> variable.</p>
 					<div className="grid-flex mb-3 mt-1">
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />
@@ -108,7 +108,7 @@ export class UIButtons extends Component {
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />
 					</div>
-					<p className="light-text-color"><code>.grid-flex.gutter-wide</code> uses the <code>$gutter-wide</code> variable.</p>
+					<p className="light-text-color sm"><code>.grid-flex.gutter-wide</code> uses the <code className="text-color">$gutter-wide</code> variable.</p>
 					<div className="grid-flex mb-3 gutter-wide mt-1">
 						<GridItem className="tall" col="1" />
 						<GridItem className="tall" col="1" />

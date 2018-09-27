@@ -49,19 +49,6 @@
     }
   }
 
-  code,
-  .code {
-    font-size: inherit;
-    color: $text-color;
-    background: transparent;
-    padding: 0.2em 0.4em;
-    font-size: .85em;
-    border-radius: $base-border-radius;
-    &:not(.minimal) {
-      background: $light-grey;
-    }
-  }
-
   ul,
   ol,
   figure,

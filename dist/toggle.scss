@@ -1,41 +1,135 @@
 
-$toggle-width : 26px;
+
+$toggle-height-tiny : 10px;
+$toggle-height-sm : 14px;
+$toggle-height-md : 18px;
+$toggle-height-lg : 22px;
+$toggle-height-xlg : 24px;
 
 input[type='checkbox'].toggle {
 	display:none;
 }
 
 .toggle-wrap {
+	display: block;
+	line-height: 0;
 	&.tiny {
-
+		input.toggle {
+			~ label{
+				.switch {
+					width: $toggle-height-tiny * 2;
+					height: $toggle-height-tiny;
+					margin: 2px;
+					&:after {
+						margin: -2px;
+						width: calc(#{$toggle-height-tiny} + 4px);
+						height: calc(100% + 4px);
+					}
+				}
+				.text {
+					font-size: $sm-p-font-size;
+				}
+			}
+			&:checked {
+				~ label{
+					.switch {
+						&:after {
+							transform: translate3d(($toggle-height-tiny), 0, 0);
+						}
+					}
+				}
+			}
+		}
 	}
-	&.sm,
-	&.small {
+	&.sm {
+		input.toggle {
+			~ label{
+				.switch {
+					width: $toggle-height-sm * 2;
+					height: $toggle-height-sm;
+					&:after {
+						width: calc(#{$toggle-height-sm} + 6px);
+					}
+				}
+				.text {
+					font-size: $sm-p-font-size;
+				}
+			}
+			&:checked {
+				~ label{
+					.switch {
+						&:after {
+							transform: translate3d(($toggle-height-sm), 0, 0);
+						}
+					}
+				}
+			}
+		}
 	}
 	&.lg {
+		input.toggle {
+			~ label{
+				.switch {
+					width: $toggle-height-lg * 2;
+					height: $toggle-height-lg;
+					&:after {
+						width: calc(#{$toggle-height-lg} + 6px);
+					}
+				}
+			}
+			&:checked {
+				~ label{
+					.switch {
+						&:after {
+							transform: translate3d(($toggle-height-lg), 0, 0);
+						}
+					}
+				}
+			}
+		}
 	}
 	&.xlg {
+		input.toggle {
+			~ label{
+				.switch {
+					width: $toggle-height-xlg * 2;
+					height: $toggle-height-xlg;
+					&:after {
+						width: calc(#{$toggle-height-xlg} + 6px);
+					}
+				}
+			}
+			&:checked {
+				~ label{
+					.switch {
+						&:after {
+							transform: translate3d(($toggle-height-xlg), 0, 0);
+						}
+					}
+				}
+			}
+		}
 	}
 	input.toggle {
 		~ label {
 			display: inline-block;
+			vertical-align: top;
 			.switch {
-				display: inline-block;
+				display: block;
 				position: relative;
-				width: $toggle-width;
-				height: $toggle-width/2;
-				margin: 2px 0 2px 0;
+				width: $toggle-height-md * 2;
+				height: $toggle-height-md;
 				vertical-align: middle;
 				color: $input-hover-bg;
 				background: rgba($light-text-color, .5);
 				border-radius: 20px;
 				transition: background 0.3s $ease, border 0.3s $ease, color 0.3s $ease, opacity 0.3s $ease;
 				opacity: .6;
-				margin: 0 3px;
+				margin: 3px;
 				&:after {
 					content: '';
 					display: block;
-					width: calc(50% + 6px);
+					width: calc(#{$toggle-height-md} + 6px);
 					height: calc(100% + 6px);
 					position: absolute;
 					top: 0;
@@ -50,13 +144,24 @@ input[type='checkbox'].toggle {
 			.text {
 				position: relative;
 				padding: 0 0 0 .5rem;
-				font-size: $base-font-size;
+				font-size: $p-font-size;
 				opacity: .4;
 				transition: opacity $md-speed $ease;
+				height: 100%;
+				.label-text,
 				.on-label,
 				.off-label {
 					transition: transform $md-speed $ease, opacity $md-speed $ease, visibility $md-speed $ease;
 					position: absolute;
+					line-height: 1em;
+					height: 100%;
+					display: flex;
+					font-size: 1em;
+					align-items: center;
+					white-space: nowrap;
+				}
+				.label-text {
+					position: static;
 				}
 				.on-label {
 					opacity: 0;
@@ -91,7 +196,7 @@ input[type='checkbox'].toggle {
 					color: $main-color;
 					&:after {
 						background: $main-color;
-						transform: translate3d($toggle-width/2, 0, 0);
+						transform: translate3d(($toggle-height-md), 0, 0);
 						box-shadow: 0 5px 10px rgba($text-color, .1);
 					}
 				}

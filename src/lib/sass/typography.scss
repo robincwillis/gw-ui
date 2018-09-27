@@ -198,12 +198,10 @@ p,
 	&.light-text-color {
 		.code,
 		code {
+			color: inherit;
 			background: transparent;
 			padding: 0;
 			border-radius: 0;
-			&:not(.main-color) {
-				color: inherit;
-			}
 		}
 		a {
 			color: inherit;
@@ -275,43 +273,39 @@ i,
 }
 
 .light-text-color {
-	color: $light-text-color;
+	color: $light-text-color !important;
 }
 
 .text-color {
-	color: $text-color;
+	color: $text-color !important;
 }
 
 .bg-color {
-	color: $bg-color;
+	color: $bg-color !important;
 }
 
 .black {
-	color: $black;
+	color: $black !important;
 }
 
 .white {
-	color: $white;
+	color: $white !important;
 }
 
 .main-color {
-	color: $main-color;
-}
-
-.main-color-opacity {
-	color: rgba($main-color, .6);
+	color: $main-color !important;
 }
 
 .success-color {
-	color: $success;
+	color: $success !important;
 }
 
 .alert-color {
-	color: $alert;
+	color: $alert !important;
 }
 
 .notify-color {
-	color: $notify;
+	color: $notify !important;
 }
 
 .align-center {
@@ -401,7 +395,7 @@ code,
 .code {
 	letter-spacing: 0;
   font-family: $code-font;
-  font-size: .85em;
+  font-size: 1em;
   line-height: $base-line-height;
   @include font-smooth($code-font-smoothing);
 }

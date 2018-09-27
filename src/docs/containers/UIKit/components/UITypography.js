@@ -30,7 +30,7 @@ export class UIInputs extends Component {
 						<div>
 							<p>The header font sizes for h1-6 and paragraphs, font weights, line heights, and letter spacing can all be adjusted easily in the <code>variables.scss</code> stylesheet</p>
 							<p>Sometimes you want elements to look and act like headers, but for SEO or other reasons, the <code>H</code> tags shouldn't be used</p>
-							<p className="light-text-color medium-weight">ie: Only one <code>h1</code> tag should be used per page</p>
+							<p className="light-text-color">ie: Only one <code>h1</code> tag should be used per page</p>
 						</div>
 					}
 				/>
