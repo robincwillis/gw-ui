@@ -18,7 +18,7 @@ export class CodeBlock extends Component {
 				{this.props.simple ? (
 					<pre className="code">{this.props.children}</pre>
 				) : (
-					<pre language={this.props.language} innerHTML={true}>
+					<pre language={this.props.language}>
 						{this.props.children}
 					</pre>
 				)}

@@ -1,12 +1,14 @@
 
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
 
 
-module.exports = {
+const config = {
 
 	context: path.resolve(__dirname, 'src/lib'),
 
@@ -26,6 +28,9 @@ module.exports = {
 	externals: [nodeExternals()],
 
 	plugins : [
+
+    new CleanWebpackPlugin(['dist']),
+
 		new webpack.NamedModulesPlugin(),
 
 		new CopyWebpackPlugin([
@@ -61,3 +66,5 @@ module.exports = {
 	}
 
 };
+
+module.exports = config;

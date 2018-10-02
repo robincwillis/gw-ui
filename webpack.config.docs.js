@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -26,6 +27,8 @@ const config = {
 	},
 
 	plugins: [
+
+    new CleanWebpackPlugin(['docs']),
 
 		new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output

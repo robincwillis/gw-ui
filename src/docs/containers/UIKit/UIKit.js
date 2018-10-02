@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import './ui-kit.scss';
+
 import DocumentTitle from 'react-document-title';
 
 import Button from 'components/Button'
 
-import UIPhilosophy from './components/UIPhilosophy';
+import UIIntroduction from './components/UIIntroduction';
 import UIButtons from './components/UIButtons';
 import UITextInputs from './components/UITextInputs';
 import UISelectInputs from './components/UISelectInputs';
@@ -17,30 +19,24 @@ import UILoaders from './components/UILoaders';
 import UIMisc from './components/UIMisc';
 import UIColors from './components/UIColors';
 import UITables from './components/UITables';
-
 import UISection from './components/UISection';
+import UIIcons from './components/UIIcons';
 
 
-import './ui-kit.scss';
 
 
 const examples = [
 	{
-		title : 'Philosophy',
-		id : 'UIPhilosophy',
-		sectionComponent : <UIPhilosophy id="UIPhilosophy" />
-	},
-	{
-		title : 'Buttons',
-		id : 'UIButtons',
-		sectionComponent : <UIButtons id="UIButtons" />,
+		title : 'Introduction',
+		id : 'UIIntroduction',
+		sectionComponent : <UIIntroduction id="UIIntroduction" />,
 		subsections : [
-			'Colors',
-			'Shapes',
-			'States',
-			'Icons',
+			'Getting Started',
+			'Variables',
+			'React'
 		]
 	},
+
 	{
 		title : 'Typography',
 		id : 'UITypography',
@@ -50,6 +46,11 @@ const examples = [
 			'Paragraphs',
 			'RichText'
 		]
+	},
+	{
+		title : 'Colors',
+		id : 'UIColors',
+		sectionComponent : <UIColors id="UIColors" />
 	},
 	{
 		title : 'Grid',
@@ -66,6 +67,27 @@ const examples = [
 		title : 'Spacing',
 		id : 'UISpacing',
 		sectionComponent : <UISpacing id="UISpacing" />
+	},
+	{
+		title : 'Icons',
+		id : 'UIIcons',
+		sectionComponent : <UIIcons id="UIIcons" />
+	},
+	{
+		title : 'Animations',
+		id : 'Animations',
+		// sectionComponent : <UIButtons/>
+	},
+	{
+		title : 'Buttons',
+		id : 'UIButtons',
+		sectionComponent : <UIButtons id="UIButtons" />,
+		subsections : [
+			'Colors',
+			'Shapes',
+			'States',
+			'Icons',
+		]
 	},
 	{
 		title : 'Text Inputs',
@@ -88,30 +110,6 @@ const examples = [
 		sectionComponent : <UILoaders id="Loaders" />
 	},
 	{
-		title : 'Colors',
-		id : 'UIColors',
-		sectionComponent : <UIColors id="UIColors" />
-	},
-	{
-		title : 'Icons',
-		id : 'Icons',
-		description : <div>
-			<div className="grid-flex gutter-tight no-break left mb-gutter">
-				<div className="col"><span className="material-icons md-48">check_circle</span></div>
-				<div className="col"><span className="material-icons md-48">arrow_forward</span></div>
-				<div className="col"><span className="material-icons md-48">photo</span></div>
-				<div className="col"><span className="material-icons md-48">attachment</span></div>
-				<div className="col"><span className="material-icons md-48">local_taxi</span></div>
-				<div className="col"><span className="material-icons md-48">videogame_asset</span></div>
-				<div className="col"><span className="material-icons md-48">add_circle_outline</span></div>
-				<div className="col"><span className="material-icons md-48">more_horiz</span></div>
-			</div>
-			<p className="bold">The UI Kit uses <a href="https://material.io/tools/icons/?style=baseline" target="_blank">Material Icons</a>.</p>
-			<p>Other than using the <code>.material-icons</code> class, we include the <code>material-icons</code> mixin for quick use.</p>
-			<p className="sm light-text-color"><strong>ie:</strong> <code>@include material-icons($size);</code> The default size is 18px</p>
-		</div>
-	},
-	{
 		title : 'Components',
 		id : 'Components',
 		// sectionComponent : <UIButtons/>
@@ -129,11 +127,6 @@ const examples = [
 			'Tooltips',
 			'HelperClasses',
 		]
-	},
-	{
-		title : 'Animations',
-		id : 'Animations',
-		// sectionComponent : <UIButtons/>
 	}
 ];
 
@@ -174,7 +167,7 @@ export class UIKit extends Component {
 								{examples.map( (section, index) => {
 									if (section.sectionComponent) {
 										return (
-											section.sectionComponent
+											<div key={section.id}>{section.sectionComponent}</div>
 										);
 									} else {
 										return (

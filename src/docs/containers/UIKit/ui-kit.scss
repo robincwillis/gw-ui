@@ -1,4 +1,18 @@
-@import '~sass/setup';
+@import 'sass/reset';
+
+@import 'sass/setup';
+
+@import 'sass/base';
+
+@import 'sass/fonts';
+@import 'sass/typography';
+@import 'sass/rich_text.scss';
+
+@import 'sass/grid';
+@import 'sass/spacing';
+@import 'sass/icons';
+@import 'sass/animations';
+
 
 .screen-ui-kit {
 	.empty {

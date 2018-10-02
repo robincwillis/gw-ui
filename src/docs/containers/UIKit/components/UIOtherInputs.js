@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Input from 'components/Input';
-import Toggle from 'components/Toggle';
 import Section from './UISection'
 import UIComponent from './UIComponent'
 
@@ -17,7 +15,7 @@ export class UIOtherInputs extends Component {
 
 		return (
 			<div>
-				<Section 
+				<Section
 					id={this.props.id}
 					key={this.props.id}
 					title="Other Inputs"

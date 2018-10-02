@@ -404,3 +404,38 @@ code,
 	font-weight: $medium !important;
 	@include font-smooth();
 }
+
+a {
+	color: $light-text-color;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, opacity $md-speed $ease;
+	&:hover,
+  &:focus {
+    outline: none;
+		color: $text-color;
+	}
+  &.text-color {
+    &:hover,
+    &:focus {
+      color: $main-color;
+    }
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.max-text-width {
+  max-width: $max-text-width;
+}
+
