@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "prepare": "npm run build",
-    "prepack": "rimraf docs && rimraf src",
+    "prepack": "clean:docs",
     "start": "NODE_ENV=development node index.js",
     "watch": "./node_modules/.bin/webpack --watch --mode=none",
     "build": "./node_modules/.bin/webpack --mode=production",
