@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './Select.scss';
 
 class Select extends Component {
-
-	static defaultProps = {
-		options : [],
-		placeholder : ''
-	}
 
 	state = {
 		className : this.props.className
@@ -71,8 +67,32 @@ class Select extends Component {
 			</div>
 		);
 	}
-
-
 }
 
+Select.propTypes = {
+	value : PropTypes.object,
+	name : PropTypes.string,
+  options : PropTypes.array,
+  placeholder : PropTypes.string,
+  className : PropTypes.string,
+  disabled : PropTypes.bool,
+  selectProps : PropTypes.object,
+  onChange : PropTypes.func,
+  onBlur : PropTypes.func,
+  onFocus : PropTypes.func
+}
+
+Select.defaultProps = {
+	options : [],
+	placeholder : '',
+	className : '',
+	disabled : false,
+	selectProps : {}
+}
+
+
 export default Select;
+
+
+
+

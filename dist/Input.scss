@@ -121,6 +121,303 @@ input[type='password'],
 		color: $placeholder-color;
 		background: darken($input-bg, 2%);
 	}
+}
 
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+input[type='password']
+{
+
+	.large & {
+		height: $input-large-height;
+	}
+	.small & {
+		height: $input-small-height;
+	}
+	.tiny & {
+		height: $input-tiny-height;
+		padding: 0 .75em;
+		display: inline-block;
+	}
+	.label-above &,
+	.input-with-label & {
+		~ label {
+			font-weight: $input-label-weight;
+		}
+	}
+
+	.input-with-label & {
+		~ label {
+			line-height: calc(#{$btn-height} - .2em);
+			font-size: $input-font-size;
+			letter-spacing: $input-letter-spaceing;
+			padding-top: .5em;
+		}
+		.large & {
+			~ label {
+				line-height: calc(#{$input-large-height} - .2em);
+				font-size: $input-large-font-size;
+			}
+		}
+		.small & {
+			~ label {
+				line-height: calc(#{$input-small-height} - .2em);
+				font-size: $input-small-font-size;
+			}
+		}
+		.tiny & {
+			~ label {
+				line-height: calc(#{$input-tiny-height} - .2em);
+				font-size: $input-tiny-font-size;
+			}
+		}
+	}
+}
+
+.input-wrap {
+	position: relative;
+	@include font-smooth();
+	.select-icon {
+		pointer-events: none;
+	}
+	.flex-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		.no-grow {
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+		.grow {
+			flex-grow: 1;
+			width: 1px;
+		}
+	}
+	&:not(.underlined) {
+		.label-above {
+			position: relative;
+			input[type='text'],
+			input[type='email'],
+			input[type='number'],
+			input[type='password'],
+			.select-wrap {
+				margin-top: 1rem;
+				display: inline-block;
+				width: 100%;
+			}
+			> .icon {
+				top: calc(50% + .5rem);
+			}
+			.select-wrap {
+				position: relative;
+			}
+		}
+	}
+	.label-above {
+		* {
+			~ label {
+				line-height: 1.5em;
+				position: absolute;
+				top: -.1rem;
+				left: 0;
+				font-size: $sm-font-size;
+				color: $light-text-color;
+				font-size: calc(#{$input-font-size} * .75);
+				@include ellipsis();
+			}
+			&:focus {
+				~ label {
+					color: $input-focus-color;
+				}
+			}
+		}
+	}
+	.input-with-label {
+		position: relative;
+		display: block;
+		~ .icon,
+		~ .error-message,
+		~ .secondary{
+			position: absolute;
+			top: 50%;
+			transform: translate3d(0, calc(-50% + .25rem), 0);
+		}
+		.icon{
+			right: 0;
+			&.before {
+				left: 0;
+				right: auto;
+			}
+		}
+
+
+		label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding-top: .5em;
+			font-size: $input-font-size;
+			pointer-events: none;
+			transform-origin: top left;
+			transition: opacity $md-speed $ease, transform $md-speed $ease, top $md-speed $ease, line-height $md-speed $ease, color $md-speed $ease;
+		}
+	}
+
+	&.underlined {
+		label {
+			top: -.2rem;
+		}
+		.icon{
+			right: 0;
+			&.before {
+				left: 0;
+				right: auto;
+			}
+		}
+		*.input-with-label {
+			label {
+				top: 0;
+			}
+		}
+	}
+
+	&.underlined,
+	.input-with-label {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type='number'],
+		select {
+			padding-top: .95em;
+			border-radius: 0;
+			border-left: 0;
+			border-right: 0;
+			border-top: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.icon {
+			top: calc(50% + .25em);
+		}
+	}
+
+	&.has-icon-before {
+		.input-with-label {
+			label,
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			input[type="number"] {
+				padding-left: 1.5rem;
+				&:focus {
+					~ label {
+						transform: scale(0.75) translate3d(-1.5rem, -1rem, 0);
+					}
+				}
+			}
+		}
+	}
+
+	&.has-icon-before.has-value {
+		.input-with-label {
+			label,
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			input[type="number"] {
+				padding-left: 1.5rem;
+				~ label {
+					transform: scale(0.75) translate3d(-1.5rem, -1rem, 0);
+				}
+			}
+		}
+	}
+	&.has-icon-after {
+		.input-with-label {
+			label,
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			input[type="number"] {
+				padding-right: 1.5rem;
+			}
+		}
+		.error-message {
+			margin-right: 25px;
+		}
+	}
+
+	&.has-icon-after,
+	&.has-icon-after.filled-in,
+	&.has-icon-after.underlined {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="number"] {
+			padding-right: 2rem;
+		}
+	}
+	&.has-icon-before,
+	&.has-icon-before.filled-in,
+	&.has-icon-before.underlined {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="number"] {
+			padding-left: 2rem;
+		}
+	}
+
+	&.error {
+		  input, select {
+			border-color: $alert;
+		 }
+		.error-message {
+			color: $alert;
+			transition: opacity $md-speed $ease;
+		}
+	}
+
+	&.validated > input {
+		border-bottom: 1px solid $success;
+	}
+
+	i.material-icons,
+	.icon,
+	.error-message,
+	.secondary {
+		position: absolute;
+		top: 50%;
+		transform: translate3d(0, -50%, 0);
+		color: $placeholder-color;
+	}
+
+	.icon{
+		transition: color $md-speed $ease;
+		right: .6rem;
+		&.before {
+			left: .6rem;
+			right: auto;
+		}
+	}
+
+	.error-message,
+	.secondary{
+		font-size:10px;
+		right: 0;
+	}
+}
+
+.input-label {
+	font-size: $sm-font-size;
+	color: $light-text-color;
+	display: inline-block;
+	vertical-align: middle;
 }
 

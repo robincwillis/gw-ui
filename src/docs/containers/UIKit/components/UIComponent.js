@@ -4,6 +4,7 @@ import CodeBlock from 'components/CodeBlock';
 
 import Button from 'components/Button';
 import Input from 'components/Input';
+import Select from 'components/Select';
 import TextArea from 'components/TextArea';
 import Checkbox from 'components/Checkbox';
 import Radio from 'components/Radio';
@@ -18,14 +19,19 @@ export class UIComponent extends Component {
 
 	renderComponent () {
 		switch (this.props.component) {
+			case 'Button': {
+				return (
+					<Button {...this.props} />
+				);
+			}
 			case 'Input': {
 				return (
 					<Input {...this.props} />
 				);
 			}
-			case 'Button': {
+			case 'Select': {
 				return (
-					<Button {...this.props} />
+					<Select {...this.props} />
 				);
 			}
 			case 'Toggle': {

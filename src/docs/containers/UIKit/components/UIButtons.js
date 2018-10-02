@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+import { parse } from 'react-docgen';
+import ButtonComponent from '!raw-loader!components/Button/Button';
+
 import Button from 'components/Button';
 import Section from './UISection';
 import SubSection from './UISubSection';
 import UIComponent from './UIComponent';
+import UIProps from './UIProps';
+
+const buttonDocs = parse(ButtonComponent);
 
 export class UIButtons extends Component {
 
@@ -15,18 +21,19 @@ export class UIButtons extends Component {
 
 		return (
 			<div>
-				<Section 
+				<Section
 					id={this.props.id}
 					key={this.props.id}
-					title="Buttons"
+					title="Button"
 					description={
 						<div>
+							<UIProps {...buttonDocs} />
 							<p>The <code>{'<Button />'}</code> component is awesome. There are lots of different variations to fit different situations.</p>
 							<p>Use the <code>label</code> prop, to insert button text and the <code>className</code> prop for classNames</p>
 						</div>
 					}
 				>
-					<SubSection 
+					<SubSection
 						title="Colors"
 						id={this.props.id + 'Colors'}
 						description={
@@ -178,7 +185,7 @@ export class UIButtons extends Component {
 									className="secondary hover-alert"
 								/>
 							</div>
-							<div className="col-6">	
+							<div className="col-6">
 								<UIComponent
 									component="Button"
 									classOnly={true}
@@ -187,7 +194,7 @@ export class UIButtons extends Component {
 									className="light hover-notify"
 								/>
 							</div>
-							<div className="col-6">	
+							<div className="col-6">
 								<UIComponent
 									component="Button"
 									classOnly={true}
@@ -196,7 +203,7 @@ export class UIButtons extends Component {
 									className="hover-success"
 								/>
 							</div>
-							<div className="col-6">	
+							<div className="col-6">
 								<UIComponent
 									component="Button"
 									classOnly={true}
@@ -208,7 +215,7 @@ export class UIButtons extends Component {
 						</div>
 					</SubSection>
 
-					<SubSection 
+					<SubSection
 						title="Shapes & Sizes"
 						id={this.props.id + 'Shapes'}
 						description={
@@ -384,7 +391,7 @@ export class UIButtons extends Component {
 						</div>
 					</div>
 
-					<SubSection 
+					<SubSection
 						title="Button States"
 						id={this.props.id + 'States'}
 						description={
@@ -402,7 +409,7 @@ export class UIButtons extends Component {
 							</div>
 						</div>
 					</SubSection>
-					<SubSection 
+					<SubSection
 						title="Button Icons"
 						id={this.props.id + 'Icons'}
 						description={

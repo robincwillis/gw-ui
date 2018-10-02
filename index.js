@@ -1,4 +1,4 @@
-{var webpack = require('webpack');
+var webpack = require('webpack');
 var fs = require('fs');
 var path = require('path');
 var WebpackDevServer = require('webpack-dev-server');

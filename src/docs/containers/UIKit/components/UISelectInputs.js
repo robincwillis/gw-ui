@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
 
+import { parse } from 'react-docgen';
+import SelectComponent from '!raw-loader!components/Select/Select';
+
 import Select from 'components/Select';
 import Section from './UISection'
 import UIComponent from './UIComponent'
+import UIProps from './UIProps';
+
+const selectDocs = parse(SelectComponent);
 
 export class UISelectInputs extends Component {
-
-	defaultModal = () => {
-		this.props.modalActions.showModal('default-modal');
-	}
-
 	render() {
-
 		return (
 			<div>
-				<Section 
+				<Section
 					id={this.props.id}
 					key={this.props.id}
-					title="Selects"
-					description={
-						<div>
-							<p>...</p>
-						</div>
-					}
+					title="Select"
+					description={<UIProps {...selectDocs} />}
 				>
 					<div className="grid-flex gutter-wide v-spaced-wide">
 						<div className="col-6">
 							<UIComponent
 								component="Select"
-								type="select"
 								labelAbove="Underlined Select"
 								className="underlined"
 								onChange={(event) => { this.setState({select1 : event.target.value})}}
@@ -42,7 +37,6 @@ export class UISelectInputs extends Component {
 						<div className="col-6">
 							<UIComponent
 								component="Select"
-								type="typeahead"
 								labelAbove="Typeahead Select"
 								options={[
 									{ label : 'Select Option', value : 'Select Option'},

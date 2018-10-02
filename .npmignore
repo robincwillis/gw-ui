@@ -9,7 +9,7 @@ bower_components
 npm-debug.log
 yarn.lock
 package-lock.json
-
+app.json
 Procfile
 server.js
 index.js

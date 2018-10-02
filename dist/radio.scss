@@ -1,4 +1,28 @@
-
+input[type='radio'] {
+	border-radius: 50%;
+	border: 2px solid $light-text-color;
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		background: $main-color;
+		border-radius: 50%;
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		bottom: 2px;
+		left: 2px;
+		opacity: 0;
+		transform: scale(.25);
+		transition: transform $md-speed $ease, opacity $md-speed $ease;
+	}
+	&:checked {
+		&:after {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
 
 .gw-radio {
 	input[type='radio'] {
@@ -46,5 +70,11 @@
 				}
 			}
 		}
+	}
+}
+
+.align-right {
+	input[type="radio"] {
+		margin-right: 0;
 	}
 }

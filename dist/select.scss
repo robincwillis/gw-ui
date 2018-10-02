@@ -1,0 +1,166 @@
+select {
+	background: $input-bg !important;
+	border: $input-border;
+	border-radius: $input-border-radius;
+	padding: $input-padding;
+	padding-right: 1.85rem;
+	line-height: calc(#{$input-height} - #{$input-text-offset});
+	color: $input-color;
+	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+	display: block;
+	width: 100%;
+	font-family: $input-font;
+	font-size: $input-font-size;
+	text-align: left;
+	font-weight: $input-font-weight;
+	&.minimal,
+	&.minimal:focus,
+	&.minimal:hover,
+	.minimal &,
+	.minimal &:focus,
+	.minimal &:hover {
+		padding: inherit;
+		font-size: inherit;
+		color: inherit;
+		border: inherit;
+		display: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		border-radius: inherit;
+		width: inherit;
+		height: inherit;
+	}
+	.large & {
+		font-size: $input-large-font-size;
+		line-height: calc(#{$input-large-height} - #{$input-text-offset});
+	}
+	.small &,
+	.tiny & {
+		font-size: $input-small-font-size;
+		line-height: calc(#{$input-small-height} - #{$input-text-offset});
+	}
+	.tiny & {
+		line-height: calc(#{$input-tiny-height} - #{$input-text-offset});
+	}
+	&::-webkit-input-placeholder {
+		color: $placeholder-color;
+		transition: color $md-speed $ease;
+	}
+	&:-moz-placeholder {
+		color: $placeholder-color;
+		transition: color $md-speed $ease;
+	}
+	&::-moz-placeholder {
+		color: $placeholder-color;
+		transition: color $md-speed $ease;
+	}
+	&:-ms-input-placeholder {
+	   color: $placeholder-color;
+	   transition: color $md-speed $ease;
+	}
+	&:hover {
+		background: $input-hover-bg;
+		color: $input-hover-color;
+		border: $input-hover-border;
+		&::-webkit-input-placeholder {
+			color: $placeholder-hover-color;
+		}
+		&:-moz-placeholder {
+			color: $placeholder-hover-color;
+		}
+		&::-moz-placeholder {
+			color: $placeholder-hover-color;
+		}
+		&:-ms-input-placeholder {
+		   color: $placeholder-hover-color;
+		}
+		~ .icon {
+			color: $placeholder-hover-color;
+		}
+	}
+	&:focus {
+		background: $input-focus-bg;
+		color: $input-focus-color;
+		border: $input-focus-border;
+		&::-webkit-input-placeholder {
+			color: $placeholder-focus-color;
+		}
+		&:-moz-placeholder {
+			color: $placeholder-focus-color;
+		}
+		&::-moz-placeholder {
+			color: $placeholder-focus-color;
+		}
+		&:-ms-input-placeholder {
+		   color: $placeholder-focus-color;
+		}
+		~ .icon {
+			color: $input-focus-color;
+		}
+	}
+	.input-with-label &:focus,
+	.has-value .input-with-label & {
+		~ label {
+			transform: scale(0.75) translate3d(0, -1rem, 0);
+			opacity: .5;
+		}
+	}
+	.input-with-label &:focus {
+		~ label {
+			color: $main-color;
+			opacity: 1;
+		}
+	}
+	.disabled &,
+	&:disabled {
+		color: $placeholder-color;
+		background: darken($input-bg, 2%);
+	}
+
+
+	.large & {
+		height: $input-large-height;
+	}
+	.small & {
+		height: $input-small-height;
+	}
+	.tiny & {
+		height: $input-tiny-height;
+		padding: 0 .75em;
+		display: inline-block;
+	}
+	.label-above &,
+	.input-with-label & {
+		~ label {
+			font-weight: $input-label-weight;
+		}
+	}
+
+	.input-with-label & {
+		~ label {
+			line-height: calc(#{$btn-height} - .2em);
+			font-size: $input-font-size;
+			letter-spacing: $input-letter-spaceing;
+			padding-top: .5em;
+		}
+		.large & {
+			~ label {
+				line-height: calc(#{$input-large-height} - .2em);
+				font-size: $input-large-font-size;
+			}
+		}
+		.small & {
+			~ label {
+				line-height: calc(#{$input-small-height} - .2em);
+				font-size: $input-small-font-size;
+			}
+		}
+		.tiny & {
+			~ label {
+				line-height: calc(#{$input-tiny-height} - .2em);
+				font-size: $input-tiny-font-size;
+			}
+		}
+	}
+}
+

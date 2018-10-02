@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import numeral from 'numeral';
 
 import Loader from 'components/Loader';
 
 import './Input.scss';
 
-export class Input extends Component {
+class Input extends Component {
 
-	static defaultProps = {
-		type : 'text',
-		hasValue : false,
-		iconPosition : 'after'
-	}
+
 
 	state = {
 		type : this.props.type,
@@ -150,6 +147,33 @@ export class Input extends Component {
 			</div>
 		);
 	}
+}
+
+Input.propTypes = {
+	value : PropTypes.string,
+	name : PropTypes.string,
+	type : PropTypes.string,
+	icon : PropTypes.string,
+	iconPosition : PropTypes.string,
+  placeholder : PropTypes.string,
+  className : PropTypes.string,
+  disabled : PropTypes.bool,
+  onChange : PropTypes.func,
+  onBlur : PropTypes.func,
+  onFocus : PropTypes.func,
+  onKeyPress : PropTypes.func,
+  loading : PropTypes.bool,
+  autoFocus : PropTypes.bool,
+  autoComplete : PropTypes.bool,
+  readOnly : PropTypes.bool,
+  inputProps : PropTypes.object,
+  error : PropTypes.string
+}
+
+
+Input.defaultProps = {
+	type : 'text',
+	iconPosition : 'after'
 }
 
 export default Input;

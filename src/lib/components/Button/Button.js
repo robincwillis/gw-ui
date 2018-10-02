@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Loader from 'components/Loader';
 
-
-
 import './Button.scss';
 
-export class Button extends Component {
+class Button extends Component {
 
 	constructor (props) {
 		super(props)
@@ -149,7 +148,7 @@ export class Button extends Component {
 				data-tooltip-text={this.props.state != "loading" ? (this.props.tooltipText) : null}
 				data-tooltip-position={this.props.tooltipPosition}
 				tabIndex={this.props.tabIndex}
-				{...this.props.extraProps}
+				{...this.props.buttonProps}
 			>
 				{!this.props.icon && !this.props.rightIcon ? (
 					this.props.state == "loading" ||
@@ -176,6 +175,24 @@ export class Button extends Component {
 			</button>
 		);
 	}
+}
+
+Button.propTypes = {
+	label : PropTypes.string,
+	icon : PropTypes.string,
+	state : PropTypes.string,
+	className : PropTypes.string,
+	focus : PropTypes.bool,
+	disabled : PropTypes.bool,
+	autoFocus : PropTypes.bool,
+	buttonProps : PropTypes.object,
+	onClick : PropTypes.func
+}
+
+Button.defaultProps = {
+	label : 'Submit',
+	className : '',
+	disabled : false
 }
 
 export default Button;

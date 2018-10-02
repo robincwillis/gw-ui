@@ -134,7 +134,7 @@ export class UIKit extends Component {
 
 	render() {
 		return (
-			<DocumentTitle title={this.props.pageTitleLeader ? this.props.pageTitleLeader + "UI Kit" : "UI Kit"}>
+			<DocumentTitle title={this.props.pageTitleLeader ? this.props.pageTitleLeader + "UI Kit" : "Gordils & Willis UI Kit"}>
 				<div className="screen-ui-kit">
 
 					<div className="ui-sidebar p-gutter">

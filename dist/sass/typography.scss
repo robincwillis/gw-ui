@@ -423,6 +423,11 @@ a {
   }
 }
 
+label {
+	cursor: pointer;
+	transition: background $md-speed $ease, border $md-speed $ease, color $md-speed $ease, opacity $md-speed $ease;
+}
+
 .align-center {
   text-align: center;
 }

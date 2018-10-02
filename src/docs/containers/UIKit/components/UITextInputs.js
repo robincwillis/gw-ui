@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
+import { parse } from 'react-docgen';
+import InputComponent from '!raw-loader!components/Input/Input';
+
 import Input from 'components/Input';
 import Section from './UISection'
 import UIComponent from './UIComponent'
+import UIProps from './UIProps';
+
+const inputDocs = parse(InputComponent);
 
 export class UIInputs extends Component {
 
@@ -14,12 +20,13 @@ export class UIInputs extends Component {
 
 		return (
 			<div>
-				<Section 
+				<Section
 					id={this.props.id}
 					key={this.props.id}
-					title="Text Inputs"
+					title="Input"
 					description={
 						<div>
+							<UIProps {...inputDocs} />
 							<p>The <code>Input</code> component is pretty serious. All of the functionality for all types of inputs is contained within it. To create awesome forms all you need to to is include one component.</p>
 							<h6>Sizes</h6>
 							<p>Other than the default input size, you can add a class of <code>tiny</code>, <code>small</code>, or <code>large</code> to make the inputs match the height of the button of that size.</p>
@@ -88,7 +95,7 @@ export class UIInputs extends Component {
 								className="large"
 								icon="close"
 							/>
-						</div>	
+						</div>
 					</div>
 				</Section>
 			</div>
