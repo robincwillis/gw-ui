@@ -14,7 +14,7 @@ export class UISection extends Component {
 					</div>
 				</div>
 				<div className="mt-3 padding-after">
-					<div className="rich-text section-desc lg">
+					<div className="rich-text section-desc">
 						{this.props.description}
 					</div>
 				</div>

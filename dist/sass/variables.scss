@@ -23,15 +23,17 @@ $base-border-radius : 2px;
 
 // Colors
 $bg-color : #fff;
-$main-color: #1D74F5; //#2174D8;
+$main-color: #1D74F5;
 $black : #000;
 $white : #fff;
-$alert : #DF693D; // #F5445C;
-$notify :  #F7C24E; // #F4A146;
-$success : #37DCAF; // #2DE0A5;
-$text-color : #2F374C;//#333;
+$alert : #DF693D;
+$notify :  #F7C24E;
+$success : #37DCAF;
+$text-color : #2F374C;
 $light-grey : lighten($text-color, 73%);
 $light-text-color : lighten($text-color, 40%);
+
+// Hr
 $hr-color : lighten($text-color, 70%);
 $hr-styles : 1px solid $hr-color;
 
@@ -39,7 +41,7 @@ $hr-styles : 1px solid $hr-color;
 $link-color : $light-text-color;
 $link-hover-color : $main-color;
 
-// Weird
+// Weirdness
 $tight-horizontal-cell-padding : 4px;
 $tight-vertical-cell-padding : 4px;
 $rich-text-max-width : 300px;

@@ -68,22 +68,22 @@
 			transition: color $md-speed $ease, background $md-speed $ease;
 
 			// Should not default
-			&:after {
-				content: 'chevron_right';
-				@include material-icons();
-				width: 24px;
-				height: 24px;
-				font-size: 24px;
-				display: block;
-				position: absolute;
-				right: $margin/2;
-				top: 50%;
-				margin: -12px -12px 0 0;
-				z-index: 0;
-				opacity: 0;
-				transform: translate3d(-12px, 0, 0);
-				transition: opacity $md-speed $ease, transform $md-speed $ease;
-			}
+			// &:after {
+			// 	content: 'chevron_right';
+			// 	@include material-icons();
+			// 	width: 24px;
+			// 	height: 24px;
+			// 	font-size: 24px;
+			// 	display: block;
+			// 	position: absolute;
+			// 	right: $margin/2;
+			// 	top: 50%;
+			// 	margin: -12px -12px 0 0;
+			// 	z-index: 0;
+			// 	opacity: 0;
+			// 	transform: translate3d(-12px, 0, 0);
+			// 	transition: opacity $md-speed $ease, transform $md-speed $ease;
+			// }
 
 			td {
 				position: relative;
@@ -132,9 +132,9 @@
 			padding-top: $vertical-cell-padding;
 			padding-bottom: $vertical-cell-padding;
 			border-bottom: 1px solid $hr-color;
-			&:last-child {
-				padding-right: $margin;
-			}
+			// &:last-child {
+			// 	padding-right: $margin;
+			// }
 			&.wide {
 				flex: 2;
 			}

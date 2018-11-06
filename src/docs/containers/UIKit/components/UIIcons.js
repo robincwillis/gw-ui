@@ -14,6 +14,7 @@ export class UIIcons extends Component {
 				key={this.props.id}
 				title="Icons"
 				description={<div>
+				<code>@import "{}/node_modules/gw-ui/dist/sass/icons.scss";</code>
 				<div className="grid-flex gutter-tight no-break left mb-gutter">
 					<div className="col"><span className="material-icons md-48">check_circle</span></div>
 					<div className="col"><span className="material-icons md-48">arrow_forward</span></div>

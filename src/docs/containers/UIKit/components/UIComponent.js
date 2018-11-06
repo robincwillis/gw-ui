@@ -118,7 +118,7 @@ export class UIComponent extends Component {
 							{this.props.className ? (this.renderClasses()) : 'default'}
 						</CodeBlock>
 					) : (
-						<CodeBlock language="json" className="sm minimall" style="atom-one-dark">
+						<CodeBlock language="json" className="sm minimal" style="atom-one-dark">
 							{JSON.stringify(this.props, null, "   ")}
 						</CodeBlock>
 					)}

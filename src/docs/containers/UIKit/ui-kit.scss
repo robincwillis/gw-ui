@@ -1,17 +1,17 @@
-@import 'sass/reset';
-
 @import 'sass/setup';
 
+@import 'sass/reset';
 @import 'sass/base';
-
 @import 'sass/fonts';
-@import 'sass/typography';
-@import 'sass/rich_text.scss';
 
+@import 'sass/typography';
 @import 'sass/grid';
 @import 'sass/spacing';
-@import 'sass/icons';
 @import 'sass/animations';
+@import 'sass/icons';
+
+//tooltips
+//inputs
 
 
 .screen-ui-kit {
@@ -52,6 +52,7 @@
 				}
 				.sidebar {
 					transform: none;
+					overflow-x : auto;
 				}
 			}
 			&:after {

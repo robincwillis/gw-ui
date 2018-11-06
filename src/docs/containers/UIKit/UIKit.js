@@ -21,7 +21,7 @@ import UIColors from './components/UIColors';
 import UITables from './components/UITables';
 import UISection from './components/UISection';
 import UIIcons from './components/UIIcons';
-
+import UIAnimations from './components/UIAnimations';
 
 
 
@@ -76,7 +76,7 @@ const examples = [
 	{
 		title : 'Animations',
 		id : 'Animations',
-		// sectionComponent : <UIButtons/>
+		sectionComponent : <UIAnimations />
 	},
 	{
 		title : 'Buttons',

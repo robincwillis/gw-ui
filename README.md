@@ -52,11 +52,11 @@ and inside define your own values.
 3. The next step is to import other utility Sass styles. These are seperated into different functions and it is your choice to include what you need, the files avaliable to you are.
 
 
-`@reset.scss` : Reset everything
+`reset.scss` : Reset everything
 
-`@base.scss` : Styles for html and body, other basic styles like `.container` : and `* {box-sizing : border-box;}`
+`base.scss` : Styles for html and body, other basic styles like `.container` : and `* {box-sizing : border-box;}`
 
-`@typography.scss` : Styles for typographic elements
+`typography.scss` : Styles for typographic elements
 
 `rich_text.scss` : `.rich-text` class for rich text containers
 

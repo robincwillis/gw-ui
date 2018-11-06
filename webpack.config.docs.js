@@ -40,6 +40,7 @@ const config = {
 		new HtmlWebpackPlugin({
 			title : 'gw-ui',
 			template: './templates/index.html',
+			favicon: './assets/images/favicon.png',
 			filename: 'index.html',
 			inject:'body'
 		}),

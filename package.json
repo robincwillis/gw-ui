@@ -62,6 +62,7 @@
     "postcss-loader": "^2.1.5",
     "raw-loader": "^0.5.1",
     "react-docgen": "^3.0.0-rc.1",
+    "react-gist": "^1.2.1",
     "resolve-url-loader": "^2.3.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",

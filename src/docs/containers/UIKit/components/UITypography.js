@@ -13,12 +13,13 @@ export class UIInputs extends Component {
 	render() {
 
 		return (
-			<Section 
+			<Section
 				id={this.props.id}
 				key={this.props.id}
 				title="Typography"
 				description={
 					<div>
+						<code>@import "{}/node_modules/gw-ui/dist/sass/typography.scss";</code>
 						<p>Typography in interactive applications can be one of the most useful tools. This is how to use our base setup</p>
 					</div>
 				}
@@ -139,7 +140,7 @@ export class UIInputs extends Component {
 							<hr/>
 
 							<p>Si est nihil nisi corpus, summa erunt illa: valitudo, vacuitas doloris, pulchritudo, cetera. Idemne potest esse dies saepius, qui semel fuit? <a href="http://loripsum.net/" target="_blank">Negare non possum.</a> <code>Tum ille: Ain tandem?</code> Tum ille timide vel potius verecunde: Facio, inquit. Deque his rebus satis multa in nostris de re publica libris sunt dicta a Laelio. Tenent mordicus. Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Summum ením bonum exposuit vacuitatem doloris; Occultum facinus esse potuerit, gaudebit; <mark>Sed quot homines, tot sententiae;</mark> <b>Quare conare, quaeso.</b> </p>
-							
+
 							<blockquote cite="http://loripsum.net">
 								Hoc dixerit potius Ennius: Nimium boni est, cui nihil est mali.
 							</blockquote>
@@ -163,7 +164,7 @@ export class UIInputs extends Component {
 								<li>Cave putes quicquam esse verius.</li>
 								<li>Itaque hic ipse iam pridem est reiectus;</li>
 							</ol>
-	
+
 						</div>
 					</div>
 				</div>
