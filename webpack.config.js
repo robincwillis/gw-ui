@@ -14,7 +14,6 @@ const config = {
 
 	entry: {
 		index : 'index.js',
-		//vendor : ['moment', 'numeral', ...],
 		"postcss.config" : 'postcss.config.js'
 	},
 
