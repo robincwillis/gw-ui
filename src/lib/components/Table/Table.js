@@ -199,9 +199,6 @@ export class Row extends Component {
 	}
 
 	render () {
-
-
-
 		return (<tr onClick={this.props.rowOnClick ? () => {this.props.rowOnClick(this.props.data[this.props.index])} : ()=>{} } className={this.className()}>{this.props.children}</tr>);
 	}
 }
@@ -268,7 +265,7 @@ export default class Table extends Component {
 				//Here we compose all the props for each of cells,
 				//Maybe a better way to do this
 
-				let props = Object.assign({},column.props, this.props, {index:rowIndex, key:colIndex, item:item});
+				let props = Object.assign({}, this.props, {className : ''}, column.props, {index:rowIndex, key:colIndex, item:item});
 				delete props.children;
 				delete props.header;
 				delete props.cell;

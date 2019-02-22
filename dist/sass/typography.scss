@@ -5,21 +5,23 @@ textarea,
 button {
 	font-family: $main-font;
 	line-height: $base-line-height;
-	font-size: $base-font-size-at-sm;
+	// font-size: calc(#{$base-font-size} - 2px);
+	font-size: $base-font-size;
 	color: $text-color;
 	letter-spacing: $base-letter-spacing;
 	@include font-smooth($general-font-smoothing);
-	-webkit-text-size-adjust: 100%;
 	@include respond($md) {
 		font-size: $base-font-size;
 	}
 	@include respond($huge) {
-		font-size: $base-font-sizel-at-huge;
+		font-size: calc(#{$base-font-size} + 2px);
 	}
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	@include font-smooth($general-font-smoothing);
+	// margin-top: .5rem;
+	// margin-bottom: .5rem;
+	@include font-smooth();
 }
 
 h1,
@@ -27,7 +29,7 @@ h1,
 .h1 p {
 	font-family: $h1-font-family;
 	text-transform: $h1-text-transform;
-	font-size: $h1-font-size * $h1-font-mobile-scale;
+	font-size: $h1-font-size * .75;
 	font-weight: $h1-font-weight;
 	line-height: $h1-line-height;
 	letter-spacing: $h1-letter-spacing;
@@ -42,7 +44,7 @@ h2,
 .h2 p {
 	font-family: $h2-font-family;
 	text-transform: $h2-text-transform;
-	font-size: $h2-font-size * $h2-font-mobile-scale;
+	font-size: $h2-font-size * .85;
 	font-weight: $h2-font-weight;
 	line-height: $h2-line-height;
 	letter-spacing: $h2-letter-spacing;
@@ -58,14 +60,10 @@ h3,
 	font-family: $h3-font-family;
 	text-transform: $h3-text-transform;
 	font-size: $h3-font-size;
-	font-size: $h2-font-size * $h3-font-mobile-scale;
 	font-weight: $h3-font-weight;
 	line-height: $h3-line-height;
 	letter-spacing: $h3-letter-spacing;
 	@include font-smooth($h3-font-smoothing);
-	@include respond($lg) {
-		font-size: $h3-font-size;
-	}
 }
 
 h4,
@@ -106,7 +104,19 @@ p,
 	letter-spacing: $p-letter-spacing;
 	font-weight: $p-font-weight;
 	text-transform: none;
-	.material-icons,
+	&.max-width,
+	.max-width & {
+		max-width: 32em;
+	}
+	&.tight-line-height {
+		line-height: $tight-line-height;
+	}
+	&.short-line-height {
+		line-height: $short-line-height;
+	}
+	&.no-spacing {
+		margin: 0;
+	}
 	.icon {
 		margin-top: -2px;
 	}
@@ -117,7 +127,6 @@ p,
 		padding-bottom: .1em;
 		cursor: pointer;
 		&:hover {
-			color: currentcolor;
 			border-color: $main-color;
 		}
 		&.hover-alert {
@@ -129,8 +138,7 @@ p,
 		&.main-color {
 			border-color: transparent;
 			&:hover {
-				color: $main-color;
-				border-color: currentcolor;
+				border-color: $main-color;
 			}
 		}
 	}
@@ -194,12 +202,15 @@ p,
 			border-radius: 0;
 		}
 		a {
-			color: $text-color;
+			color: inherit;
 			&:hover {
-				color: $text-color;
-				border-color: $main-color;
+				color: $main-color;
+				border-color: currentcolor;
 			}
 		}
+	}
+	.material-icons {
+		margin-top: -2px;
 	}
 }
 
@@ -237,15 +248,8 @@ ul {
 
 strong,
 .bold,
-.weight-bold,
 b {
 	font-weight: $bold !important;
-}
-
-.medium-weight,
-.weight-medium {
-	font-weight: $medium !important;
-	@include font-smooth($general-font-smoothing);
 }
 
 em,
@@ -266,39 +270,39 @@ i,
 	@include tiny-caps();
 }
 
-.color-light-text-color {
-	color: $light-text-color;
+.light-text-color {
+	color: $light-text-color !important;
 }
 
-.color-text-color {
-	color: $text-color;
+.text-color {
+	color: $text-color !important;
 }
 
-.color-bg-color {
-	color: $bg-color;
+.bg-color {
+	color: $bg-color !important;
 }
 
-.color-black {
-	color: $black;
+.black {
+	color: $black !important;
 }
 
-.color-white {
-	color: $white;
+.white {
+	color: $white !important;
 }
 
-.color-main-color {
-	color: $main-color;
+.main-color {
+	color: $main-color !important;
 }
 
-.color-success {
-	color: $success;
+.success-color {
+	color: $success !important;
 }
 
-.color-alert {
+.alert-color {
 	color: $alert !important;
 }
 
-.color-notify {
+.notify-color {
 	color: $notify !important;
 }
 
@@ -312,6 +316,10 @@ i,
 
 .align-right {
   text-align: right;
+}
+
+.sm-font-size {
+	font-size: $sm-font-size;
 }
 
 hr {
@@ -354,6 +362,26 @@ hr {
   color: $highlight-color;
 }
 
+.underlined-link {
+	cursor: pointer;
+	font-weight: $medium;
+	border-bottom: 1px solid currentcolor;
+	display: inline-block;
+	cursor: pointer;
+	padding-bottom: .25em;
+	font-size: $p-font-size;
+	@include small-caps();
+	transition: opacity $md-speed $ease, color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, transform $md-speed $ease;
+}
+
+.hover-underline {
+	border-bottom: 1px solid transparent;
+	&:hover {
+		color: inherit;
+		border-color: currentcolor;
+	}
+}
+
 .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -370,8 +398,12 @@ code,
   @include font-smooth($code-font-smoothing);
 }
 
+.medium-weight {
+	font-weight: $medium !important;
+	@include font-smooth();
+}
+
 a {
-	color: $light-text-color;
 	text-decoration: none;
 	cursor: pointer;
 	transition: color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, opacity $md-speed $ease;
@@ -554,4 +586,14 @@ label {
 
 }
 
+.align-center {
+  text-align: center;
+}
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}

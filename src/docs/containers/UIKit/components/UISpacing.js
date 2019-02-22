@@ -8,25 +8,69 @@ class UISpacing extends Component {
 
 		const data = [
 			{
-				prefix : 'm-',
+				prefix : 'm',
 				description : 'Margin'
 			},
 			{
-				prefix : 'mt-',
-				description : 'Margin top'
+				prefix : 'p',
+				description : 'Padding'
 			},
 			{
-				prefix : 'mr-',
-				description : 'Margin right'
+				prefix : 'x',
+				description : 'X-axis (left and right)'
 			},
 			{
-				prefix : 'mb-',
-				description : 'Margin'
+				prefix : 'y',
+				description : 'Y-axis (top and bottom)'
 			},
 			{
-				prefix : 'ml-',
-				description : 'Margin'
-			}
+				prefix : 't',
+				description : 'Top'
+			},
+			{
+				prefix : 'r',
+				description : 'Right'
+			},
+			{
+				prefix : 'b',
+				description : 'Bottom'
+			},
+			{
+				prefix : 'l',
+				description : 'Left'
+			},
+			{
+				prefix : 'n',
+				description : 'negative (ie: mtn-1 = margin-top: -$space-1)'
+			},
+			{
+				prefix : '1',
+				description : '$space-1 variable'
+			},
+			{
+				prefix : '2',
+				description : '$space-2 variable'
+			},
+			{
+				prefix : '3',
+				description : '$space-3 variable'
+			},
+			{
+				prefix : '4',
+				description : '$space-4 variable'
+			},
+			{
+				prefix : 'gutter',
+				description : '$gutter variable'
+			},
+			{
+				prefix : 'gutter-tight',
+				description : '$gutter-tight variable'
+			},
+			{
+				prefix : 'margin',
+				description : '$margin variable'
+			},
 		];
 
 		return (
@@ -37,55 +81,19 @@ class UISpacing extends Component {
 					title="Spacing"
 					description={
 						<div>
-							<code>@import "{}/node_modules/gw-ui/dist/sass/spacing.scss";</code>
-							<p>The spacing stylesheet offers a number of helper classes to vertically and horizontally space elements either through margins or padding
+							<p><code>@import "{}/node_modules/gw-ui/dist/sass/spacing.scss";</code></p>
+							<p>The spacing stylesheet offers a number of helper classes to vertically and horizontally space elements either through margins or padding. You can construct these classes through this system: <code>margin/padding + direction + amount</code></p>
 
-									you can construct these classes through this system -> margin / padding + direction + amount;
+							<p><span className="p medium-weight">margin options:</span><code>m mx my mt mr mb ml</code><br/>
+							<span className="p medium-weight">padding options:</span><code>p px py pt pr pb pl</code><br/>
+							<span className="p medium-weight">negative modifier:</span><code>n</code><br/>
+							<span className="p medium-weight">spacing options:</span><code>1, 2, 3, 4, gutter, gutter-tight, margin</code></p>
 
-									<label>type</label>
-									[m] margin
-									[p] padding
-
-									<label>direction</label>
-
-									[] all
-									[t] top
-									[r] right
-									[b] bottom
-									[l] left
-									[x] horizontal (left and right)
-									[y] vertical (top and bottom)
-
-									[n] negative
-									[tn] negative top
-									[rn] negative right
-									[bn] negative bottom
-									[ln] negative left
-									[xn] negative horizontal
-									[yn] negative vertical
-
-									<label>amount, these corrosponding to spacing variables in variables.scss</label>
-
-									[1] $space-1
-									[2] $space-2
-									[3] $space-3
-									[4] $space-4
-									[gutter] $gutter
-									[gutter-right] $gutter-tight
-									[gutter-wide] $gutter-wide
-
-
-									<label>Mobile Spacing Classes</label>
-
-									.p-margin
-									.pt-margin
-									.pr-margin
-									.pb-margin
-									.pl-margin
-									.px-margin
-									.py-margin
-
-									</p>
+							<h6>Examples</h6>
+							<ul>
+								<li className="p"><code>.m-2</code>: margin on all sides measuring <code>$space-2</code> variable</li>
+								<li className="p"><code>.mtn-1</code>: margin-top of negative <code>$space-1</code> variable</li>
+							</ul>
 						</div>
 					}
 				/>
@@ -95,7 +103,7 @@ class UISpacing extends Component {
 				>
 					<Column
 						header="Prefix"
-						className="short"
+						className="narrow"
 						col="prefix"
 						cell={<Cell />}
 					/>

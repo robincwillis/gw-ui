@@ -39,117 +39,78 @@ img {
   z-index: 4;
 }
 
-.align-center {
-  text-align: center;
+.bg-white {
+  background: $white;
 }
 
-.align-left {
-  text-align: left;
+.bg-main-color {
+  background: $main-color;
+  color: $bg-color;
 }
 
-.align-right {
-  text-align: right;
+.bg-text-color {
+  background: $text-color;
+  color: $bg-color;
 }
 
 // show below breakpoint
 .show-huge {
   @include respond($huge) {
-    display: none !important;
+    display: none;
   }
 }
 
 .show-xlg {
   @include respond($xlg) {
-    display: none !important;
+    display: none;
   }
 }
 
 .show-lg {
   @include respond($lg) {
-    display: none !important;
+    display: none;
   }
 }
 
 .show-md {
   @include respond($md) {
-    display: none !important;
+    display: none;
   }
 }
 
 .show-sm {
   @include respond($sm) {
-    display: none !important;
+    display: none;
   }
 }
 
 // hide below breakpoint
 .hide-huge {
   @include respond-smaller-than($huge) {
-    display: none !important;
+    display: none;
   }
 }
 
 .hide-xlg {
   @include respond-smaller-than($xlg) {
-    display: none !important;
+    display: none;
   }
 }
 
 .hide-lg {
   @include respond-smaller-than($lg) {
-    display: none !important;
+    display: none;
   }
 }
 
 .hide-md {
   @include respond-smaller-than($md) {
-    display: none !important;
+    display: none;
   }
 }
 
 .hide-sm {
   @include respond-smaller-than($sm) {
-    display: none !important;
+    display: none;
   }
-}
-
-.dark-section {
-  background: $black;
-  color: $main-color;
-  .button {
-    &.transparent {
-      color: rgba($main-color, .65);
-      &:not(.disabled):not(.loading):hover {
-        color: $white;
-        opacity: 1;
-      }
-    }
-  }
-}
-
-// General Section headers
-.section-header {
-  min-height: $btn-height;
-  margin-bottom: 1.5rem;
-  &.no-space-below {
-    margin-bottom: 0;
-  }
-  &.space-above {
-    margin-top: 1rem;
-  }
-  &.with-border {
-    border-bottom: 1px solid $text-color;
-  }
-  h1, h2, h3, h4, h5, h6, p,
-  .h1, .h2, .h3, .h4, .h5, .h6, .p {
-    margin: 0;
-  }
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.max-text-width {
-  max-width: $max-text-width;
 }

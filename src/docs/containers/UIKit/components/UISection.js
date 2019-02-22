@@ -7,7 +7,7 @@ export class UISection extends Component {
 
 	render() {
 		return (
-			<section id={this.props.id} className="ui-section my-margin">
+			<section id={this.props.id} className="ui-section mt-margin mb-4">
 				<div className="grid-flex">
 					<div className="col-6">
 						<h1 className="title">{this.props.title}</h1>

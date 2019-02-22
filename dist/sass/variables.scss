@@ -1,5 +1,5 @@
 $margin: 7.5rem;
-$mobile-margin: 6.5%;
+$mobile-margin: 6.5vw;  // best to us vw, px, or rem units here to keep the grid consistent
 $min-site-width : 800px;
 $max-site-width: 1500px;
 $site-width : 87%;
@@ -63,6 +63,8 @@ $tight-line-height : 1.1em;
 $tracked-out : .125em;
 	// General Text Sizes
 	$base-font-size : 16px;
+	$base-font-size-at-sm : 14px;
+	$base-font-sizel-at-huge : 18px;
 	$sm-font-size : 11px;
 	$md-font-size : .875rem;
 	$tiny-font-size : 10px;
@@ -76,7 +78,6 @@ $tracked-out : .125em;
 		$h1-font-family : inherit;
 		$h1-text-transform : none;
 		$h1-font-size : 2.5rem;
-		$h1-font-mobile-scale : .65; // Scale down size extra for mobile
 		$h1-font-weight : $medium;
 		$h1-line-height : $short-line-height;
 		$h1-letter-spacing : inherit;
@@ -85,7 +86,6 @@ $tracked-out : .125em;
 		$h2-font-family : inherit;
 		$h2-text-transform : none;
 		$h2-font-size : 2.25rem;
-		$h2-font-mobile-scale : .65; // Scale down size extra for mobile
 		$h2-font-weight : $medium;
 		$h2-line-height : $short-line-height;
 		$h2-letter-spacing : inherit;
@@ -94,7 +94,6 @@ $tracked-out : .125em;
 		$h3-font-family : inherit;
 		$h3-text-transform : none;
 		$h3-font-size : 1.75rem;
-		$h3-font-mobile-scale : .65; // Scale down size extra for mobile
 		$h3-font-weight : $medium;
 		$h3-line-height : $short-line-height;
 		$h3-letter-spacing : inherit;

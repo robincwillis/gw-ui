@@ -2,20 +2,32 @@ $col: 100% / 12;
 
 @mixin grid-setup() {
   display: block;
-  margin-left: calc(#{$gutter} * -.5);
-  margin-right: calc(#{$gutter} * -.5);
+  margin-left: calc(#{$mobile-margin} * -.5);
+  margin-right: calc(#{$mobile-margin} * -.5);
+  @include respond($md) {
+    margin-left: calc(#{$gutter} * -.5);
+    margin-right: calc(#{$gutter} * -.5);
+  }
 }
 
 @mixin gutter-wide-grid-setup() {
   display: block;
-  margin-left: calc(#{$gutter-wide} * -.5);
-  margin-right: calc(#{$gutter-wide} * -.5);
+  margin-left: calc(#{$mobile-margin} * -.5);
+  margin-right: calc(#{$mobile-margin} * -.5);
+  @include respond($md) {
+    margin-left: calc(#{$gutter-wide} * -.5);
+    margin-right: calc(#{$gutter-wide} * -.5);
+  }
 }
 
 @mixin gutter-tight-grid-setup() {
   display: block;
-  margin-left: calc(#{$gutter-tight} * -.5);
-  margin-right: calc(#{$gutter-tight} * -.5);
+  margin-left: calc(#{$mobile-margin} * -.25);
+  margin-right: calc(#{$mobile-margin} * -.25);
+  @include respond($md) {
+    margin-left: calc(#{$gutter-tight} * -.5);
+    margin-right: calc(#{$gutter-tight} * -.5);
+  }
 }
 
 @mixin slim-gutter-grid-setup() {
@@ -36,11 +48,15 @@ $col: 100% / 12;
   > .col {
     font-size: inherit;
     flex-grow: 0;
-    padding-left: calc(#{$gutter} / 2);
-    padding-right: calc(#{$gutter} / 2);
+    padding-left: calc(#{$mobile-margin} / 2);
+    padding-right: calc(#{$mobile-margin} / 2);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    @include respond($md) {
+      padding-left: calc(#{$gutter} / 2);
+      padding-right: calc(#{$gutter} / 2);
+    }
     &.order-1 {
       order: 1;
     }
@@ -140,8 +156,12 @@ $col: 100% / 12;
     @include gutter-wide-grid-setup();
     > *[class^="col"],
     > .col {
-      padding-left: calc(#{$gutter-wide} / 2);
-      padding-right: calc(#{$gutter-wide} / 2);
+      padding-left: calc(#{$mobile-margin} / 2);
+      padding-right: calc(#{$mobile-margin} / 2);
+      @include respond($md) {
+        padding-left: calc(#{$gutter-wide} / 2);
+        padding-right: calc(#{$gutter-wide} / 2);
+      }
     }
   }
 }
@@ -151,8 +171,12 @@ $col: 100% / 12;
     @include gutter-tight-grid-setup();
     > *[class^="col"],
     > .col {
-      padding-left: calc(#{$gutter-tight} / 2) !important;
-      padding-right: calc(#{$gutter-tight} / 2) !important;
+      padding-left: calc(#{$mobile-margin} / 4);
+      padding-right: calc(#{$mobile-margin} / 4);
+      @include respond($md) {
+        padding-left: calc(#{$gutter-tight} / 2);
+        padding-right: calc(#{$gutter-tight} / 2);
+      }
     }
   }
 }
@@ -162,8 +186,8 @@ $col: 100% / 12;
     @include slim-gutter-grid-setup();
     > *[class^="col"],
     > .col {
-      padding-left: calc(#{$gutter-tight} / 4) !important;
-      padding-right: calc(#{$gutter-tight} / 4) !important;
+      padding-left: calc(#{$gutter-tight} / 4);
+      padding-right: calc(#{$gutter-tight} / 4);
     }
   }
 }
@@ -173,8 +197,8 @@ $col: 100% / 12;
     @include slim-gutter-grid-setup();
     > *[class^="col"],
     > .col {
-      padding-left: calc(#{$gutter-tight} / 4) !important;
-      padding-right: calc(#{$gutter-tight} / 4) !important;
+      padding-left: calc(#{$gutter-tight} / 4);
+      padding-right: calc(#{$gutter-tight} / 4);
     }
   }
 }
@@ -285,31 +309,29 @@ $col: 100% / 12;
     @include respond($lg) {
       margin-bottom: -$gutter;
     }
-  }
-  &.v-wide-spaced {
-    > *[class^="col"],
-    > .col {
-      margin-bottom: $mobile-margin;
+    &.gutter-tight {
+      > *[class^="col"],
+      > .col {
+        margin-bottom: $gutter-tight;
+        @include respond($lg) {
+          margin-bottom: $gutter-tight;
+        }
+      }
+      margin-bottom: -$gutter-tight;
       @include respond($lg) {
-        margin-bottom: $gutter-wide;
+        margin-bottom: -$gutter-tight;
       }
     }
-    margin-bottom: -$mobile-margin;
-    @include respond($lg) {
-      margin-bottom: -$margin;
-    }
-  }
-  &.v-md-spaced {
-    > *[class^="col"],
-    > .col {
-      margin-bottom: $mobile-margin;
-      @include respond($lg) {
-        margin-bottom: $margin * .65;
+    &.gutter-wide {
+      > *[class^="col"],
+      > .col {
+        @include respond($lg) {
+          margin-bottom: $gutter-wide;
+        }
       }
-    }
-    margin-bottom: -$mobile-margin;
-    @include respond($lg) {
-      margin-bottom: -$margin * .65;
+      @include respond($lg) {
+        margin-bottom: -$gutter-wide;
+      }
     }
   }
 }
