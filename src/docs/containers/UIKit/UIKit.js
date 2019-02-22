@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import './ui-kit.scss';
 
-import DocumentTitle from 'react-document-title';
-
 import Button from 'components/Button'
 
 import UIIntroduction from './components/UIIntroduction';
@@ -134,7 +132,6 @@ export class UIKit extends Component {
 
 	render() {
 		return (
-			<DocumentTitle title={this.props.pageTitleLeader ? this.props.pageTitleLeader + "UI Kit" : "Gordils & Willis UI Kit"}>
 				<div className="screen-ui-kit">
 
 					<div className="ui-sidebar p-gutter">
@@ -180,7 +177,6 @@ export class UIKit extends Component {
 					</div>
 
 				</div>
-			</DocumentTitle>
 		);
 	}
 }

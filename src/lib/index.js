@@ -17,7 +17,6 @@ export Radio from './components/Radio';
 export Toggle from './components/Toggle';
 export ContentEditable from 'components/ContentEditable';
 export EditableItem from 'components/EditableItem';
-export Typeahead from 'components/Typeahead';
 export FileUpload from './components/FileUpload';
 export AddContentBetween from './components/AddContentBetween';
 
@@ -74,7 +73,6 @@ export Video from './components/Video';
 // These components have dependencies that we are not sure we want to commit to yet
 // ========================================
 
-export DatePicker from './components/DatePicker';
 //export Calendar from 'components/Calendar';
 //export CalendarKey from 'components/CalendarKey';
 
