@@ -27,12 +27,12 @@ export class UIButtons extends Component {
 					title="Button"
 					description={
 						<div>
-							<UIProps {...buttonDocs} />
 							<p>The <code>{'<Button />'}</code> component is awesome. There are lots of different variations to fit different situations.</p>
 							<p>Use the <code>label</code> prop, to insert button text and the <code>className</code> prop for classNames</p>
 						</div>
 					}
 				>
+					<UIProps {...buttonDocs} />
 					<SubSection
 						title="Colors"
 						id={this.props.id + 'Colors'}

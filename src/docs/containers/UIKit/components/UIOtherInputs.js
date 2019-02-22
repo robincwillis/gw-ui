@@ -89,8 +89,26 @@ export class UIOtherInputs extends Component {
 							<h5 className="space-after">Checkboxes and Radios</h5>
 							<UIComponent
 								component="Checkbox"
+								label={<p>Custom Checkbox Label</p>}
+								id="UICheckboxCust"
+							/>
+							<UIComponent
+								component="Checkbox"
+								id="UICheckboxNoLabel"
+							/>
+							<UIComponent
+								component="Checkbox"
 								label="Checkbox"
 								id="UICheckbox"
+							/>
+							<UIComponent
+								component="Radio"
+								label={<p>Custom Radio Label</p>}
+								id="UIRadioCust"
+							/>
+							<UIComponent
+								component="Radio"
+								id="UIRadioNoLabel"
 							/>
 							<UIComponent
 								component="Radio"

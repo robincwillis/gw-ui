@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './Radio.scss';
 
-class Checkbox extends Component {
+class Radio extends Component {
 
 	static defaultProps = {
 		className : ''
@@ -24,7 +24,30 @@ class Checkbox extends Component {
 		if(this.props.onChange) { this.props.onChange(event)}
 	}
 
-	checkbox = () => (
+	renderLabel = () => {
+		if (this.props.label && typeof(this.props.label) == 'string') {
+			return (
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
+					<div className="grid-flex no-break gutter-none left middle">
+						<div className="col"><div className="radio"/></div>
+						{this.props.label ? (<div className="col"><span className="pl-1">{this.props.label}</span></div>) : false}
+					</div>
+				</label>
+			)
+		} else if (this.props.label) {
+			return (
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>{this.props.label}</label>
+			)
+		} else {
+			return (
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
+					<div className="radio"/>
+				</label>
+			)
+		}
+	}
+
+	radio = () => (
 		<div className="gw-radio">
 			<input
 				disabled={this.props.disabled}
@@ -39,24 +62,17 @@ class Checkbox extends Component {
 				readOnly={this.props.readOnly}
 				{...this.props.radioProps}
 			/>
-			{this.props.label ? (
-				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
-					<div className="grid-flex no-break gutter-none left middle">
-						<div className="col"><div className="radio"/></div>
-						{this.props.label ? (<div className="col"><span className="pl-1">{this.props.label}</span></div>) : false}
-					</div>
-				</label>
-			) : false}
+			{this.renderLabel()}
 		</div>
 	)
 
 	render() {
 		return (
 			<div className={this.className()}>
-				{this.checkbox()}
+				{this.radio()}
 			</div>
 		);
 	}
 }
 
-export default Checkbox;
+export default Radio;

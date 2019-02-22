@@ -218,14 +218,14 @@ export class Column extends Component {
 export default class Table extends Component {
 
 	listClass () {
-    var listClass = 'gw-table';
-    if(this.props.listClass) {
-      listClass += ' ' + this.props.listClass;
+    var className = 'gw-table';
+    if(this.props.className) {
+      className += ' ' + this.props.className;
     }
     if(this.props.alignment) {
-      listClass += ' align-' + this.props.alignment;
+      className += ' align-' + this.props.alignment;
     }
-    return listClass;
+    return className;
   }
 
 	render () {

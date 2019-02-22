@@ -99,71 +99,51 @@ export class UIInputs extends Component {
 				<div className="grid-flex right">
 					<div className="col-8">
 						<div id="RichText" className="rich-text">
-							<h1>Quid est enim aliud esse versutum?</h1>
+<h1>Quod autem in homine praestantissimum atque optimum est, id deseruit.</h1>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aperiendum est igitur, quid sit voluptas; Hos contra singulos dici est melius. <i>Duo Reges: constructio interrete.</i> Quis suae urbis conservatorem Codrum, quis Erechthei filias non maxime laudat? Nihil opus est exemplis hoc facere longius. Universa enim illorum ratione cum tota vestra confligendum puto. </p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. Memini vero, inquam; Quid ei reliquisti, nisi te, quoquo modo loqueretur, intellegere, quid diceret? Cur, nisi quod turpis oratio est? Quaesita enim virtus est, non quae relinqueret naturam, sed quae tueretur. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Ita ne hoc quidem modo paria peccata sunt. Hoc est non modo cor non habere, sed ne palatum quidem. </p>
 
-							<h3>Quod totum contra est.</h3>
-
-							<p>Beatus autem esse in maximarum rerum timore nemo potest. Venit enim mihi Platonis in mentem, quem accepimus primum hic disputare solitum; Aliena dixit in physicis nec ea ipsa, quae tibi probarentur; </p>
-
-							<p>Aliis esse maiora, illud dubium, ad id, quod summum bonum dicitis, ecquaenam possit fieri accessio. <mark>Cyrenaici quidem non recusant;</mark> Cupiditates non Epicuri divisione finiebat, sed sua satietate. Utrum igitur tibi litteram videor an totas paginas commovere? <a href="http://loripsum.net/" target="_blank">Quis istum dolorem timet?</a> Ait enim se, si uratur, Quam hoc suave! dicturum. Non pugnem cum homine, cur tantum habeat in natura boni; Qui ita affectus, beatum esse numquam probabis; <code>Tum Torquatus: Prorsus, inquit, assentior;</code> Ita prorsus, inquam; Traditur, inquit, ab Epicuro ratio neglegendi doloris. </p>
-
-							<pre>Tum ille: Finem, inquit, interrogandi, si videtur, quod
-							quidem ego a principio ita me malle dixeram hoc ipsum
-							providens, dialecticas captiones.
-
-							Quod ea non occurrentia fingunt, vincunt Aristonem;
-							</pre>
+<blockquote cite="http://loripsum.net">
+	Virtutibus igitur rectissime mihi videris et ad consuetudinem nostrae orationis vitia posuisse contraria.
+</blockquote>
 
 
-							<dl>
-								<dt><dfn>Sedulo, inquam, faciam.</dfn></dt>
-								<dd>Vos autem cum perspicuis dubia debeatis illustrare, dubiis perspicua conamini tollere.</dd>
-								<dt><dfn>Avaritiamne minuis?</dfn></dt>
-								<dd>At enim, qua in vita est aliquid mali, ea beata esse non potest.</dd>
-								<dt><dfn>Ut pulsi recurrant?</dfn></dt>
-								<dd>Illud mihi a te nimium festinanter dictum videtur, sapientis omnis esse semper beatos;</dd>
-								<dt><dfn>Sit sane ista voluptas.</dfn></dt>
-								<dd>Bonum liberi: misera orbitas.</dd>
-								<dt><dfn>Nos commodius agimus.</dfn></dt>
-								<dd>Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum.</dd>
-							</dl>
+<ol>
+	<li>Ita enim vivunt quidam, ut eorum vita refellatur oratio.</li>
+	<li>Quamquam ab iis philosophiam et omnes ingenuas disciplinas habemus;</li>
+	<li>Idemne, quod iucunde?</li>
+	<li>Ne amores quidem sanctos a sapiente alienos esse arbitrantur.</li>
+</ol>
 
 
-							<h2>Sed in rebus apertissimis nimium longi sumus.</h2>
-
-							<p><code>Huius, Lyco, oratione locuples, rebus ipsis ielunior.</code> Certe, nisi voluptatem tanti aestimaretis. <i>Minime vero istorum quidem, inquit.</i> Praeterea sublata cognitione et scientia tollitur omnis ratio et vitae degendae et rerum gerendarum. Quoniam, si dis placet, ab Epicuro loqui discimus. Omnia peccata paria dicitis. </p>
-
-							<p>Videamus animi partes, quarum est conspectus illustrior; <b>Ut id aliis narrare gestiant?</b> Si mala non sunt, iacet omnis ratio Peripateticorum. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. <b>Quid censes in Latino fore?</b> Quod maxime efficit Theophrasti de beata vita liber, in quo multum admodum fortunae datur. <b>Itaque haec cum illis est dissensio, cum Peripateticis nulla sane.</b> At ille non pertimuit saneque fidenter: Istis quidem ipsis verbis, inquit; Ut id aliis narrare gestiant? Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? </p>
-
-							<hr/>
-
-							<p>Si est nihil nisi corpus, summa erunt illa: valitudo, vacuitas doloris, pulchritudo, cetera. Idemne potest esse dies saepius, qui semel fuit? <a href="http://loripsum.net/" target="_blank">Negare non possum.</a> <code>Tum ille: Ain tandem?</code> Tum ille timide vel potius verecunde: Facio, inquit. Deque his rebus satis multa in nostris de re publica libris sunt dicta a Laelio. Tenent mordicus. Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Summum ením bonum exposuit vacuitatem doloris; Occultum facinus esse potuerit, gaudebit; <mark>Sed quot homines, tot sententiae;</mark> <b>Quare conare, quaeso.</b> </p>
-
-							<blockquote cite="http://loripsum.net">
-								Hoc dixerit potius Ennius: Nimium boni est, cui nihil est mali.
-							</blockquote>
+<ul>
+	<li>Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere.</li>
+	<li>Tu enim ista lenius, hic Stoicorum more nos vexat.</li>
+	<li>Istam voluptatem perpetuam quis potest praestare sapienti?</li>
+	<li>Quod cum ille dixisset et satis disputatum videretur, in oppidum ad Pomponium perreximus omnes.</li>
+</ul>
 
 
-							<p><a href="http://loripsum.net/" target="_blank">Ego vero isti, inquam, permitto.</a> Hoc loco tenere se Triarius non potuit. <mark>Rhetorice igitur, inquam, nos mavis quam dialectice disputare?</mark> Quid enim necesse est, tamquam meretricem in matronarum coetum, sic voluptatem in virtutum concilium adducere? <b>Primum quid tu dicis breve?</b> Oculorum, inquit Plato, est in nobis sensus acerrimus, quibus sapientiam non cernimus. Nummus in Croesi divitiis obscuratur, pars est tamen divitiarum. Eadem nunc mea adversum te oratio est. Nam Pyrrho, Aristo, Erillus iam diu abiecti. <mark>Pauca mutat vel plura sane;</mark> </p>
+<pre>Homines optimi non intellegunt totam rationem everti, si ita
+res se habeat.
 
-							<p>Videamus animi partes, quarum est conspectus illustrior; <b>Ut id aliis narrare gestiant?</b> Si mala non sunt, iacet omnis ratio Peripateticorum. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. <b>Quid censes in Latino fore?</b> Quod maxime efficit Theophrasti de beata vita liber, in quo multum admodum fortunae datur. <b>Itaque haec cum illis est dissensio, cum Peripateticis nulla sane.</b> At ille non pertimuit saneque fidenter: Istis quidem ipsis verbis, inquit; Ut id aliis narrare gestiant? Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? </p>
-
-							<p>Si est nihil nisi corpus, summa erunt illa: valitudo, vacuitas doloris, pulchritudo, cetera. Idemne potest esse dies saepius, qui semel fuit? <a href="http://loripsum.net/" target="_blank">Negare non possum.</a> <code>Tum ille: Ain tandem?</code> Tum ille timide vel potius verecunde: Facio, inquit. Deque his rebus satis multa in nostris de re publica libris sunt dicta a Laelio. Tenent mordicus. Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Summum ením bonum exposuit vacuitatem doloris; Occultum facinus esse potuerit, gaudebit; <mark>Sed quot homines, tot sententiae;</mark> <b>Quare conare, quaeso.</b> </p>
-
-							<ul>
-								<li>At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.</li>
-								<li>Aliud est enim poëtarum more verba fundere, aliud ea, quae dicas, ratione et arte distinguere.</li>
-							</ul>
+Si ista mala sunt, in quae potest incidere sapiens,
+sapientem esse non esse ad beate vivendum satis.
+</pre>
 
 
-							<ol>
-								<li>Quod praeceptum quia maius erat, quam ut ab homine videretur, idcirco assignatum est deo.</li>
-								<li>Quid ei reliquisti, nisi te, quoquo modo loqueretur, intellegere, quid diceret?</li>
-								<li>Cave putes quicquam esse verius.</li>
-								<li>Itaque hic ipse iam pridem est reiectus;</li>
-							</ol>
+<p>Nam si quae sunt aliae, falsum est omnis animi voluptates esse e corporis societate. Aliter enim nosmet ipsos nosse non possumus. Ad eos igitur converte te, quaeso. Quis istud possit, inquit, negare? Cur post Tarentum ad Archytam? Mihi enim satis est, ipsis non satis. In qua quid est boni praeter summam voluptatem, et eam sempiternam? Consequatur summas voluptates non modo parvo, sed per me nihilo, si potest; Sic enim censent, oportunitatis esse beate vivere. Virtutis, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. </p>
+
+<dl>
+	<dt><dfn>Non igitur bene.</dfn></dt>
+	<dd>Alia quaedam dicent, credo, magna antiquorum esse peccata, quae ille veri investigandi cupidus nullo modo ferre potuerit.</dd>
+	<dt><dfn>Confecta res esset.</dfn></dt>
+	<dd>An vero, inquit, quisquam potest probare, quod perceptfum, quod.</dd>
+	<dt><dfn>Nihilo magis.</dfn></dt>
+	<dd>Hic, qui utrumque probat, ambobus debuit uti, sicut facit re, neque tamen dividit verbis.</dd>
+	<dt><dfn>Quo modo?</dfn></dt>
+	<dd>Quam ob rem tandem, inquit, non satisfacit?</dd>
+</dl>
 
 						</div>
 					</div>

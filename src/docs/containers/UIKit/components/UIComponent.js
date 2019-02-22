@@ -98,6 +98,14 @@ export class UIComponent extends Component {
 		}
 	}
 
+	renderProps () {
+		const keys = Object.keys(this.props);
+
+		return keys.map( (key) => {
+			return `${key} : ${this.props[key]}\n`;
+		})
+	}
+
 	render() {
 
 		return (
@@ -119,7 +127,7 @@ export class UIComponent extends Component {
 						</CodeBlock>
 					) : (
 						<CodeBlock language="json" className="sm minimal" style="atom-one-dark">
-							{JSON.stringify(this.props, null, "   ")}
+							{this.renderProps()}
 						</CodeBlock>
 					)}
 				</div>

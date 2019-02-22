@@ -7,16 +7,28 @@
 	.data {
 		width: 100%;
 	}
-	&.full-width {
-		tr {
-			td {
-				&:first-child {
-					padding-left: $mobile-margin;
-					@include respond($md) {
-						padding-left: $margin;
-					}
-				}
-			}
+	&.space-1 {
+		tr td {
+			padding-top: $space-1;
+			padding-bottom: $space-1;
+		}
+	}
+	&.space-2 {
+		tr td {
+			padding-top: $space-2;
+			padding-bottom: $space-2;
+		}
+	}
+	&.space-3 {
+		tr td {
+			padding-top: $space-3;
+			padding-bottom: $space-3;
+		}
+	}
+	&.space-4 {
+		tr td {
+			padding-top: $space-4;
+			padding-bottom: $space-4;
 		}
 	}
 	td {
@@ -25,9 +37,6 @@
 			.data {
 				@include ellipsis;
 			}
-		}
-		&:first-child {
-			padding-left: $horizontal-cell-padding;
 		}
 	}
 	thead,
@@ -63,11 +72,11 @@
 		flex-direction: column;
 		background: $bg-color;
 		tr {
-			position: relative;
-			cursor: pointer;
 			transition: color $md-speed $ease, background $md-speed $ease;
 
-			// Should not default
+			// Should not default. Add class if is linkable?
+			// cursor: pointer;
+			// position: relative;
 			// &:after {
 			// 	content: 'chevron_right';
 			// 	@include material-icons();
@@ -84,39 +93,21 @@
 			// 	transform: translate3d(-12px, 0, 0);
 			// 	transition: opacity $md-speed $ease, transform $md-speed $ease;
 			// }
+			// &:hover {
+			// 	color: $main-color;
+			// 	background: $white;
+			// 	cursor: pointer;
+			// 	&:after {
+			// 		transform: none;
+			// 		opacity: 1;
+			// 	}
+			// }
 
 			td {
 				position: relative;
 				z-index: 1;
-				&.small-caps {
-					.data {
-						@include small-caps();
-					}
-				}
 				.data {
 					width: 100%;
-				}
-				.img-wrap {
-					overflow: hidden;
-					margin-top: -.2rem;
-					width: 6rem;
-					height: 3.375rem;
-					background: $light-grey;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					img {
-						display: block;
-					}
-				}
-			}
-			&:hover {
-				color: $main-color;
-				background: $white;
-				cursor: pointer;
-				&:after {
-					transform: none;
-					opacity: 1;
 				}
 			}
 		}
@@ -132,9 +123,6 @@
 			padding-top: $vertical-cell-padding;
 			padding-bottom: $vertical-cell-padding;
 			border-bottom: 1px solid $hr-color;
-			// &:last-child {
-			// 	padding-right: $margin;
-			// }
 			&.wide {
 				flex: 2;
 			}
@@ -155,47 +143,4 @@
 			}
 		}
 	}
-	p {
-		&.ellipsis {
-			padding-bottom: 1px;
-			a {
-				padding: 0;
-				border-color: $light-text-color;
-				line-height: 1em;
-				display: inline-block;
-				&:hover {
-					color: $main-color;
-					border-color: $main-color;
-				}
-			}
-		}
-	}
-
-	.kill-xlg {
-		@include respond-smaller-than($xlg) {
-			display: none;
-		}
-	}
-	.kill-lg {
-		@include respond-smaller-than($lg) {
-			display: none;
-		}
-	}
-	.kill-md {
-		@include respond-smaller-than($md) {
-			display: none;
-		}
-	}
-	.kill-sm {
-		@include respond-smaller-than($sm) {
-			display: none;
-		}
-	}
-
-}
-
-.gw-table-header {
-	display: flex;
-	height: 39px;
-	align-items: center;
 }

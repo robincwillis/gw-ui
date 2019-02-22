@@ -26,16 +26,11 @@ export class UIInputs extends Component {
 					title="Input"
 					description={
 						<div>
-							<UIProps {...inputDocs} />
-							<p>The <code>Input</code> component is pretty serious. All of the functionality for all types of inputs is contained within it. To create awesome forms all you need to to is include one component.</p>
-							<h6>Sizes</h6>
-							<p>Other than the default input size, you can add a class of <code>tiny</code>, <code>small</code>, or <code>large</code> to make the inputs match the height of the button of that size.</p>
-							<h6>Icons</h6>
-							<p>Both custom icons and material icons can be used with text inputs by adding props of <code>iconLeft="nameOfIcon"</code> or just <code>icon="nameOfIcon"</code> will place the icon to the right.</p>
-							<p>One of the special icons is the <code>loader</code> icon which uses the loader component so it matches the loaders accross the app.</p>
+							<p>...</p>
 						</div>
 					}
 				>
+					<UIProps {...inputDocs} />
 					<div className="grid-flex gutter-wide v-spaced-wide">
 						<div className="col-6">
 							<h5 className="space-after">Normal Inputs</h5>

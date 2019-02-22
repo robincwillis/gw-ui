@@ -27,7 +27,7 @@ class UITables extends Component {
 					Example
 
 					<Gist id='73d64155c7110550145f3112ea21bf17' />
-
+					add classes <code>.space-1</code>, <code>.space-2</code>, <code>.space-3</code>, or <code>.space-4</code> to adjust the vertical spacing using the corresponding variables in <code>variables.scss</code>.
 					</div>
 				}
 			>

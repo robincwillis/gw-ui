@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
 import Section from './UISection';
 import SubSection from './UISubSection';
+import Table, { Column, Cell } from 'components/Table';
 
 class UISpacing extends Component {
 	render() {
+
+		const data = [
+			{
+				prefix : 'm-',
+				description : 'Margin'
+			},
+			{
+				prefix : 'mt-',
+				description : 'Margin top'
+			},
+			{
+				prefix : 'mr-',
+				description : 'Margin right'
+			},
+			{
+				prefix : 'mb-',
+				description : 'Margin'
+			},
+			{
+				prefix : 'ml-',
+				description : 'Margin'
+			}
+		];
+
 		return (
 			<div>
 				<Section
@@ -64,6 +89,24 @@ class UISpacing extends Component {
 						</div>
 					}
 				/>
+				<Table
+					data={data}
+					className="space-1 p sm"
+				>
+					<Column
+						header="Prefix"
+						className="short"
+						col="prefix"
+						cell={<Cell />}
+					/>
+
+					<Column
+						header="Description"
+						col="description"
+						cell={<Cell />}
+					/>
+
+				</Table>
 			</div>
 		);
 	}

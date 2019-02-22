@@ -51,32 +51,66 @@ img {
   text-align: right;
 }
 
+// show below breakpoint
+.show-huge {
+  @include respond($huge) {
+    display: none !important;
+  }
+}
+
+.show-xlg {
+  @include respond($xlg) {
+    display: none !important;
+  }
+}
+
+.show-lg {
+  @include respond($lg) {
+    display: none !important;
+  }
+}
+
+.show-md {
+  @include respond($md) {
+    display: none !important;
+  }
+}
+
+.show-sm {
+  @include respond($sm) {
+    display: none !important;
+  }
+}
+
+// hide below breakpoint
+.hide-huge {
+  @include respond-smaller-than($huge) {
+    display: none !important;
+  }
+}
+
 .hide-xlg {
   @include respond-smaller-than($xlg) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-lg {
   @include respond-smaller-than($lg) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-md {
   @include respond-smaller-than($md) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-sm {
   @include respond-smaller-than($sm) {
-    display: none;
+    display: none !important;
   }
-}
-
-.white-bg {
-  background: $white;
 }
 
 .dark-section {

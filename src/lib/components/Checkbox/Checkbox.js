@@ -9,11 +9,10 @@ class Checkbox extends Component {
 	}
 
 	state = {
-		className : this.props.className
 	}
 
 	className () {
-		let className = this.state.className  + ' ' + 'input-wrap';
+		let className = this.props.className  + ' ' + 'input-wrap';
 		if(this.state.error) { className += ' ' + 'error' }
 		if(this.state.validated) { className += ' ' + 'validated' }
 		if(this.state.hasValue) { className += ' has-value' }
@@ -22,6 +21,31 @@ class Checkbox extends Component {
 
 	handleChange = (event) => {
 		if(this.props.onChange) { this.props.onChange(event)}
+		console.log(event.target.value)
+		console.log(event.target.checked)
+	}
+
+	renderLabel = () => {
+		if (this.props.label && typeof(this.props.label) == 'string') {
+			return (
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
+					<div className="grid-flex no-break gutter-none left middle">
+						<div className="col"><div className="checkbox"/></div>
+						{this.props.label ? (<div className="col"><span className="pl-1">{this.props.label}</span></div>) : false}
+					</div>
+				</label>
+			)
+		} else if (this.props.label) {
+			return (
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>{this.props.label}</label>
+			)
+		} else {
+			return (
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
+					<div className="checkbox"/>
+				</label>
+			)
+		}
 	}
 
 	checkbox = () => (
@@ -39,18 +63,12 @@ class Checkbox extends Component {
 				readOnly={this.props.readOnly}
 				{...this.props.checkboxProps}
 			/>
-			{this.props.label ? (
-				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
-					<div className="grid-flex no-break gutter-none left middle">
-						<div className="col"><div className="checkbox"/></div>
-						{this.props.label ? (<div className="col"><span className="pl-1">{this.props.label}</span></div>) : false}
-					</div>
-				</label>
-			) : false}
+			{this.renderLabel()}
 		</div>
 	)
 
 	render() {
+
 		return (
 			<div className={this.className()}>
 				{this.checkbox()}

@@ -30,6 +30,8 @@ input[type='radio'] {
 		~ label {
 			font-size: $p-font-size;
 			color: $light-text-color;
+			display: inline-block;
+			vertical-align: top;
 			&:hover {
 				color: $text-color;
 			}

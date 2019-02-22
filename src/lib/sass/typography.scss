@@ -122,13 +122,12 @@ p,
 	}
 	a {
 		color: currentcolor;
-		border-bottom: 1px solid darken($hr-color, 10%);
+		border-bottom: $hr-styles;
 		line-height: 1em;
 		padding-bottom: .1em;
 		cursor: pointer;
 		&:hover {
-			color: $main-color;
-			border-color: currentcolor;
+			border-color: $main-color;
 		}
 		&.hover-alert {
 			&:hover {
@@ -139,8 +138,7 @@ p,
 		&.main-color {
 			border-color: transparent;
 			&:hover {
-				color: $main-color;
-				border-color: currentcolor;
+				border-color: $main-color;
 			}
 		}
 	}
@@ -406,7 +404,6 @@ code,
 }
 
 a {
-	color: $light-text-color;
 	text-decoration: none;
 	cursor: pointer;
 	transition: color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, opacity $md-speed $ease;
@@ -453,7 +450,7 @@ label {
     font-size: $lg-p-font-size;
   }
 
-  *:first-child {
+  > *:first-child {
     margin-top: 0;
     padding-top: 0;
   }
@@ -589,4 +586,14 @@ label {
 
 }
 
+.align-center {
+  text-align: center;
+}
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}

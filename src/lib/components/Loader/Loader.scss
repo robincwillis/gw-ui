@@ -17,6 +17,7 @@ $large-loader-size: 36px;
 		width: $medium-loader-size;
 		height: $medium-loader-size;
 		padding: $loader-weight / 2;
+		overflow: visible;
 		display: block;
 		animation: rotate 1.5s ease-in-out infinite;
 		circle {

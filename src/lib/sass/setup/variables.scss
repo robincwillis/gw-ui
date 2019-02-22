@@ -1,5 +1,5 @@
 $margin: 7.5rem;
-$mobile-margin: 6.5%;
+$mobile-margin: 6.5vw;  // best to us vw, px, or rem units here to keep the grid consistent
 $min-site-width : 800px;
 $max-site-width: 1500px;
 $site-width : 87%;
@@ -63,6 +63,8 @@ $tight-line-height : 1.1em;
 $tracked-out : .125em;
 	// General Text Sizes
 	$base-font-size : 16px;
+	$base-font-size-at-sm : 14px;
+	$base-font-sizel-at-huge : 18px;
 	$sm-font-size : 11px;
 	$md-font-size : .875rem;
 	$tiny-font-size : 10px;

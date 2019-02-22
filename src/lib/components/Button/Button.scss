@@ -17,7 +17,7 @@ input[type=submit].button {
   height: $btn-height;
   padding: $btn-padding;
   cursor: pointer;
-  line-height: calc(#{$btn-height} - #{$btn-vertical-offset});
+  line-height: $btn-height;
   text-transform: $btn-text-transform;
   letter-spacing: $btn-letter-spacing;
   border-radius: $btn-radius;
@@ -80,6 +80,7 @@ input[type=submit].button {
     height: 100%;
     align-items: center;
     justify-content: center;
+    padding-bottom: $btn-vertical-offset;
     & .label {
       display: inline-block;
       line-height: 1rem;
@@ -130,7 +131,7 @@ input[type=submit].button {
     padding: $btn-padding;
     // padding-left: 1.5em;
     // padding-right: 1.5em;
-    line-height: calc(#{$btn-tiny-height} - #{$btn-vertical-offset});
+    line-height: $btn-tiny-height;
     font-size: $btn-tiny-font-size;
     min-width: 80px;
     .icon {
@@ -172,7 +173,7 @@ input[type=submit].button {
   &.micro {
     height: $btn-micro-height;
     padding: 0;
-    line-height: calc(#{$btn-micro-height} - #{$btn-vertical-offset});
+    line-height: $btn-micro-height;
     font-size: $btn-tiny-font-size;
     padding: 0 1em;
     min-width: 0;
@@ -189,7 +190,7 @@ input[type=submit].button {
   &.small {
     height: $btn-small-height;
     padding: $btn-padding;
-    line-height: calc(#{$btn-small-height} - #{$btn-vertical-offset});
+    line-height: $btn-small-height;
     font-size: $btn-small-font-size;
     min-width: 100px;
     &.circle,
@@ -205,7 +206,7 @@ input[type=submit].button {
   &.large {
     height: $btn-large-height;
     padding: $btn-padding;
-    line-height: calc(#{$btn-large-height} - #{$btn-vertical-offset});
+    line-height: $btn-large-height;
     font-size: $btn-large-font-size;
     &.transparent {
       min-width: 0;
