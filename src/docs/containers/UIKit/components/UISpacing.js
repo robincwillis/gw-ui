@@ -44,6 +44,10 @@ class UISpacing extends Component {
 				description : 'negative (ie: mtn-1 = margin-top: -$space-1)'
 			},
 			{
+				prefix : '0',
+				description : 'No spacing'
+			},
+			{
 				prefix : '1',
 				description : '$space-1 variable'
 			},
@@ -87,7 +91,7 @@ class UISpacing extends Component {
 							<p><span className="p medium-weight">margin options:</span><code>m mx my mt mr mb ml</code><br/>
 							<span className="p medium-weight">padding options:</span><code>p px py pt pr pb pl</code><br/>
 							<span className="p medium-weight">negative modifier:</span><code>n</code><br/>
-							<span className="p medium-weight">spacing options:</span><code>1, 2, 3, 4, gutter, gutter-tight, margin</code></p>
+							<span className="p medium-weight">spacing options:</span><code>0, 1, 2, 3, 4, gutter, gutter-tight, margin</code></p>
 
 							<h6>Examples</h6>
 							<ul>

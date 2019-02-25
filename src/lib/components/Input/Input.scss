@@ -2,6 +2,7 @@
 
 input[type='text'],
 input[type='email'],
+input[type='tel'],
 input[type='number'],
 input[type='password'],
 {
@@ -18,6 +19,7 @@ input[type='password'],
 	font-size: $input-font-size;
 	text-align: left;
 	font-weight: $input-font-weight;
+	height: $input-height;
 	&.minimal,
 	&.minimal:focus,
 	&.minimal:hover,
@@ -38,14 +40,17 @@ input[type='password'],
 	.large & {
 		font-size: $input-large-font-size;
 		line-height: calc(#{$input-large-height} - #{$input-text-offset});
+		height: $input-large-height;
 	}
 	.small &,
 	.tiny & {
 		font-size: $input-small-font-size;
 		line-height: calc(#{$input-small-height} - #{$input-text-offset});
+		height: $input-small-height;
 	}
 	.tiny & {
 		line-height: calc(#{$input-tiny-height} - #{$input-text-offset});
+		height: $input-tiny-height;
 	}
 	&::-webkit-input-placeholder {
 		color: $placeholder-color;

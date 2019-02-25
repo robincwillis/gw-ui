@@ -259,3 +259,23 @@
 		}
 	}
 }
+
+.matted-ui-components .ui-component {
+	.ui-component-wrap {
+		display: flex;
+		min-height: 10rem;
+		align-items: center;
+		justify-content: center;
+		background: $light-grey;
+		margin-bottom: 0;
+		padding: $space-2;
+		border-radius: $base-border-radius $base-border-radius 0 0;
+		> div {
+			width: auto;
+		}
+	}
+	.code-block {
+		border-top: 1px $hr-color solid;
+		border-radius: 0 0 $base-border-radius $base-border-radius;
+	}
+}

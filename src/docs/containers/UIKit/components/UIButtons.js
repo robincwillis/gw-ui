@@ -42,178 +42,107 @@ export class UIButtons extends Component {
 							</div>
 						}
 					>
-						<div className="grid-flex baseline v-spaced">
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Default"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Secondary"
-									className="secondary"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Tertiary"
-									className="tertiary"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Light"
-									className="light"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="White"
-									className="white-btn"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Success"
-									className="success-btn"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Notify"
-									className="notify-btn"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Alert"
-									className="alert-btn"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Transparent"
-									className="transparent"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Transparent"
-									className="transparent main-color"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Transparent"
-									className="transparent notify-color"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Transparent"
-									className="transparent text-color"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Transparent"
-									className="transparent success-color"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Transparent"
-									className="transparent alert-color"
-								/>
-							</div>
-							<div className="col-12">
-								<div className="grid-flex gutter-none no-break middle padding-before">
-									<div className="col no-grow">
-										<h4 className="all-caps light-text-color mr-1">Color Hovers</h4>
-									</div>
-									<div className="col grow"><hr className="no-space-after no-space-before"/></div>
-								</div>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Hover Alert"
-									className="secondary hover-alert"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Hover Notify"
-									className="light hover-notify"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Hover Success"
-									className="hover-success"
-								/>
-							</div>
-							<div className="col-6">
-								<UIComponent
-									component="Button"
-									classOnly={true}
-									listStyle={true}
-									label="Hover Alert"
-									className="transparent hover-alert"
-								/>
-							</div>
-						</div>
 					</SubSection>
+
+					<div className="grid-flex left baseline v-spaced matted-ui-components">
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Default"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Secondary"
+								className="secondary"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Tertiary"
+								className="tertiary"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Light"
+								className="light"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="White"
+								className="white-btn"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Success"
+								className="success-btn"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Notify"
+								className="notify-btn"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Alert"
+								className="alert-btn"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Transparent"
+								className="transparent"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Transparent"
+								className="transparent main-color"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Transparent"
+								className="transparent notify-color"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Transparent"
+								className="transparent text-color"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Transparent"
+								className="transparent success-color"
+							/>
+						</div>
+						<div className="col-4">
+							<UIComponent
+								component="Button"
+								label="Transparent"
+								className="transparent alert-color"
+							/>
+						</div>
+					</div>
 
 					<SubSection
 						title="Shapes & Sizes"

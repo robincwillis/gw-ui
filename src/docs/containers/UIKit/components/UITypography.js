@@ -92,13 +92,6 @@ export class UIInputs extends Component {
 					id={this.props.id + "RichText"}
 					description={
 						<div>
-							<p>Dump it text...WIP</p>
-						</div>
-					}
-				/>
-				<div className="grid-flex right">
-					<div className="col-8">
-						<div id="RichText" className="rich-text">
 <h1>Quod autem in homine praestantissimum atque optimum est, id deseruit.</h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. Memini vero, inquam; Quid ei reliquisti, nisi te, quoquo modo loqueretur, intellegere, quid diceret? Cur, nisi quod turpis oratio est? Quaesita enim virtus est, non quae relinqueret naturam, sed quae tueretur. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Ita ne hoc quidem modo paria peccata sunt. Hoc est non modo cor non habere, sed ne palatum quidem. </p>
@@ -144,6 +137,12 @@ sapientem esse non esse ad beate vivendum satis.
 	<dt><dfn>Quo modo?</dfn></dt>
 	<dd>Quam ob rem tandem, inquit, non satisfacit?</dd>
 </dl>
+						</div>
+					}
+				/>
+				<div className="grid-flex right">
+					<div className="col-8">
+						<div id="RichText" className="rich-text">
 
 						</div>
 					</div>
