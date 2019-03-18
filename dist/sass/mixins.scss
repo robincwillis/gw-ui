@@ -111,7 +111,7 @@
   font-size: 13px;
   font-weight: $bold;
   line-height: 1.4em;
-  @include font-smooth();
+  @include font-smooth(true);
 }
 
 @mixin small-caps () {
@@ -187,7 +187,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  @include font-smooth();
+  @include font-smooth(true);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
   &.md-12 { font-size: 12px; line-height: 12px; }

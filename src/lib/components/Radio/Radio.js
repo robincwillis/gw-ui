@@ -25,7 +25,7 @@ class Radio extends Component {
 	}
 
 	renderLabel = () => {
-		if (this.props.label && typeof(this.props.label) == 'string') {
+		if (this.props.label && !this.props.customLabel) {
 			return (
 				<label htmlFor={this.props.id ? this.props.id : this.props.value}>
 					<div className="grid-flex no-break gutter-none left middle">
@@ -34,9 +34,9 @@ class Radio extends Component {
 					</div>
 				</label>
 			)
-		} else if (this.props.label) {
+		} else if (this.props.customLabel) {
 			return (
-				<label htmlFor={this.props.id ? this.props.id : this.props.value}>{this.props.label}</label>
+				<label htmlFor={this.props.id ? this.props.id : this.props.value}>{this.props.customLabel}</label>
 			)
 		} else {
 			return (

@@ -89,7 +89,7 @@ export class UIOtherInputs extends Component {
 							<h5 className="space-after">Checkboxes and Radios</h5>
 							<UIComponent
 								component="Checkbox"
-								label={<p>Custom Checkbox Label</p>}
+								customLabel={<p>Custom Checkbox Label</p>}
 								id="UICheckboxCust"
 							/>
 							<UIComponent
@@ -103,7 +103,7 @@ export class UIOtherInputs extends Component {
 							/>
 							<UIComponent
 								component="Radio"
-								label={<p>Custom Radio Label</p>}
+								customLabel={<p>Custom Radio Label</p>}
 								id="UIRadioCust"
 							/>
 							<UIComponent
