@@ -6,7 +6,7 @@ button {
 	font-family: $main-font;
 	line-height: $base-line-height;
 	// font-size: calc(#{$base-font-size} - 2px);
-	font-size: $base-font-size;
+	font-size: $base-font-size-at-sm;
 	color: $text-color;
 	letter-spacing: $base-letter-spacing;
 	@include font-smooth($general-font-smoothing);
@@ -14,22 +14,18 @@ button {
 		font-size: $base-font-size;
 	}
 	@include respond($huge) {
-		font-size: calc(#{$base-font-size} + 2px);
+		font-size: $base-font-size-at-huge;
 	}
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	// margin-top: .5rem;
-	// margin-bottom: .5rem;
-	@include font-smooth();
-}
+// h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {}
 
 h1,
 .h1,
 .h1 p {
 	font-family: $h1-font-family;
 	text-transform: $h1-text-transform;
-	font-size: $h1-font-size * .75;
+	font-size: $h1-font-size-at-md;
 	font-weight: $h1-font-weight;
 	line-height: $h1-line-height;
 	letter-spacing: $h1-letter-spacing;
@@ -44,7 +40,7 @@ h2,
 .h2 p {
 	font-family: $h2-font-family;
 	text-transform: $h2-text-transform;
-	font-size: $h2-font-size * .85;
+	font-size: $h2-font-size-at-md;
 	font-weight: $h2-font-weight;
 	line-height: $h2-line-height;
 	letter-spacing: $h2-letter-spacing;
@@ -59,7 +55,7 @@ h3,
 .h3 p {
 	font-family: $h3-font-family;
 	text-transform: $h3-text-transform;
-	font-size: $h3-font-size;
+	font-size: $h3-font-size-at-md;
 	font-weight: $h3-font-weight;
 	line-height: $h3-line-height;
 	letter-spacing: $h3-letter-spacing;
@@ -93,7 +89,13 @@ h5,
 h6,
 .h6,
 .h6 p {
-	@include small-caps();
+	font-family: $h6-font-family;
+	text-transform: $h6-text-transform;
+	font-size: $h6-font-size;
+	font-weight: $h6-font-weight;
+	line-height: $h6-line-height;
+	letter-spacing: $h6-letter-spacing;
+	@include font-smooth($h6-font-smoothing);
 }
 
 p,
@@ -250,6 +252,7 @@ strong,
 .bold,
 b {
 	font-weight: $bold !important;
+	@include font-smooth($general-font-smoothing);
 }
 
 em,
@@ -400,7 +403,7 @@ code,
 
 .medium-weight {
 	font-weight: $medium !important;
-	@include font-smooth();
+	@include font-smooth($general-font-smoothing);
 }
 
 a {

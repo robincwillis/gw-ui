@@ -111,6 +111,9 @@ $col: 100% / 12;
   display: flex !important;
   justify-content: space-between;
   flex-wrap: wrap;
+  &.top {
+    justify-content: flex-start;
+  }
   &.center {
     justify-content: center;
   }
