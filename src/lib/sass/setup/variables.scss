@@ -101,7 +101,7 @@ $tracked-out : .125em;
 		$h3-text-transform : none;
 		$h3-font-size : 1.75rem;
 			// changes the font size under $md breakpoint
-			$h3-font-size-at-md : 1.75rem $h3-font-size;
+			$h3-font-size-at-md : $h3-font-size;
 		$h3-font-weight : $medium;
 		$h3-line-height : $short-line-height;
 		$h3-letter-spacing : inherit;
@@ -166,6 +166,7 @@ $btn-text-transform: none;
 $btn-letter-spacing: 0;
 $btn-weight: $bold;
 $btn-font-style: normal;
+$btn-icon-size: 18px;
 $btn-vertical-offset: 1px;
 $btn-font-smoothing: true;
 

@@ -1,5 +1,3 @@
-
-
 button,
 .button,
 input[type=submit].button {
@@ -36,7 +34,6 @@ input[type=submit].button {
               box-shadow $md-speed $ease,
               transform $md-speed $ease,
               opacity $md-speed $ease;
-  overflow: hidden;
   &.block {
     display: block;
     width: 100%;
@@ -47,7 +44,7 @@ input[type=submit].button {
       cursor: grabbing;
     }
   }
-  &:not(.disabled):not(.loading):hover {
+  &:hover {
     border-color: $btn-hover-border-color;
     background: $btn-hover-bg;
     color: $btn-hover-color;
@@ -96,8 +93,9 @@ input[type=submit].button {
       // line-height: 1rem;
       transition: transform $md-speed $ease, opacity $md-speed $ease, visibility $md-speed $ease;
       margin-top: -2px;
-      width: 18px;
-      height: 18px;
+      &.material-icons {
+        @include material-icons($btn-icon-size);
+      }
       &.spinner {
         svg {
           width: 16px;
@@ -278,31 +276,31 @@ input[type=submit].button {
     }
     &.main-color {
       color: $main-color;
-      &:not(.disabled):not(.loading):hover {
+      &:hover {
         color: darken($main-color, 12%);
       }
     }
     &.text-color {
       color: $text-color;
-      &:not(.disabled):not(.loading):hover {
+      &:hover {
         color: $main-color;
       }
     }
     &.success-color {
       color: $success;
-      &:not(.disabled):not(.loading):hover {
+      &:hover {
         color: darken($success, 12%);
       }
     }
     &.alert-color {
       color: $alert;
-      &:not(.disabled):not(.loading):hover {
+      &:hover {
         color: darken($alert, 12%);
       }
     }
     &.notify-color {
       color: darken($notify, 15%);
-      &:not(.disabled):not(.loading):hover {
+      &:hover {
         color: darken($notify, 25%);
       }
     }
@@ -317,7 +315,7 @@ input[type=submit].button {
         }
       }
     }
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       background: transparent;
       border-color: transparent;
       opacity: 1;
@@ -329,7 +327,7 @@ input[type=submit].button {
     background: $btn-secondary-bg;
     border-color: $btn-secondary-border-color;
     color: $btn-secondary-color;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       background: $btn-secondary-hover-bg;
       border-color: $btn-secondary-hover-border-color;
       color: $btn-secondary-hover-color;
@@ -340,7 +338,7 @@ input[type=submit].button {
     background: $btn-tertiary-bg;
     border-color: $btn-tertiary-border-color;
     color: $btn-tertiary-color;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       background: $btn-tertiary-hover-bg;
       border-color: $btn-tertiary-hover-border-color;
       color: $btn-tertiary-hover-color;
@@ -368,7 +366,7 @@ input[type=submit].button {
     background: $alert;
     border-color: $alert;
     color: $btn-alert-color;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       opacity: 1;
       color: $btn-alert-color;
       background: darken($alert, 10%);
@@ -380,7 +378,7 @@ input[type=submit].button {
     color: rgba($text-color, .6);
     background: rgba($text-color, .1);
     border-color: transparent;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       color: $text-color;
       background: rgba($text-color, .15);
       border-color: transparent;
@@ -391,7 +389,7 @@ input[type=submit].button {
     color: rgba($text-color, .6);
     background: $white;
     border-color: $white;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       color: $main-color;
       background: $white;
       border-color: $white;
@@ -404,7 +402,7 @@ input[type=submit].button {
     background: $notify;
     border-color: $notify;
     color: $btn-notify-color;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       opacity: 1;
       color: $btn-notify-color;
       background: darken($notify, 10%);
@@ -418,7 +416,7 @@ input[type=submit].button {
     background: $success;
     border-color: $success;
     color: $btn-success-color;
-    &:not(.disabled):not(.loading):hover {
+    &:hover {
       opacity: 1;
       color: $btn-success-color;
       background: darken($success, 10%);
@@ -426,7 +424,7 @@ input[type=submit].button {
     }
   }
 
-  &:not(.disabled):not(.loading):hover {
+  &:hover {
     &.hover-alert {
       background: $alert;
       color: $white;
@@ -563,6 +561,15 @@ input[type=submit].button {
     border-color: transparent;
     color: rgba($text-color, .25);
     box-shadow: none !important;
+    &:hover, &:active, &:focus {
+      pointer-events: hover;
+      opacity: 1;
+      cursor: default;
+      background: rgba($text-color, .1);
+      border-color: transparent;
+      color: rgba($text-color, .25);
+      box-shadow: none !important;
+    }
   }
 
 }

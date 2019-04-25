@@ -20,6 +20,7 @@ input[type='password'],
 	text-align: left;
 	font-weight: $input-font-weight;
 	height: $input-height;
+	caret-color: $main-color;
 	&.minimal,
 	&.minimal:focus,
 	&.minimal:hover,
@@ -109,16 +110,16 @@ input[type='password'],
 		}
 	}
 	.input-with-label &:focus,
+	.input-with-label &[placeholder],
 	.has-value .input-with-label & {
 		~ label {
 			transform: scale(0.75) translate3d(0, -1rem, 0);
-			opacity: .5;
+			color: $light-text-color;
 		}
 	}
 	.input-with-label &:focus {
 		~ label {
 			color: $main-color;
-			opacity: 1;
 		}
 	}
 	.disabled &,
@@ -426,3 +427,6 @@ input[type='password']
 	vertical-align: middle;
 }
 
+[contenteditable] {
+	caret-color: $main-color;
+}

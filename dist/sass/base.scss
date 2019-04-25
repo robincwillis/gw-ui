@@ -5,6 +5,11 @@
 html {
 	background-color: $bg-color;
   height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow: hidden;
 }
 
 img, video, svg {

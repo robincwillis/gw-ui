@@ -79,6 +79,8 @@ export class Collapse extends Component {
 
 	render() {
 
+		// Should try and transition this for the new release
+
 		const className = this.props.className || '';
 
 		return (

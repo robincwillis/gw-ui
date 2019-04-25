@@ -41,24 +41,29 @@ export class UIInputs extends Component {
 						<code className="light-text-color">{'<h1>'} or .h1</code>
 					</div>
 					<div className="col-8"><h1>Header No.1</h1></div>
+
 					<div className="col-4 align-right">
-						<code className="light-text-color">{'<h2>'} or .h1</code>
+						<code className="light-text-color">{'<h2>'} or .h2</code>
 					</div>
 					<div className="col-8"><h2>Header No.2</h2></div>
+					
 					<div className="col-4 align-right">
-						<code className="light-text-color">{'<h3>'} or .h1</code>
+						<code className="light-text-color">{'<h3>'} or .h3</code>
 					</div>
 					<div className="col-8"><h3>Header No.3</h3></div>
+					
 					<div className="col-4 align-right">
-						<code className="light-text-color">{'<h4>'} or .h1</code>
+						<code className="light-text-color">{'<h4>'} or .h4</code>
 					</div>
 					<div className="col-8"><h4>Header No.4</h4></div>
+					
 					<div className="col-4 align-right">
-						<code className="light-text-color">{'<h5>'} or .h1</code>
+						<code className="light-text-color">{'<h5>'} or .h5</code>
 					</div>
 					<div className="col-8"><h5>Header No.5</h5></div>
+					
 					<div className="col-4 align-right">
-						<code className="light-text-color">{'<h6>'} or .h1</code>
+						<code className="light-text-color">{'<h6>'} or .h6</code>
 					</div>
 					<div className="col-8"><h6>Header No.6</h6></div>
 				</div>

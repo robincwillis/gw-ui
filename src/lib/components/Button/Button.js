@@ -45,14 +45,10 @@ class Button extends Component {
 	buttonLabel () {
 		var label = '';
 
-		if (this.props.label) {
-
-			if (this.props.className && (this.props.className.includes('circle') || this.props.className.includes('square'))) {
-				label = '';
-			} else {
-				label = (<span className="label">{this.props.label}</span>);
-			}
-
+		if (this.props.className && (this.props.className.includes('circle') || this.props.className.includes('square'))) {
+			label = '';
+		} else {
+			label = (<div className="label">{this.props.children ? this.props.children : this.props.label}</div>);
 		}
 
 		return label;

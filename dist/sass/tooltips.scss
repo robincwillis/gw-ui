@@ -1,7 +1,4 @@
-*[data-tooltip-text],
-button[data-tooltip-text],
-.button[data-tooltip-text],
-input[type=submit].button[data-tooltip-text] {
+*[data-tooltip-text] {
 	overflow: visible;
 	position: relative;
 	z-index: 999;

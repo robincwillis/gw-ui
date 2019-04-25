@@ -10,7 +10,8 @@ $stagger-delay : .05s;
 @keyframes transition-in {
 	100% {
 		opacity: 1;
-		transform: translate3d(0, 0, 0);
+		// transform: translate3d(0, 0, 0);
+		transform: none;
 		visibility: visible;
 	}
 }
@@ -27,80 +28,95 @@ $stagger-delay : .05s;
 	animation: transition-in $slow-speed $ease forwards;	
 }
 
-.stagger-in-1 { animation: transition-in $stagger-time $stagger-delay * 0 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-2 { animation: transition-in $stagger-time $stagger-delay * 1 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-3 { animation: transition-in $stagger-time $stagger-delay * 2 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-4 { animation: transition-in $stagger-time $stagger-delay * 3 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-5 { animation: transition-in $stagger-time $stagger-delay * 4 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-6 { animation: transition-in $stagger-time $stagger-delay * 5 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-7 { animation: transition-in $stagger-time $stagger-delay * 6 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-8 { animation: transition-in $stagger-time $stagger-delay * 7 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-9 { animation: transition-in $stagger-time $stagger-delay * 8 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
-.stagger-in-10 { animation: transition-in $stagger-time $stagger-delay * 9 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// Test Stagger ins
+@for $stagger-count from 1 through 10 {
+  .stagger-in-#{$stagger-count} {
+    animation: transition-in $stagger-time $stagger-delay * ($stagger-count - 1) $ease forwards;
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+}
 
+// .stagger-in-1 { animation: transition-in $stagger-time $stagger-delay * 0 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-2 { animation: transition-in $stagger-time $stagger-delay * 1 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-3 { animation: transition-in $stagger-time $stagger-delay * 2 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-4 { animation: transition-in $stagger-time $stagger-delay * 3 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-5 { animation: transition-in $stagger-time $stagger-delay * 4 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-6 { animation: transition-in $stagger-time $stagger-delay * 5 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-7 { animation: transition-in $stagger-time $stagger-delay * 6 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-8 { animation: transition-in $stagger-time $stagger-delay * 7 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-9 { animation: transition-in $stagger-time $stagger-delay * 8 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+// .stagger-in-10 { animation: transition-in $stagger-time $stagger-delay * 9 $ease forwards; opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+
+// Test stagger in items
 .stagger-in-items {
 	> * {
 		opacity: 0;
 		transform: translate3d(0, 1.5rem, 0);
 		animation: transition-in $stagger-time ease forwards;
 		animation-delay: $stagger-delay * 0;
-		&:nth-child(2) {
-			animation-delay: $stagger-delay * 1;
+		@for $stagger-count from 2 through 20 {
+		  &:nth-child(#{$stagger-count}) {
+		    animation-delay: $stagger-delay * ($stagger-count - 1);
+		  }
 		}
-		&:nth-child(3) {
-			animation-delay: $stagger-delay * 2;
-		}
-		&:nth-child(4) {
-			animation-delay: $stagger-delay * 3;
-		}
-		&:nth-child(5) {
-			animation-delay: $stagger-delay * 4;
-		}
-		&:nth-child(6) {
-			animation-delay: $stagger-delay * 5;
-		}
-		&:nth-child(7) {
-			animation-delay: $stagger-delay * 6;
-		}
-		&:nth-child(8) {
-			animation-delay: $stagger-delay * 7;
-		}
-		&:nth-child(9) {
-			animation-delay: $stagger-delay * 8;
-		}
-		&:nth-child(10) {
-			animation-delay: $stagger-delay * 9;
-		}
-		&:nth-child(11) {
-			animation-delay: $stagger-delay * 10;
-		}
-		&:nth-child(12) {
-			animation-delay: $stagger-delay * 11;
-		}
-		&:nth-child(13) {
-			animation-delay: $stagger-delay * 12;
-		}
-		&:nth-child(14) {
-			animation-delay: $stagger-delay * 13;
-		}
-		&:nth-child(15) {
-			animation-delay: $stagger-delay * 14;
-		}
-		&:nth-child(16) {
-			animation-delay: $stagger-delay * 15;
-		}
-		&:nth-child(17) {
-			animation-delay: $stagger-delay * 16;
-		}
-		&:nth-child(18) {
-			animation-delay: $stagger-delay * 17;
-		}
-		&:nth-child(19) {
-			animation-delay: $stagger-delay * 18;
-		}
-		&:nth-child(20) {
-			animation-delay: $stagger-delay * 19;
-		}
+		// &:nth-child(2) {
+		// 	animation-delay: $stagger-delay * 1;
+		// }
+		// &:nth-child(3) {
+		// 	animation-delay: $stagger-delay * 2;
+		// }
+		// &:nth-child(4) {
+		// 	animation-delay: $stagger-delay * 3;
+		// }
+		// &:nth-child(5) {
+		// 	animation-delay: $stagger-delay * 4;
+		// }
+		// &:nth-child(6) {
+		// 	animation-delay: $stagger-delay * 5;
+		// }
+		// &:nth-child(7) {
+		// 	animation-delay: $stagger-delay * 6;
+		// }
+		// &:nth-child(8) {
+		// 	animation-delay: $stagger-delay * 7;
+		// }
+		// &:nth-child(9) {
+		// 	animation-delay: $stagger-delay * 8;
+		// }
+		// &:nth-child(10) {
+		// 	animation-delay: $stagger-delay * 9;
+		// }
+		// &:nth-child(11) {
+		// 	animation-delay: $stagger-delay * 10;
+		// }
+		// &:nth-child(12) {
+		// 	animation-delay: $stagger-delay * 11;
+		// }
+		// &:nth-child(13) {
+		// 	animation-delay: $stagger-delay * 12;
+		// }
+		// &:nth-child(14) {
+		// 	animation-delay: $stagger-delay * 13;
+		// }
+		// &:nth-child(15) {
+		// 	animation-delay: $stagger-delay * 14;
+		// }
+		// &:nth-child(16) {
+		// 	animation-delay: $stagger-delay * 15;
+		// }
+		// &:nth-child(17) {
+		// 	animation-delay: $stagger-delay * 16;
+		// }
+		// &:nth-child(18) {
+		// 	animation-delay: $stagger-delay * 17;
+		// }
+		// &:nth-child(19) {
+		// 	animation-delay: $stagger-delay * 18;
+		// }
+		// &:nth-child(20) {
+		// 	animation-delay: $stagger-delay * 19;
+		// }
 	}
 }
 
