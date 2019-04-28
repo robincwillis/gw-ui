@@ -77,6 +77,13 @@ class Sandbox extends Component {
 
 		return (
 			<div className="container py-margin">
+				<div className="stagger-in-items">
+					<div>Stagger 1</div>
+					<div>Stagger 2</div>
+					<div>Stagger 3</div>
+					<div>Stagger 4</div>
+					<div>Stagger 5</div>
+				</div>
 				<Button icon="assignment" rightIcon="arrow_forward">Button Text</Button>
 				<br/><br/>
 				<Button disabled>Disbaled</Button>
