@@ -55,7 +55,8 @@ class Sandbox extends Component {
 
 	state = {
 		input5 : 'Value',
-		modalOpen : false
+		modalOpen : false,
+		btnState : 'normal'
 	}
 
 	gap () {
@@ -67,39 +68,38 @@ class Sandbox extends Component {
 	}
 
 	onModalClose = (result, state) => {
-		console.log(result);
-		console.log(state);
+		// console.log(result);
+		// console.log(state);
+	}
+
+	toggleButtonState = () => {
+		const states = [ 'error', 'loading', 'normal', 'success' ]
+		let newState = states[Math.floor(Math.random() * states.length)];
+		this.setState({btnState : newState})
 	}
 
 	render() {
-		console.log('final state is');
-		console.log(this.state);
 
 		return (
 			<div className="container py-margin">
 				<div className="stagger-in-items">
-					<div>Stagger 1</div>
-					<div>Stagger 2</div>
-					<div>Stagger 3</div>
-					<div>Stagger 4</div>
-					<div>Stagger 5</div>
+					<h1>Sandbox</h1>
 				</div>
-				<Button icon="assignment" rightIcon="arrow_forward">Button Text</Button>
+
+				<Button 
+					icon="assignment" 
+					rightIcon="arrow_forward"
+					state={this.state.btnState}
+				>
+					Stateful Button
+				</Button>
 				<br/><br/>
-				<Button disabled>Disbaled</Button>
-				<br/><br/>
-				<Button state='loading' icon="arrow_forward">Loading</Button>
-				<br/><br/>
-				<Button state='loading'>Loading</Button>
-				<br/><br/>
-				<Button state='success' icon="arrow_forward">Success</Button>
-				<br/><br/>
-				<Button state='success'>Success</Button>
-				<br/><br/>
-				<Button state='error' icon="arrow_forward">Error</Button>
-				<br/><br/>
-				<Button state='error'>Error</Button>
-				<br/><br/>
+				<Button 
+					className="light small"
+					onClick={this.toggleButtonState}
+				>
+					Change Button State
+				</Button>				
 			</div>
 		);
 	}

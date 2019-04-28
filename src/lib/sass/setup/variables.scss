@@ -284,6 +284,8 @@ $md : 600;
 $lg : 850;
 $xlg : 1050;
 $huge : 1500;
+	// When to switch from desktop $margin to $mobile-margin
+	$margin-breakpoint : $lg;
 
 // Transitions
 $fast-speed : .1s;

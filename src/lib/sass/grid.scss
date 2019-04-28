@@ -223,9 +223,40 @@ $col: 100% / 12;
   margin-right: auto;
   width: calc(100% - #{$mobile-margin} * 2);
   max-width: $max-site-width;
-  @include respond($lg) {
+  @include respond($margin-breakpoint) {
     width: $site-width;
     width: calc(100% - #{$margin} * 2);
+  }
+  // Breakpoints for containers
+  &.break-sm {
+    @include respond-smaller-than($sm) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  &.break-md {
+    @include respond-smaller-than($md) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  &.break-lg {
+    @include respond-smaller-than($lg) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  &.break-xlg {
+    @include respond-smaller-than($xlg) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  &.break-huge {
+    @include respond-smaller-than($huge) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &.narrow {
     max-width: 35rem;
@@ -233,17 +264,6 @@ $col: 100% / 12;
   &.very-narrow {
     max-width: 20rem;
   }
-}
-
-.container-flex-center {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .grid-flex,
