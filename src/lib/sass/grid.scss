@@ -53,36 +53,30 @@ $col: 100% / 12;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    order: 1;
     @include respond($md) {
       padding-left: calc(#{$gutter} / 2);
       padding-right: calc(#{$gutter} / 2);
     }
-    &.order-1 {
-      order: 1;
-    }
-    &.order-2 {
-      order: 2;
-    }
-    &.order-3 {
-      order: 3;
-    }
-    &.order-4 {
-      order: 4;
+    // .order-2 = order: 2;
+    @for $col-order from 1 through 6 {
+      &.order-#{$col-order} {
+        order: $col-order;
+      }
     }
     &.grow {
       width: 1px;
       flex-grow: 1;
     }
-    &.grow-2 {
-      width: 1px;
-      flex-grow: 2;
-    }
-    &.grow-3 {
-      width: 1px;
-      flex-grow: 3;
-    }
     &.no-grow {
       flex-grow: 0;
+    }
+    // .grow-2 = flex-grow: 2;
+    @for $col-grow from 1 through 6 {
+      &.grow-#{$col-grow} {
+        width: 1px;
+        flex-grow: $col-grow;
+      }
     }
   }
 
@@ -131,6 +125,9 @@ $col: 100% / 12;
   }
   &.baseline {
     align-items: baseline;
+  }
+  &.stretch {
+    align-items: stretch;
   }
 }
 

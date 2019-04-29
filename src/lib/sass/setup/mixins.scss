@@ -116,12 +116,12 @@
 
 @mixin small-caps () {
   @include all-caps();
-  font-size: $sm-font-size;
+  font-size: $sm-p-font-size;
 }
 
 @mixin tiny-caps () {
   @include all-caps();
-  font-size: $tiny-font-size;
+  font-size: $sm-p-font-size;
 }
 
 

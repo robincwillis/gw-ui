@@ -56,25 +56,18 @@ export Accordion from './components/Accordion';
 export CenteredForm from './components/CenteredForm';
 
 // Per App
-// export Header from './components/Header';
-// export Sidebar from './components/Sidebar';
 
 // Lists
 export ImageList from './components/ImageList';
 
 // Misc
-export Avatar from './components/Avatar';
-export Card from './components/Card';
-export TermsOfService from './components/TermsOfService';
+export Profile from './components/Profile';
 export Video from './components/Video';
 
 // ========================================
 // TODO
 // These components have dependencies that we are not sure we want to commit to yet
 // ========================================
-
-//export Calendar from 'components/Calendar';
-//export CalendarKey from 'components/CalendarKey';
 
 //Popper Dependant
 //export Popup from './components/Popup';

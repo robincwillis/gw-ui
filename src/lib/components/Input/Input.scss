@@ -232,7 +232,7 @@ input[type='password']
 				position: absolute;
 				top: -.1rem;
 				left: 0;
-				font-size: $sm-font-size;
+				font-size: $sm-p-font-size;
 				color: $light-text-color;
 				font-size: calc(#{$input-font-size} * .75);
 				@include ellipsis();
@@ -421,7 +421,7 @@ input[type='password']
 }
 
 .input-label {
-	font-size: $sm-font-size;
+	font-size: $sm-p-font-size;
 	color: $light-text-color;
 	display: inline-block;
 	vertical-align: middle;

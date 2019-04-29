@@ -4,7 +4,7 @@ input,
 textarea,
 button {
 	font-family: $main-font;
-	line-height: $base-line-height;
+	line-height: $line-height-base;
 	// font-size: calc(#{$base-font-size} - 2px);
 	font-size: $base-font-size-at-sm;
 	color: $text-color;
@@ -106,15 +106,11 @@ p,
 	letter-spacing: $p-letter-spacing;
 	font-weight: $p-font-weight;
 	text-transform: none;
-	&.max-width,
-	.max-width & {
-		max-width: 32em;
-	}
 	&.tight-line-height {
-		line-height: $tight-line-height;
+		line-height: $tight-line-xsmall;
 	}
 	&.short-line-height {
-		line-height: $short-line-height;
+		line-height: $line-height-small;
 	}
 	&.no-spacing {
 		margin: 0;
@@ -226,7 +222,7 @@ ol {
 	.small > &,
 	&.sm,
 	&.small {
-		font-size: $sm-font-size;
+		font-size: $sm-p-font-size;
 		font-weight: $medium;
 	}
 }
@@ -273,39 +269,39 @@ i,
 	@include tiny-caps();
 }
 
-.light-text-color {
+.color-light-text-color {
 	color: $light-text-color !important;
 }
 
-.text-color {
+.color-text-color {
 	color: $text-color !important;
 }
 
-.bg-color {
+.color-bg-color {
 	color: $bg-color !important;
 }
 
-.black {
+.color-black {
 	color: $black !important;
 }
 
-.white {
+.color-white {
 	color: $white !important;
 }
 
-.main-color {
+.color-main-color {
 	color: $main-color !important;
 }
 
-.success-color {
+.color-success {
 	color: $success !important;
 }
 
-.alert-color {
+.color-alert {
 	color: $alert !important;
 }
 
-.notify-color {
+.color-notify {
 	color: $notify !important;
 }
 
@@ -322,7 +318,7 @@ i,
 }
 
 .sm-font-size {
-	font-size: $sm-font-size;
+	font-size: $sm-p-font-size;
 }
 
 hr {
@@ -397,7 +393,7 @@ code,
 	letter-spacing: 0;
   font-family: $code-font;
   font-size: 1em;
-  line-height: $base-line-height;
+  line-height: $line-height-base;
   @include font-smooth($code-font-smoothing);
 }
 
@@ -572,7 +568,7 @@ label {
         text-align: right;
         position: absolute;
         left: calc(2rem - .5em - .75rem + 2px);
-        top: $base-line-height / 2;
+        top: $line-height-base / 2;
         margin-top: -2px;
         padding: 0;
         background-color: currentcolor;

@@ -56,10 +56,10 @@ $secondary-font: $system-font;
 $code-font: 'Roboto Mono', monospace;
 $general-font-smoothing : false;
 $code-font-smoothing : false;
-$base-line-height : 1.5em;
 $base-letter-spacing : 0;
-$short-line-height : 1.25em;
-$tight-line-height : 1.1em;
+$line-height-base : 1.5em;
+$line-height-small : 1.25em;
+$tight-line-xsmall : 1.1em;
 $tracked-out : .125em;
 	// General Text Sizes
 	$base-font-size : 16px;
@@ -67,9 +67,6 @@ $tracked-out : .125em;
 	$base-font-size-at-sm : 14px;
 	// changes the font size above $huge breakpoint
 	$base-font-size-at-huge : 18px;
-	$sm-font-size : 11px;
-	$md-font-size : .875rem;
-	$tiny-font-size : 10px;
 	// Font Weights
 	$normal : normal;
 	$thin : 300;
@@ -83,7 +80,7 @@ $tracked-out : .125em;
 			// changes the font size under $md breakpoint
 			$h1-font-size-at-md : $h1-font-size * .75;
 		$h1-font-weight : $medium;
-		$h1-line-height : $short-line-height;
+		$h1-line-height : $line-height-small;
 		$h1-letter-spacing : inherit;
 		$h1-font-smoothing : true;
 	// h2
@@ -93,7 +90,7 @@ $tracked-out : .125em;
 			// changes the font size under $md breakpoint
 			$h2-font-size-at-md : $h2-font-size * .85;
 		$h2-font-weight : $medium;
-		$h2-line-height : $short-line-height;
+		$h2-line-height : $line-height-small;
 		$h2-letter-spacing : inherit;
 		$h2-font-smoothing : true;
 	// h3
@@ -103,7 +100,7 @@ $tracked-out : .125em;
 			// changes the font size under $md breakpoint
 			$h3-font-size-at-md : $h3-font-size;
 		$h3-font-weight : $medium;
-		$h3-line-height : $short-line-height;
+		$h3-line-height : $line-height-small;
 		$h3-letter-spacing : inherit;
 		$h3-font-smoothing : true;
 	// h4
@@ -111,7 +108,7 @@ $tracked-out : .125em;
 		$h4-text-transform : none;
 		$h4-font-size : 1.25rem;
 		$h4-font-weight : $medium;
-		$h4-line-height : $base-line-height;
+		$h4-line-height : $line-height-base;
 		$h4-letter-spacing : inherit;
 		$h4-font-smoothing : true;
 	// h5
@@ -119,7 +116,7 @@ $tracked-out : .125em;
 		$h5-text-transform : none;
 		$h5-font-size : 1rem;
 		$h5-font-weight : $bold;
-		$h5-line-height : $base-line-height;
+		$h5-line-height : $line-height-base;
 		$h5-letter-spacing : inherit;
 		$h5-font-smoothing : true;
 	// h6 is tracked out all caps by default
@@ -127,32 +124,32 @@ $tracked-out : .125em;
 		$h6-text-transform : uppercase;
 		$h6-font-size : 13px;
 		$h6-font-weight : $bold;
-		$h6-line-height : $short-line-height;
+		$h6-line-height : $line-height-small;
 		$h6-letter-spacing : $tracked-out;
 		$h6-font-smoothing : true;
 	// p.sm
 		$sm-p-font-size : .875rem; //13px;
 		$sm-p-font-family : inherit;
 		$sm-p-font-weight : $normal;
-		$sm-p-line-height : $base-line-height;
+		$sm-p-line-height : $line-height-base;
 		$sm-p-letter-spacing : inherit;
 	// p
 		$p-font-size : 1rem;
 		$p-font-family : inherit;
 		$p-font-weight : $normal;
-		$p-line-height : $base-line-height;
+		$p-line-height : $line-height-base;
 		$p-letter-spacing : inherit;
 	// p.md
 		$md-p-font-size : 1.125rem;
 		$md-p-font-family : inherit;
 		$md-p-font-weight : $normal;
-		$md-p-line-height : $base-line-height;
+		$md-p-line-height : $line-height-base;
 		$md-p-letter-spacing : inherit;
 	// p.lg
 		$lg-p-font-size : 1.25rem;
 		$lg-p-font-family : inherit;
 		$lg-p-font-weight : $normal;
-		$lg-p-line-height : $base-line-height;
+		$lg-p-line-height : $line-height-base;
 		$lg-p-letter-spacing : inherit;
 
 // Text Highlights
@@ -292,3 +289,8 @@ $fast-speed : .1s;
 $slow-speed : .5s;
 $md-speed : .2s;
 $ease : ease-in-out;
+
+// Export Variables to JS
+// colorMain : $main-color;
+// colorSuccess : $main-color;
+// colorNotify : $main-color;

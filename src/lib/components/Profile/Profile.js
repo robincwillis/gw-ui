@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import './Profile.scss';
 
-
-import './Avatar.scss';
-
-export class Avatar extends Component {
+export class Profile extends Component {
 
 	static defaultProps = {
 		editable : false
@@ -62,4 +60,4 @@ export class Avatar extends Component {
 	}
 }
 
-export default Avatar;
+export default Profile;
