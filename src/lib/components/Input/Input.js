@@ -29,6 +29,13 @@ class Input extends Component {
 
 		return className;
 	}
+	static getDerivedStateFromProps(nextProps, prevState){
+		if(nextProps.type !== prevState.type){
+			return { type: nextProps.type }
+		}else{
+			return { type: prevState.type }
+		}
+	}
 
 	value () {
 		const { focused } = this.state;
